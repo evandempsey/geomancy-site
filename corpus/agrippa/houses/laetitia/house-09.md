@@ -5,7 +5,6 @@ figures: [laetitia]
 houses: [9]
 topics: []
 quality: transcribed
-excerpt: "In the ninth House Laetitia signifies very few journies, and those that do apply themselves to travail, their journyes either are about the Messages and Embassages of Princes, or\u2026"
-editorialNote: "Text supplied from the parallel 1655 issue (EEBO-TCP A26562), the copy text being damaged at this point."
+excerpt: "In the n•nth house L•etitia signifies few journeys; and those •hat do apply themselves to travel, their journeys •ith•r are about the mess•ges and • of •, or pil•rimages to fulfil…"
 ---
-In the ninth House *Laetitia* signifies very few journies, and those that do apply themselves to travail, their journyes either are about the Messages and Embassages of Princes, or Pilgrimages to fulfil holy vows; sheweth a man to be of a good religion, of indifferent knowledge, and who easily apprehendeth all things with natural ingenuity.
+In the n•nth house *L•etitia* signifies few journeys; and those •hat do apply themselves to travel, their journeys •ith•r are about the mess•ges and • of •, or pil•rimages to fulfil holy • of a good religion, of • who •sily apprehendeth all • g•nuity. In the te•th • princes to honour • famous by • times; signifies • offices and • th•ng• which are exer•i•ed • affairs, schools, or the • sheweth a moth•r • shall be married ag•in. • increaseth • friends. And

@@ -5,6 +5,6 @@ figures: [acquisitio]
 houses: [2]
 topics: []
 quality: transcribed
-excerpt: "In the second house, he signifies very great riches, apprehending all the•ves, and causeth whatsoever is lost to be…"
+excerpt: "In the second house, he signifies very great riches, apprehending all thieves, and causeth whatsoever is lost to be…"
 ---
-In the second house, he signifies very great riches, apprehending all the•ves, and causeth whatsoever is lost to be re•overed.
+In the second house, he signifies very great riches, apprehending all thieves, and causeth whatsoever is lost to be recovered.

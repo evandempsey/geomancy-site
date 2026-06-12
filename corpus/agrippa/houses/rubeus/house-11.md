@@ -5,7 +5,6 @@ figures: [rubeus]
 houses: [11]
 topics: []
 quality: transcribed
-excerpt: "In the eleventh House Rubeus giveth no true, nor any faithful friends; sheweth men to be of wicked lives and conversations, and causeth a man to be rejected and cast out from all\u2026"
-editorialNote: "Text supplied from the parallel 1655 issue (EEBO-TCP A26562), the copy text being damaged at this point."
+excerpt: "In the eleventh house Rubeus giveth no true, nor any faithful friends; sheweth men to be of wicked lives and conversation, and causeth a man to be rejected and cast out of all…"
 ---
-In the eleventh House *Rubeus* giveth no true, nor any faithful friends; sheweth men to be of wicked lives and conversations, and causeth a man to be rejected and cast out from all society and conversation with good and noble persons.
+In the eleventh house *Rubeus* giveth no true, nor any faithful friends; sheweth men to be of wicked lives and conversation, and causeth a man to be rejected and cast out of all society and conversation with good and noble persons. *Rubeus*

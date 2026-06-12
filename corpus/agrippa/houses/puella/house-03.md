@@ -5,6 +5,6 @@ figures: [puella]
 houses: [3]
 topics: []
 quality: transcribed
-excerpt: "In the third house Puella signifi•s more sisters than br•thren, and incre•seth and continueth good fri•ndship and amity amo•gst them; denoteth journ•ys to be ple•s•nt and joyous,…"
+excerpt: "In the third house Puella signifies more sisters than brethren, and increaseth and continueth good friendship and amity amongst them; denoteth journeys to be pleasant and joyous,…"
 ---
-In the third house *Puella* signifi•s more sisters than br•thren, and incre•seth and continueth good fri•ndship and amity amo•gst them; denoteth journ•ys to be ple•s•nt and joyous, and men of good conv•rsations.
+In the third house *Puella* signifies more sisters than brethren, and increaseth and continueth good friendship and amity amongst them; denoteth journeys to be pleasant and joyous, and men of good conversations.

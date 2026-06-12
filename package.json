@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "coverage": "node scripts/coverage.mjs",
+    "audit:content": "node scripts/audit-content.mjs",
     "test:casting": "node --test scripts/test-casting.mjs",
     "test:gerard": "node --test scripts/test-gerard.mjs",
     "dossier": "node scripts/chart-dossier.mjs",

@@ -5,6 +5,7 @@ import Base from '../../../layouts/Base.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import FigureGlyph from '../../../components/FigureGlyph.astro';
 import { houseCoverage, quotesFor } from '../../../lib/queries';
+import { astroSymbolsHtml } from '../../../lib/rehype-astro-symbols.mjs';
 
 export async function getStaticPaths() {
   const houses = await getCollection('houses');
@@ -65,7 +66,7 @@ const rows = await Promise.all(
             )}
             {excerpt && (
               <p>
-                {excerpt}
+                <span set:html={astroSymbolsHtml(excerpt)} />
                 {sourceName && <span class="excerpt-source"> — {sourceName}</span>}
               </p>
             )}

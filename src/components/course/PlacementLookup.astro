@@ -8,6 +8,7 @@
  */
 import { getCollection } from 'astro:content';
 import { houseCoverage, citationFor } from '../../lib/queries';
+import { astroSymbolsText } from '../../lib/rehype-astro-symbols.mjs';
 import { withBase } from '../../lib/url';
 
 const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
@@ -28,8 +29,8 @@ for (const [key, quotes] of coverage) {
     count: quotes.length,
     excerpts: await Promise.all(
       withExcerpts.slice(0, EXCERPTS_PER_COMBO).map(async (q) => ({
-        text: q.data.excerpt as string,
-        cite: (await citationFor(q)).replace(/\*([^*]+)\*/g, '$1'),
+        text: astroSymbolsText(q.data.excerpt as string),
+        cite: astroSymbolsText((await citationFor(q)).replace(/\*([^*]+)\*/g, '$1')),
       })),
     ),
   };

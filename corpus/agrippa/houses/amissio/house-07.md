@@ -9,4 +9,4 @@ excerpt: "In the seventh house Amissio giveth an adulterous wife, contradicting 
 ---
 In the seventh house *Amissio* giveth an adulterous wife, contradicting her husband with continual contention;
 
-nevertheless she shall not live long: and it causeth contentions to be end•d.
+nevertheless she shall not live long: and it causeth contentions to be ended.

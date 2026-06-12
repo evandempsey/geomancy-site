@@ -5,6 +5,6 @@ figures: [amissio]
 houses: [9]
 topics: []
 quality: transcribed
-excerpt: "In the nin•h house Amissio causeth no journ•y•, but su•h as shall be compassed with great loss; signifies men to be inconstant in religion and oft•n changing their opinion from…"
+excerpt: "In the ninth house Amissio causeth no journeys, but such as shall be compassed with great loss; signifies men to be inconstant in religion and often changing their opinion from…"
 ---
-In the nin•h house *Amissio* causeth no journ•y•, but su•h as shall be compassed with great loss; signifies men to be inconstant in religion and oft•n changing their opinion from one sect to another, and altogether ignorant of learning.
+In the ninth house *Amissio* causeth no journeys, but such as shall be compassed with great loss; signifies men to be inconstant in religion and often changing their opinion from one sect to another, and altogether ignorant of learning.

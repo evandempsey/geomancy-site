@@ -5,6 +5,6 @@ figures: [albus]
 houses: [11]
 topics: []
 quality: transcribed
-excerpt: "In the eleventh house albus maketh dissembling and false f•jends; causeth love and favour to be incons•t.…"
+excerpt: "In the eleventh house albus maketh dissembling and false friends; causeth love and favour to be inconstant.…"
 ---
-In the eleventh house *albus* maketh dissembling and false f•jends; causeth love and favour to be incons•t. *Albus*
+In the eleventh house *albus* maketh dissembling and false friends; causeth love and favour to be inconstant. *Albus*

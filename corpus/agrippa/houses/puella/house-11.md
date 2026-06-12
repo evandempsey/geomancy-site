@@ -5,6 +5,6 @@ figures: [puella]
 houses: [11]
 topics: []
 quality: transcribed
-excerpt: "In the eleventh house Puella •iveth many friends, and increaseth favour with…"
+excerpt: "In the eleventh house Puella giveth many friends, and increaseth favour with…"
 ---
-In the eleventh house *Puella* •iveth many friends, and increaseth favour with women.
+In the eleventh house *Puella* giveth many friends, and increaseth favour with women.

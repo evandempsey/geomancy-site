@@ -5,8 +5,8 @@ figures: [carcer]
 houses: [9]
 topics: []
 quality: transcribed
-excerpt: "in the ninth house, sheweth he that is • shall not return, & signifieth some evil sh•l• happen to him in his journey; it deno•s p•r•on• •f no Religion, a wicked conscience, and…"
+excerpt: "in the ninth house, sheweth he that is absent shall not return, & signifieth some evil shall happen to him in his journey; it denotes persons of no Religion, a wicked conscience,…"
 ---
-in the ninth house, sheweth he that is • shall not return, & signifieth some evil sh•l• happen to him in his journey; it deno•s p•r•on• •f
+in the ninth house, sheweth he that is absent shall not return, & signifieth some evil shall happen to him in his journey; it denotes persons of
 
 no Religion, a wicked conscience, and ignorant of learning.

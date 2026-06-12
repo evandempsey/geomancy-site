@@ -5,6 +5,6 @@ figures: [tristitia]
 houses: [5]
 topics: []
 quality: transcribed
-excerpt: "In the fifth hous\u2022 it signifies no children, or that they shall soon die, sheweth a woman with child to bring forth a woman child, giveth no fame nor\u2026"
+excerpt: "In the fifth house it signifies no children, or that they shall soon die, sheweth a woman with child to bring forth a woman child, giveth no fame nor…"
 ---
-In the fifth hous• it signifies no children, or that they shall soon die, sheweth a woman with child to bring forth a woman child, giveth no fame nor honours.
+In the fifth house it signifies no children, or that they shall soon die, sheweth a woman with child to bring forth a woman child, giveth no fame nor honours.

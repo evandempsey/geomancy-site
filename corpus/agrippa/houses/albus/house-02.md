@@ -9,4 +9,4 @@ excerpt: "In the second house Albus enlargeth and augmenteth substance gained by
 ---
 In the second house *Albus* enlargeth and augmenteth substance gained by sports, plays, vile and base arts and exercises, but such as are pleasing and delightful; as by plays,
 
-pastimes, dancings and lau•hters: he discovereth both the thief, and the theft or thing stolen, and hideth and concealeth treasure.
+pastimes, dancings and laughters: he discovereth both the thief, and the theft or thing stolen, and hideth and concealeth treasure.

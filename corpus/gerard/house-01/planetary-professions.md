@@ -12,6 +12,6 @@ excerpt: "Jupiter signifies Bishops, Prelates, Nobles, Potentates, Judges, Wise 
 
 The *Sun* signifies Emperors, Kings, Princes, Nobles, Lords and Judges.
 
-*Venus* signifies Queens and Ladies, Marriages, Communications, Friendship, Apothecaries, Taylors, and such as make Ornaments for plays, sellers of Cloth, Jesters, Vintners, Players at dice, Whores and Ro•be•s.
+*Venus* signifies Queens and Ladies, Marriages, Communications, Friendship, Apothecaries, Taylors, and such as make Ornaments for plays, sellers of Cloth, Jesters, Vintners, Players at dice, Whores and Robbers.
 
-*Mercury* signifies Clerks, Philosophers, Astrologers, Geometrician•, Arithmeticians, Latin writers, and Painters, and all subtil Artist, as well men as women, and their Arts.
+*Mercury* signifies Clerks, Philosophers, Astrologers, Geometricians, Arithmeticians, Latin writers, and Painters, and all subtil Artist, as well men as women, and their Arts.
