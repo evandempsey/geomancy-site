@@ -1,0 +1,24 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'point-of-intention')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    Suppose a chart is found with no record of its question, or the geomancer wishes to know what
+    the querent has really come to ask. The old books give rules for finding the
+    <em>point of intention</em>: distributing the odd points of the chart around the houses to
+    find where the question lives, and reading the figures for the matter of another's thought.
+    Cattan gives the rules "for pleasure, and to shewe that Geomancie is a wittie Arte":
+  </p>
+  <QuoteList topic="intention" />
+</Prose>

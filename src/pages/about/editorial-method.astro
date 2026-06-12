@@ -1,0 +1,56 @@
+---
+import Prose from '../../layouts/Prose.astro';
+---
+
+<Prose
+  title="Editorial method"
+  description="How the texts on this site are transcribed: semi-diplomatic transcription, sources of each edition, normalisation rules, and how to verify every quotation against the original page."
+  crumbs={[{ name: 'About', href: '/about/' }, { name: 'Editorial method' }]}
+>
+  <h2>Transcription</h2>
+  <p>Quotations are semi-diplomatic transcriptions of the original editions:</p>
+  <ul>
+    <li>Long s (ſ) is printed as s; vv as w.</li>
+    <li>u/v and i/j are given their modern values (<em>vnto</em> → unto, <em>ioy</em> → joy).</li>
+    <li>Printers' contractions are expanded in square brackets.</li>
+    <li>Original spelling, capitalisation and punctuation are otherwise retained.</li>
+    <li>Letters illegible in the source copy are marked with • (following the Text Creation
+        Partnership convention) or [?]; text supplied from another copy or edition is noted.</li>
+    <li>Marginal annotations of the original are given inline as {'{margin: …}'}; woodcut
+        figures and chart diagrams are described in [square brackets].</li>
+    <li>Manifest misprints of the original are reproduced, with an editorial note.</li>
+  </ul>
+  <h2>The editions used</h2>
+  <ul>
+    <li>
+      <strong>Cattan</strong>: transcribed from the digitised Wellcome Library copy of the 1591
+      London edition (archive.org item b30337860). Quotations link to the scanned leaf.
+    </li>
+    <li>
+      <strong>Heydon</strong>: transcribed from a digital facsimile of the 1663–4 first edition,
+      located by page number.
+    </li>
+    <li>
+      <strong>Agrippa and Gerard of Cremona</strong>: from the EEBO-TCP transcription (A26563) of
+      Turner's 1655 edition, checked and lightly normalised; passages damaged in that copy are
+      supplied from the parallel issue (A26562) and so noted.
+    </li>
+    <li>
+      <strong>Crowley</strong>: from a re-typeset edition of The Equinox I.2 (1909), with its
+      tables verified arithmetically (every Judge equals the sum of its Witnesses).
+    </li>
+  </ul>
+  <h2>Copyright</h2>
+  <p>
+    All five sources are in the public domain. Modern translations of otherwise public-domain
+    works (such as John Michael Greer's translation of the pseudo-Abano <em>Method of Judging
+    Questions</em>) are not reproduced here; where their doctrine matters, it is summarised in our
+    own words and the original Latin tradition is cited.
+  </p>
+  <h2>Verifying a quotation</h2>
+  <p>
+    Every quotation carries a citation with a locator (folio, signature, page or section) and,
+    for Cattan, a “view scan” link to the photographed page. Errors do occur; if you find one,
+    check the scan first, then write to us.
+  </p>
+</Prose>

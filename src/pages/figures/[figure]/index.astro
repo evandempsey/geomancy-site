@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FigureGlyph from '../../../components/FigureGlyph.astro';
+import AttributeTable from '../../../components/AttributeTable.astro';
+import QuoteList from '../../../components/QuoteList.astro';
+import { houseCoverage } from '../../../lib/queries';
+
+export async function getStaticPaths() {
+  const figures = await getCollection('figures');
+  return figures.map((figure) => ({ params: { figure: figure.id }, props: { figure } }));
+}
+
+const { figure } = Astro.props;
+const d = figure.data;
+
+const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
+const coverage = await houseCoverage();
+
+const jsonLd = [
+  {
+    '@type': 'DefinedTerm',
+    name: d.name,
+    alternateName: d.translation,
+    inDefinedTermSet: new URL('/figures/', Astro.site).href,
+    description: d.summary,
+  },
+];
+---
+
+<Base title={`${d.name} (${d.translation}), geomantic figure`} description={d.summary} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'The Figures', href: '/figures/' }, { name: d.name }]} />
+  <header class="figure-header">
+    <FigureGlyph dots={d.dots} name={d.name} size={6} class="glyph" />
+    <div>
+      <h1>{d.name}</h1>
+      <p class="translation">{d.translation}</p>
+    </div>
+  </header>
+
+  <AttributeTable {figure} />
+
+  <h2>What the sources say of {d.name}</h2>
+  <QuoteList figure={figure.id} generalOnly />
+
+  <h2>{d.name} in the twelve houses</h2>
+  <p>
+    The meaning of {d.name} changes with the house it falls in. The sources give a judgment for
+    each placement:
+  </p>
+  <ul class="house-grid">
+    {
+      houses.map((h) => {
+        const has = coverage.has(`${figure.id}/${h.data.number}`);
+        return (
+          <li>
+            {has ? (
+              <a href={`/figures/${figure.id}/${h.data.slug}/`}>
+                {d.name} in the {h.data.name.replace(' House', '')} house
+              </a>
+            ) : (
+              <span>{d.name} in the {h.data.name.replace(' House', '')} house</span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</Base>
+
+<style>
+  .figure-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+  .figure-header h1 {
+    margin: 0;
+  }
+  .translation {
+    margin: 0;
+    font-style: italic;
+    color: var(--color-ink-muted);
+    font-size: var(--text-md);
+  }
+  .glyph {
+    color: var(--color-rubric);
+    flex-shrink: 0;
+  }
+  .house-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--space-2);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+  .house-grid li {
+    padding: var(--space-2) 0;
+  }
+  .house-grid span {
+    color: var(--color-ink-faint);
+  }
+</style>

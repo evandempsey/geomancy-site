@@ -1,0 +1,34 @@
+name: Cauda Draconis
+translation: "The Dragon's Tail"
+dots: [1, 1, 1, 2]
+planet: South Node
+sign: Scorpio
+element: water
+mobility: mobile
+counterpart: caput-draconis
+attributionVariants:
+  - source: cattan
+    element: fire
+    planet: Mars and Saturn
+    sign: Sagittarius
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: fire
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Capricorn
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Sagittarius
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    element: fire
+    note: "the Golden Dawn attributions"
+keywords:
+  - exit
+  - endings
+  - departure
+  - evil with evil
+summary: >-
+  Cauda Draconis, the Dragon's Tail: figure of the Moon's South Node, a way of going out, fortunate for endings, evil in beginnings. Quoted from the historical sources.
+order: 16

@@ -1,0 +1,36 @@
+name: Carcer
+translation: "The Prison"
+dots: [1, 2, 2, 1]
+planet: Saturn
+sign: Capricorn
+element: earth
+mobility: stable
+counterpart: carcer
+attributionVariants:
+  - source: cattan
+    element: earth
+    planet: Saturn
+    sign: Pisces
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: earth
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Pisces
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Pisces
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Capricorn
+    element: earth
+    note: "the Golden Dawn attributions"
+keywords:
+  - restriction
+  - delay
+  - imprisonment
+  - binding
+  - enclosure
+summary: >-
+  Carcer, the Prison: geomantic figure of Saturn in Capricorn, signifying restriction, delay and binding. Its traditional meanings quoted from the historical sources.
+order: 14

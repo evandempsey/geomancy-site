@@ -1,0 +1,34 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'essential-dignities')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    As in astrology, a figure is not equally strong everywhere. The houses themselves differ in
+    strength (angles, succedents and cadents) and each figure has houses where it stands in
+    dignity and houses where it is debilitated. Cattan reckons the good and ill houses of every
+    figure, its triplicity with its day and night rulers, and its exaltation, joy and fall; the
+    Golden Dawn line systematised the same doctrine into a table of house, exaltation, triplicity,
+    fall and detriment, counting the twelve houses as answering to the twelve signs:
+  </p>
+  <QuoteList topic="dignities" noFigures />
+  <p>
+    Cattan's reckoning of each figure's good and ill houses is quoted on the
+    <a href="/figures/">individual figure pages</a>.
+  </p>
+  <p>
+    The complete Golden Dawn table (every figure's house, exaltation, triplicity, fall and
+    detriment) is reproduced in the library:
+    <a href="/library/crowley/dignities-and-aspects/">the Table of Essential Dignities</a>.
+  </p>
+</Prose>

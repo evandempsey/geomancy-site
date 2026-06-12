@@ -1,0 +1,35 @@
+name: Amissio
+translation: "Loss"
+dots: [1, 2, 1, 2]
+planet: Venus
+sign: Libra
+element: fire
+mobility: mobile
+counterpart: acquisitio
+attributionVariants:
+  - source: cattan
+    element: fire
+    planet: Venus
+    sign: Scorpio
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: fire
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Sagittarius
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Scorpio
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Taurus
+    element: earth
+    note: "the Golden Dawn attributions"
+keywords:
+  - loss
+  - expense
+  - things taken away
+  - transience
+summary: >-
+  Amissio, Loss: geomantic figure of Venus in Libra, signifying loss and expense, evil in gain, good in love. Meanings quoted from the historical sources.
+order: 6

@@ -1,0 +1,47 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import FlashcardDrill from '../../components/course/FlashcardDrill.astro';
+import { TOOLS } from '../../lib/tools';
+
+const tool = TOOLS.find((t) => t.slug === 'flashcards')!;
+---
+
+<Prose
+  title={tool.title}
+  description={tool.description}
+  crumbs={[{ name: 'Tools', href: '/tools/' }, { name: tool.title }]}
+  kicker="Practice Tools"
+>
+  <p>
+    Everything in geomancy is built from sixteen figures, and judgment begins where recognition
+    ends: a chart cannot be read while its figures still have to be deciphered. These drills
+    train recognition in layers. First the figure to its name, then the name to its meaning:
+    translation, planet and the core significations. Last, the figure to each of its
+    attributions on its own: planet, sign, quality and element. The course's standard, set in
+    <a href="/course/the-alphabet-of-the-earth/">Lesson 2</a> and
+    <a href="/course/the-sixteen-natures/">Lesson 3</a>, is two clean passes in a row before
+    moving on; score is kept for the round only, so every visit starts fresh.
+  </p>
+  <p>
+    The full reference for each figure (dots, names, attributions in every source's system, and
+    the placement columns) is at <a href="/figures/">the sixteen figures</a>.
+  </p>
+
+  <h2>Figure to name</h2>
+  <FlashcardDrill />
+
+  <h2>Name to meaning</h2>
+  <FlashcardDrill mode="meaning" />
+
+  <h2>Figure to planet</h2>
+  <FlashcardDrill mode="figure-planet" />
+
+  <h2>Figure to sign</h2>
+  <FlashcardDrill mode="figure-sign" />
+
+  <h2>Figure to quality</h2>
+  <FlashcardDrill mode="figure-quality" />
+
+  <h2>Figure to element</h2>
+  <FlashcardDrill mode="figure-element" />
+</Prose>

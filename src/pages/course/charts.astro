@@ -1,0 +1,175 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import ShieldChart from '../../components/ShieldChart.astro';
+import HouseChart from '../../components/HouseChart.astro';
+import GerardChart from '../../components/GerardChart.astro';
+
+const charts = [
+  {
+    label: 'A',
+    question: 'Will the marriage go ahead?',
+    mothers: ['conjunctio', 'via', 'amissio', 'caput-draconis'],
+    mothersNames: 'Conjunctio, Via, Amissio, Caput Draconis',
+    note: 'Dense with repetition: Conjunctio stands in houses 1 and 5, Via in 2 and 7, Amissio in 3 and 12, Puer in 6 and 10. The Witnesses are Rubeus and Tristitia (two of the harshest figures in the art), and yet the Judge they engender is Acquisitio, gain. The seventh house, the house of the question, holds Via, the most changeable figure of the sixteen.',
+  },
+  {
+    label: 'B',
+    question: 'Will the querent recover the partnership?',
+    mothers: ['puella', 'rubeus', 'rubeus', 'amissio'],
+    mothersNames: 'Puella, Rubeus, Rubeus, Amissio',
+    note: 'A chart with a doubled Mother (Rubeus twice), and the consequences cascade: doubled Carcer among the Daughters, doubled Via among the Nieces. The Judge is Via, change and movement itself, sired by Tristitia and Cauda Draconis, the two figures of sorrow and departure. A chart about restoration whose final word is change.',
+  },
+  {
+    label: 'C',
+    question: 'Will the querent win the lawsuit?',
+    mothers: ['amissio', 'amissio', 'puella', 'fortuna-minor'],
+    mothersNames: 'Amissio, Amissio, Puella, Fortuna Minor',
+    note: 'The conflict chart. The Judge is Acquisitio, among the best figures in the art; and the seventh house, the house of this very question, holds Cauda Draconis, one of the worst. A bright Judge over a dark seventh house is not a contradiction; it is a chart with a complicated sentence to deliver, and Lesson 10 resolves exactly this weighing as the master case.',
+  },
+  {
+    label: 'D',
+    question: 'Will the querent get the office they seek?',
+    mothers: ['acquisitio', 'fortuna-major', 'via', 'amissio'],
+    mothersNames: 'Acquisitio, Fortuna Major, Via, Amissio',
+    note: 'The first chart the course meets with the complete method already in hand, and the first to perfect by occupation: the querent’s own Gain standing in both the first house and the tenth, the house of the very office he sues for. The Judge is Fortuna Major, the best sentence of the bench; and yet the fourth angle carries Loss and the fortune-point falls dark in the eighth. Granted, and priced: Lesson 10 judges it from scratch as the model of a finished judgment.',
+  },
+  {
+    label: 'J',
+    question: 'Will the querent get what they hope for?',
+    mothers: ['fortuna-major', 'via', 'amissio', 'albus'],
+    mothersNames: 'Fortuna Major, Via, Amissio, Albus',
+    note: 'The practicum’s first examination (Lesson 13): an eleventh-house hope, the one class no worked example ever modeled. The chart perfects in the direction no course chart had shown (the querent’s own Fortuna Major walks to the hope’s door, standing in the twelfth beside the eleventh), and the fortune-point travels with it, falling in the twelfth on the querent’s own figure. The hope wears Albus, good and trusty, repeated into the house of the end; the harsh witnesses Rubeus and Tristitia engender Acquisitio. Granted, by the asker’s own going.',
+  },
+  {
+    label: 'K',
+    question: 'Will the prisoner be released?',
+    mothers: ['tristitia', 'puer', 'puer', 'rubeus'],
+    mothersNames: 'Tristitia, Puer, Puer, Rubeus',
+    note: 'The practicum’s hard chart, a grant the student is tempted to refuse. The prison’s figure is Cauda Draconis, whose twelfth-house column flatly promises to hold the prisoner; the Judge is Amissio; the authority over the matter wears Carcer; the fortune-point falls dark in the prison itself. And yet the querent’s Sorrow stands in the eleventh, beside the prison (the chart perfects by the asker’s approach), and the bench’s own table row says, in so many words, prison: come out. Delivered, hardly, slowly, and at Amissio’s price. Lesson 13 stages it as the examination of the whole hierarchy.',
+  },
+  {
+    label: 'L',
+    question: 'Will the intended marriage go ahead?',
+    mothers: ['acquisitio', 'albus', 'carcer', 'via'],
+    mothersNames: 'Acquisitio, Albus, Carcer, Via',
+    note: 'The course’s last marriage chart asks its first chart’s question, and answers it by occupation, Acquisitio standing in both the first house and the seventh: the two parties one figure, the native opposition fully kinned. The bench is Chart A’s own, mirrored (Tristitia and Rubeus engendering Acquisitio, with the same priced row), and the fortune-point falls in the eighth on Puella: the matter’s luck enters with the bride’s substance. Effected, lasting, and judged beside its Gerard twin (Chart M) as Lesson 13’s examination in the two tongues.',
+  },
+];
+
+/**
+ * The Gerard charts of Lesson 12 — celestial charts of astronomical
+ * geomancy, not shields. Planet placements are the frozen facts of
+ * references/gerard-charts-dossier.md (npm run dossier:gerard asserts them).
+ * Charts H and I are exercise charts and stay inside the lesson.
+ */
+const gerardCharts = [
+  {
+    label: 'E',
+    question: 'Will the querent live a long life?',
+    ascendant: 'fortuna-major',
+    ascendantName: 'Fortuna Major',
+    planets: {
+      Sun: 7, Moon: 3, Venus: 5, Mercury: 2, Saturn: 10,
+      Jupiter: 1, Mars: 9, 'Caput Draconis': 4, 'Cauda Draconis': 6,
+    },
+    note: 'Fortuna Major cast for the Ascendant puts Aquarius (not the Leo of the course’s default attributions) on the first house, and Saturn, its lord, stands in the tenth, a strong angle: long life, by the greater years of Saturn. Jupiter keeps the first house, the Sun stays out of the eighth, and every mortal configuration of Gerard’s first-house chapter answers in the negative.',
+  },
+  {
+    label: 'F',
+    question: 'Whether the sick man shall recover his health, or die?',
+    ascendant: 'carcer',
+    ascendantName: 'Carcer',
+    planets: {
+      Sun: 8, Moon: 11, Venus: 1, Mercury: 6, Saturn: 1,
+      Jupiter: 5, Mars: 5, 'Caput Draconis': 3, 'Cauda Draconis': 10,
+    },
+    note: 'The dark chart of the course’s second system. Saturn sits in the first house with Venus, the lady of the eighth, while the Sun occupies the eighth itself; Jupiter, lord of the Ascendant, is joined with Mars in the fifth; and the Dragon’s Tail holds the midheaven. Lesson 12 runs Gerard’s sickness machinery through it clause by clause: the same triangle of first, sixth and eighth the course taught with figures, now worked entirely in planets and lords.',
+  },
+  {
+    label: 'G',
+    question: 'Will the physician cure the sick man with his medicines?',
+    ascendant: 'puella',
+    ascendantName: 'Puella',
+    planets: {
+      Sun: 4, Moon: 7, Venus: 12, Mercury: 9, Saturn: 10,
+      Jupiter: 1, Mars: 7, 'Caput Draconis': 8, 'Cauda Draconis': 2,
+    },
+    note: 'The reassigned wheel: for this question Gerard gives the first house to the physician, the tenth to the sick, the seventh to his diseases and the fourth to the medicines. Jupiter in the first promises the physician shall profit; Saturn in the tenth says the sick man is the cause of his own disease; Mars keeps the seventh with the diseases, and the Moon with him. Venus reaches the twelfth by exactly thirty-six points: the remainder of nought that counts as twelve.',
+  },
+  {
+    label: 'M',
+    question: 'Will the intended marriage go ahead?',
+    ascendant: 'conjunctio',
+    ascendantName: 'Conjunctio',
+    planets: {
+      Sun: 4, Moon: 7, Venus: 11, Mercury: 10, Saturn: 3,
+      Jupiter: 1, Mars: 8, 'Caput Draconis': 7, 'Cauda Draconis': 6,
+    },
+    note: 'Shield chart L’s question, cast independently in the second tongue for Lesson 13’s examination in both systems. Conjunctio (the figure of joining) puts Virgo on the Ascendant; the lord of the seventh (Jupiter) stands in the first and the Moon in the seventh, firing Gerard’s marriage clause on two independent branches; the Dragon’s Head keeps the Moon company in the wives’ house, the querent’s lord Mercury holds the midheaven, and no infortune touches the first or the seventh. Effected, and easily; the concord note beside Chart L reads: agree.',
+  },
+];
+---
+
+<Prose
+  title="The Course Charts"
+  description="The fixed example charts of the Geomancy Course: shields A–D and J–L, and the celestial charts E–G and M of Gerard's astronomical geomancy, with their questions."
+  crumbs={[{ name: 'The Course', href: '/course/' }, { name: 'The Course Charts' }]}
+  kicker="The Geomancy Course"
+>
+  <p>
+    Seven shield charts accompany the course, the way the great cases accompany a law student:
+    Charts A, B and C from Lesson 4; Chart D from Lesson 10, where it is judged from scratch as
+    the model of a finished judgment; and Charts J, K and L, the practicum charts of Lesson 13,
+    published here because its staged master solutions judge them whole. Each is a complete cast
+    with a standing question; every judgment lesson returns to them with its new instrument.
+    They are reproduced here in full so that any lesson, and any page of your journal, can refer
+    back to one canonical copy. Each shield below is computed by the site's casting engine from
+    the four Mothers; if you derive them by hand, as Lesson 4 asks, your results must agree
+    exactly.
+  </p>
+
+  {
+    charts.map((c) => (
+      <section>
+        <h2>Chart {c.label}: “{c.question}”</h2>
+        <p>
+          <strong>Mothers:</strong> {c.mothersNames}.
+        </p>
+        <ShieldChart mothers={c.mothers} caption={`Chart ${c.label}: the complete shield.`} />
+        <HouseChart mothers={c.mothers} caption={`Chart ${c.label} set into the twelve houses.`} />
+        <p>{c.note}</p>
+      </section>
+    ))
+  }
+
+  <section>
+    <h2>The Gerard charts</h2>
+    <p>
+      Lesson 12 adds charts of a different kind: celestial charts of Gerard of Cremona's
+      astronomical geomancy, in which a single cast figure puts a sign on the Ascendant, the signs
+      follow in zodiacal order, and nine projections of points place the planets. There is no
+      shield here, no Witnesses and no Judge: these charts are read by lords, planets and signs.
+      The two exercise charts of that lesson, H and I, are not reproduced here: erecting them is
+      the exercise. Chart M, the practicum's celestial half of Lesson 13's marriage question,
+      closes the set.
+    </p>
+  </section>
+
+  {
+    gerardCharts.map((c) => (
+      <section>
+        <h2>Chart {c.label}: “{c.question}”</h2>
+        <p>
+          <strong>Ascendant figure:</strong> {c.ascendantName}.
+        </p>
+        <GerardChart
+          ascendant={c.ascendant}
+          planets={c.planets}
+          caption={`Chart ${c.label}: the erected celestial figure.`}
+        />
+        <p>{c.note}</p>
+      </section>
+    ))
+  }
+
+</Prose>

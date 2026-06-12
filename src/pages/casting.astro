@@ -1,0 +1,65 @@
+---
+import Prose from '../layouts/Prose.astro';
+import Quote from '../components/Quote.astro';
+import ShieldChart from '../components/ShieldChart.astro';
+import HouseChart from '../components/HouseChart.astro';
+---
+
+<Prose
+  title="How to Cast a Geomantic Chart"
+  description="Casting the geomantic chart step by step: the sixteen lines, the four Mothers, Daughters, Nieces, Witnesses and Judge, and the shield chart, as the historical sources teach it."
+  crumbs={[{ name: 'Casting' }]}
+  kicker="Practice"
+  jsonLd={[{ '@type': 'Article', headline: 'How to Cast a Geomantic Chart' }]}
+>
+  <p>
+    A geomantic reading begins with a question and sixteen lines of points, made from right to
+    left without counting, the mind held on the matter asked. Everything else follows by rule.
+  </p>
+
+  <h2>1. The sixteen lines and the four Mothers</h2>
+  <p>
+    Mark sixteen rows of points. Count each row: an odd number yields one point, an even number
+    two. Rows 1–4 give the first <em>Mother</em>, rows 5–8 the second, and so on: four figures of
+    four lines each. Agrippa describes the operation:
+  </p>
+  <Quote id="agrippa/general/casting-mothers" compact />
+  <p>Gerard of Cremona adds the traditional cautions about when not to ask:</p>
+  <Quote id="gerard/casting-caution" compact />
+
+  <h2>2. Daughters, Nieces, Witnesses, Judge</h2>
+  <p>
+    The four <em>Daughters</em> are made by reading the Mothers sideways: the first Daughter takes
+    the head-lines of Mothers I–IV in order, the second their neck-lines, and so on. The four
+    <em>Nieces</em> are made by adding neighbouring pairs line by line: odd sums give one point,
+    even sums two. The two <em>Witnesses</em> are added from the Nieces in the same way, and the
+    <em>Judge</em> from the Witnesses.
+  </p>
+  <Quote id="agrippa/general/casting-daughters" compact />
+
+  <h2>The shield chart</h2>
+  <ShieldChart />
+
+  <h2>3. Into the houses</h2>
+  <p>
+    For judgment the first twelve figures are also placed in the twelve astrological houses. The
+    common way, which Agrippa reports first, sets the Mothers in houses 1–4, the Daughters in
+    5–8 and the Nieces in 9–12, in order, as the figure below shows:
+  </p>
+  <HouseChart />
+  <p>
+    Agrippa then gives his own “astrological” arrangement, and other authors differ again:
+    Crowley's Golden Dawn scheme begins with the first Mother in the tenth house. See
+    <a href="/library/agrippa/of-geomancy/">Agrippa's text</a> and
+    <a href="/library/crowley/twelve-houses/">Crowley's chapter III</a> for the variants.
+  </p>
+
+  <h2>4. Judgment</h2>
+  <p>
+    If the Judge is good, the matter ends well; the Witnesses qualify it; the figure in the house
+    of the question, its aspects, dignities and springings refine the answer. One warning is
+    universal in the Golden Dawn line:
+  </p>
+  <Quote id="crowley/techniques/destroy-rule" compact />
+  <p>Continue with <a href="/techniques/">the techniques of judgment →</a></p>
+</Prose>

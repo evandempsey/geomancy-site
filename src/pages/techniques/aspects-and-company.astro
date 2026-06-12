@@ -1,0 +1,36 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'aspects-and-company')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    The houses of the chart behold one another as the signs do: each house has its sextiles,
+    squares and trines on either side, and its opposition across the chart. Aspects falling
+    <em>against</em> the natural order of the houses are called <em>dexter</em> and are the
+    stronger; those following the order are <em>sinister</em>. Figures, like planets, also keep
+    friendships and enmities with one another, by their rulers and by their elements:
+  </p>
+  <QuoteList topic="aspects" />
+  <p>
+    Friendly figures aspecting the house of the question aid it; hostile figures hinder it.
+    Crowley's worked judgment shows the weighing of these testimonies in practice:
+    <a href="/library/crowley/method-of-judging/">the General Method of Judging a Figure</a>.
+  </p>
+  <h2>The company of figures</h2>
+  <p>
+    Beside the aspects, neighbouring houses keep <em>company</em>: the second with the first, the
+    fourth with the third, and so through the chart. Cattan distinguishes simple, half-simple and
+    compound company, and judges by them with worked examples from his own practice:
+  </p>
+  <QuoteList topic="company" />
+</Prose>

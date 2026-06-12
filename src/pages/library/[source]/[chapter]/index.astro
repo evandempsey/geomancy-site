@@ -1,0 +1,84 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import { chaptersOf, chapterSlug } from '../../../../lib/library';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('library');
+  return chapters.map((chapter) => ({
+    params: { source: chapter.data.source.id, chapter: chapterSlug(chapter) },
+    props: { chapter },
+  }));
+}
+
+const { chapter } = Astro.props;
+const source = await getEntry('sources', chapter.data.source.id);
+if (!source) throw new Error(`missing source for ${chapter.id}`);
+
+const siblings = await chaptersOf(source.id);
+const idx = siblings.findIndex((c) => c.id === chapter.id);
+const prev = siblings[idx - 1];
+const next = siblings[idx + 1];
+
+const { Content } = await render(chapter);
+
+const jsonLd = [
+  {
+    '@type': 'Article',
+    headline: chapter.data.title,
+    isPartOf: {
+      '@type': 'Book',
+      name: source.data.title,
+      author: { '@type': 'Person', name: source.data.author },
+      datePublished: String(source.data.year),
+      ...(source.data.archiveUrl ? { isBasedOn: source.data.archiveUrl } : {}),
+    },
+  },
+];
+---
+
+<Base title={chapter.data.title} description={chapter.data.description} type="article" jsonLd={jsonLd}>
+  <Breadcrumbs
+    items={[
+      { name: 'Library', href: '/library/' },
+      { name: source.data.shortTitle, href: `/library/${source.id}/` },
+      { name: chapter.data.title },
+    ]}
+  />
+  <article class="library-text">
+    <p class="kicker">{source.data.title} ({source.data.year})</p>
+    <h1>{chapter.data.title}</h1>
+    <Content />
+  </article>
+  <nav class="chapter-nav" aria-label="Chapters">
+    {prev && <a href={`/library/${source.id}/${chapterSlug(prev)}/`}>← {prev.data.title}</a>}
+    {next && <a href={`/library/${source.id}/${chapterSlug(next)}/`}>{next.data.title} →</a>}
+  </nav>
+</Base>
+
+<style>
+  .kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    margin-bottom: var(--space-1);
+  }
+  .library-text :global(table) {
+    display: block;
+    overflow-x: auto;
+  }
+  .library-text :global(.geo-figure) {
+    font-size: 0.75em;
+  }
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-12);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+</style>

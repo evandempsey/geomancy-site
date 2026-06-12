@@ -1,0 +1,36 @@
+name: Via
+translation: "The Way"
+dots: [1, 1, 1, 1]
+planet: Moon
+sign: Cancer
+element: water
+mobility: mobile
+counterpart: via
+attributionVariants:
+  - source: cattan
+    element: water
+    planet: Moon
+    sign: Leo
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: water
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Virgo
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Leo
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Cancer
+    element: water
+    note: "the Golden Dawn attributions"
+keywords:
+  - change
+  - journeys
+  - movement
+  - a road
+  - alteration
+summary: >-
+  Via, the Way: geomantic figure of the Moon in Cancer, signifying journeys, change and movement. Its meanings quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 1

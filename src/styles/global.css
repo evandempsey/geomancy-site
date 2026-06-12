@@ -1,0 +1,122 @@
+@import './tokens.css';
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/eb-garamond-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/eb-garamond-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/eb-garamond-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+}
+
+h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; }
+h2 { font-size: var(--text-xl); margin-top: var(--space-12); }
+h3 { font-size: var(--text-lg); margin-top: var(--space-8); }
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-link) 40%, transparent);
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: currentColor;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-family: var(--font-ui);
+  margin: var(--space-6) 0;
+}
+th, td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--color-bg-raised);
+  font-weight: 600;
+}
+
+blockquote {
+  margin: var(--space-6) 0;
+  padding-left: var(--space-6);
+  border-left: 2px solid var(--color-border-strong);
+  color: var(--color-ink-muted);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-12) auto;
+  width: 8rem;
+}
+
+code, pre {
+  font-size: 0.9em;
+}
+
+.geo-figure {
+  display: inline-block;
+  font-family: var(--font-ui);
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* skip-to-content for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: var(--space-2) var(--space-4);
+  z-index: 10;
+}
+.skip-link:focus {
+  left: 0;
+}

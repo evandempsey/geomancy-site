@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const sources = (await getCollection('sources')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title="The Library: historical texts of geomancy"
+  description="The historical sources of geomancy online: Cattan's Geomancie (1591), Heydon's Theomagia (1663), Agrippa's Of Geomancy and Gerard of Cremona's Astronomical Geomancy (1655), and Crowley's Handbook of Geomancy (1909)."
+>
+  <Breadcrumbs items={[{ name: 'Library' }]} />
+  <h1>The Library</h1>
+  <p class="lead">
+    The sources from which every interpretation on this site is quoted. The shorter texts are
+    reproduced here in full; the longer ones in faithful extracts, with complete transcriptions in
+    progress. Each text's page records exactly which edition and copy the transcription was made
+    from.
+  </p>
+  <ul class="source-list">
+    {
+      sources.map((s) => (
+        <li>
+          <h2>
+            <a href={`/library/${s.id}/`}>{s.data.title}</a>
+          </h2>
+          <p class="byline">
+            {s.data.author}
+            {s.data.translator && <>, translated by {s.data.translator}</>} · {s.data.year}
+          </p>
+          <p>{s.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+  }
+  .source-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .source-list li {
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .source-list h2 {
+    margin: 0;
+    font-size: var(--text-lg);
+  }
+  .byline {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-1) 0;
+  }
+  .source-list p {
+    margin: var(--space-2) 0 0;
+  }
+</style>

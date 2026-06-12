@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { chaptersOf, chapterSlug } from '../../../lib/library';
+
+export async function getStaticPaths() {
+  const sources = await getCollection('sources');
+  return sources.map((source) => ({ params: { source: source.id }, props: { source } }));
+}
+
+const { source } = Astro.props;
+const s = source.data;
+const chapters = await chaptersOf(source.id);
+
+const jsonLd = [
+  {
+    '@type': 'Book',
+    name: s.title,
+    author: { '@type': 'Person', name: s.author },
+    ...(s.translator ? { translator: { '@type': 'Person', name: s.translator } } : {}),
+    datePublished: String(s.year),
+    ...(s.archiveUrl ? { isBasedOn: s.archiveUrl } : {}),
+    inLanguage: 'en',
+    isAccessibleForFree: true,
+  },
+];
+---
+
+<Base title={`${s.title} (${s.year})`} description={s.description} type="book" jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'Library', href: '/library/' }, { name: s.shortTitle }]} />
+  <h1>{s.title}</h1>
+  <p class="byline">
+    {s.author}{s.translator && <>, translated by {s.translator}</>} · {s.year}
+    {s.originalYear && <> (first published {s.originalYear})</>}
+  </p>
+  <p>{s.description}</p>
+
+  <h2>Provenance</h2>
+  <p>{s.provenance}</p>
+  {
+    s.archiveUrl && (
+      <p>
+        <a href={s.archiveUrl} rel="noopener">View the source edition →</a>
+      </p>
+    )
+  }
+
+  {
+    chapters.length > 0 && (
+      <>
+        <h2>The text</h2>
+        <ol class="chapter-list">
+          {chapters.map((c) => (
+            <li>
+              <a href={`/library/${source.id}/${chapterSlug(c)}/`}>{c.data.title}</a>
+            </li>
+          ))}
+        </ol>
+      </>
+    )
+  }
+  {
+    chapters.length === 0 && (
+      <p class="pending">
+        The full transcription of this text is in progress; its passages are meanwhile quoted
+        throughout the <a href="/figures/">figure</a> and <a href="/techniques/">technique</a> pages.
+      </p>
+    )
+  }
+</Base>
+
+<style>
+  .byline {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .chapter-list li {
+    padding: var(--space-1) 0;
+  }
+  .pending {
+    font-style: italic;
+    color: var(--color-ink-muted);
+  }
+</style>

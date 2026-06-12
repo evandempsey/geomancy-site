@@ -1,0 +1,36 @@
+name: Fortuna Major
+translation: "The Greater Fortune"
+dots: [2, 2, 1, 1]
+planet: Sun
+sign: Leo
+element: fire
+mobility: stable
+counterpart: fortuna-minor
+attributionVariants:
+  - source: cattan
+    element: earth
+    planet: Sun
+    sign: Aquarius
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: earth
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Taurus
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Aquarius
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Leo
+    element: fire
+    note: "the Golden Dawn attributions"
+keywords:
+  - great fortune
+  - success
+  - victory
+  - protection
+  - inward strength
+summary: >-
+  Fortuna Major, the Greater Fortune: figure of the Sun in Leo, signifying great success and protection. Meanings quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 3

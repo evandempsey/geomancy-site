@@ -1,0 +1,248 @@
+---
+/**
+ * Figure flashcard drill. The card shows a figure's glyph; the mode sets
+ * what you recall and what Reveal shows: its name ('figure-name'), its
+ * full meaning ('meaning': translation, planet, keywords), or a single
+ * attribution ('figure-planet', 'figure-sign', 'figure-quality',
+ * 'figure-element'). Score is kept in memory for the round only; mastery
+ * is the student's business, not localStorage's.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  mode?: 'figure-name' | 'meaning' | 'figure-planet' | 'figure-sign' | 'figure-quality' | 'figure-element';
+}
+const { mode = 'figure-name' } = Astro.props;
+
+const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
+const deck = figures.map((f) => ({
+  id: f.id,
+  name: f.data.name,
+  translation: f.data.translation,
+  dots: f.data.dots,
+  planet: f.data.planet,
+  sign: f.data.sign,
+  element: f.data.element,
+  mobility: f.data.mobility,
+  keywords: f.data.keywords,
+}));
+---
+
+<div class="flashcards" data-flashcards data-mode={mode}>
+  <script type="application/json" data-deck is:inline set:html={JSON.stringify(deck)} />
+  <div class="card" hidden>
+    <p class="progress" data-progress></p>
+    <svg class="card-glyph" viewBox="0 0 72 96" role="img" data-glyph aria-label="Figure to identify"></svg>
+    <div class="answer" data-answer hidden>
+      <p class="answer-name" data-answer-name></p>
+      <p class="answer-detail" data-answer-detail></p>
+    </div>
+    <div class="card-controls">
+      <button data-action="reveal">Reveal</button>
+      <button data-action="right" hidden>I had it right</button>
+      <button data-action="wrong" hidden>I missed it</button>
+      <button data-action="again" hidden>Run the deck again</button>
+    </div>
+  </div>
+  <noscript>
+    <p class="noscript">
+      The flashcard drill needs JavaScript. Without it, drill from
+      <a href="/figures/">the table of figures</a> with a sheet of paper over one column.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  import { glyphGeometry } from '../../lib/glyph';
+
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  interface Card {
+    id: string;
+    name: string;
+    translation: string;
+    dots: number[];
+    planet: string;
+    sign: string;
+    element: string;
+    mobility: string;
+    keywords: string[];
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-flashcards]')) {
+    const deck: Card[] = JSON.parse(root.querySelector('[data-deck]')?.textContent ?? '[]');
+    const mode = root.dataset.mode ?? 'figure-name';
+    const card = root.querySelector<HTMLElement>('.card');
+    const progress = root.querySelector<HTMLElement>('[data-progress]');
+    const glyph = root.querySelector<SVGSVGElement>('[data-glyph]');
+    const answer = root.querySelector<HTMLElement>('[data-answer]');
+    const answerName = root.querySelector<HTMLElement>('[data-answer-name]');
+    const answerDetail = root.querySelector<HTMLElement>('[data-answer-detail]');
+    const revealBtn = root.querySelector<HTMLButtonElement>('[data-action="reveal"]');
+    const rightBtn = root.querySelector<HTMLButtonElement>('[data-action="right"]');
+    const wrongBtn = root.querySelector<HTMLButtonElement>('[data-action="wrong"]');
+    const againBtn = root.querySelector<HTMLButtonElement>('[data-action="again"]');
+    if (
+      !card || !progress || !glyph || !answer || !answerName || !answerDetail ||
+      !revealBtn || !rightBtn || !wrongBtn || !againBtn
+    )
+      continue;
+
+    let order: number[] = [];
+    let pos = 0;
+    let right = 0;
+
+    const shuffle = () => {
+      order = deck.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+    };
+
+    const drawGlyph = (dots: number[]) => {
+      glyph.replaceChildren();
+      for (const c of glyphGeometry(dots).circles) {
+        const circle = document.createElementNS(SVG_NS, 'circle');
+        circle.setAttribute('cx', String(c.cx));
+        circle.setAttribute('cy', String(c.cy));
+        circle.setAttribute('r', String(c.r));
+        glyph.append(circle);
+      }
+    };
+
+    const show = () => {
+      const c = deck[order[pos]];
+      progress.textContent = `Card ${pos + 1} of ${deck.length} · ${right} right so far`;
+      drawGlyph(c.dots);
+      answer.hidden = true;
+      revealBtn.hidden = false;
+      rightBtn.hidden = true;
+      wrongBtn.hidden = true;
+      againBtn.hidden = true;
+    };
+
+    const finish = () => {
+      progress.textContent = `Done: ${right} of ${deck.length} right. ${
+        right === deck.length
+          ? 'A clean run. Do it once more to be sure.'
+          : 'Run it again until two clean passes in a row.'
+      }`;
+      glyph.replaceChildren();
+      answer.hidden = true;
+      revealBtn.hidden = true;
+      rightBtn.hidden = true;
+      wrongBtn.hidden = true;
+      againBtn.hidden = false;
+    };
+
+    const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+    const detailFor = (c: Card) => {
+      switch (mode) {
+        case 'meaning':
+          return `${c.planet} · ${c.keywords.join(', ')}`;
+        case 'figure-planet':
+          return c.planet;
+        case 'figure-sign':
+          return c.sign;
+        case 'figure-quality':
+          return cap(c.mobility);
+        case 'figure-element':
+          return cap(c.element);
+        default:
+          return '';
+      }
+    };
+
+    revealBtn.addEventListener('click', () => {
+      const c = deck[order[pos]];
+      answerName.textContent = `${c.name}: ${c.translation}`;
+      answerDetail.textContent = detailFor(c);
+      answer.hidden = false;
+      revealBtn.hidden = true;
+      rightBtn.hidden = false;
+      wrongBtn.hidden = false;
+    });
+
+    const advance = (gotIt: boolean) => {
+      if (gotIt) right += 1;
+      pos += 1;
+      if (pos >= order.length) finish();
+      else show();
+    };
+    rightBtn.addEventListener('click', () => advance(true));
+    wrongBtn.addEventListener('click', () => advance(false));
+    againBtn.addEventListener('click', () => {
+      shuffle();
+      pos = 0;
+      right = 0;
+      show();
+    });
+
+    shuffle();
+    show();
+    card.hidden = false;
+  }
+</script>
+
+<style>
+  .flashcards {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-6);
+    background: var(--color-bg-raised);
+    text-align: center;
+  }
+  .progress {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-4);
+  }
+  .card-glyph {
+    height: 7rem;
+    width: auto;
+    fill: var(--color-ink);
+  }
+  .answer-name {
+    font-size: var(--text-md);
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+    margin: var(--space-3) 0 0;
+  }
+  .answer-detail {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-1) 0 0;
+  }
+  .card-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  button {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--color-rubric);
+    border-color: var(--color-rubric);
+  }
+  .noscript {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

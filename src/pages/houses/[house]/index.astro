@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FigureGlyph from '../../../components/FigureGlyph.astro';
+import { houseCoverage, quotesFor } from '../../../lib/queries';
+
+export async function getStaticPaths() {
+  const houses = await getCollection('houses');
+  return houses.map((house) => ({ params: { house: house.data.slug }, props: { house } }));
+}
+
+const { house } = Astro.props;
+const h = house.data;
+const shortHouse = h.name.replace(' House', '').toLowerCase();
+
+const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
+const coverage = await houseCoverage();
+
+// a short excerpt per figure for this house, from the first source that has one
+const { getEntry } = await import('astro:content');
+const rows = await Promise.all(
+  figures.map(async (f) => {
+    const quotes = await quotesFor({ figure: f.id, house: h.number });
+    const chosen = quotes.find((q) => q.data.excerpt) ?? quotes[0];
+    const excerpt =
+      chosen?.data.excerpt ??
+      (chosen?.body && chosen.body.length < 200 ? chosen.body.replace(/\*/g, '') : undefined);
+    const sourceName = chosen ? (await getEntry('sources', chosen.data.source.id))?.data.shortTitle : undefined;
+    return { figure: f, excerpt, sourceName, linked: coverage.has(`${f.id}/${h.number}`) };
+  }),
+);
+---
+
+<Base
+  title={`${h.title} in Geomancy`}
+  description={h.summary}
+  jsonLd={[{ '@type': 'Article', headline: `${h.title} in geomancy`, about: h.significations }]}
+>
+  <Breadcrumbs items={[{ name: 'The Houses', href: '/houses/' }, { name: h.name }]} />
+  <h1>{h.title}</h1>
+  <p class="lead">The {shortHouse} house governs:</p>
+  <ul>
+    {h.significations.map((s) => <li>{s}</li>)}
+  </ul>
+
+  <h2>The sixteen figures in the {shortHouse} house</h2>
+  <p>
+    Each placement page quotes the sources' full judgments; the excerpts below show one source's
+    opening words.
+  </p>
+  <ul class="figure-rows">
+    {
+      rows.map(({ figure, excerpt, sourceName, linked }) => (
+        <li>
+          <FigureGlyph dots={figure.data.dots} name={figure.data.name} size={2.4} />
+          <div>
+            {linked ? (
+              <a href={`/figures/${figure.id}/${h.slug}/`}>
+                {figure.data.name} in the {shortHouse} house
+              </a>
+            ) : (
+              <span class="unlinked">{figure.data.name}</span>
+            )}
+            {excerpt && (
+              <p>
+                {excerpt}
+                {sourceName && <span class="excerpt-source"> — {sourceName}</span>}
+              </p>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+    margin-bottom: var(--space-2);
+  }
+  .figure-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .figure-rows li {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .figure-rows a {
+    font-weight: 600;
+  }
+  .figure-rows p {
+    margin: var(--space-1) 0 0;
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

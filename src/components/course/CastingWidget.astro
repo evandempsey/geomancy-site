@@ -1,0 +1,284 @@
+---
+/**
+ * Casting practice widget: generates four random Mothers, derives the
+ * whole shield with the shared casting math, and draws it — all at once,
+ * or step by step with an explanation of each derivation. Without
+ * JavaScript it degrades to the structural shield diagram.
+ */
+import { getCollection } from 'astro:content';
+
+const figures = await getCollection('figures');
+const names: Record<string, { name: string; id: string }> = {};
+for (const f of figures) {
+  names[f.data.dots.join('')] = { name: f.data.name, id: f.id };
+}
+
+const W = 640;
+const ROW = 150;
+const H = ROW * 4;
+const cellW = W / 8;
+const GLYPH_SCALE = 0.72;
+
+interface Cell {
+  x: number;
+  y: number;
+  w: number;
+  numeral: string;
+  role: string;
+  idx: number;
+}
+const cells: Cell[] = [
+  ...['VIII', 'VII', 'VI', 'V', 'IV', 'III', 'II', 'I'].map((numeral, i) => ({
+    x: i * cellW,
+    y: 0,
+    w: cellW,
+    numeral,
+    role: [
+      '4th Daughter',
+      '3rd Daughter',
+      '2nd Daughter',
+      '1st Daughter',
+      '4th Mother',
+      '3rd Mother',
+      '2nd Mother',
+      '1st Mother',
+    ][i],
+    idx: 7 - i,
+  })),
+  ...['XII', 'XI', 'X', 'IX'].map((numeral, i) => ({
+    x: i * cellW * 2,
+    y: ROW,
+    w: cellW * 2,
+    numeral,
+    role: ['4th Niece', '3rd Niece', '2nd Niece', '1st Niece'][i],
+    idx: 11 - i,
+  })),
+  { x: 0, y: ROW * 2, w: W / 2, numeral: 'XIV', role: 'Left Witness', idx: 13 },
+  { x: W / 2, y: ROW * 2, w: W / 2, numeral: 'XIII', role: 'Right Witness', idx: 12 },
+  { x: W / 4, y: ROW * 3, w: W / 2, numeral: 'XV', role: 'Judge', idx: 14 },
+];
+---
+
+<div class="casting-widget" data-casting-widget>
+  <script type="application/json" data-figure-names is:inline set:html={JSON.stringify(names)} />
+  <div class="controls" hidden>
+    <button data-action="cast">Cast a chart</button>
+    <button data-action="step">Cast step by step</button>
+    <button data-action="next" hidden>Next step →</button>
+  </div>
+  <p class="explain" data-explain aria-live="polite"></p>
+  <svg
+    viewBox={`0 0 ${W} ${H}`}
+    role="img"
+    aria-label="Practice shield chart. Use the buttons above to cast a chart; the cells fill with the derived figures."
+  >
+    {
+      cells.map((c) => (
+        <>
+          <rect x={c.x} y={c.y} width={c.w} height={ROW} />
+          <text class="numeral" x={c.x + c.w / 2} y={c.y + 20}>
+            {c.numeral}
+          </text>
+          <g
+            class="glyph-slot"
+            data-idx={c.idx}
+            transform={`translate(${c.x + c.w / 2 - 36 * GLYPH_SCALE}, ${c.y + 30}) scale(${GLYPH_SCALE})`}
+          />
+          <text class="figure-name" data-name={c.idx} x={c.x + c.w / 2} y={c.y + 118} />
+          <text class="label" x={c.x + c.w / 2} y={c.y + 136}>
+            {c.role}
+          </text>
+        </>
+      ))
+    }
+  </svg>
+  <noscript>
+    <p class="noscript">
+      The practice tool needs JavaScript. Without it, follow the
+      <a href="/casting/">casting walkthrough</a> with pen and paper, which is the better
+      exercise in any case.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  import { deriveChart, chartFigures, randomMother, type FigureDots } from '../../lib/casting';
+  import { glyphGeometry } from '../../lib/glyph';
+
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  interface Step {
+    reveal: number[];
+    text: string;
+  }
+  const STEPS: Step[] = [
+    {
+      reveal: [0, 1, 2, 3],
+      text: 'The four Mothers come first: in practice, from sixteen rows of points made without counting; here, generated at random.',
+    },
+    {
+      reveal: [4, 5, 6, 7],
+      text: 'The Daughters are the Mothers read sideways: the 1st Daughter takes the head line of each Mother in order, the 2nd Daughter the second lines, and so on.',
+    },
+    {
+      reveal: [8],
+      text: '1st Niece = 1st Mother + 2nd Mother, line by line. Two points of the same kind make two; one of each makes one.',
+    },
+    { reveal: [9], text: '2nd Niece = 3rd Mother + 4th Mother.' },
+    { reveal: [10], text: '3rd Niece = 1st Daughter + 2nd Daughter.' },
+    { reveal: [11], text: '4th Niece = 3rd Daughter + 4th Daughter.' },
+    { reveal: [12], text: 'The Right Witness = 1st Niece + 2nd Niece.' },
+    { reveal: [13], text: 'The Left Witness = 3rd Niece + 4th Niece.' },
+    {
+      reveal: [14],
+      text: 'The Judge = Right Witness + Left Witness. Its points always sum to an even number; if your Judge is odd, the chart was miscast.',
+    },
+  ];
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-casting-widget]')) {
+    const namesJson = root.querySelector('[data-figure-names]')?.textContent ?? '{}';
+    const names: Record<string, { name: string; id: string }> = JSON.parse(namesJson);
+    const controls = root.querySelector<HTMLElement>('.controls');
+    const explain = root.querySelector<HTMLElement>('[data-explain]');
+    const castBtn = root.querySelector<HTMLButtonElement>('[data-action="cast"]');
+    const stepBtn = root.querySelector<HTMLButtonElement>('[data-action="step"]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-action="next"]');
+    if (!controls || !explain || !castBtn || !stepBtn || !nextBtn) continue;
+
+    let figures: FigureDots[] = [];
+    let stepIndex = -1;
+
+    const clear = () => {
+      for (const slot of root.querySelectorAll('.glyph-slot')) slot.replaceChildren();
+      for (const name of root.querySelectorAll('[data-name]')) name.textContent = '';
+    };
+
+    const fill = (idx: number) => {
+      const slot = root.querySelector(`.glyph-slot[data-idx="${idx}"]`);
+      const label = root.querySelector(`[data-name="${idx}"]`);
+      const dots = figures[idx];
+      if (!slot || !label || !dots) return;
+      slot.replaceChildren();
+      for (const c of glyphGeometry(dots).circles) {
+        const circle = document.createElementNS(SVG_NS, 'circle');
+        circle.setAttribute('cx', String(c.cx));
+        circle.setAttribute('cy', String(c.cy));
+        circle.setAttribute('r', String(c.r));
+        slot.append(circle);
+      }
+      label.textContent = names[dots.join('')]?.name ?? '';
+    };
+
+    const cast = () => {
+      const mothers = [0, 0, 0, 0].map(() => randomMother());
+      figures = chartFigures(deriveChart(mothers));
+    };
+
+    castBtn.addEventListener('click', () => {
+      cast();
+      clear();
+      for (let i = 0; i < 15; i++) fill(i);
+      stepIndex = -1;
+      nextBtn.hidden = true;
+      explain.textContent = `A fresh chart. The Judge is ${names[figures[14].join('')]?.name ?? 'unknown'}.`;
+    });
+
+    const advance = () => {
+      stepIndex += 1;
+      const step = STEPS[stepIndex];
+      if (!step) return;
+      for (const idx of step.reveal) fill(idx);
+      explain.textContent = step.text;
+      if (stepIndex >= STEPS.length - 1) {
+        nextBtn.hidden = true;
+      }
+    };
+
+    stepBtn.addEventListener('click', () => {
+      cast();
+      clear();
+      stepIndex = -1;
+      nextBtn.hidden = false;
+      advance();
+    });
+
+    nextBtn.addEventListener('click', advance);
+
+    controls.hidden = false;
+  }
+</script>
+
+<style>
+  .casting-widget {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    background: var(--color-bg-raised);
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  button {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--color-rubric);
+    border-color: var(--color-rubric);
+  }
+  .explain {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    min-height: 2.5em;
+    margin: 0 0 var(--space-2);
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  rect {
+    fill: var(--color-bg);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+  }
+  .glyph-slot :global(circle) {
+    fill: var(--color-ink);
+  }
+  text {
+    text-anchor: middle;
+    fill: var(--color-ink);
+  }
+  .numeral {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 600;
+    fill: var(--color-ink-muted);
+  }
+  .figure-name {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-style: italic;
+  }
+  .label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--color-ink-muted);
+  }
+  .noscript {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

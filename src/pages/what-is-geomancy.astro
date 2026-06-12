@@ -1,0 +1,50 @@
+---
+import Prose from '../layouts/Prose.astro';
+import Quote from '../components/Quote.astro';
+---
+
+<Prose
+  title="What is Geomancy?"
+  description="An introduction to geomancy, the great divinatory art of medieval and Renaissance Europe: its history, its sixteen figures, and how it differs from astrology."
+  crumbs={[{ name: 'What is Geomancy?' }]}
+  kicker="Introduction"
+  jsonLd={[{ '@type': 'Article', headline: 'What is Geomancy?' }]}
+>
+  <p>
+    Geomancy (“divination by earth”) answers questions by figures of points. Sixteen lines of
+    points are made at hazard; from their odd or even remainders are built four figures, the
+    <em>Mothers</em>, and from these the whole chart is derived by rule: Daughters, Nieces,
+    Witnesses, and the Judge that resolves the question. The figures are read in the twelve houses
+    of heaven, after the manner of astrology, but no ephemeris, table or instrument is needed, only
+    pen, paper, and an earnest question.
+  </p>
+  <p>Agrippa's treatise opens with as good a definition as any:</p>
+  <Quote id="agrippa/general/casting-mothers" compact />
+  <p>
+    The art reached Europe in the twelfth century through Latin translations from Arabic,
+    <em>ʿilm al-raml</em>, “the science of the sand,” and the same sixteen figures are cast to
+    this day in West African and Malagasy divination. In Europe it became the most practised of
+    all divinatory arts after astrology itself, taught by scholastic authorities like Pietro
+    d'Abano and printed in great manuals through the sixteenth and seventeenth centuries: Cattan's
+    <em>Geomancie</em>, translated into English in 1591, and John Heydon's vast
+    <em>Theomagia</em> of 1663. Robert Turner's 1655 translation of the <em>Fourth Book of Occult
+    Philosophy</em> carried two treatises (the <em>Of Geomancy</em> attributed to Agrippa and the
+    medieval <em>Astronomical Geomancy</em> of Gerard of Cremona) that remain the most read
+    English texts of the art.
+  </p>
+  <p>
+    The geomancers called their art the <em>daughter of astrology</em>: it borrows the twelve
+    houses, the planets and signs, aspects, and essential dignities; but where astrology computes
+    the actual heavens, geomancy raises its “heaven” from the points themselves. As the historical
+    authors insist, the virtue of the art lies not in the marks on the paper but in the motion of
+    the soul that makes them.
+  </p>
+  <h2>Where to begin</h2>
+  <ul>
+    <li><a href="/casting/">How to cast a geomantic chart</a>: the mechanics, from sixteen lines to the Judge.</li>
+    <li><a href="/figures/">The sixteen figures</a>: their natures, attributions and meanings, quoted from the sources.</li>
+    <li><a href="/houses/">The twelve houses</a>: where every question finds its place.</li>
+    <li><a href="/techniques/">The techniques of judgment</a>: how a chart becomes an answer.</li>
+    <li><a href="/library/">The library</a>: the historical texts themselves.</li>
+  </ul>
+</Prose>

@@ -1,0 +1,28 @@
+---
+title: "\"Questions of the First House — Of Astronomical Geomancy\""
+source: gerard
+order: 1
+description: "\"Gerard of Cremona's judgments for questions of the first house, from the medieval treatise Of Astronomical Geomancy (trans. Turner, 1655).\""
+---
+
+IF you are desirous to know concerning the life of any man whether it be long or short, behold the Lord of the Ascendant, who if he be in strong Angles, it signifies long life; in succedents, a middle age; and in cadent houses, a short life; and if he be in strong Angles, he signifies greater years; if in Succedents, meaner years; if in Cadents, lesser years. The lesser years of *Saturn* are thirty, the meaner are forty four years, and the greater fifty eight. The lesser years of *Jupiter* are twelve, the meaner years forty, and the greater accordingly are forty seven. The lesser years of *Mars* are fifteen, his mean years forty, and the greater years forty seven. The
+
+lesser years of the *Sun* are nineteen, his mean years forty five, and his greater years eighty two. The lesser years of *Venus* are eight, her mean years forty five, and her greater years eighty two. *Mercury*'s lesser years are twenty, his mean years forty nine▪ and his greater years eighty. The lesser years of the *Moon* are fifteen, her mean years thirty nine, and her greater years a hundred and seven. And also look if *Mars* or *Saturn* shall be in the first house, & the Lord of the eighth with them, and if the *Sun* shall be in the eighth, the Querent shall not live: likewise if the Lord of the Ascendant shall happen to be void of course, and *Mars* be in the eighth, the Querent shall not live; but if the *Sun* and the *Moon* shall be in conjunction in the seventh house, & *Venus* in the second, he shall live well.
+
+The accidents of the nativity are likewise to be considered. If you find *Saturn* or *Mercury* in the first, he is foolish and talkative; if it be *Mars* and *Mercury,* he will not be servile, but a wrangler and scoffer; if the *Sun* and *Mercury,* he will be a speaker of truth, and if the *Sun* be in *Aires,* he will apply himself to learn whatsoever he shall hear; if *Venus* be in the seventh, he will be luxurious; and if *Saturn, Mercury* and *Venus* be in their fall, he will be a Sodomite; if the *Sun* & *Venus* be in the tenth, & the *Moon* in the first, he will be very liberal; if *Venus, Mercury* & the *Dragons Head* be in the first, he will be covetous; if the *Moon* and *Mars* be in the first, he
+
+will be subject to great bondage; and if *Mars*; be Lord of the nativity, he will be rich and an evil speaker, and litigious; and if the *Sun* be in the first, he will be envious, having a fair body, not very lean, nor very fat; and if *Venus* be in the first, he will be white and fair; if *Mercury* be in the first, he will not be staple, but always in motion; but if the *Moon* be found there, it denotes him to have a graceful face, breast and arms; if *Saturn* be there, the man will be black and filthy; if *Jupiter,* he will have a round face, a fair forehead, a ruddy complexion mixt with a little white. If you would know his office or art: if the *Moon* be in the seventh with *Saturn,* or in the fourth, or in the tenth; or in the first, it is not good for him to build any house in a City, nor to build a ship, neither is it good for him to be a tiller of land, or to dress vines, or plant trees; but to be imployed about some office belonging to the water, or concerning marriages or to be a Post or a Messenger; neither let him apply himself much to his Master, because he shall gain no repute from him: if the *Moon* be in the fifth or third, it will be good to him; in the second, eighth, sixth, and twelfth, neither good nor evil.
+
+*Jupiter* signifies Bishops, Prelates, Nobles, Potentates, Judges, Wise men, Merchants, and Userers.
+
+*Mars* signifies Warriors, Incendiaries, Homicides, Physicians, Barbers, Hangmen, Goldsmiths, Cooks, furnaces and all fire-works. And if *Mars* be in the strong signs, he will be poor and die in captivity, unless he put himself in arms with some Soldier or vassal.
+
+The *Sun* signifies Emperors, Kings, Princes, Nobles, Lords and Judges.
+
+*Venus* signifies Queens and Ladies, Marriages, Communications, Friendship, Apothecaries, Taylors, and such as make Ornaments for plays, sellers of Cloth, Jesters, Vintners, Players at dice, Whores and Ro•be•s.
+
+*Mercury* signifies Clerks, Philosophers, Astrologers, Geometrician•, Arithmeticians, Latin writers, and Painters, and all subtil Artist, as well men as women, and their Arts.
+
+Concerning the intentions of the Querent, look unto the sign ascending, and his Lord; & where you find the Lord of the Ascendant, he comes to inquire about something pertaining to that house; and if the *Sun* be Lord of the Ascendant, his Question is concerning fear which he is in of some man; if *Venus,* he enquireth of arts, that he may know some proper Arts, or he enquireth concerning things belonging to women. If *Mercury* be Lord of the Ascendant, he seeketh after some thing th•t is lost, or enquireth concerning some infirmity. If the *Moon,* he seeketh also for something lost, or enquireth about sickness,
+
+or some disease in his eyes. If *Saturn* be Lord of the Ascendant, he enquireth about some sickness, or concerning a Prince; and keepeth silence, but hath some great grief or anguish in his heart. If *Jupiter* be Lord of the Ascendant, his Question is concerning some infirmity, or restitution, or for some office which he desireth to have. If *Mars,* he enquireth for some fear, or of an enemy, death, sickness, riches, or substance.

@@ -1,0 +1,7 @@
+---
+source: crowley
+locator: "ch. VII"
+topics: [method, judge-witnesses, aspects, springing]
+quality: transcribed
+---
+Your figure being thoroughly arranged, note first to what House the demand belongs. Then look for Witnesses and Judge in their special table, and see what is said under the head of the demand. Put this down. Note next what figure falls into the House required (if it spring into other Houses, these too should be considered); e.g. in a question of money stolen, if the figure in 2nd be also in 6th it might show the thief to be a servant in the house. Look next in the Table of Figures in the Houses, and see what the figure signifies in the especial House under consideration. Put this down also. Then by the Table of Aspects note down the figures sextile, square, trine and opposition, putting good on one side, evil on the other; noting also the strength or weakness, friendliness or hostility to the figure of the House required, of these figures. Then add the meaning of the figure in the 4th, to signify the end of the matter. It may also assist you to form a Reconciler from the figure in the House required and the Judge, noting what figure results and whether it harmonises with one or both by nature. Now consider all you have written, and according to the balance of Good and Evil, form your final judgement. Consider also always in money questions where the Part of Fortune falls.

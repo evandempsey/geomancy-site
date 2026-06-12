@@ -1,0 +1,160 @@
+---
+import Base from './Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Reading from '../components/course/Reading.astro';
+import { lessonUrl, type Lesson } from '../lib/course';
+import { toolByKey, toolUrl } from '../lib/tools';
+
+interface Props {
+  lesson: Lesson;
+  prev?: Lesson;
+  next?: Lesson;
+}
+
+const { lesson, prev, next } = Astro.props;
+const { title, description, order, part, objectives, readings, tools } = lesson.data;
+const lessonTools = tools.map(toolByKey);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: title,
+    description,
+    position: order,
+    isPartOf: new URL('/course/', Astro.site).href,
+    educationalLevel: 'beginner',
+    isAccessibleForFree: true,
+  },
+];
+---
+
+<Base title={`Lesson ${order}: ${title}`} {description} type="article" {jsonLd}>
+  <Breadcrumbs
+    items={[{ name: 'The Course', href: '/course/' }, { name: `Lesson ${order}` }]}
+  />
+  <article class="prose lesson">
+    <p class="kicker">Lesson {order} · Part {part.number}: {part.title}</p>
+    <h1>{title}</h1>
+    {
+      objectives.length > 0 && (
+        <aside class="objectives" aria-label="Lesson objectives">
+          <p class="objectives-kicker">In this lesson you will learn to</p>
+          <ul>
+            {objectives.map((o) => (
+              <li>{o}</li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+    {readings.length > 0 && <Reading items={readings} />}
+    {
+      lessonTools.length > 0 && (
+        <aside class="lesson-tools" aria-label="Tools for this lesson">
+          <p class="tools-kicker">Tools for this lesson</p>
+          <ul>
+            {lessonTools.map((t) => (
+              <li>
+                <a href={toolUrl(t)}>{t.title}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+    <slot />
+  </article>
+  <footer class="lesson-footer">
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      {
+        prev ? (
+          <a class="prev" href={lessonUrl(prev)}>
+            ← Lesson {prev.data.order}: {prev.data.title}
+          </a>
+        ) : (
+          <a class="prev" href="/course/">
+            ← The Course
+          </a>
+        )
+      }
+      {
+        next && (
+          <a class="next" href={lessonUrl(next)}>
+            Lesson {next.data.order}: {next.data.title} →
+          </a>
+        )
+      }
+    </nav>
+  </footer>
+</Base>
+
+<style>
+  .kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    margin-bottom: var(--space-1);
+  }
+  .prose h1 {
+    margin-top: 0;
+  }
+  .prose :global(h2) {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-1);
+  }
+  .prose :global(table) {
+    width: 100%;
+  }
+  .prose :global(.geo-figure) {
+    font-size: 0.8em;
+  }
+  .objectives {
+    margin: var(--space-6) 0;
+  }
+  .objectives-kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-ink-faint);
+    margin: 0 0 var(--space-1);
+  }
+  .objectives ul {
+    margin: 0;
+  }
+  .lesson-tools {
+    margin: var(--space-6) 0;
+  }
+  .tools-kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-ink-faint);
+    margin: 0 0 var(--space-1);
+  }
+  .lesson-tools ul {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+  .lesson-footer {
+    margin-top: var(--space-12);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-6);
+  }
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+  .lesson-nav .next {
+    margin-left: auto;
+    text-align: right;
+  }
+</style>

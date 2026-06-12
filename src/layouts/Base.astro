@@ -1,0 +1,137 @@
+---
+import Seo from '../components/Seo.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article' | 'book';
+  jsonLd?: object[];
+  /** widen the content column (index/table pages) */
+  wide?: boolean;
+}
+
+const { title, description, type, jsonLd, wide = false } = Astro.props;
+
+const nav = [
+  { href: '/course/', label: 'The Course' },
+  { href: '/figures/', label: 'The Figures' },
+  { href: '/houses/', label: 'The Houses' },
+  { href: '/casting/', label: 'Casting' },
+  { href: '/techniques/', label: 'Techniques' },
+  { href: '/tools/', label: 'Tools' },
+  { href: '/library/', label: 'Library' },
+  { href: '/about/', label: 'About' },
+];
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/eb-garamond-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo {title} {description} {type} {jsonLd} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="masthead">
+        <a class="site-name" href="/">The Art of Geomancy</a>
+        <p class="site-tagline">The figures, houses and judgments of traditional geomancy, from the historical sources</p>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        {
+          nav.map((item) => (
+            <a href={item.href} aria-current={path.startsWith(item.href) ? 'true' : undefined}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <main id="main" class:list={['content', { wide }]}>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p class="site-footer-name">The Art of Geomancy</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    border-bottom: 3px double var(--color-border-strong);
+    padding: var(--space-8) var(--space-4) 0;
+    text-align: center;
+  }
+  .site-name {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-variant: small-caps;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .site-tagline {
+    margin: var(--space-1) 0 var(--space-4);
+    color: var(--color-ink-muted);
+    font-style: italic;
+    font-size: var(--text-sm);
+  }
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2) var(--space-6);
+    padding-bottom: var(--space-3);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+  .site-nav a {
+    color: var(--color-ink-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .site-nav a:hover,
+  .site-nav a[aria-current='true'] {
+    color: var(--color-rubric);
+    border-bottom-color: var(--color-rubric);
+  }
+  .content {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4) var(--space-16);
+  }
+  .content.wide {
+    max-width: var(--measure-wide);
+  }
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    text-align: center;
+  }
+  .site-footer-name {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: var(--text-sm);
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-muted);
+  }
+</style>

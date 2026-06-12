@@ -1,0 +1,36 @@
+name: Acquisitio
+translation: "Gain"
+dots: [2, 1, 2, 1]
+planet: Jupiter
+sign: Pisces
+element: water
+mobility: stable
+counterpart: amissio
+attributionVariants:
+  - source: cattan
+    element: air
+    planet: Jupiter
+    sign: Aries
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: air
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Aries
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Aries
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Sagittarius
+    element: fire
+    note: "the Golden Dawn attributions"
+keywords:
+  - gain
+  - profit
+  - acquisition
+  - obtaining
+  - prosperity
+summary: >-
+  Acquisitio, Gain: geomantic figure of Jupiter in Pisces, signifying profit, acquisition and success. Its meanings quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 5

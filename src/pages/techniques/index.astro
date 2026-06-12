@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+---
+
+<Base
+  title="Techniques of Geomantic Judgment"
+  description="The classical techniques for judging a geomantic chart: Judge and Witnesses, modes of perfection, springing of figures, projection of points, dignities and aspects."
+>
+  <Breadcrumbs items={[{ name: 'Techniques' }]} />
+  <h1>Techniques of Judgment</h1>
+  <p class="lead">
+    Casting the chart is the lesser half of geomancy; the art lies in judging it. As Agrippa says,
+    “this whole Art consisteth in the commixtures of the figures, and the natures thereof.” These
+    pages set out the classical methods, each grounded in quotations from the sources.
+  </p>
+  <ul class="technique-list">
+    {
+      TECHNIQUES.map((t) => (
+        <li>
+          <a href={`/techniques/${t.slug}/`}>{t.title}</a>
+          <p>{t.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+  }
+  .technique-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .technique-list li {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .technique-list a {
+    font-weight: 600;
+    font-size: var(--text-md);
+  }
+  .technique-list p {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

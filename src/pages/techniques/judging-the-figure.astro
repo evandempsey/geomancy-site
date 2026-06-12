@@ -1,0 +1,24 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'judging-the-figure')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    The separate techniques (houses, witnesses, aspects, company, points) must finally be
+    weighed together into one sentence. The masters give general rules for this synthesis: when a
+    figure is to be called fortunate, how the chart as a whole inclines to good or evil, and the
+    order in which the testimonies are taken. Cattan reckons eight ways a figure is judged good
+    or unfortunate; Crowley reduces the whole method to a checklist:
+  </p>
+  <QuoteList topic="method" />
+</Prose>

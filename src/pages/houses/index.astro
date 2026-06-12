@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Quote from '../../components/Quote.astro';
+
+const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
+---
+
+<Base
+  title="The Twelve Houses in Geomancy"
+  description="The twelve houses of the geomantic chart and what each governs (life, substance, brethren, marriage, death, honours) with the significations given by the historical sources."
+>
+  <Breadcrumbs items={[{ name: 'The Houses' }]} />
+  <h1>The Twelve Houses</h1>
+  <p class="lead">
+    Geomancy borrows the twelve houses of astrology: every question is referred to the house that
+    governs its matter, and judgment is made chiefly from the figure found there. Agrippa sets out
+    their significations:
+  </p>
+  <Quote id="agrippa/general/houses-significations" />
+  <h2>The houses</h2>
+  <ol class="house-list">
+    {
+      houses.map((h) => (
+        <li>
+          <a href={`/houses/${h.data.slug}/`}>{h.data.title}</a>
+          <span>{h.data.significations.join('; ')}</span>
+        </li>
+      ))
+    }
+  </ol>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+  }
+  .house-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: house;
+  }
+  .house-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .house-list a {
+    font-weight: 600;
+    display: block;
+  }
+  .house-list span {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

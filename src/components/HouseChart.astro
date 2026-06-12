@@ -1,0 +1,185 @@
+---
+/**
+ * The twelve astrological houses drawn as a traditional square chart
+ * (outer square, midpoint diamond, diagonals), showing where the shield
+ * chart's figures are set down: Mothers in houses 1–4, Daughters in 5–8,
+ * Nieces in 9–12. The first house stands at the left, where the ascendant
+ * stands in an astrological figure, and the houses follow counter-clockwise,
+ * as in a Renaissance horoscope.
+ *
+ * Given four `mothers` (or twelve explicit `figures`), the actual figures
+ * are drawn into their houses.
+ */
+import { deriveChart, type FigureDots } from '../lib/casting';
+import { resolveDots, nameOf } from '../lib/figureData';
+import { glyphGeometry } from '../lib/glyph';
+
+interface Props {
+  /** four Mothers — houses 1–12 are filled from the derived chart */
+  mothers?: (string | number[])[];
+  /** or twelve explicit figures for houses 1–12 */
+  figures?: (string | number[])[];
+  caption?: string;
+}
+
+const { mothers: mothersProp, figures: figuresProp, caption } = Astro.props;
+
+const W = 640;
+
+interface Cell {
+  house: number;
+  label: string;
+  group: 'mothers' | 'daughters' | 'nieces';
+  d: string;
+  lx: number;
+  ly: number;
+  /** glyph center when figures are drawn */
+  gx: number;
+  gy: number;
+}
+
+const cells: Cell[] = [
+  { house: 1, label: '1st Mother', group: 'mothers', d: 'M320 320 L160 160 L0 320 L160 480 Z', lx: 160, ly: 320, gx: 160, gy: 265 },
+  { house: 2, label: '2nd Mother', group: 'mothers', d: 'M0 320 L0 640 L160 480 Z', lx: 53, ly: 480, gx: 53, gy: 420 },
+  { house: 3, label: '3rd Mother', group: 'mothers', d: 'M0 640 L320 640 L160 480 Z', lx: 160, ly: 587, gx: 160, gy: 545 },
+  { house: 4, label: '4th Mother', group: 'mothers', d: 'M320 320 L160 480 L320 640 L480 480 Z', lx: 320, ly: 480, gx: 320, gy: 425 },
+  { house: 5, label: '1st Daughter', group: 'daughters', d: 'M320 640 L640 640 L480 480 Z', lx: 480, ly: 587, gx: 480, gy: 545 },
+  { house: 6, label: '2nd Daughter', group: 'daughters', d: 'M640 640 L640 320 L480 480 Z', lx: 587, ly: 480, gx: 587, gy: 420 },
+  { house: 7, label: '3rd Daughter', group: 'daughters', d: 'M320 320 L480 480 L640 320 L480 160 Z', lx: 480, ly: 320, gx: 480, gy: 265 },
+  { house: 8, label: '4th Daughter', group: 'daughters', d: 'M640 320 L640 0 L480 160 Z', lx: 587, ly: 160, gx: 587, gy: 100 },
+  { house: 9, label: '1st Niece', group: 'nieces', d: 'M640 0 L320 0 L480 160 Z', lx: 480, ly: 53, gx: 480, gy: 105 },
+  { house: 10, label: '2nd Niece', group: 'nieces', d: 'M320 320 L480 160 L320 0 L160 160 Z', lx: 320, ly: 160, gx: 320, gy: 105 },
+  { house: 11, label: '3rd Niece', group: 'nieces', d: 'M320 0 L0 0 L160 160 Z', lx: 160, ly: 53, gx: 160, gy: 105 },
+  { house: 12, label: '4th Niece', group: 'nieces', d: 'M0 0 L0 320 L160 160 Z', lx: 53, ly: 160, gx: 53, gy: 105 },
+];
+
+let filled: { dots: FigureDots; name: string }[] | undefined;
+if (mothersProp && figuresProp) {
+  throw new Error('HouseChart takes either mothers or figures, not both');
+}
+if (mothersProp) {
+  if (mothersProp.length !== 4) {
+    throw new Error(`HouseChart needs exactly four Mothers, got ${mothersProp.length}`);
+  }
+  const mothers = await Promise.all(mothersProp.map(resolveDots));
+  const chart = deriveChart(mothers);
+  const twelve = [...chart.mothers, ...chart.daughters, ...chart.nieces];
+  filled = await Promise.all(twelve.map(async (dots) => ({ dots, name: await nameOf(dots) })));
+} else if (figuresProp) {
+  if (figuresProp.length !== 12) {
+    throw new Error(`HouseChart needs exactly twelve figures, got ${figuresProp.length}`);
+  }
+  filled = await Promise.all(
+    figuresProp.map(async (spec) => {
+      const dots = await resolveDots(spec);
+      return { dots, name: await nameOf(dots) };
+    }),
+  );
+}
+
+const GLYPH_SCALE = 0.45; // 72×96 glyph → ~32×43
+
+const ariaLabel = filled
+  ? `The twelve houses of a geomantic chart, drawn as a traditional square chart. ${filled
+      .map((f, i) => `House ${i + 1}: ${f.name}`)
+      .join('; ')}.`
+  : 'Diagram of the twelve astrological houses drawn as a traditional square chart, showing where the figures of the shield chart are placed: the four Mothers in houses one to four, the four Daughters in houses five to eight, and the four Nieces in houses nine to twelve. The first house is at the left and the houses run counter-clockwise.';
+---
+
+<figure class="house-chart">
+  <svg viewBox={`-1 -1 ${W + 2} ${W + 2}`} role="img" aria-label={ariaLabel}>
+    {
+      cells.map((c) => {
+        const fig = filled?.[c.house - 1];
+        const geo = fig ? glyphGeometry(fig.dots) : undefined;
+        return (
+          <>
+            <path class={c.group} d={c.d} />
+            {fig && geo && (
+              <g
+                transform={`translate(${c.gx - 36 * GLYPH_SCALE}, ${c.gy - 48 * GLYPH_SCALE}) scale(${GLYPH_SCALE})`}
+              >
+                {geo.circles.map((p) => (
+                  <circle cx={p.cx} cy={p.cy} r={p.r} />
+                ))}
+              </g>
+            )}
+            <text class="numeral" x={c.lx} y={c.ly - 4}>
+              {c.house}
+            </text>
+            <text class="label" x={c.lx} y={c.ly + 16}>
+              {fig ? fig.name : c.label}
+            </text>
+          </>
+        );
+      })
+    }
+  </svg>
+  <figcaption>
+    {
+      caption ??
+        (filled ? (
+          <>
+            The figures of the shield set into the twelve houses: Mothers in houses 1–4, Daughters
+            in 5–8, Nieces in 9–12. The first house stands at the left and the houses follow
+            counter-clockwise.
+          </>
+        ) : (
+          <>
+            The twelve houses, drawn in the old square fashion. The four Mothers fill houses 1–4
+            (darkest), the four Daughters houses 5–8, and the four Nieces houses 9–12 (lightest).
+            The first house stands at the left, where the ascendant stands in an astrological
+            figure, and the houses follow in order counter-clockwise; the Witnesses and Judge
+            remain outside the houses.
+          </>
+        ))
+    }
+  </figcaption>
+</figure>
+
+<style>
+  .house-chart {
+    margin: var(--space-8) auto;
+    max-width: 30rem;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  path {
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+  }
+  .mothers {
+    fill: var(--color-bg-inset);
+  }
+  .daughters {
+    fill: var(--color-bg-raised);
+  }
+  .nieces {
+    fill: var(--color-bg);
+  }
+  circle {
+    fill: var(--color-ink);
+  }
+  text {
+    text-anchor: middle;
+    fill: var(--color-ink);
+  }
+  .numeral {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--color-ink-muted);
+  }
+  figcaption {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin-top: var(--space-2);
+  }
+</style>

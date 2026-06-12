@@ -1,0 +1,36 @@
+name: Conjunctio
+translation: "Conjunction"
+dots: [2, 1, 1, 2]
+planet: Mercury
+sign: Virgo
+element: air
+mobility: mobile
+counterpart: conjunctio
+attributionVariants:
+  - source: cattan
+    element: air
+    planet: Mercury
+    sign: Virgo
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: air
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Libra
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Virgo
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Virgo
+    element: earth
+    note: "the Golden Dawn attributions"
+keywords:
+  - union
+  - assembly
+  - recovery
+  - combination
+  - meeting
+summary: >-
+  Conjunctio, Conjunction: geomantic figure of Mercury in Virgo, signifying union, meeting and recovery of things lost. Quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 13

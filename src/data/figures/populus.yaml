@@ -1,0 +1,35 @@
+name: Populus
+translation: "The People"
+dots: [2, 2, 2, 2]
+planet: Moon
+sign: Cancer
+element: water
+mobility: stable
+counterpart: populus
+attributionVariants:
+  - source: cattan
+    element: water
+    planet: Moon
+    sign: Capricorn
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: water
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Aquarius
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Capricorn
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Cancer
+    element: water
+    note: "the Golden Dawn attributions"
+keywords:
+  - multitude
+  - assembly
+  - crowds
+  - stability of place
+summary: >-
+  Populus, the People: geomantic figure of the Moon in Cancer, signifying multitudes and assembly. Its traditional meanings quoted from the historical sources.
+order: 2

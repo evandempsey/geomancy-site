@@ -1,0 +1,310 @@
+---
+/**
+ * Practice widget for Gerard's astronomical geomancy: casts one figure for
+ * the Ascendant (four lines of points, parity by parity), ripples the
+ * signs through the twelve houses of the square chart, then projects the
+ * nine planets in Gerard's fixed order, showing the points, the sum, and
+ * the remainder that names the house — all at once, or step by step.
+ * Without JavaScript it degrades to the empty square figure with a pointer
+ * to the worked examples.
+ */
+import { getCollection } from 'astro:content';
+import { GERARD_ASCENDANT_SIGN } from '../../lib/gerard';
+
+const figures = await getCollection('figures');
+const names: Record<string, { name: string; id: string; sign: string }> = {};
+for (const f of figures) {
+  names[f.data.dots.join('')] = {
+    name: f.data.name,
+    id: f.id,
+    sign: GERARD_ASCENDANT_SIGN[f.id],
+  };
+}
+
+const W = 640;
+
+// the same square-chart geometry as HouseChart/GerardChart
+const cells = [
+  { house: 1, d: 'M320 320 L160 160 L0 320 L160 480 Z', lx: 160, ly: 320 },
+  { house: 2, d: 'M0 320 L0 640 L160 480 Z', lx: 53, ly: 480 },
+  { house: 3, d: 'M0 640 L320 640 L160 480 Z', lx: 160, ly: 587 },
+  { house: 4, d: 'M320 320 L160 480 L320 640 L480 480 Z', lx: 320, ly: 480 },
+  { house: 5, d: 'M320 640 L640 640 L480 480 Z', lx: 480, ly: 587 },
+  { house: 6, d: 'M640 640 L640 320 L480 480 Z', lx: 587, ly: 480 },
+  { house: 7, d: 'M320 320 L480 480 L640 320 L480 160 Z', lx: 480, ly: 320 },
+  { house: 8, d: 'M640 320 L640 0 L480 160 Z', lx: 587, ly: 160 },
+  { house: 9, d: 'M640 0 L320 0 L480 160 Z', lx: 480, ly: 53 },
+  { house: 10, d: 'M320 320 L480 160 L320 0 L160 160 Z', lx: 320, ly: 160 },
+  { house: 11, d: 'M320 0 L0 0 L160 160 Z', lx: 160, ly: 53 },
+  { house: 12, d: 'M0 0 L0 320 L160 160 Z', lx: 53, ly: 160 },
+];
+---
+
+<div class="gerard-widget" data-gerard-widget>
+  <script type="application/json" data-gerard-figures is:inline set:html={JSON.stringify(names)} />
+  <div class="controls" hidden>
+    <button data-action="erect">Erect a chart</button>
+    <button data-action="step">Erect step by step</button>
+    <button data-action="next" hidden>Next step →</button>
+  </div>
+  <p class="explain" data-explain aria-live="polite"></p>
+  <svg
+    viewBox={`-1 -1 ${W + 2} ${W + 2}`}
+    role="img"
+    aria-label="Practice chart for astronomical geomancy. Use the buttons above to erect a chart; the houses fill with signs and planets."
+  >
+    {
+      cells.map((c) => (
+        <>
+          <path data-cell={c.house} d={c.d} />
+          {c.house === 1 && (
+            <g
+              class="glyph-slot"
+              data-asc-glyph
+              transform={`translate(${c.lx - 14.4}, ${c.ly - 115}) scale(0.4)`}
+            />
+          )}
+          <text class="numeral" x={c.lx} y={c.ly - 8}>
+            {c.house}
+          </text>
+          <text class="sign" data-sign={c.house} x={c.lx} y={c.ly + 12} />
+          <text class="planets" data-planets={c.house} x={c.lx} y={c.ly + 30} />
+        </>
+      ))
+    }
+  </svg>
+  <noscript>
+    <p class="noscript">
+      The practice tool needs JavaScript. Without it, erect charts by hand from the worked
+      examples in <a href="/course/astrological-geomancy/">Lesson 12</a>: four lines of points
+      for the Ascendant, four for every planet, which is the better exercise in any case.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  import {
+    PLANET_ORDER,
+    RULERS,
+    signsForHouses,
+    houseFromPoints,
+    houseKind,
+    randomProjection,
+    projectionTotal,
+    type Sign,
+    type Planet,
+  } from '../../lib/gerard';
+  import { glyphGeometry } from '../../lib/glyph';
+
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const DISPLAY: Partial<Record<Planet, string>> = {
+    'Caput Draconis': "Dragon's Head",
+    'Cauda Draconis': "Dragon's Tail",
+  };
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-gerard-widget]')) {
+    const namesJson = root.querySelector('[data-gerard-figures]')?.textContent ?? '{}';
+    const names: Record<string, { name: string; id: string; sign: Sign }> = JSON.parse(namesJson);
+    const controls = root.querySelector<HTMLElement>('.controls');
+    const explain = root.querySelector<HTMLElement>('[data-explain]');
+    const erectBtn = root.querySelector<HTMLButtonElement>('[data-action="erect"]');
+    const stepBtn = root.querySelector<HTMLButtonElement>('[data-action="step"]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-action="next"]');
+    if (!controls || !explain || !erectBtn || !stepBtn || !nextBtn) continue;
+
+    interface Cast {
+      ascLines: number[];
+      dots: number[];
+      figure: { name: string; sign: Sign };
+      houseSigns: Sign[];
+      lord: Planet;
+      projections: { planet: Planet; lines: number[]; total: number; house: number }[];
+    }
+
+    const cast = (): Cast => {
+      const ascLines = randomProjection();
+      const dots = ascLines.map((n) => (n % 2 === 1 ? 1 : 2));
+      const figure = names[dots.join('')];
+      const houseSigns = signsForHouses(figure.sign);
+      const lord = RULERS[figure.sign];
+      const projections = PLANET_ORDER.map((planet) => {
+        const lines = randomProjection();
+        const total = projectionTotal(lines);
+        return { planet, lines, total, house: houseFromPoints(total) };
+      });
+      return { ascLines, dots, figure, houseSigns, lord, projections };
+    };
+
+    const clear = () => {
+      for (const t of root.querySelectorAll('[data-sign], [data-planets]')) t.replaceChildren();
+      root.querySelector('[data-asc-glyph]')?.replaceChildren();
+    };
+
+    const drawAscendant = (c: Cast) => {
+      const slot = root.querySelector('[data-asc-glyph]');
+      if (slot) {
+        slot.replaceChildren();
+        for (const p of glyphGeometry(c.dots).circles) {
+          const circle = document.createElementNS(SVG_NS, 'circle');
+          circle.setAttribute('cx', String(p.cx));
+          circle.setAttribute('cy', String(p.cy));
+          circle.setAttribute('r', String(p.r));
+          slot.append(circle);
+        }
+      }
+      c.houseSigns.forEach((sign, i) => {
+        const t = root.querySelector(`[data-sign="${i + 1}"]`);
+        if (t) t.textContent = sign;
+      });
+    };
+
+    const drawPlanet = (c: Cast, i: number) => {
+      const { planet, house } = c.projections[i];
+      const t = root.querySelector<SVGTextElement>(`[data-planets="${house}"]`);
+      if (!t) return;
+      const tspan = document.createElementNS(SVG_NS, 'tspan');
+      tspan.setAttribute('x', t.getAttribute('x') ?? '0');
+      if (t.childNodes.length > 0) tspan.setAttribute('dy', '15');
+      tspan.textContent = DISPLAY[planet] ?? planet;
+      t.append(tspan);
+    };
+
+    const ascText = (c: Cast) =>
+      `Four lines of ${c.ascLines.join(', ')} points (odd leaves one point, even leaves two): ` +
+      `${c.figure.name}. Put ${c.figure.sign} in the Ascendant; the signs follow in order ` +
+      `through the twelve houses. The lord of the Ascendant is ${c.lord}.`;
+
+    const planetText = (c: Cast, i: number) => {
+      const { planet, lines, total, house } = c.projections[i];
+      const rem = total % 12;
+      return (
+        `${DISPLAY[planet] ?? planet}: lines of ${lines.join(', ')} points, ${total} in all; ` +
+        `÷ 12 leaves ${rem === 0 ? 'nought, which counts as twelve' : rem} → the ${house}th house.`
+      );
+    };
+
+    const lordText = (c: Cast) =>
+      `All nine are placed. The lord of the Ascendant, ${c.lord}, stands in the ` +
+      `${c.projections.find((p) => p.planet === c.lord)?.house ?? '?'}th house ` +
+      `(${houseKind(c.projections.find((p) => p.planet === c.lord)!.house)}), ` +
+      `the first thing Gerard weighs.`;
+
+    let current: Cast | null = null;
+    let stepIndex = -1; // 0 = ascendant, 1–9 = planets, 10 = the lord
+
+    erectBtn.addEventListener('click', () => {
+      current = cast();
+      clear();
+      drawAscendant(current);
+      for (let i = 0; i < 9; i++) drawPlanet(current, i);
+      stepIndex = -1;
+      nextBtn.hidden = true;
+      explain.textContent = `${current.figure.name} ascending, ${current.figure.sign} on the first house. ${lordText(current)}`;
+    });
+
+    const advance = () => {
+      if (!current) return;
+      stepIndex += 1;
+      if (stepIndex === 0) {
+        drawAscendant(current);
+        explain.textContent = ascText(current);
+      } else if (stepIndex <= 9) {
+        drawPlanet(current, stepIndex - 1);
+        explain.textContent = planetText(current, stepIndex - 1);
+      } else {
+        explain.textContent = lordText(current);
+        nextBtn.hidden = true;
+      }
+    };
+
+    stepBtn.addEventListener('click', () => {
+      current = cast();
+      clear();
+      stepIndex = -1;
+      nextBtn.hidden = false;
+      advance();
+    });
+
+    nextBtn.addEventListener('click', advance);
+
+    controls.hidden = false;
+  }
+</script>
+
+<style>
+  .gerard-widget {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    background: var(--color-bg-raised);
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  button {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--color-rubric);
+    border-color: var(--color-rubric);
+  }
+  .explain {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    min-height: 2.5em;
+    margin: 0 0 var(--space-2);
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  path {
+    fill: var(--color-bg);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+  }
+  path[data-cell='1'] {
+    fill: var(--color-bg-inset);
+  }
+  .glyph-slot :global(circle) {
+    fill: var(--color-ink);
+  }
+  text {
+    text-anchor: middle;
+    fill: var(--color-ink);
+  }
+  .numeral {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    fill: var(--color-ink-muted);
+  }
+  .sign {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-style: italic;
+  }
+  .planets {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--color-rubric, var(--color-ink));
+  }
+  .noscript {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

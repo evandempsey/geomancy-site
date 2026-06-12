@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  /** og:type */
+  type?: 'website' | 'article' | 'book';
+  /** extra JSON-LD objects to emit */
+  jsonLd?: object[];
+  image?: string;
+}
+
+const SITE_NAME = 'The Art of Geomancy';
+const { title, description, type = 'article', jsonLd = [], image } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = Astro.url.pathname === '/' ? title : `${title}: ${SITE_NAME}`;
+const ogImage = image ? new URL(image, Astro.site).href : undefined;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical.href} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type === 'book' ? 'book' : type} />
+<meta property="og:url" content={canonical.href} />
+{ogImage && <meta property="og:image" content={ogImage} />}
+<meta name="twitter:card" content="summary" />
+{
+  jsonLd.map((obj) => (
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', ...obj })} />
+  ))
+}

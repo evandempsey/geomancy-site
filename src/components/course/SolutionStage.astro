@@ -1,0 +1,68 @@
+---
+/**
+ * One stage of a staged master solution in the practicum (Lesson 13):
+ * Stage 1 verifies the cast, Stage 2 names the instruments to weigh,
+ * Stage 3 is the full master judgment. Native details/summary like
+ * ModelAnswer — no JavaScript, keyboard accessible, printable when
+ * opened — with the stage number carried visually so the sequence
+ * reads as a graded reveal.
+ */
+interface Props {
+  n: 1 | 2 | 3;
+  label: string;
+}
+
+const { n, label } = Astro.props;
+---
+
+<details class="solution-stage">
+  <summary><span class="stage-n">Stage {n}</span> · {label}</summary>
+  <div class="stage-body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .solution-stage {
+    margin: var(--space-3) 0;
+    border-left: 2px solid var(--color-rubric);
+    background: var(--color-bg-raised);
+    border-radius: var(--radius);
+    padding: var(--space-3) var(--space-4);
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-muted);
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: '+';
+    display: inline-block;
+    width: 1.2em;
+    color: var(--color-rubric);
+    font-weight: 600;
+  }
+  .solution-stage[open] summary::before {
+    content: '−';
+  }
+  summary:hover {
+    color: var(--color-rubric);
+  }
+  .stage-n {
+    color: var(--color-rubric);
+    font-weight: 600;
+  }
+  .stage-body {
+    margin-top: var(--space-3);
+  }
+  .stage-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

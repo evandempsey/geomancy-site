@@ -1,0 +1,107 @@
+---
+import { getEntry, render } from 'astro:content';
+import type { Quote } from '../lib/queries';
+
+interface Props {
+  /** corpus entry id, e.g. "cattan/book-1/ch-21-puer" — or pass the entry */
+  id?: string;
+  entry?: Quote;
+  /** suppress the figure/house context line (when the page provides it) */
+  compact?: boolean;
+}
+
+const { id, entry: given, compact = false } = Astro.props;
+const entry = given ?? (id ? await getEntry('quotes', id) : undefined);
+if (!entry) throw new Error(`Quote not found: ${id}`);
+
+const source = await getEntry('sources', entry.data.source.id);
+if (!source) throw new Error(`Source not found for quote ${entry.id}`);
+const citation = source.data.citationTemplate.replace('{locator}', entry.data.locator);
+const { Content } = await render(entry);
+const gloss = entry.data.gloss ? Object.entries(entry.data.gloss) : [];
+---
+
+<figure class="quote">
+  <blockquote>
+    <Content />
+  </blockquote>
+  <figcaption>
+    <span set:html={citation.replace(/\*([^*]+)\*/g, '<em>$1</em>')} />
+    {
+      entry.data.scanRef && (
+        <>
+          {' · '}
+          <a href={entry.data.scanRef} rel="noopener">view scan</a>
+        </>
+      )
+    }
+  </figcaption>
+  {
+    gloss.length > 0 && (
+      <dl class="gloss">
+        {gloss.map(([word, meaning]) => (
+          <div>
+            <dt>{word}</dt>
+            <dd>{meaning}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+  {!compact && entry.data.editorialNote && <p class="editorial-note">{entry.data.editorialNote}</p>}
+</figure>
+
+<style>
+  .quote {
+    margin: var(--space-8) 0;
+    padding-left: var(--space-6);
+    border-left: 2px solid var(--color-border-strong);
+  }
+  blockquote {
+    font-size: var(--text-md);
+    margin: 0;
+    padding-left: 0;
+    border-left: 0;
+    color: inherit;
+  }
+  blockquote :global(p:first-child) {
+    margin-top: 0;
+  }
+  blockquote :global(p:last-child) {
+    margin-bottom: var(--space-2);
+  }
+  figcaption {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .gloss {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-2) 0 0;
+  }
+  .gloss div {
+    display: inline;
+  }
+  .gloss div + div::before {
+    content: ' · ';
+  }
+  .gloss dt {
+    display: inline;
+    font-style: italic;
+  }
+  .gloss dt::after {
+    content: ': ';
+  }
+  .gloss dd {
+    display: inline;
+    margin: 0;
+  }
+  .editorial-note {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-2) 0 0;
+  }
+</style>

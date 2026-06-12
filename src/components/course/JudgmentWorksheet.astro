@@ -1,0 +1,289 @@
+---
+/**
+ * Guided judgment worksheet: walks the canonical order of judgment one
+ * step at a time and assembles the student's notes into a draft
+ * judgment paragraph. Without JavaScript all steps render at once — a
+ * printable worksheet, which is how it should be used on paper anyway.
+ */
+import { getCollection } from 'astro:content';
+
+const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
+---
+
+<form class="worksheet" data-worksheet>
+  <p class="worksheet-title">The order of judgment</p>
+
+  <fieldset data-step="1">
+    <legend>1 · The question</legend>
+    <label>
+      The question, exactly as asked
+      <input type="text" name="question" autocomplete="off" />
+    </label>
+    <label>
+      The house of the quesited
+      <select name="house">
+        {
+          houses.map((h) => (
+            <option value={h.data.number}>
+              {h.data.name}: {h.data.significations.slice(0, 3).join(', ')}
+            </option>
+          ))
+        }
+      </select>
+    </label>
+    <p class="hint">
+      The querent is always the 1st house. Place the matter asked about before going further; a
+      wrong house wrecks everything after it.
+    </p>
+  </fieldset>
+
+  <fieldset data-step="2">
+    <legend>2 · Witnesses and Judge</legend>
+    <label>
+      Right Witness (XIII)
+      <input type="text" name="rightWitness" autocomplete="off" />
+    </label>
+    <label>
+      Left Witness (XIV)
+      <input type="text" name="leftWitness" autocomplete="off" />
+    </label>
+    <label>
+      Judge (XV)
+      <input type="text" name="judge" autocomplete="off" />
+    </label>
+    <label>
+      What do they promise? (good/ill beginning, good/ill ending, the Judge's sentence)
+      <textarea name="judgeNotes" rows="3"></textarea>
+    </label>
+  </fieldset>
+
+  <fieldset data-step="3">
+    <legend>3 · The significators</legend>
+    <label>
+      Figure in the 1st house (the querent)
+      <input type="text" name="querentFigure" autocomplete="off" />
+    </label>
+    <label>
+      Figure in the quesited's house
+      <input type="text" name="quesitedFigure" autocomplete="off" />
+    </label>
+    <label>
+      Where else does each significator spring up in the shield?
+      <textarea name="springing" rows="3"></textarea>
+    </label>
+  </fieldset>
+
+  <fieldset data-step="4">
+    <legend>4 · Perfection</legend>
+    <p class="hint">Test in order of strength; record everything found, not just the first.</p>
+    <label class="check"><input type="checkbox" name="occupation" /> Occupation: the same figure in both houses</label>
+    <label class="check"><input type="checkbox" name="conjunction" /> Conjunction: a significator passes to a house beside the other</label>
+    <label class="check"><input type="checkbox" name="company" /> Company: a significator strengthened by its companion house</label>
+    <label class="check"><input type="checkbox" name="aspect" /> Favorable aspect between the significators</label>
+    <label class="check"><input type="checkbox" name="denied" /> Perfection denied</label>
+    <label>
+      Notes on what perfects or denies, and where
+      <textarea name="perfectionNotes" rows="3"></textarea>
+    </label>
+  </fieldset>
+
+  <fieldset data-step="5">
+    <legend>5 · Strength and quality</legend>
+    <label>
+      Dignities, debilities and aspects bearing on the significators
+      <textarea name="dignityNotes" rows="3"></textarea>
+    </label>
+  </fieldset>
+
+  <fieldset data-step="6">
+    <legend>6 · The verdict</legend>
+    <label>
+      Weigh the testimonies and pronounce, with the reservation the chart itself demands
+      <textarea name="verdict" rows="4"></textarea>
+    </label>
+  </fieldset>
+
+  <div class="worksheet-nav" hidden>
+    <button type="button" data-action="back" hidden>← Back</button>
+    <button type="button" data-action="next">Next step →</button>
+    <button type="button" data-action="assemble" hidden>Assemble the judgment</button>
+  </div>
+
+  <div class="summary" data-summary hidden aria-live="polite">
+    <p class="summary-title">Draft judgment</p>
+    <p data-summary-text></p>
+    <p class="hint">
+      Copy this into your casting journal and rewrite it in your own words. The worksheet drafts,
+      the geomancer judges.
+    </p>
+  </div>
+</form>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-worksheet]')) {
+    const steps = [...form.querySelectorAll<HTMLFieldSetElement>('fieldset[data-step]')];
+    const nav = form.querySelector<HTMLElement>('.worksheet-nav');
+    const backBtn = form.querySelector<HTMLButtonElement>('[data-action="back"]');
+    const nextBtn = form.querySelector<HTMLButtonElement>('[data-action="next"]');
+    const assembleBtn = form.querySelector<HTMLButtonElement>('[data-action="assemble"]');
+    const summary = form.querySelector<HTMLElement>('[data-summary]');
+    const summaryText = form.querySelector<HTMLElement>('[data-summary-text]');
+    if (!nav || !backBtn || !nextBtn || !assembleBtn || !summary || !summaryText) continue;
+
+    let current = 0;
+    const showStep = () => {
+      steps.forEach((s, i) => (s.hidden = i !== current));
+      backBtn.hidden = current === 0;
+      nextBtn.hidden = current === steps.length - 1;
+      assembleBtn.hidden = current !== steps.length - 1;
+    };
+    backBtn.addEventListener('click', () => {
+      current = Math.max(0, current - 1);
+      showStep();
+    });
+    nextBtn.addEventListener('click', () => {
+      current = Math.min(steps.length - 1, current + 1);
+      showStep();
+    });
+
+    const value = (name: string): string => {
+      const el = form.elements.namedItem(name);
+      return el && 'value' in el ? String(el.value).trim() : '';
+    };
+    const checked = (name: string): boolean => {
+      const el = form.elements.namedItem(name);
+      return el instanceof HTMLInputElement && el.checked;
+    };
+
+    assembleBtn.addEventListener('click', () => {
+      const houseSel = form.elements.namedItem('house');
+      const houseLabel =
+        houseSel instanceof HTMLSelectElement
+          ? houseSel.options[houseSel.selectedIndex]?.text.split(': ')[0]
+          : '';
+      const perfections = [
+        checked('occupation') && 'occupation',
+        checked('conjunction') && 'conjunction',
+        checked('company') && 'company',
+        checked('aspect') && 'favorable aspect',
+      ].filter(Boolean);
+      const parts = [
+        value('question') && `The question: ${value('question')}, belonging to the ${houseLabel}.`,
+        value('judge') &&
+          `The Right Witness is ${value('rightWitness') || 'blank'}, the Left Witness ${value('leftWitness') || 'blank'}, and the Judge ${value('judge')}.`,
+        value('judgeNotes'),
+        value('querentFigure') &&
+          `The querent's significator is ${value('querentFigure')}; the quesited's is ${value('quesitedFigure') || 'blank'}.`,
+        value('springing'),
+        checked('denied')
+          ? 'The figure does not perfect.'
+          : perfections.length > 0
+            ? `The figure perfects by ${perfections.join(' and ')}.`
+            : '',
+        value('perfectionNotes'),
+        value('dignityNotes'),
+        value('verdict') && `Judgment: ${value('verdict')}`,
+      ].filter(Boolean);
+      summaryText.textContent = parts.join(' ');
+      summary.hidden = false;
+    });
+
+    showStep();
+    nav.hidden = false;
+  }
+</script>
+
+<style>
+  .worksheet {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-4) var(--space-6) var(--space-6);
+    background: var(--color-bg-raised);
+  }
+  .worksheet-title {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    margin: 0 0 var(--space-2);
+  }
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: var(--space-2) 0;
+  }
+  legend {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    font-weight: 600;
+    padding: 0;
+  }
+  label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-3) 0 0;
+  }
+  label.check {
+    margin: var(--space-2) 0 0;
+  }
+  input[type='text'],
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    margin-top: var(--space-1);
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2);
+  }
+  input[type='checkbox'] {
+    margin-right: var(--space-2);
+  }
+  .hint {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-faint);
+    margin: var(--space-2) 0 0;
+  }
+  .worksheet-nav {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  button {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--color-rubric);
+    border-color: var(--color-rubric);
+  }
+  .summary {
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+  }
+  .summary-title {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin: 0 0 var(--space-2);
+  }
+</style>

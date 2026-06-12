@@ -1,0 +1,36 @@
+name: Laetitia
+translation: "Joy"
+dots: [1, 2, 2, 2]
+planet: Jupiter
+sign: Sagittarius
+element: air
+mobility: mobile
+counterpart: tristitia
+attributionVariants:
+  - source: cattan
+    element: air
+    planet: Jupiter
+    sign: Taurus
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: air
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Gemini
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Taurus
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Pisces
+    element: water
+    note: "the Golden Dawn attributions"
+keywords:
+  - joy
+  - gladness
+  - health
+  - good fortune
+  - ascending
+summary: >-
+  Laetitia, Joy: geomantic figure of Jupiter in Sagittarius, signifying gladness, health and good fortune. Its meanings quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 7

@@ -1,0 +1,21 @@
+---
+source: cattan
+locator: "Book III, ch. 16 (p. 185–187)"
+scanRef: https://archive.org/details/b30337860/page/n219
+topics: [method]
+quality: transcribed
+---
+
+### Of the quadrats Aspect.
+
+
+
+Of the quadrats Aspect. Chap. 16.
+
+THe Quadrature Aspect is from the first to the fourth or from the first to the tenth, or from foure fygures unto foure figures. If the first be in the fourth or tenth, it is good for the querant: and as we have spoken of the other rules and aspectes, so will we speake of this, that is to say, that if in the place of this aspect there be a good fygure, or that it be of the same qualitie, and of one Planet, it is a good signe that the querant shall have a good issue and end of his demand. If in the first and twelfth there be *Aquisitio* the quadrature is good: if *Laetitia* be in any of those quadratures, then it shall be meane, because *Laetitia* is retrograde although she be of the same Element and Planet that *Aquisitio* is. And if yee finde in the saide aspect a good fygure so that it be not of the same Element and Planet, as the first is, or the fygure where that quadrature doth beginne: this aspect shall be meane, because the fygure is good. If ye find a figure of one Planet, which is friend to the other, and that she behold him, ye shall judge as well as if *Aquisitio* were in the first house, and *Puella* in the fourth or tenth, as ye shall plainly see by the example following.
+
+An example and figure of the quadrate Aspect to knowe if the Emperour should depart quickly from Nece to come to Provance.
+
+[Chart: fifteen figures — eight over four, two witnesses, and the judge. Top row, left to right: [figure: 1,1,2,1] (Puer), [figure: 2,2,2,1] (Tristitia), [figure: 1,2,1,1] (Puella), [figure: 2,2,1,2] (Albus), [figure: 2,1,1,1] (Caput draconis), [figure: 1,1,2,2] (Fortuna minor), [figure: 2,2,2,1] (Tristitia), [figure: 2,1,2,1] (Aquisitio). Second row, left to right: [figure: 2,1,2,1] (Aquisitio), [figure: 1,2,2,1] (Carcer), [figure: 1,2,1,1] (Puella), [figure: 2,1,2,2] (Rubeus). Witnesses, left and right: [figure: 2,1,2,1] (Aquisitio), [figure: 1,1,1,1] (Via). Judge: [figure: 1,2,1,2] (Amissio).]
+
+WHilest the time that the Emperour Charles the fift was at Nece making his provision to make warre in Provance against the French king, Francis the first of that name: I was requested by the Counte of Touerra (which was desirous to know which day the Emperour should depart from Nece) to make him a fygure. To whom (for that I would not fayle) I made this fygure here before. And for that *Aquisitio* was in the first house, which is a fygure fixed, and of the same Planet that the quadrature which is the tenth is, which is also a signe fixed: for that cause I judged that the Emperour shall not part thence in sixe dayes, and so it chaunced, for hee stayed eight dayes at S. Laurences: and because the seventh is a fygure of ♄ retrograde, and his companion which is the eight, is a fygure of ♂ retrograde: I judged that his long stay in that place should be much to his hinderance, and that should be the cause of his losse and destruction: and because the first is a fygure of ♄ which is a Planet slow fixed, miserable and avericious: I say that the abode which hee there made, was for none other cause, but least he and his Campe should want victuals, because the fyft signifyeth the countrey or land whereunto a person would goe: which thing was true, for his staying there was for none other cause, but to stay for Andreas Dore, which brought him bysket for his souldiers. And because the ninth which is a Trine aspect, and the eleventh which is a Sextill, be ill fygures, I also judged that hee stayed there for money from his friends, which he had borrowed, and it was much for the present necessitie which he sawe: and because the witnesses and the judge be fixed fygures, I judged thereby that he should stay there fiue or sixe daies: and because the first which is the fygure of the Emperour went into the 14. which is the house of sadnesse, I judged that in the end of his voyage (for so much as he could not attaine unto his purpose) he would be sad and angry with himselfe, and so it came to passe, for hee made a short returne with dishonour, losse, and discomfyture of his men.

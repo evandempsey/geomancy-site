@@ -1,0 +1,36 @@
+name: Puer
+translation: "The Boy"
+dots: [1, 1, 2, 1]
+planet: Mars
+sign: Scorpio
+element: fire
+mobility: mobile
+counterpart: puella
+attributionVariants:
+  - source: cattan
+    element: air
+    planet: Mars
+    sign: Aries
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: air
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Scorpio
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Gemini
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Aries
+    element: fire
+    note: "the Golden Dawn attributions"
+keywords:
+  - rashness
+  - combat
+  - the warrior
+  - passion
+  - yellow beardless
+summary: >-
+  Puer, the Boy: geomantic figure of Mars in Scorpio, signifying rashness, combat and passion, evil save in love and war. Quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 9

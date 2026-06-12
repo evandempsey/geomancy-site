@@ -1,0 +1,37 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import Quote from '../../components/Quote.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'judge-and-witnesses')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    At the foot of every shield chart stand three figures that sum up the whole: the
+    <em>Right Witness</em> (made from the first and second Nieces), the <em>Left Witness</em>
+    (from the third and fourth), and the <em>Judge</em>, made from the two Witnesses together.
+    The Judge delivers the general sentence of the question (good or evil) before any house is
+    examined; the Witnesses show the parties, the beginning and the end of the matter.
+  </p>
+  <p>
+    Because of the way it is generated, the Judge always has an even number of points: an odd
+    Judge means a miscast chart. Agrippa calls the Witnesses <em>Coadjutrices</em> or
+    <em>Testes</em>, and the figure made from them the index of the whole figure:
+  </p>
+  <QuoteList topic="judge-witnesses" />
+  <p>
+    Crowley's <em>Handbook</em> preserves a complete set of tables (omitted from Regardie's
+    Golden Dawn papers) giving the verdict of every combination of Witnesses and Judge for ten
+    standard matters (life, money, rank, property, marriage, children, sickness, prison, journeys
+    and things lost): see <a href="/library/crowley/witnesses-and-judge/">the Tables of Witnesses
+    and Judge</a> in the library.
+  </p>
+</Prose>

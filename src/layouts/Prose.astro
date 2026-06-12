@@ -1,0 +1,49 @@
+---
+import Base from './Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article' | 'book';
+  jsonLd?: object[];
+  crumbs?: { name: string; href?: string }[];
+  /** small label shown above the h1 */
+  kicker?: string;
+}
+
+const { title, description, type, jsonLd, crumbs, kicker } = Astro.props;
+---
+
+<Base {title} {description} {type} {jsonLd}>
+  {crumbs && <Breadcrumbs items={crumbs} />}
+  <article class="prose">
+    {kicker && <p class="kicker">{kicker}</p>}
+    <h1>{title}</h1>
+    <slot />
+  </article>
+</Base>
+
+<style>
+  .kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    margin-bottom: var(--space-1);
+  }
+  .prose h1 {
+    margin-top: 0;
+  }
+  .prose :global(h2) {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-1);
+  }
+  .prose :global(table) {
+    width: 100%;
+  }
+  .prose :global(.geo-figure) {
+    font-size: 0.8em;
+  }
+</style>

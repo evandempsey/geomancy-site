@@ -1,0 +1,58 @@
+---
+import { render } from 'astro:content';
+import LessonLayout from '../../../layouts/Lesson.astro';
+import { allLessons, lessonSlug, prevNext } from '../../../lib/course';
+import Quote from '../../../components/Quote.astro';
+import QuoteList from '../../../components/QuoteList.astro';
+import FigureGlyph from '../../../components/FigureGlyph.astro';
+import ShieldChart from '../../../components/ShieldChart.astro';
+import HouseChart from '../../../components/HouseChart.astro';
+import GerardChart from '../../../components/GerardChart.astro';
+import Exercise from '../../../components/course/Exercise.astro';
+import ModelAnswer from '../../../components/course/ModelAnswer.astro';
+import Reading from '../../../components/course/Reading.astro';
+import CastingWidget from '../../../components/course/CastingWidget.astro';
+import FlashcardDrill from '../../../components/course/FlashcardDrill.astro';
+import PlacementLookup from '../../../components/course/PlacementLookup.astro';
+import JudgmentWorksheet from '../../../components/course/JudgmentWorksheet.astro';
+import GerardCastingWidget from '../../../components/course/GerardCastingWidget.astro';
+import SolutionStage from '../../../components/course/SolutionStage.astro';
+
+export async function getStaticPaths() {
+  const lessons = await allLessons();
+  return lessons.map((lesson) => ({
+    params: { lesson: lessonSlug(lesson) },
+    props: { lesson },
+  }));
+}
+
+const { lesson } = Astro.props;
+const { prev, next } = await prevNext(lesson);
+const { Content } = await render(lesson);
+
+/**
+ * Common components available in every lesson without per-file imports.
+ * A lesson can still import anything else it needs at the top of its MDX.
+ */
+const components = {
+  Quote,
+  QuoteList,
+  FigureGlyph,
+  ShieldChart,
+  HouseChart,
+  GerardChart,
+  Exercise,
+  ModelAnswer,
+  Reading,
+  CastingWidget,
+  FlashcardDrill,
+  PlacementLookup,
+  JudgmentWorksheet,
+  GerardCastingWidget,
+  SolutionStage,
+};
+---
+
+<LessonLayout {lesson} {prev} {next}>
+  <Content {components} />
+</LessonLayout>

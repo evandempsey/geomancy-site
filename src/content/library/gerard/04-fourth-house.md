@@ -1,0 +1,12 @@
+---
+title: "\"Questions of the Fourth House — Of Astronomical Geomancy\""
+source: gerard
+order: 4
+description: "\"Gerard of Cremona's judgments for questions of the fourth house, from the medieval treatise Of Astronomical Geomancy (trans. Turner, 1655).\""
+---
+
+IF thou wouldst know whether it be good for thee to stay in any Land, City, Village, Territory, or House, or not, behold the Lord of the Ascendant of the fourth, and of the seventh; and if the Lord of the fourth be in the seventh, and be good, and the Lords of the first and the tenth house be good, and with good Planets, then it is good for thee to continue in that place wherein thou art. And if the Lord of the seventh be with a good Planet, & the Lord of the fourth with an evil Planet, then it is not good for thee to abide there, because if thou dost continue there, thou shalt suffer many losses, and have evil reports raised on thee in that Country.
+
+But if thou wouldst know when any one that is absent will return, behold the Lord of the Ascendant; and if you find him in any one of the four Angles, he will return in that year; and if he be not in an Angle, then see how far he is distant from the first Angle; for so long he will stay, & so many years as there be houses.
+
+If you would be informed of the dearth or plenty of things, behold the strong houses, the Succedents and the Cadents; for the strong houses signify dearth and scarcity, the Succedents a moderate season, neither too dear, nor too cheap, the Cadents signify plenty and profitableness of things. Consider also the Planets, and their places, which if they be in strong houses, the things which are signified by those Planets will be rare: and note, that *Saturn* doth signify fields, vines, and instruments to work in fields; and leather, and of fruits, corn, acorns, oak-apples, and pomgranates. *Jupiter* hath oil, honey, silk-worms, cloth, wine, and grass, and things that are odoriferous. *Mars* signifies wine, and flesh, and especially hogs, wars, and armour, and such things as belong thereunto, and red garments. The *Sun* hath signification of wheat, and wine, purple colours, and cloth, and all things that are affimulated unto gold, horses and birds, such as hawks & falcons. *Venus* hoth signify fatness & grapes, sigs & dates, fish and pastimes. *Mercury* hath barley, millet, grain, money, and quicksilver. The *Moon* signifies oates, milk, cheese, fire and salt, cows, rams, hens, and silver, and accordingly plenty and scarcity of them.

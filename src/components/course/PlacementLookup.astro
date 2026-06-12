@@ -1,0 +1,211 @@
+---
+/**
+ * House-placement lookup: pick a figure and a house, see what the
+ * sources say about that placement — short excerpts inline, with a link
+ * to the full combination page when one exists. All data is inlined at
+ * build time from the quote corpus frontmatter (plain-string excerpts,
+ * so no client-side Markdown).
+ */
+import { getCollection } from 'astro:content';
+import { houseCoverage, citationFor } from '../../lib/queries';
+
+const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
+const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
+const coverage = await houseCoverage();
+
+const EXCERPTS_PER_COMBO = 2;
+const combos: Record<
+  string,
+  { url?: string; count: number; excerpts: { text: string; cite: string }[] }
+> = {};
+for (const [key, quotes] of coverage) {
+  const [figureId, houseNum] = key.split('/');
+  const house = houses.find((h) => h.data.number === Number(houseNum));
+  const withExcerpts = quotes.filter((q) => q.data.excerpt);
+  combos[key] = {
+    url: house ? `/figures/${figureId}/${house.data.slug}/` : undefined,
+    count: quotes.length,
+    excerpts: await Promise.all(
+      withExcerpts.slice(0, EXCERPTS_PER_COMBO).map(async (q) => ({
+        text: q.data.excerpt as string,
+        cite: (await citationFor(q)).replace(/\*([^*]+)\*/g, '$1'),
+      })),
+    ),
+  };
+}
+
+const figureData = figures.map((f) => ({
+  id: f.id,
+  name: f.data.name,
+  translation: f.data.translation,
+  keywords: f.data.keywords,
+}));
+const houseData = houses.map((h) => ({
+  number: h.data.number,
+  name: h.data.name,
+  slug: h.data.slug,
+  significations: h.data.significations.slice(0, 5),
+}));
+---
+
+<div class="placement-lookup" data-placement-lookup>
+  <script
+    type="application/json"
+    data-lookup
+    is:inline
+    set:html={JSON.stringify({ combos, figures: figureData, houses: houseData })}
+  />
+  <div class="pickers" hidden>
+    <label>
+      Figure
+      <select data-pick="figure">
+        {figures.map((f) => <option value={f.id}>{f.data.name}</option>)}
+      </select>
+    </label>
+    <label>
+      House
+      <select data-pick="house">
+        {houses.map((h) => <option value={h.data.number}>{h.data.name}</option>)}
+      </select>
+    </label>
+  </div>
+  <div class="result" data-result aria-live="polite"></div>
+  <noscript>
+    <p class="noscript">
+      The lookup needs JavaScript. Without it, every covered placement has its own page. Start
+      from <a href="/figures/">the figures</a> and follow the house links.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  interface LookupData {
+    combos: Record<string, { url?: string; count: number; excerpts: { text: string; cite: string }[] }>;
+    figures: { id: string; name: string; translation: string; keywords: string[] }[];
+    houses: { number: number; name: string; slug: string; significations: string[] }[];
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-placement-lookup]')) {
+    const data: LookupData = JSON.parse(root.querySelector('[data-lookup]')?.textContent ?? '{}');
+    const pickers = root.querySelector<HTMLElement>('.pickers');
+    const figureSel = root.querySelector<HTMLSelectElement>('[data-pick="figure"]');
+    const houseSel = root.querySelector<HTMLSelectElement>('[data-pick="house"]');
+    const result = root.querySelector<HTMLElement>('[data-result]');
+    if (!pickers || !figureSel || !houseSel || !result) continue;
+
+    const show = () => {
+      const figure = data.figures.find((f) => f.id === figureSel.value);
+      const house = data.houses.find((h) => h.number === Number(houseSel.value));
+      if (!figure || !house) return;
+      const combo = data.combos[`${figure.id}/${house.number}`];
+
+      result.replaceChildren();
+      const heading = document.createElement('p');
+      heading.className = 'combo-title';
+      heading.textContent = `${figure.name} in the ${house.name}`;
+      result.append(heading);
+
+      if (combo) {
+        for (const ex of combo.excerpts) {
+          const block = document.createElement('blockquote');
+          const text = document.createElement('p');
+          text.textContent = ex.text;
+          const cite = document.createElement('footer');
+          cite.textContent = ex.cite;
+          block.append(text, cite);
+          result.append(block);
+        }
+        const more = document.createElement('p');
+        more.className = 'more';
+        if (combo.url) {
+          const a = document.createElement('a');
+          a.href = combo.url;
+          a.textContent =
+            combo.count === 1
+              ? 'Read the full quotation →'
+              : `Read all ${combo.count} quotations in full →`;
+          more.append(a);
+        }
+        result.append(more);
+      } else {
+        const empty = document.createElement('p');
+        empty.className = 'empty';
+        empty.textContent =
+          'No delineation for this placement has been transcribed yet. Reason from the figure and the house:';
+        const detail = document.createElement('p');
+        detail.className = 'empty-detail';
+        detail.textContent = `${figure.name} (${figure.translation}): ${figure.keywords.join(', ')}. ${house.name}: ${house.significations.join('; ')}.`;
+        result.append(empty, detail);
+      }
+    };
+
+    figureSel.addEventListener('change', show);
+    houseSel.addEventListener('change', show);
+    pickers.hidden = false;
+    show();
+  }
+</script>
+
+<style>
+  .placement-lookup {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-bg-raised);
+  }
+  .pickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  label {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  select {
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-1) var(--space-2);
+  }
+  .result :global(.combo-title) {
+    font-size: var(--text-md);
+    font-weight: 600;
+    margin: var(--space-3) 0 var(--space-2);
+  }
+  .result :global(blockquote) {
+    margin: var(--space-3) 0;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-border-strong);
+  }
+  .result :global(blockquote p) {
+    margin: 0;
+  }
+  .result :global(blockquote footer) {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin-top: var(--space-1);
+  }
+  .result :global(.more),
+  .result :global(.empty),
+  .result :global(.empty-detail) {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .noscript {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

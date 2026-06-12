@@ -1,0 +1,26 @@
+{
+  "name": "geomancy-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "coverage": "node scripts/coverage.mjs",
+    "test:casting": "node --test scripts/test-casting.mjs",
+    "test:gerard": "node --test scripts/test-gerard.mjs",
+    "dossier": "node scripts/chart-dossier.mjs",
+    "dossier:gerard": "node scripts/gerard-dossier.mjs",
+    "corpus:gerard": "node scripts/split-gerard-quotes.mjs",
+    "check:course": "node scripts/check-course-links.mjs",
+    "fetch:eebo": "node scripts/fetch-eebo.mjs",
+    "fetch:cattan": "node scripts/fetch-cattan-leaves.mjs",
+    "heydon": "node scripts/heydon-page.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.0",
+    "astro": "^5.12.0"
+  }
+}

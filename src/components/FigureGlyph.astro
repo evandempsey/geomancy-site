@@ -1,0 +1,33 @@
+---
+import { glyphGeometry, glyphDescription } from '../lib/glyph';
+
+interface Props {
+  dots: readonly number[];
+  name: string;
+  /** rendered height in rem */
+  size?: number;
+  class?: string;
+}
+
+const { dots, name, size = 3, class: className } = Astro.props;
+const { viewBox, circles } = glyphGeometry(dots);
+---
+
+<svg
+  viewBox={viewBox}
+  style={`height: ${size}rem;`}
+  class:list={['figure-glyph', className]}
+  role="img"
+  aria-label={`${name}: ${glyphDescription(dots)}`}
+>
+  {circles.map((c) => <circle cx={c.cx} cy={c.cy} r={c.r} />)}
+</svg>
+
+<style>
+  .figure-glyph {
+    display: inline-block;
+    width: auto;
+    fill: currentColor;
+    vertical-align: middle;
+  }
+</style>

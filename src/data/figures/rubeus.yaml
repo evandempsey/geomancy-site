@@ -1,0 +1,34 @@
+name: Rubeus
+translation: "Red"
+dots: [2, 1, 2, 2]
+planet: Mars
+sign: Scorpio
+element: fire
+mobility: mobile
+counterpart: albus
+attributionVariants:
+  - source: cattan
+    planet: Mars
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: fire
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Cancer
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Gemini
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Scorpio
+    element: water
+    note: "the Golden Dawn attributions"
+keywords:
+  - passion
+  - violence
+  - vice
+  - fire and blood
+  - red
+summary: >-
+  Rubeus, Red: geomantic figure of Mars in Scorpio, signifying passion, violence and burning, evil in all that is good. Meanings quoted from the historical sources.
+order: 12

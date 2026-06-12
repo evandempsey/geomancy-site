@@ -1,0 +1,57 @@
+---
+/**
+ * An expandable model answer / worked solution. Native details/summary:
+ * no JavaScript, keyboard accessible, printable when opened.
+ */
+interface Props {
+  label?: string;
+}
+
+const { label = 'Model answer' } = Astro.props;
+---
+
+<details class="model-answer">
+  <summary>{label}</summary>
+  <div class="answer-body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .model-answer {
+    margin: var(--space-4) 0 var(--space-2);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-3);
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-muted);
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: '+';
+    display: inline-block;
+    width: 1.2em;
+    color: var(--color-rubric);
+    font-weight: 600;
+  }
+  .model-answer[open] summary::before {
+    content: '−';
+  }
+  summary:hover {
+    color: var(--color-rubric);
+  }
+  .answer-body {
+    margin-top: var(--space-3);
+  }
+  .answer-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

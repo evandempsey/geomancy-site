@@ -1,0 +1,35 @@
+name: Puella
+translation: "The Girl"
+dots: [1, 2, 1, 1]
+planet: Venus
+sign: Taurus
+element: air
+mobility: stable
+counterpart: puer
+attributionVariants:
+  - source: cattan
+    element: water
+    planet: Venus
+    sign: Libra
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: water
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Cancer
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Libra
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Libra
+    element: air
+    note: "the Golden Dawn attributions"
+keywords:
+  - beauty
+  - pleasantness
+  - harmony
+  - the feminine
+summary: >-
+  Puella, the Girl: geomantic figure of Venus in Taurus, signifying beauty, pleasantness and harmony, good in nearly all demands. Quoted from the historical sources.
+order: 10

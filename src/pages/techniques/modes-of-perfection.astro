@@ -1,0 +1,66 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    In the house chart, a question is answered by the relation between the figure of the querent
+    (normally the first house) and the figure of the thing asked about (the house of the
+    quesited). The medieval geomancers (the doctrine is set out most systematically in the
+    <em>Method of Judging Questions</em> that circulated under the name of Pietro d'Abano)
+    recognised four principal ways the chart <em>perfects</em>, that is, joins querent to
+    quesited and promises the matter accomplished:
+  </p>
+  <ul>
+    <li>
+      <strong>Occupation</strong>: the same figure stands in the house of the querent and the
+      house of the quesited: the matter is achieved without impediment.
+    </li>
+    <li>
+      <strong>Conjunction</strong>: the figure of the querent or of the quesited passes to a
+      house immediately beside the other: the matter is achieved by effort; whose figure moves
+      shows who must do the seeking.
+    </li>
+    <li>
+      <strong>Mutation</strong>: the figures of querent and quesited appear together, side by
+      side, elsewhere in the chart: the matter is accomplished, but in an unexpected way or place.
+    </li>
+    <li>
+      <strong>Translation</strong>: a third figure appears next to both significators: the matter
+      is accomplished through a go-between, another person or thing answering to that figure.
+    </li>
+  </ul>
+  <p>
+    If the chart shows none of these (and no aspect joins the significators) the matter is
+    denied. The favourableness of the figures themselves then colours <em>how</em> the thing comes
+    about, for which see <a href="/figures/">the natures of the figures</a> and
+    <a href="/techniques/aspects-and-company/">their aspects and friendships</a>.
+  </p>
+  <p class="sourcing">
+    The summary above is given in our own words from the medieval doctrine; the pseudo-Abano
+    treatise survives in Latin and in a modern English translation by John Michael Greer
+    (<em>Caduceus</em> II.1), which copyright does not permit us to reproduce. A new translation
+    from the public-domain Latin is planned for the library. Cattan teaches the same doctrine
+    under his own names (<em>occupation</em> and the <em>company of conjunction</em>) with
+    worked examples from his own practice:
+  </p>
+  <QuoteList topic="perfection" />
+</Prose>
+
+<style>
+  .sourcing {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

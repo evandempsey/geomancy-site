@@ -1,0 +1,153 @@
+- id: 1st-house
+  number: 1
+  slug: 1st-house
+  name: First House
+  title: "The First House: Life and the Querent"
+  significations:
+    - the querent, their life, body and complexion
+    - the beginning of all enterprises
+    - the head and face
+  summary: >-
+    The first house in geomancy: the querent, their life, body and beginnings.
+    What each of the sixteen figures signifies here, quoted from the historical sources.
+- id: 2nd-house
+  number: 2
+  slug: 2nd-house
+  name: Second House
+  title: "The Second House: Substance and Goods"
+  significations:
+    - money, goods and moveable possessions
+    - profit and loss
+    - those who assist the querent
+  summary: >-
+    The second house in geomancy: money, goods and substance. What each of the
+    sixteen figures signifies here, quoted from Cattan, Heydon and the other historical sources.
+- id: 3rd-house
+  number: 3
+  slug: 3rd-house
+  name: Third House
+  title: "The Third House: Brethren and Short Journeys"
+  significations:
+    - brothers, sisters and kindred
+    - short journeys
+    - letters, messages and rumours
+    - neighbours
+  summary: >-
+    The third house in geomancy: brethren, kindred, short journeys and messages.
+    The meaning of each figure here, quoted from the historical sources.
+- id: 4th-house
+  number: 4
+  slug: 4th-house
+  name: Fourth House
+  title: "The Fourth House: The Father, Lands and Endings"
+  significations:
+    - the father and patrimony
+    - lands, houses and immoveable goods
+    - hidden treasure
+    - the end of every matter
+  summary: >-
+    The fourth house in geomancy: the father, lands, inheritance and the end of
+    things. What each of the sixteen figures signifies here, from the historical sources.
+- id: 5th-house
+  number: 5
+  slug: 5th-house
+  name: Fifth House
+  title: "The Fifth House: Children and Pleasure"
+  significations:
+    - children and their welfare
+    - pleasure, feasts and play
+    - messengers and ambassadors
+    - gifts
+  summary: >-
+    The fifth house in geomancy: children, pleasure, feasts and gifts. The meaning
+    of each of the sixteen figures placed here, quoted from the historical sources.
+- id: 6th-house
+  number: 6
+  slug: 6th-house
+  name: Sixth House
+  title: "The Sixth House: Sickness and Servants"
+  significations:
+    - sickness and its causes
+    - servants and labourers
+    - small beasts
+    - uncles and aunts
+  summary: >-
+    The sixth house in geomancy: sickness, servants and small beasts. What each
+    of the sixteen figures signifies here, quoted from Cattan, Heydon and others.
+- id: 7th-house
+  number: 7
+  slug: 7th-house
+  name: Seventh House
+  title: "The Seventh House: Marriage and Open Enemies"
+  significations:
+    - marriage, love and the partner
+    - open enemies, quarrels and lawsuits
+    - contracts, bargains and partnerships
+    - thieves and theft
+  summary: >-
+    The seventh house in geomancy: marriage, partnerships, lawsuits and open
+    enemies. The meaning of each figure placed here, from the historical sources.
+- id: 8th-house
+  number: 8
+  slug: 8th-house
+  name: Eighth House
+  title: "The Eighth House: Death and Inheritance"
+  significations:
+    - death and its manner
+    - the goods of the dead, wills and legacies
+    - the substance of the partner or adversary
+    - fear and peril
+  summary: >-
+    The eighth house in geomancy: death, legacies and the goods of others. What
+    each of the sixteen figures signifies here, quoted from the historical sources.
+- id: 9th-house
+  number: 9
+  slug: 9th-house
+  name: Ninth House
+  title: "The Ninth House: Religion, Learning and Long Journeys"
+  significations:
+    - religion, faith and the clergy
+    - long journeys and voyages
+    - learning, wisdom, arts and sciences
+    - dreams and divinations
+  summary: >-
+    The ninth house in geomancy: religion, long voyages, learning and dreams.
+    The meaning of each of the sixteen figures here, from the historical sources.
+- id: 10th-house
+  number: 10
+  slug: 10th-house
+  name: Tenth House
+  title: "The Tenth House: Honour, Office and Rulers"
+  significations:
+    - kings, princes, magistrates and rulers
+    - honour, dignity, office and preferment
+    - trades and professions
+    - the mother
+  summary: >-
+    The tenth house in geomancy: kings, honour, office and preferment. What each
+    of the sixteen figures signifies here, quoted from the historical sources.
+- id: 11th-house
+  number: 11
+  slug: 11th-house
+  name: Eleventh House
+  title: "The Eleventh House: Friends and Hopes"
+  significations:
+    - friends and friendship
+    - hope, trust and confidence
+    - the substance and aid of the prince
+  summary: >-
+    The eleventh house in geomancy: friends, hopes and aid. The meaning of each
+    of the sixteen figures placed here, quoted from the historical sources.
+- id: 12th-house
+  number: 12
+  slug: 12th-house
+  name: Twelfth House
+  title: "The Twelfth House: Hidden Enemies, Prison and Affliction"
+  significations:
+    - secret and hidden enemies
+    - prisons and captivity
+    - great beasts
+    - sorrow, affliction and witchcraft
+  summary: >-
+    The twelfth house in geomancy: hidden enemies, prisons and affliction. What
+    each of the sixteen figures signifies here, from the historical sources.

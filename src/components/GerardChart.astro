@@ -1,0 +1,192 @@
+---
+/**
+ * The celestial chart of Gerard's astronomical geomancy, drawn as the same
+ * traditional square chart as HouseChart (the treatise itself asks for "one
+ * square figure divided into twelve equal parts"): the ascendant figure's
+ * sign in the first house at the left, the signs following in zodiacal
+ * order counter-clockwise, and the planets set down in the houses their
+ * point-projections gave them.
+ *
+ * With only `ascendant`, it reproduces the treatise's own diagram — "Look
+ * how the twelve Signs are placed in the figure" — signs and no planets.
+ * Computation happens at build time via src/lib/gerard.ts; chart facts in
+ * lessons must match references/gerard-charts-dossier.md.
+ */
+import {
+  GERARD_ASCENDANT_SIGN,
+  RULERS,
+  PLANET_ORDER,
+  signsForHouses,
+  houseKind,
+  type Planet,
+} from '../lib/gerard';
+import { figureMaps } from '../lib/figureData';
+import { glyphGeometry } from '../lib/glyph';
+
+interface Props {
+  /** figure id of the single cast figure, e.g. "fortuna-major" */
+  ascendant: string;
+  /** planet → house number (1–12), as the dossier gives them */
+  planets?: Partial<Record<Planet, number>>;
+  caption?: string;
+}
+
+const { ascendant, planets, caption } = Astro.props;
+
+const ascendantSign = GERARD_ASCENDANT_SIGN[ascendant];
+if (!ascendantSign) throw new Error(`GerardChart: unknown figure id ${ascendant}`);
+const houseSigns = signsForHouses(ascendantSign);
+const lord = RULERS[ascendantSign];
+
+if (planets) {
+  for (const [p, h] of Object.entries(planets)) {
+    if (!PLANET_ORDER.includes(p as Planet)) throw new Error(`GerardChart: unknown planet ${p}`);
+    if (!Number.isInteger(h) || h < 1 || h > 12) throw new Error(`GerardChart: bad house for ${p}: ${h}`);
+  }
+}
+
+/** planets standing in house n, in projection order, display names */
+const DISPLAY: Partial<Record<Planet, string>> = {
+  'Caput Draconis': "Dragon's Head",
+  'Cauda Draconis': "Dragon's Tail",
+};
+const inHouse = (n: number): string[] =>
+  planets
+    ? PLANET_ORDER.filter((p) => planets[p] === n).map((p) => DISPLAY[p] ?? p)
+    : [];
+
+const { byId } = await figureMaps();
+const fig = byId.get(ascendant);
+if (!fig) throw new Error(`GerardChart: no figure data for ${ascendant}`);
+const geo = glyphGeometry(fig.dots);
+
+const W = 640;
+
+// the same square-chart geometry as HouseChart: outer square, midpoint
+// diamond, diagonals; house 1 at the left, counter-clockwise
+const cells = [
+  { house: 1, d: 'M320 320 L160 160 L0 320 L160 480 Z', lx: 160, ly: 320 },
+  { house: 2, d: 'M0 320 L0 640 L160 480 Z', lx: 53, ly: 480 },
+  { house: 3, d: 'M0 640 L320 640 L160 480 Z', lx: 160, ly: 587 },
+  { house: 4, d: 'M320 320 L160 480 L320 640 L480 480 Z', lx: 320, ly: 480 },
+  { house: 5, d: 'M320 640 L640 640 L480 480 Z', lx: 480, ly: 587 },
+  { house: 6, d: 'M640 640 L640 320 L480 480 Z', lx: 587, ly: 480 },
+  { house: 7, d: 'M320 320 L480 480 L640 320 L480 160 Z', lx: 480, ly: 320 },
+  { house: 8, d: 'M640 320 L640 0 L480 160 Z', lx: 587, ly: 160 },
+  { house: 9, d: 'M640 0 L320 0 L480 160 Z', lx: 480, ly: 53 },
+  { house: 10, d: 'M320 320 L480 160 L320 0 L160 160 Z', lx: 320, ly: 160 },
+  { house: 11, d: 'M320 0 L0 0 L160 160 Z', lx: 160, ly: 53 },
+  { house: 12, d: 'M0 0 L0 320 L160 160 Z', lx: 53, ly: 160 },
+];
+
+const GLYPH_SCALE = 0.4;
+
+const ariaLabel = `The celestial chart of astronomical geomancy, drawn as a traditional square chart. ${fig.name} was cast, so ${ascendantSign} ascends. ${cells
+  .map((c) => {
+    const ps = inHouse(c.house);
+    return `House ${c.house}: ${houseSigns[c.house - 1]}${ps.length ? `, holding ${ps.join(' and ')}` : ''}`;
+  })
+  .join('; ')}.`;
+---
+
+<figure class="gerard-chart">
+  <svg viewBox={`-1 -1 ${W + 2} ${W + 2}`} role="img" aria-label={ariaLabel}>
+    {
+      cells.map((c) => {
+        const ps = inHouse(c.house);
+        return (
+          <>
+            <path class={c.house === 1 ? 'asc' : undefined} d={c.d} />
+            {c.house === 1 && (
+              <g
+                class="asc-glyph"
+                transform={`translate(${c.lx - 36 * GLYPH_SCALE}, ${c.ly - 76 - 48 * GLYPH_SCALE}) scale(${GLYPH_SCALE})`}
+              >
+                {geo.circles.map((p) => (
+                  <circle cx={p.cx} cy={p.cy} r={p.r} />
+                ))}
+              </g>
+            )}
+            <text class="numeral" x={c.lx} y={c.ly - 8}>
+              {c.house}
+            </text>
+            <text class="sign" x={c.lx} y={c.ly + 12}>
+              {houseSigns[c.house - 1]}
+            </text>
+            {ps.map((name, i) => (
+              <text class="planet" x={c.lx} y={c.ly + 30 + i * 15}>
+                {name}
+              </text>
+            ))}
+          </>
+        );
+      })
+    }
+  </svg>
+  <figcaption>
+    {
+      caption ??
+        (planets ? (
+          <>
+            {fig.name} cast for the Ascendant: {ascendantSign} rises, the signs follow in order,
+            and the nine projections place the planets. The lord of the Ascendant is {lord}
+            {planets[lord] ? `, standing in the ${planets[lord]}th house (${houseKind(planets[lord]!)})` : ''}.
+          </>
+        ) : (
+          <>
+            The square figure of astronomical geomancy with {fig.name} cast for the Ascendant:{' '}
+            {ascendantSign} stands in the first house at the left, and the signs follow in
+            zodiacal order counter-clockwise. The witnesses and Judge have no place here.
+          </>
+        ))
+    }
+  </figcaption>
+</figure>
+
+<style>
+  .gerard-chart {
+    margin: var(--space-8) auto;
+    max-width: 30rem;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  path {
+    fill: var(--color-bg);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+  }
+  path.asc {
+    fill: var(--color-bg-inset);
+  }
+  .asc-glyph circle {
+    fill: var(--color-ink);
+  }
+  text {
+    text-anchor: middle;
+    fill: var(--color-ink);
+  }
+  .numeral {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    fill: var(--color-ink-muted);
+  }
+  .sign {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-style: italic;
+  }
+  .planet {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--color-rubric, var(--color-ink));
+  }
+  figcaption {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin-top: var(--space-2);
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { TOOLS, toolUrl } from '../../lib/tools';
+---
+
+<Base
+  title="Practice Tools for Geomancy"
+  description="Interactive tools for learning and practicing geomancy: casting practice, figure flashcards, the placement lookup, the judgment worksheet and Gerard's astronomical casting."
+>
+  <Breadcrumbs items={[{ name: 'Tools' }]} />
+  <h1>The Practice Tools</h1>
+  <p class="lead">
+    Five instruments built for the Geomancy Course and free-standing for any practitioner: drills
+    for the figures, casting practice in both of the art's systems, a concordance of the sources'
+    placement-judgments, and a worksheet that walks a whole judgment. Everything runs in your
+    browser as you use it. Nothing is recorded and nothing is sent. Each tool links the lesson
+    that teaches its method; the tools are good company on their own, and better with the
+    training.
+  </p>
+  <ul class="tool-list">
+    {
+      TOOLS.map((t) => (
+        <li>
+          <a href={toolUrl(t)}>{t.title}</a>
+          <p>{t.description}</p>
+          <p class="taught-in">
+            Taught in{' '}
+            {t.taughtIn.map((l, i) => (
+              <>
+                {i > 0 && ' and '}
+                <a href={l.href}>{l.label}</a>
+              </>
+            ))}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+  }
+  .tool-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tool-list li {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tool-list > li > a {
+    font-weight: 600;
+    font-size: var(--text-md);
+  }
+  .tool-list p {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .taught-in a {
+    color: var(--color-ink-muted);
+    text-decoration-color: var(--color-border-strong);
+  }
+  .taught-in a:hover {
+    color: var(--color-rubric);
+  }
+</style>

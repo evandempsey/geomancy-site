@@ -1,0 +1,23 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import QuoteList from '../../components/QuoteList.astro';
+import { TECHNIQUES } from '../../lib/techniques';
+
+const t = TECHNIQUES.find((x) => x.slug === 'way-of-the-point')!;
+---
+
+<Prose
+  title={t.title}
+  description={t.description}
+  crumbs={[{ name: 'Techniques', href: '/techniques/' }, { name: t.title }]}
+  kicker="Technique"
+  jsonLd={[{ '@type': 'Article', headline: t.title }]}
+>
+  <p>
+    The <em>way of the point</em> traces the head-line of the Judge backward through the chart:
+    from the Judge to whichever Witness shares its top points, from the Witness to the Niece, and
+    so back to the Mothers. The houses where the trail ends show the hidden root of the matter.
+    Cattan counts it among the most necessary rules of the art:
+  </p>
+  <QuoteList topic="way-of-the-point" />
+</Prose>

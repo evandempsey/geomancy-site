@@ -1,0 +1,36 @@
+name: Tristitia
+translation: "Sorrow"
+dots: [2, 2, 2, 1]
+planet: Saturn
+sign: Aquarius
+element: earth
+mobility: stable
+counterpart: laetitia
+attributionVariants:
+  - source: cattan
+    element: earth
+    planet: Saturn
+    sign: Scorpio
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: earth
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Sagittarius
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Scorpio
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Aquarius
+    element: air
+    note: "the Golden Dawn attributions"
+keywords:
+  - sorrow
+  - grief
+  - condemnation
+  - descending
+  - fixity
+summary: >-
+  Tristitia, Sorrow: geomantic figure of Saturn in Aquarius, signifying grief and cross, yet good in matters of earth and stability. Quoted from the historical sources.
+order: 8

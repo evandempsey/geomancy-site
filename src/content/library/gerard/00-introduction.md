@@ -1,0 +1,18 @@
+---
+title: "\"Of Astronomical Geomancy\" — introduction"
+source: gerard
+order: 0
+description: "\"The opening of Gerard of Cremona's medieval treatise of astrological geomancy: how to erect and judge the figure, in Robert Turner's 1655 translation.\""
+---
+
+BEcause Astronomy is so transendant and subtil an art in itself, that therein a man ought to have respect unto so many things before he can attain to true judgment thereby, because the eye of the understanding will not pierce unto the half thereof, and few Doctors of our latter time have been found so experienced therein, that they know sufficiently how to judge thereby; therefore I have composed this work, which I will have to be named *Astronomical Geomancy*; wherein, I will sufficiently teach how to judge with less labour and study. For in this present science it is not requisite to behold neither the Ascendant, nor the hour in a Table, as it is in Astrology.
+
+It is expedient therefore to make four unequal lines, by the points casually set down; and to join together those points; and out of the points which are not joined together, which do remain in the heads of the lines, (as it is done in Geomancy) extract one figure; and the sign of the *Zodiack* that answereth to the figure, put for the Ascendant, for the words sake. If *Acquisitio* arise
+
+from the heads of those four lines, let *Aries* be placed in the Ascendant; if *Laetitia,* or the lesser Fortune put *Taurus* in the Ascendant; if *Puer* or *Rubeus,* place *Gemini*; if *Albus, Cancer;* if *Via, Leo*; if *Conjunctio* or the *Dragons head, Virgo*; if *Puella, Libra*; if *Amissio* or *Tristitia, Scorpio*; if the *Dragons Tail, Sagittary*; if *Populus, Capricorn*; if *Fortuna major, Aquary*; if *Carcer,* then put *Pisces* for the Ascendant. Afterwards in the second house, let that sign be placed which immediately succeeds the other. In the third house, the third sign, and so place the rest in order until you come unto the end of the signs; and make one square figure divided into twelve equal parts, and therein place the signs in order, as it is in Astrology, & as you may find them in this figure: neither are we here to regard the witnesses, or Judge, or any other thing which belongs to Geomancy; but only the sixteen figures, that by them we may have the twelve signs, to which they agree; and observe the manner of the figure as it is here placed.
+
+## Look how the twelve Signs are placed in the figure, and so may any other Sign be ascending in his turn, as Aries is here.
+
+Afterwards it is requisite to make four lines by course for every Planet, by points casually pricked down; and likewise for the *Dragons Head,* as you have done for the Ascendant, and divide those points by twelve, and that which remaineth above twelve, or the twelfth itself, if a greater number doth not remain, retain, and the Planet for which the projection was made, place in that house of which the superabounding number shall be; that is, if there remain twelve,
+
+let the Planet be placed in the twelfth house; if ten, in the tenth house; if one, in the first house; if two, in the second house; and so of the rest. And you ought always to begin from the *Sun,* and afterwards from the *Moon,* then from *Venus* and *Mercury,* and from *S•turn, Jupiter* and *Mars,* and the *Dragons Head* and *Dragons Tail*; but you must always take heed, that you do not make a question in a rainy, cloudy, or a very windy season, or when thou art angry, or thy mind busied with many affairs; nor for tempters or deriders, neither that you may renew and reiterate the same Question again under the same figure or form; for that is error.

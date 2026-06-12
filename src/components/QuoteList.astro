@@ -1,0 +1,50 @@
+---
+import { getEntry } from 'astro:content';
+import Quote from './Quote.astro';
+import { quotesFor, type QuoteFilter } from '../lib/queries';
+
+interface Props extends QuoteFilter {
+  /** heading level for source group headings */
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { headingLevel = 'h3', ...filter } = Astro.props;
+const quotes = await quotesFor(filter);
+
+// group consecutive quotes by source for "From Cattan" headings
+const groups: { sourceId: string; title: string; quotes: typeof quotes }[] = [];
+for (const q of quotes) {
+  const last = groups.at(-1);
+  if (last && last.sourceId === q.data.source.id) {
+    last.quotes.push(q);
+  } else {
+    const source = await getEntry('sources', q.data.source.id);
+    groups.push({
+      sourceId: q.data.source.id,
+      title: source ? `${source.data.author}, ${source.data.title} (${source.data.year})` : q.data.source.id,
+      quotes: [q],
+    });
+  }
+}
+const Heading = headingLevel;
+---
+
+{
+  groups.map((group) => (
+    <section class="source-group">
+      <Heading class="source-heading">{group.title}</Heading>
+      {group.quotes.map((entry) => (
+        <Quote entry={entry} />
+      ))}
+    </section>
+  ))
+}
+
+<style>
+  .source-heading {
+    font-size: var(--text-md);
+    color: var(--color-rubric);
+    font-style: italic;
+    font-weight: 400;
+  }
+</style>

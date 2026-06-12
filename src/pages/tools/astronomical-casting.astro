@@ -1,0 +1,33 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import GerardCastingWidget from '../../components/course/GerardCastingWidget.astro';
+import { TOOLS } from '../../lib/tools';
+
+const tool = TOOLS.find((t) => t.slug === 'astronomical-casting')!;
+---
+
+<Prose
+  title={tool.title}
+  description={tool.description}
+  crumbs={[{ name: 'Tools', href: '/tools/' }, { name: tool.title }]}
+  kicker="Practice Tools"
+>
+  <p>
+    Geomancy has a second, older branch: the <em>astronomical geomancy</em> of Gerard of Cremona,
+    in which the figures do not fill a shield at all. One cast figure puts a zodiac sign on the
+    Ascendant; the signs follow in order through a square chart of twelve houses; and nine
+    further casts of points place the planets, each by the remainder of its points divided by
+    twelve. The chart is then judged as an astrologer judges (by lords, planets and signs) with
+    no Witnesses and no Judge anywhere in it.
+  </p>
+  <p>
+    This tool erects the whole figure, at once or step by step with every count, sum and
+    remainder shown. The method is taught whole in
+    <a href="/course/astrological-geomancy/">Lesson 12</a>, and the medieval treatise itself
+    (in Robert Turner's 1655 translation) is in
+    <a href="/library/gerard/introduction/">the library</a>, short enough to read in an evening
+    and the best companion this tool can have.
+  </p>
+
+  <GerardCastingWidget />
+</Prose>

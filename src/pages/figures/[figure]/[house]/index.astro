@@ -1,0 +1,124 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import FigureGlyph from '../../../../components/FigureGlyph.astro';
+import QuoteList from '../../../../components/QuoteList.astro';
+import { houseCoverage } from '../../../../lib/queries';
+
+export async function getStaticPaths() {
+  // a combination page is only emitted when at least one usable quote exists
+  const figures = await getCollection('figures');
+  const houses = await getCollection('houses');
+  const coverage = await houseCoverage();
+  const paths = [];
+  for (const figure of figures) {
+    for (const house of houses) {
+      if (coverage.has(`${figure.id}/${house.data.number}`)) {
+        paths.push({ params: { figure: figure.id, house: house.data.slug }, props: { figure, house } });
+      }
+    }
+  }
+  return paths;
+}
+
+const { figure, house } = Astro.props;
+const f = figure.data;
+const h = house.data;
+
+const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
+const coverage = await houseCoverage();
+const prevHouse = houses.find((x) => x.data.number === h.number - 1);
+const nextHouse = houses.find((x) => x.data.number === h.number + 1);
+
+const shortHouse = h.name.replace(' House', '').toLowerCase();
+const title = `${f.name} in the ${shortHouse} house`;
+const description = `What ${f.name} (${f.translation}) signifies in the ${shortHouse} house of a geomantic chart: the judgments of the historical sources, quoted in full.`;
+
+const jsonLd = [
+  {
+    '@type': 'Article',
+    headline: title,
+    about: [f.name, h.title],
+    isPartOf: new URL(`/figures/${figure.id}/`, Astro.site).href,
+  },
+];
+---
+
+<Base title={title.charAt(0).toUpperCase() + title.slice(1)} description={description} jsonLd={jsonLd}>
+  <Breadcrumbs
+    items={[
+      { name: 'The Figures', href: '/figures/' },
+      { name: f.name, href: `/figures/${figure.id}/` },
+      { name: `In the ${shortHouse} house` },
+    ]}
+  />
+  <header class="combo-header">
+    <FigureGlyph dots={f.dots} name={f.name} size={4.5} class="glyph" />
+    <div>
+      <h1>{f.name} in the {shortHouse} house</h1>
+      <p class="context">
+        <a href={`/figures/${figure.id}/`}>{f.name}</a> ({f.translation}) · in
+        <a href={`/houses/${h.slug}/`}>{h.title}</a>
+      </p>
+    </div>
+  </header>
+
+  <p class="house-significations">
+    The {shortHouse} house governs {h.significations.join('; ')}.
+  </p>
+
+  <QuoteList figure={figure.id} house={h.number} headingLevel="h2" />
+
+  <nav class="combo-nav" aria-label="Related placements">
+    {
+      prevHouse && coverage.has(`${figure.id}/${prevHouse.data.number}`) && (
+        <a href={`/figures/${figure.id}/${prevHouse.data.slug}/`}>
+          ← {f.name} in the {prevHouse.data.name.replace(' House', '').toLowerCase()} house
+        </a>
+      )
+    }
+    {
+      nextHouse && coverage.has(`${figure.id}/${nextHouse.data.number}`) && (
+        <a href={`/figures/${figure.id}/${nextHouse.data.slug}/`}>
+          {f.name} in the {nextHouse.data.name.replace(' House', '').toLowerCase()} house →
+        </a>
+      )
+    }
+  </nav>
+</Base>
+
+<style>
+  .combo-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  .combo-header h1 {
+    margin: 0;
+  }
+  .glyph {
+    color: var(--color-rubric);
+    flex-shrink: 0;
+  }
+  .context {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .house-significations {
+    font-style: italic;
+    color: var(--color-ink-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
+  }
+  .combo-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-12);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,36 @@
+name: Albus
+translation: "White"
+dots: [2, 2, 1, 2]
+planet: Mercury
+sign: Gemini
+element: earth
+mobility: stable
+counterpart: rubeus
+attributionVariants:
+  - source: cattan
+    element: water
+    planet: Mercury
+    sign: Cancer
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: water
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Leo
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Cancer
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    sign: Gemini
+    element: air
+    note: "the Golden Dawn attributions"
+keywords:
+  - wisdom
+  - peace
+  - purity
+  - clear thought
+  - white
+summary: >-
+  Albus, White: geomantic figure of Mercury in Gemini, signifying wisdom, peace and clear thought. Its traditional meanings quoted from Cattan, Agrippa, Heydon and Crowley.
+order: 11

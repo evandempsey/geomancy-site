@@ -1,0 +1,34 @@
+name: Caput Draconis
+translation: "The Dragon's Head"
+dots: [2, 1, 1, 1]
+planet: North Node
+sign: Capricorn
+element: earth
+mobility: stable
+counterpart: cauda-draconis
+attributionVariants:
+  - source: cattan
+    element: earth
+    planet: Jupiter and Mercury
+    sign: Virgo
+    note: "Cattan's attributions (The Geomancie, Book II, ch. 1)"
+  - source: agrippa
+    element: earth
+    note: "the vulgar order of the triplicities, also reported by Agrippa"
+  - source: agrippa
+    sign: Libra
+    note: "Agrippa's alternative distribution of the figures to the twelve signs"
+  - source: gerard
+    sign: Virgo
+    note: "the sign placed in the Ascendant for this figure in astronomical geomancy"
+  - source: crowley
+    element: earth
+    note: "the Golden Dawn attributions"
+keywords:
+  - entrance
+  - beginnings
+  - thresholds
+  - good with good
+summary: >-
+  Caput Draconis, the Dragon's Head: figure of the Moon's North Node, an entering threshold, good with good figures, evil with evil. Quoted from the historical sources.
+order: 15

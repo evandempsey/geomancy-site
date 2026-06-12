@@ -1,0 +1,27 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# local caches of scans and OCR dumps (re-fetchable; see scripts/)
+references/scans/
+references/ocr/
+
+# source PDFs (re-downloadable; see references/historical_sources.md)
+references/*.pdf
+references/pdf/
+
+# re-fetchable EEBO-TCP XML (npm run fetch:eebo)
+references/eebo/
+
+# local Claude Code settings
+.claude/settings.local.json
+
+# OS
+.DS_Store
+
+# environment
+.env
+.env.*

@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FigureGlyph from '../../components/FigureGlyph.astro';
+
+const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
+
+const jsonLd = [
+  {
+    '@type': 'DefinedTermSet',
+    '@id': new URL('/figures/', Astro.site).href,
+    name: 'The Sixteen Geomantic Figures',
+    description:
+      'The sixteen figures of geomancy with their traditional meanings from the historical sources.',
+    hasDefinedTerm: figures.map((f) => ({
+      '@type': 'DefinedTerm',
+      name: f.data.name,
+      url: new URL(`/figures/${f.id}/`, Astro.site).href,
+    })),
+  },
+];
+---
+
+<Base
+  title="The Sixteen Figures of Geomancy"
+  description="The sixteen geomantic figures (Via, Populus, the Fortunes, Puer, Puella and the rest) with their elements, planets, signs and traditional meanings from the historical sources."
+  jsonLd={jsonLd}
+  wide
+>
+  <Breadcrumbs items={[{ name: 'The Figures' }]} />
+  <h1>The Sixteen Figures</h1>
+  <p class="lead">
+    Every geomantic chart is built of sixteen figures, each of four lines of one or two points.
+    Each figure has its planet, its sign, its element and its own nature, good or evil. The
+    historical sources describe them at length: follow each figure for its meanings quoted from
+    Cattan, Agrippa, Heydon and Crowley.
+  </p>
+  <table class="figures-table">
+    <thead>
+      <tr><th>Figure</th><th>Name</th><th>English</th><th>Planet</th><th>Sign</th><th>Element</th><th>Quality</th></tr>
+    </thead>
+    <tbody>
+      {
+        figures.map((f) => (
+          <tr>
+            <td><a href={`/figures/${f.id}/`} aria-label={f.data.name}><FigureGlyph dots={f.data.dots} name={f.data.name} size={2.6} /></a></td>
+            <td><a href={`/figures/${f.id}/`}>{f.data.name}</a></td>
+            <td>{f.data.translation}</td>
+            <td>{f.data.planet}</td>
+            <td>{f.data.sign}</td>
+            <td class="cap">{f.data.element}</td>
+            <td class="cap">{f.data.mobility}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+  <p class="note">
+    Planetary and zodiacal attributions follow Agrippa's <em>Of Geomancy</em> (1655); where the
+    sources differ (and they do), the variants are recorded on each figure's page.
+  </p>
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+    max-width: var(--measure);
+  }
+  .figures-table {
+    width: 100%;
+  }
+  .figures-table a {
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cap {
+    text-transform: capitalize;
+  }
+  .note {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

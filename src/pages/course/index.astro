@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { allLessons, lessonUrl, FORTHCOMING, PARTS, type Lesson } from '../../lib/course';
+
+const written = await allLessons();
+
+interface Row {
+  order: number;
+  title: string;
+  synopsis: string;
+  hours?: string;
+  entry?: Lesson;
+}
+
+const parts = PARTS.map((part) => {
+  const rows: Row[] = [
+    ...written
+      .filter((l) => l.data.part.number === part.number)
+      .map((l) => ({
+        order: l.data.order,
+        title: l.data.title,
+        synopsis: l.data.description,
+        hours: l.data.hours,
+        entry: l,
+      })),
+    ...FORTHCOMING.filter((f) => f.part === part.number).map((f) => ({
+      order: f.order,
+      title: f.title,
+      synopsis: f.synopsis,
+    })),
+  ].sort((a, b) => a.order - b.order);
+  return { ...part, rows };
+});
+
+const description =
+  'A free, full-depth course in traditional geomancy: thirteen lessons from the worldview of the art to complete judgment, taught entirely from the public-domain sources.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'The Geomancy Course',
+    description,
+    provider: {
+      '@type': 'Organization',
+      name: 'The Art of Geomancy',
+      url: new URL('/', Astro.site).href,
+    },
+    isAccessibleForFree: true,
+    offers: {
+      '@type': 'Offer',
+      price: 0,
+      priceCurrency: 'USD',
+      category: 'Free',
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'Online',
+      courseWorkload: 'PT200H',
+    },
+    hasPart: written.map((l) => ({
+      '@type': 'LearningResource',
+      name: l.data.title,
+      url: new URL(lessonUrl(l), Astro.site).href,
+      position: l.data.order,
+    })),
+  },
+];
+---
+
+<Base title="The Geomancy Course" {description} {jsonLd}>
+  <Breadcrumbs items={[{ name: 'The Course' }]} />
+  <h1>The Geomancy Course</h1>
+  <p class="lead">
+    A complete education in traditional geomancy, free, in thirteen lessons. Every required
+    reading is on this site, transcribed from the original printed books and cited to the leaf;
+    every technique is taught from the sources themselves (Cattan, Heydon, the pseudo-Agrippa,
+    Gerard of Cremona) with original instruction, worked examples, and exercises you grade
+    yourself against full model answers.
+  </p>
+  <p>
+    The course is sequential and mastery-based: each lesson assumes command of everything before
+    it, and each closes with a checklist telling you when you are ready to continue. There are no
+    dates and no cohort; speed is irrelevant. Expect two to three weeks of unhurried work per
+    lesson. Begin with <a href="/course/how-to-study/">how to study this course</a>; from Lesson 4
+    onward, keep <a href="/course/charts/">the course charts</a> at your elbow.
+  </p>
+
+  {
+    parts.map((part) => (
+      <section class="part">
+        <h2>
+          <span class="part-number">Part {part.number}</span> {part.title}
+        </h2>
+        <ol class="lesson-list">
+          {part.rows.map((row) => (
+            <li>
+              <div>
+                <p class="lesson-title">
+                  <span class="lesson-number">{row.order}.</span>{' '}
+                  {row.entry ? (
+                    <a href={lessonUrl(row.entry)}>{row.title}</a>
+                  ) : (
+                    <span class="forthcoming-title">{row.title}</span>
+                  )}
+                  {!row.entry && <span class="forthcoming-badge">forthcoming</span>}
+                </p>
+                <p class="synopsis">{row.synopsis}</p>
+                {row.hours && <p class="hours">≈ {row.hours} hours of study</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .lead {
+    font-size: var(--text-md);
+  }
+  .part {
+    margin-top: var(--space-12);
+  }
+  .part h2 {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-1);
+  }
+  .part-number {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    display: block;
+  }
+  .lesson-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .lesson-list li {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .lesson-title {
+    margin: 0;
+    font-size: var(--text-md);
+  }
+  .lesson-title a {
+    font-weight: 600;
+  }
+  .lesson-number {
+    font-family: var(--font-serif);
+    color: var(--color-ink-faint);
+  }
+  .forthcoming-title {
+    font-weight: 600;
+    color: var(--color-ink-faint);
+  }
+  .forthcoming-badge {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-faint);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0 var(--space-2);
+    margin-left: var(--space-2);
+  }
+  .synopsis {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .hours {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-faint);
+  }
+</style>

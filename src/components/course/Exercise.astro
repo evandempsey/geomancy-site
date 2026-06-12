@@ -1,0 +1,48 @@
+---
+/**
+ * A numbered exercise at the end of a lesson. The model answer goes
+ * inside as a <ModelAnswer> child.
+ */
+interface Props {
+  n: number;
+  title: string;
+  /** "quiz" exercises are short keyed questions; "drill" for deterministic work */
+  kind?: 'quiz' | 'drill' | 'practice';
+}
+
+const { n, title, kind } = Astro.props;
+const kindLabel = kind === 'quiz' ? 'Quiz' : kind === 'drill' ? 'Drill' : kind === 'practice' ? 'Practice' : undefined;
+---
+
+<section class="exercise">
+  <p class="exercise-kicker">
+    Exercise {n}{kindLabel && <span class="kind"> · {kindLabel}</span>}
+  </p>
+  <h4>{title}</h4>
+  <slot />
+</section>
+
+<style>
+  .exercise {
+    border-left: 2px solid var(--color-rubric);
+    background: var(--color-bg-raised);
+    border-radius: var(--radius);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-8) 0;
+  }
+  .exercise-kicker {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-rubric);
+    margin: 0;
+  }
+  .kind {
+    color: var(--color-ink-faint);
+  }
+  h4 {
+    margin: var(--space-1) 0 var(--space-3);
+    font-size: var(--text-md);
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+interface Props {
+  figure: CollectionEntry<'figures'>;
+}
+
+const { figure } = Astro.props;
+const d = figure.data;
+const counterpart = await getEntry('figures', d.counterpart.id);
+
+const variants = await Promise.all(
+  d.attributionVariants.map(async (v) => ({
+    ...v,
+    sourceName: (await getEntry('sources', v.source.id))?.data.shortTitle ?? v.source.id,
+  })),
+);
+
+const cap = (s?: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : '—');
+---
+
+<table class="attributes">
+  <tbody>
+    <tr><th scope="row">English name</th><td>{d.translation}</td></tr>
+    <tr><th scope="row">Planet</th><td>{d.planet}</td></tr>
+    <tr><th scope="row">Sign</th><td>{d.sign}</td></tr>
+    {d.element && <tr><th scope="row">Element</th><td>{cap(d.element)}</td></tr>}
+    <tr><th scope="row">Quality</th><td>{cap(d.mobility)}</td></tr>
+    {
+      counterpart && counterpart.id !== figure.id && (
+        <tr>
+          <th scope="row">Reverse figure</th>
+          <td>
+            <a href={`/figures/${counterpart.id}/`}>{counterpart.data.name}</a>
+          </td>
+        </tr>
+      )
+    }
+  </tbody>
+</table>
+{
+  variants.length > 0 && (
+    <details class="variants">
+      <summary>The sources differ on the attributions of {d.name}</summary>
+      <p>
+        The primary attributions above follow Agrippa's <em>Of Geomancy</em> (1655). The other
+        systems found in the sources:
+      </p>
+      <table>
+        <thead>
+          <tr><th>System</th><th>Element</th><th>Planet</th><th>Sign</th></tr>
+        </thead>
+        <tbody>
+          {variants.map((v) => (
+            <tr>
+              <td>{v.note ?? v.sourceName}</td>
+              <td>{cap(v.element)}</td>
+              <td>{v.planet ?? '—'}</td>
+              <td>{v.sign ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </details>
+  )
+}
+
+<style>
+  .attributes {
+    font-size: var(--text-sm);
+  }
+  .attributes th {
+    background: none;
+    font-weight: 600;
+    padding-right: var(--space-6);
+  }
+  .variants {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: var(--space-4) 0;
+  }
+  .variants summary {
+    cursor: pointer;
+    color: var(--color-link);
+  }
+  .variants table {
+    width: 100%;
+  }
+</style>
