@@ -57,7 +57,7 @@ export const PLANET_ORDER: Planet[] = [
  * Figure id → the sign "put for the Ascendant" — Gerard's own table,
  * verbatim from corpus/gerard/attributions.md. Four signs are doubled
  * (Taurus, Gemini, Virgo, Scorpio) because sixteen figures share twelve
- * signs. The gerard-dossier script cross-asserts this map against the
+ * signs. The Gerard chart check script cross-asserts this map against the
  * `gerard` attributionVariants in src/data/figures/*.yaml.
  */
 export const GERARD_ASCENDANT_SIGN: Record<string, Sign> = {

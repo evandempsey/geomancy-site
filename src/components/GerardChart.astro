@@ -10,7 +10,7 @@
  * With only `ascendant`, it reproduces the treatise's own diagram — "Look
  * how the twelve Signs are placed in the figure" — signs and no planets.
  * Computation happens at build time via src/lib/gerard.ts; chart facts in
- * lessons must match references/gerard-charts-dossier.md.
+ * lessons must match the Gerard chart reference file.
  */
 import {
   GERARD_ASCENDANT_SIGN,
@@ -26,7 +26,7 @@ import { glyphGeometry } from '../lib/glyph';
 interface Props {
   /** figure id of the single cast figure, e.g. "fortuna-major" */
   ascendant: string;
-  /** planet → house number (1–12), as the dossier gives them */
+  /** planet -> house number (1-12), as the reference file gives them */
   planets?: Partial<Record<Planet, number>>;
   caption?: string;
 }

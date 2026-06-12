@@ -1,8 +1,8 @@
 ---
 /**
- * Guided judgment worksheet: walks the canonical order of judgment one
+ * Guided reading worksheet: walks the canonical reading order one
  * step at a time and assembles the student's notes into a draft
- * judgment paragraph. Without JavaScript all steps render at once — a
+ * reading paragraph. Without JavaScript all steps render at once — a
  * printable worksheet, which is how it should be used on paper anyway.
  */
 import { getCollection } from 'astro:content';
@@ -11,7 +11,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
 ---
 
 <form class="worksheet" data-worksheet>
-  <p class="worksheet-title">The order of judgment</p>
+  <p class="worksheet-title">The order of reading</p>
 
   <fieldset data-step="1">
     <legend>1 · The question</legend>
@@ -52,7 +52,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
       <input type="text" name="judge" autocomplete="off" />
     </label>
     <label>
-      What do they promise? (good/ill beginning, good/ill ending, the Judge's sentence)
+      What do they show? (beginning, course, end, and the Judge's summary)
       <textarea name="judgeNotes" rows="3"></textarea>
     </label>
   </fieldset>
@@ -96,25 +96,25 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
   </fieldset>
 
   <fieldset data-step="6">
-    <legend>6 · The verdict</legend>
+    <legend>6 · The answer</legend>
     <label>
-      Weigh the testimonies and pronounce, with the reservation the chart itself demands
-      <textarea name="verdict" rows="4"></textarea>
+      Weigh the findings and pronounce, with the limits the chart itself demands
+      <textarea name="answer" rows="4"></textarea>
     </label>
   </fieldset>
 
   <div class="worksheet-nav" hidden>
     <button type="button" data-action="back" hidden>← Back</button>
     <button type="button" data-action="next">Next step →</button>
-    <button type="button" data-action="assemble" hidden>Assemble the judgment</button>
+    <button type="button" data-action="assemble" hidden>Assemble the reading</button>
   </div>
 
   <div class="summary" data-summary hidden aria-live="polite">
-    <p class="summary-title">Draft judgment</p>
+    <p class="summary-title">Draft reading</p>
     <p data-summary-text></p>
     <p class="hint">
-      Copy this into your casting journal and rewrite it in your own words. The worksheet drafts,
-      the geomancer judges.
+      Copy this into your casting journal and rewrite it in your own words. The worksheet drafts;
+      the geomancer reads.
     </p>
   </div>
 </form>
@@ -182,7 +182,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
             : '',
         value('perfectionNotes'),
         value('dignityNotes'),
-        value('verdict') && `Judgment: ${value('verdict')}`,
+        value('answer') && `Answer: ${value('answer')}`,
       ].filter(Boolean);
       summaryText.textContent = parts.join(' ');
       summary.hidden = false;

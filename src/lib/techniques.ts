@@ -22,13 +22,13 @@ export const TECHNIQUES: Technique[] = [
     slug: 'springing-of-figures',
     title: 'The Springing of Figures',
     description:
-      'How a figure that passes into other houses extends the judgment: the commixture of figures taught by Agrippa and the later geomancers.',
+      'How a figure that passes into other houses extends the reading: the commixture of figures taught by Agrippa and the later geomancers.',
   },
   {
     slug: 'projection-of-points',
     title: 'The Projection of Points and the Index',
     description:
-      'Counting the points of the chart to find the Index and the Part of Fortune, the hidden arbiters of a geomantic judgment.',
+      'Counting the points of the chart to find the Index and the Part of Fortune, a late check on the chart.',
   },
   {
     slug: 'essential-dignities',
@@ -55,9 +55,9 @@ export const TECHNIQUES: Technique[] = [
       'How the old geomancers found what question a chart was cast for, and what the querent secretly thinks, by Cattan\'s rules of the point of intention.',
   },
   {
-    slug: 'judging-the-figure',
-    title: 'Judging the Figure',
+    slug: 'reading-the-figure',
+    title: 'Reading the Figure',
     description:
-      'How a geomantic chart becomes a judgment: the eight ways a figure is fortunate or unfortunate, the figure of figures, and the general method of the masters.',
+      'How a geomantic chart becomes an answer: the eight ways a figure is fortunate or unfortunate, the figure of figures, and the general method of the masters.',
   },
 ];

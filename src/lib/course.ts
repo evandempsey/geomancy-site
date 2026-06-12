@@ -55,7 +55,7 @@ export async function prevNext(
 export const PARTS = [
   { number: 1, title: 'Foundations' },
   { number: 2, title: 'Reading the Chart' },
-  { number: 3, title: 'Judgment' },
+  { number: 3, title: 'Finished Readings' },
   { number: 4, title: 'Mastery' },
 ] as const;
 

@@ -10,7 +10,7 @@ export const TOOL_KEYS = [
   'casting-widget',
   'flashcards',
   'placement-lookup',
-  'judgment-worksheet',
+  'reading-worksheet',
   'gerard-casting',
 ] as const;
 export type ToolKey = (typeof TOOL_KEYS)[number];
@@ -54,14 +54,14 @@ export const TOOLS: Tool[] = [
     taughtIn: [{ href: '/course/the-twelve-houses/', label: 'Lesson 5: The Twelve Houses' }],
   },
   {
-    key: 'judgment-worksheet',
-    slug: 'judgment-worksheet',
-    title: 'The Judgment Worksheet',
+    key: 'reading-worksheet',
+    slug: 'reading-worksheet',
+    title: 'The Reading Worksheet',
     description:
-      'A six-step guided worksheet that walks a chart from significators through perfection, aspects and company to the court and the sentence, printable for work on paper.',
+      'A six-step guided worksheet that walks a chart from significators through perfection, aspects and company to a finished reading, printable for work on paper.',
     taughtIn: [
       { href: '/course/perfection-of-the-figure/', label: 'Lesson 7: Perfection of the Figure' },
-      { href: '/course/the-full-judgment/', label: 'Lesson 10: The Full Judgment' },
+      { href: '/course/the-finished-reading/', label: 'Lesson 10: The Finished Reading' },
     ],
   },
   {
