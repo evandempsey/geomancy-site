@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 ---
 
@@ -75,14 +76,14 @@ import Prose from '../../layouts/Prose.astro';
     <li>Pen and paper: the art was practiced for a thousand years with nothing else.</li>
     <li>A notebook for the casting journal.</li>
     <li>
-      The texts, all free on this site: start from <a href="/library/">the library</a>. Nothing
+      The texts, all free on this site: start from <a href={withBase('/library/')}>the library</a>. Nothing
       is for sale here and nothing ever will be.
     </li>
   </ul>
   <p>
-    The site's reference sections (<a href="/figures/">the figures</a>,
-    <a href="/houses/">the houses</a>, <a href="/techniques/">the techniques</a>) remain open
+    The site's reference sections (<a href={withBase('/figures/')}>the figures</a>,
+    <a href={withBase('/houses/')}>the houses</a>, <a href={withBase('/techniques/')}>the techniques</a>) remain open
     beside the course at all times; the lessons link into them constantly. When you are ready,
-    begin with <a href="/course/">Lesson 1</a>.
+    begin with <a href={withBase('/course/')}>Lesson 1</a>.
   </p>
 </Prose>

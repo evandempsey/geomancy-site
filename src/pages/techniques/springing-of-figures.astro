@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import QuoteList from '../../components/QuoteList.astro';
 import { TECHNIQUES } from '../../lib/techniques';
@@ -23,12 +24,12 @@ const t = TECHNIQUES.find((x) => x.slug === 'springing-of-figures')!;
   <QuoteList topic="springing" noFigures />
   <p>
     Cattan and Heydon also give the meaning of each figure's passing house by house, quoted on
-    each <a href="/figures/">figure's own page</a>.
+    each <a href={withBase('/figures/')}>figure's own page</a>.
   </p>
   <p>
     Thus in Agrippa's example, the figure of the second house (money) found again in the sixth
     (servants) shows a thief within the household. Crowley applies the same rule in his worked
-    example: see <a href="/library/crowley/method-of-judging/">the General Method of Judging a
+    example: see <a href={withBase('/library/crowley/method-of-judging/')}>the General Method of Judging a
     Figure</a>.
   </p>
 </Prose>

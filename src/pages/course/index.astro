@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { allLessons, lessonUrl, FORTHCOMING, PARTS, type Lesson } from '../../lib/course';
@@ -45,7 +46,7 @@ const jsonLd = [
     provider: {
       '@type': 'Organization',
       name: 'The Art of Geomancy',
-      url: new URL('/', Astro.site).href,
+      url: new URL(withBase('/'), Astro.site).href,
     },
     isAccessibleForFree: true,
     offers: {
@@ -83,8 +84,8 @@ const jsonLd = [
     The course is sequential and mastery-based: each lesson assumes command of everything before
     it, and each closes with a checklist telling you when you are ready to continue. There are no
     dates and no cohort; speed is irrelevant. Expect two to three weeks of unhurried work per
-    lesson. Begin with <a href="/course/how-to-study/">how to study this course</a>; from Lesson 4
-    onward, keep <a href="/course/charts/">the course charts</a> at your elbow.
+    lesson. Begin with <a href={withBase('/course/how-to-study/')}>how to study this course</a>; from Lesson 4
+    onward, keep <a href={withBase('/course/charts/')}>the course charts</a> at your elbow.
   </p>
 
   {

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
@@ -56,7 +57,7 @@ const rows = await Promise.all(
           <FigureGlyph dots={figure.data.dots} name={figure.data.name} size={2.4} />
           <div>
             {linked ? (
-              <a href={`/figures/${figure.id}/${h.slug}/`}>
+              <a href={withBase(`/figures/${figure.id}/${h.slug}/`)}>
                 {figure.data.name} in the {shortHouse} house
               </a>
             ) : (

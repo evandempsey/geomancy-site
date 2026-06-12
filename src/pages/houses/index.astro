@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -24,7 +25,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
     {
       houses.map((h) => (
         <li>
-          <a href={`/houses/${h.data.slug}/`}>{h.data.title}</a>
+          <a href={withBase(`/houses/${h.data.slug}/`)}>{h.data.title}</a>
           <span>{h.data.significations.join('; ')}</span>
         </li>
       ))

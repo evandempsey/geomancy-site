@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { TOOLS, toolUrl } from '../../lib/tools';
+import { withBase } from '../../lib/url';
 ---
 
 <Base
@@ -29,7 +30,7 @@ import { TOOLS, toolUrl } from '../../lib/tools';
             {t.taughtIn.map((l, i) => (
               <>
                 {i > 0 && ' and '}
-                <a href={l.href}>{l.label}</a>
+                <a href={withBase(l.href)}>{l.label}</a>
               </>
             ))}
           </p>

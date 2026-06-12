@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import PlacementLookup from '../../components/course/PlacementLookup.astro';
 import { TOOLS } from '../../lib/tools';
@@ -20,12 +21,12 @@ const tool = TOOLS.find((t) => t.slug === 'placement-lookup')!;
     Book II (the richest of the series) alongside the pseudo-Agrippa, Heydon and Crowley.
   </p>
   <p>
-    A concordance, not an oracle: <a href="/course/the-twelve-houses/">Lesson 5</a> introduces
+    A concordance, not an oracle: <a href={withBase('/course/the-twelve-houses/')}>Lesson 5</a> introduces
     the lookup and Lesson 11 promotes it to a working instrument, and both teach the discipline
     that makes it one. A placement entry is testimony, to be selected by the question's register
     and weighed inside a method, never a pre-written answer to be read off. The same material
-    can be browsed whole from <a href="/figures/">the figures</a> and
-    <a href="/houses/">the houses</a>.
+    can be browsed whole from <a href={withBase('/figures/')}>the figures</a> and
+    <a href={withBase('/houses/')}>the houses</a>.
   </p>
 
   <PlacementLookup />

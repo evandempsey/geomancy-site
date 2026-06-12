@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { withBase } from './url';
 
 export type Lesson = CollectionEntry<'course'>;
 
@@ -12,7 +13,7 @@ export function lessonSlug(entry: Lesson): string {
 }
 
 export function lessonUrl(entry: Lesson): string {
-  return `/course/${lessonSlug(entry)}/`;
+  return withBase(`/course/${lessonSlug(entry)}/`);
 }
 
 /**

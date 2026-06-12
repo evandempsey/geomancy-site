@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import FigureGlyph from '../components/FigureGlyph.astro';
@@ -10,7 +11,7 @@ const jsonLd = [
   {
     '@type': 'WebSite',
     name: 'The Art of Geomancy',
-    url: Astro.site?.href,
+    url: new URL(withBase('/'), Astro.site).href,
     description:
       'The figures, houses and judgments of traditional geomancy, quoted from the historical sources: Cattan, Heydon, Agrippa, Gerard of Cremona and Crowley.',
   },
@@ -36,10 +37,10 @@ const jsonLd = [
       (1655), and Aleister Crowley’s Equinox handbook (1909).
     </p>
     <nav class="start" aria-label="Start here">
-      <a href="/what-is-geomancy/">What is geomancy?</a>
-      <a href="/casting/">How to cast a chart</a>
-      <a href="/library/">Read the texts</a>
-      <a href="/tools/">Practice tools</a>
+      <a href={withBase('/what-is-geomancy/')}>What is geomancy?</a>
+      <a href={withBase('/casting/')}>How to cast a chart</a>
+      <a href={withBase('/library/')}>Read the texts</a>
+      <a href={withBase('/tools/')}>Practice tools</a>
     </nav>
   </section>
 
@@ -52,7 +53,7 @@ const jsonLd = [
       primary sources, with worked examples, practice tools and exercises you grade yourself
       against full model answers.
     </p>
-    <p><a href="/course/">Begin the course →</a></p>
+    <p><a href={withBase('/course/')}>Begin the course →</a></p>
   </section>
 
   <section>
@@ -61,7 +62,7 @@ const jsonLd = [
       {
         figures.map((f) => (
           <li>
-            <a href={`/figures/${f.id}/`}>
+            <a href={withBase(`/figures/${f.id}/`)}>
               <FigureGlyph dots={f.data.dots} name={f.data.name} size={3.5} />
               <span class="figure-name">{f.data.name}</span>
               <span class="figure-translation">{f.data.translation}</span>
@@ -80,7 +81,7 @@ const jsonLd = [
         marriage to the seventh, honours to the tenth. Each house page gathers what the sources say
         a figure signifies when it falls there.
       </p>
-      <p><a href="/houses/">The houses and their significations →</a></p>
+      <p><a href={withBase('/houses/')}>The houses and their significations →</a></p>
     </div>
     <div>
       <h2>The techniques of judgment</h2>
@@ -88,7 +89,7 @@ const jsonLd = [
         Witnesses and Judge, the springing of figures, aspects and dignities, the projection of
         points: the methods by which the old geomancers turned a chart into an answer.
       </p>
-      <p><a href="/techniques/">The techniques →</a></p>
+      <p><a href={withBase('/techniques/')}>The techniques →</a></p>
     </div>
   </section>
 
@@ -99,7 +100,7 @@ const jsonLd = [
       {
         sources.map((s) => (
           <li>
-            <a href={`/library/${s.id}/`}>
+            <a href={withBase(`/library/${s.id}/`)}>
               {s.data.author}, <em>{s.data.title}</em> ({s.data.year})
             </a>
           </li>

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../../lib/url';
 import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../../../layouts/Base.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
@@ -52,8 +53,8 @@ const jsonLd = [
     <Content />
   </article>
   <nav class="chapter-nav" aria-label="Chapters">
-    {prev && <a href={`/library/${source.id}/${chapterSlug(prev)}/`}>← {prev.data.title}</a>}
-    {next && <a href={`/library/${source.id}/${chapterSlug(next)}/`}>{next.data.title} →</a>}
+    {prev && <a href={withBase(`/library/${source.id}/${chapterSlug(prev)}/`)}>← {prev.data.title}</a>}
+    {next && <a href={withBase(`/library/${source.id}/${chapterSlug(next)}/`)}>{next.data.title} →</a>}
   </nav>
 </Base>
 

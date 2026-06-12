@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import QuoteList from '../../components/QuoteList.astro';
 import { TECHNIQUES } from '../../lib/techniques';
@@ -24,7 +25,7 @@ const t = TECHNIQUES.find((x) => x.slug === 'aspects-and-company')!;
   <p>
     Friendly figures aspecting the house of the question aid it; hostile figures hinder it.
     Crowley's worked judgment shows the weighing of these testimonies in practice:
-    <a href="/library/crowley/method-of-judging/">the General Method of Judging a Figure</a>.
+    <a href={withBase('/library/crowley/method-of-judging/')}>the General Method of Judging a Figure</a>.
   </p>
   <h2>The company of figures</h2>
   <p>

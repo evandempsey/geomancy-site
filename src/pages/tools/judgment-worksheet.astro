@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import JudgmentWorksheet from '../../components/course/JudgmentWorksheet.astro';
 import { TOOLS } from '../../lib/tools';
@@ -18,16 +19,16 @@ const tool = TOOLS.find((t) => t.slug === 'judgment-worksheet')!;
     aspects and company, and the weighing that becomes a sentence. This worksheet walks that
     canonical order one step at a time and assembles your notes into a draft judgment, the same
     instrument the course unlocks across
-    <a href="/course/perfection-of-the-figure/">Lesson 7</a> and completes in
-    <a href="/course/the-full-judgment/">Lesson 10</a>.
+    <a href={withBase('/course/perfection-of-the-figure/')}>Lesson 7</a> and completes in
+    <a href={withBase('/course/the-full-judgment/')}>Lesson 10</a>.
   </p>
   <p>
     Without JavaScript every step renders at once, which makes the page a printable worksheet.
     Paper is how it should be used in any case: the course's standing practice is the written
     judgment, filed in a journal where the verdict can one day face its outcome. The method
-    itself is set out at <a href="/techniques/judging-the-figure/">Judging the Figure</a> and
-    <a href="/techniques/modes-of-perfection/">The Modes of Perfection</a>; for practice
-    material, <a href="/course/charts/">the course charts</a> carry eleven canonical casts with
+    itself is set out at <a href={withBase('/techniques/judging-the-figure/')}>Judging the Figure</a> and
+    <a href={withBase('/techniques/modes-of-perfection/')}>The Modes of Perfection</a>; for practice
+    material, <a href={withBase('/course/charts/')}>the course charts</a> carry eleven canonical casts with
     standing questions.
   </p>
 

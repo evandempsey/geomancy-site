@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/url';
 import Prose from '../layouts/Prose.astro';
 import Quote from '../components/Quote.astro';
 ---
@@ -41,10 +42,10 @@ import Quote from '../components/Quote.astro';
   </p>
   <h2>Where to begin</h2>
   <ul>
-    <li><a href="/casting/">How to cast a geomantic chart</a>: the mechanics, from sixteen lines to the Judge.</li>
-    <li><a href="/figures/">The sixteen figures</a>: their natures, attributions and meanings, quoted from the sources.</li>
-    <li><a href="/houses/">The twelve houses</a>: where every question finds its place.</li>
-    <li><a href="/techniques/">The techniques of judgment</a>: how a chart becomes an answer.</li>
-    <li><a href="/library/">The library</a>: the historical texts themselves.</li>
+    <li><a href={withBase('/casting/')}>How to cast a geomantic chart</a>: the mechanics, from sixteen lines to the Judge.</li>
+    <li><a href={withBase('/figures/')}>The sixteen figures</a>: their natures, attributions and meanings, quoted from the sources.</li>
+    <li><a href={withBase('/houses/')}>The twelve houses</a>: where every question finds its place.</li>
+    <li><a href={withBase('/techniques/')}>The techniques of judgment</a>: how a chart becomes an answer.</li>
+    <li><a href={withBase('/library/')}>The library</a>: the historical texts themselves.</li>
   </ul>
 </Prose>

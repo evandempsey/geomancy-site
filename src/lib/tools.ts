@@ -4,6 +4,8 @@
  * imports TOOL_KEYS for the lesson frontmatter enum, and Lesson.astro
  * renders each lesson's `tools:` list as links via toolByKey.
  */
+import { withBase } from './url';
+
 export const TOOL_KEYS = [
   'casting-widget',
   'flashcards',
@@ -78,4 +80,4 @@ export function toolByKey(key: ToolKey): Tool {
   return tool;
 }
 
-export const toolUrl = (tool: Tool) => `/tools/${tool.slug}/`;
+export const toolUrl = (tool: Tool) => withBase(`/tools/${tool.slug}/`);

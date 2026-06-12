@@ -63,9 +63,23 @@ scripts above. `scripts/extract-agent-result.py` pulls a subagent's final
 message from its transcript file. Every quote carries its leaf/page locator;
 Cattan quotes link to the archive.org scan for verification.
 
-Set the production domain via `SITE_URL` at build time (or edit
-`astro.config.mjs`); canonical URLs, the sitemap and `public/robots.txt`
-depend on it.
+## Deployment
+
+The site is published to **GitHub Pages** as a project site at
+`https://evandempsey.github.io/geomancy-site/`. Because it is served from the
+`/geomancy-site/` subpath, `astro.config.mjs` sets `base: '/geomancy-site'`;
+internal links go through `withBase()` (`src/lib/url.ts`) and Markdown/MDX prose
+links through the `rehypeBaseLinks` plugin, so everything resolves under the
+subpath in both `npm run dev` and the deployed build.
+
+`.github/workflows/deploy.yml` builds on every push to `main`, runs
+`npm run check:course`, and deploys the `dist/` artifact. One manual, one-time
+step is required: in the repo **Settings → Pages**, set **Source = GitHub
+Actions**.
+
+To target a different host, override `SITE_URL` (domain) and `BASE_PATH`
+(subpath, e.g. `/` for a root user site) at build time — canonical URLs, the
+sitemap and link prefixing all derive from them.
 
 ## Editorial method
 

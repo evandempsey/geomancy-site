@@ -1,5 +1,6 @@
 ---
 import Seo from '../components/Seo.astro';
+import { withBase } from '../lib/url';
 import '../styles/global.css';
 
 interface Props {
@@ -31,28 +32,28 @@ const path = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <link
       rel="preload"
-      href="/fonts/eb-garamond-latin-400-normal.woff2"
+      href={withBase('/fonts/eb-garamond-latin-400-normal.woff2')}
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
     <Seo {title} {description} {type} {jsonLd} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="masthead">
-        <a class="site-name" href="/">The Art of Geomancy</a>
+        <a class="site-name" href={withBase('/')}>The Art of Geomancy</a>
         <p class="site-tagline">The figures, houses and judgments of traditional geomancy, from the historical sources</p>
       </div>
       <nav class="site-nav" aria-label="Main">
         {
           nav.map((item) => (
-            <a href={item.href} aria-current={path.startsWith(item.href) ? 'true' : undefined}>
+            <a href={withBase(item.href)} aria-current={path.startsWith(withBase(item.href)) ? 'true' : undefined}>
               {item.label}
             </a>
           ))

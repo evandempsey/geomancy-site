@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import { chapterSlug } from '../../lib/library';
+import { withBase } from '../../lib/url';
 
 /**
  * The required-reading panel of a lesson. Items are either library
@@ -47,7 +48,7 @@ const resolved = await Promise.all(
     {
       resolved.map((item) => (
         <li>
-          <a href={item.href}>{item.label}</a>
+          <a href={withBase(item.href)}>{item.label}</a>
           {item.detail && <span class="detail">, {item.detail}</span>}
           {item.note && <span class="note"> ({item.note})</span>}
         </li>

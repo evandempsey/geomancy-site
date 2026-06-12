@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import QuoteList from '../../components/QuoteList.astro';
 import { TECHNIQUES } from '../../lib/techniques';
@@ -43,8 +44,8 @@ const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
   <p>
     If the chart shows none of these (and no aspect joins the significators) the matter is
     denied. The favourableness of the figures themselves then colours <em>how</em> the thing comes
-    about, for which see <a href="/figures/">the natures of the figures</a> and
-    <a href="/techniques/aspects-and-company/">their aspects and friendships</a>.
+    about, for which see <a href={withBase('/figures/')}>the natures of the figures</a> and
+    <a href={withBase('/techniques/aspects-and-company/')}>their aspects and friendships</a>.
   </p>
   <p class="sourcing">
     The summary above is given in our own words from the medieval doctrine; the pseudo-Abano
