@@ -25,3 +25,6 @@ references/eebo/
 # environment
 .env
 .env.*
+
+# Copyrighted style reference, not ours to publish
+references/style_model.md

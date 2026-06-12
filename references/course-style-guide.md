@@ -298,6 +298,21 @@ objectives:
   - "Complete three readings: a fresh class, a divided chart, and one question answered in both systems"
 ```
 
+## Sentence Shape
+
+The model for the course's own prose is plain, flowing instructional writing (see `references/style_model.md`). Beyond the word-level rules above:
+
+- Prefer short-to-medium declarative sentences, one idea each, connected with plain words: `So`, `Thus`, `Note that`, `For example`.
+- Split any sentence over about 30 words that carries embedded asides. Do not stack parentheticals; turn them into separate sentences.
+- Give instructions directly: "Read Cattan's chapter on the Judge now." "Use the course default throughout."
+- State numbers, lists, and rules flatly. Helpful repetition is fine; epigrams are not. Do not compress a rule into a clever closing line.
+- No rhetorical shapes: no anaphora, no tricolon, no "not X, not Y, but Z" contrast structures, no sentence fragments for effect, no colon-chained definitions ("the crowd, the mirror: pure passivity").
+- No appositive flourishes ("a sprawling compendium dressed in Rosicrucian costume"). Say it in a separate plain sentence.
+- No first person singular. "We" is allowed where natural; "this course" also works.
+- Cap paragraphs around 4-6 sentences. Add a subheading when a section runs long or changes task.
+- Do not use lower-case `witness` for a textual source ("count your witnesses"); say `source`. Keep the chart terms `Witness`, `Right Witness`, `Left Witness` capitalized.
+- Avoid recurring pet metaphors for the method: the figures are not an `alphabet`, a rule is not a `checksum`, a technique is not on a `leash`.
+
 ## Final Check Before Commit
 
 Before committing course prose, search for course-authored leftovers:
