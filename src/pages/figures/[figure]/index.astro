@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
@@ -23,7 +24,7 @@ const jsonLd = [
     '@type': 'DefinedTerm',
     name: d.name,
     alternateName: d.translation,
-    inDefinedTermSet: new URL('/figures/', Astro.site).href,
+    inDefinedTermSet: new URL(withBase('/figures/'), Astro.site).href,
     description: d.summary,
   },
 ];
@@ -56,7 +57,7 @@ const jsonLd = [
         return (
           <li>
             {has ? (
-              <a href={`/figures/${figure.id}/${h.data.slug}/`}>
+              <a href={withBase(`/figures/${figure.id}/${h.data.slug}/`)}>
                 {d.name} in the {h.data.name.replace(' House', '')} house
               </a>
             ) : (

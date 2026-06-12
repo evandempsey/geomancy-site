@@ -9,6 +9,9 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = 'dist';
+// Links carry the configured base path (e.g. /geomancy-site/...) but the build
+// output lives at dist/<route>, so strip the base before resolving to a file.
+const BASE = (process.env.BASE_PATH ?? '/geomancy-site').replace(/\/$/, '');
 if (!existsSync(DIST)) {
   console.error('dist/ not found — run `npm run build` first.');
   process.exit(1);
@@ -30,7 +33,8 @@ for (const file of htmlFiles(join(DIST, 'course'))) {
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = match[1];
     checked += 1;
-    const target = join(DIST, href);
+    const rel = BASE && (href === BASE || href.startsWith(BASE + '/')) ? href.slice(BASE.length) : href;
+    const target = join(DIST, rel);
     const ok =
       (existsSync(target) && statSync(target).isFile()) ||
       existsSync(join(target, 'index.html'));

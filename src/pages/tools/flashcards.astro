@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import FlashcardDrill from '../../components/course/FlashcardDrill.astro';
 import { TOOLS } from '../../lib/tools';
@@ -18,13 +19,13 @@ const tool = TOOLS.find((t) => t.slug === 'flashcards')!;
     train recognition in layers. First the figure to its name, then the name to its meaning:
     translation, planet and the core significations. Last, the figure to each of its
     attributions on its own: planet, sign, quality and element. The course's standard, set in
-    <a href="/course/the-alphabet-of-the-earth/">Lesson 2</a> and
-    <a href="/course/the-sixteen-natures/">Lesson 3</a>, is two clean passes in a row before
+    <a href={withBase('/course/the-alphabet-of-the-earth/')}>Lesson 2</a> and
+    <a href={withBase('/course/the-sixteen-natures/')}>Lesson 3</a>, is two clean passes in a row before
     moving on; score is kept for the round only, so every visit starts fresh.
   </p>
   <p>
     The full reference for each figure (dots, names, attributions in every source's system, and
-    the placement columns) is at <a href="/figures/">the sixteen figures</a>.
+    the placement columns) is at <a href={withBase('/figures/')}>the sixteen figures</a>.
   </p>
 
   <h2>Figure to name</h2>

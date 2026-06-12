@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
@@ -53,7 +54,7 @@ const jsonLd = [
         <ol class="chapter-list">
           {chapters.map((c) => (
             <li>
-              <a href={`/library/${source.id}/${chapterSlug(c)}/`}>{c.data.title}</a>
+              <a href={withBase(`/library/${source.id}/${chapterSlug(c)}/`)}>{c.data.title}</a>
             </li>
           ))}
         </ol>
@@ -64,7 +65,7 @@ const jsonLd = [
     chapters.length === 0 && (
       <p class="pending">
         The full transcription of this text is in progress; its passages are meanwhile quoted
-        throughout the <a href="/figures/">figure</a> and <a href="/techniques/">technique</a> pages.
+        throughout the <a href={withBase('/figures/')}>figure</a> and <a href={withBase('/techniques/')}>technique</a> pages.
       </p>
     )
   }

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import CastingWidget from '../../components/course/CastingWidget.astro';
 import { TOOLS } from '../../lib/tools';
@@ -20,19 +21,19 @@ const tool = TOOLS.find((t) => t.slug === 'casting-practice')!;
     each addition explained as it lands.
   </p>
   <p>
-    Use it the way <a href="/course/casting-the-chart/">Lesson 4</a> teaches: hand first. Cast
+    Use it the way <a href={withBase('/course/casting-the-chart/')}>Lesson 4</a> teaches: hand first. Cast
     and derive on paper, then let the step mode show you the same derivation and find where an
     error entered, if one did. A Judge with an odd number of points always means a miscast chart.
     The tool will never produce one, and neither should you. The full manual walkthrough, with
     the traditional procedure for making the Mothers from sixteen rows of points, is at
-    <a href="/casting/">How to cast a chart</a>.
+    <a href={withBase('/casting/')}>How to cast a chart</a>.
   </p>
 
   <CastingWidget />
 
   <p>
     When you can derive a shield by hand without hesitation, the worked charts of the course
-    (<a href="/course/charts/">the course charts</a>) make good verification practice: derive
+    (<a href={withBase('/course/charts/')}>the course charts</a>) make good verification practice: derive
     them yourself and check against the canonical copies.
   </p>
 </Prose>

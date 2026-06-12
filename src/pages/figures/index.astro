@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -9,14 +10,14 @@ const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b
 const jsonLd = [
   {
     '@type': 'DefinedTermSet',
-    '@id': new URL('/figures/', Astro.site).href,
+    '@id': new URL(withBase('/figures/'), Astro.site).href,
     name: 'The Sixteen Geomantic Figures',
     description:
       'The sixteen figures of geomancy with their traditional meanings from the historical sources.',
     hasDefinedTerm: figures.map((f) => ({
       '@type': 'DefinedTerm',
       name: f.data.name,
-      url: new URL(`/figures/${f.id}/`, Astro.site).href,
+      url: new URL(withBase(`/figures/${f.id}/`), Astro.site).href,
     })),
   },
 ];
@@ -44,8 +45,8 @@ const jsonLd = [
       {
         figures.map((f) => (
           <tr>
-            <td><a href={`/figures/${f.id}/`} aria-label={f.data.name}><FigureGlyph dots={f.data.dots} name={f.data.name} size={2.6} /></a></td>
-            <td><a href={`/figures/${f.id}/`}>{f.data.name}</a></td>
+            <td><a href={withBase(`/figures/${f.id}/`)} aria-label={f.data.name}><FigureGlyph dots={f.data.dots} name={f.data.name} size={2.6} /></a></td>
+            <td><a href={withBase(`/figures/${f.id}/`)}>{f.data.name}</a></td>
             <td>{f.data.translation}</td>
             <td>{f.data.planet}</td>
             <td>{f.data.sign}</td>

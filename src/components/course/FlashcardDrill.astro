@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 /**
  * Figure flashcard drill. The card shows a figure's glyph; the mode sets
  * what you recall and what Reveal shows: its name ('figure-name'), its
@@ -47,7 +48,7 @@ const deck = figures.map((f) => ({
   <noscript>
     <p class="noscript">
       The flashcard drill needs JavaScript. Without it, drill from
-      <a href="/figures/">the table of figures</a> with a sheet of paper over one column.
+      <a href={withBase('/figures/')}>the table of figures</a> with a sheet of paper over one column.
     </p>
   </noscript>
 </div>

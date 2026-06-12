@@ -8,6 +8,7 @@
  */
 import { getCollection } from 'astro:content';
 import { houseCoverage, citationFor } from '../../lib/queries';
+import { withBase } from '../../lib/url';
 
 const figures = (await getCollection('figures')).sort((a, b) => a.data.order - b.data.order);
 const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.data.number);
@@ -23,7 +24,7 @@ for (const [key, quotes] of coverage) {
   const house = houses.find((h) => h.data.number === Number(houseNum));
   const withExcerpts = quotes.filter((q) => q.data.excerpt);
   combos[key] = {
-    url: house ? `/figures/${figureId}/${house.data.slug}/` : undefined,
+    url: house ? withBase(`/figures/${figureId}/${house.data.slug}/`) : undefined,
     count: quotes.length,
     excerpts: await Promise.all(
       withExcerpts.slice(0, EXCERPTS_PER_COMBO).map(async (q) => ({
@@ -73,7 +74,7 @@ const houseData = houses.map((h) => ({
   <noscript>
     <p class="noscript">
       The lookup needs JavaScript. Without it, every covered placement has its own page. Start
-      from <a href="/figures/">the figures</a> and follow the house links.
+      from <a href={withBase('/figures/')}>the figures</a> and follow the house links.
     </p>
   </noscript>
 </div>

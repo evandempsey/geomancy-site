@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { TECHNIQUES } from '../../lib/techniques';
@@ -19,7 +20,7 @@ import { TECHNIQUES } from '../../lib/techniques';
     {
       TECHNIQUES.map((t) => (
         <li>
-          <a href={`/techniques/${t.slug}/`}>{t.title}</a>
+          <a href={withBase(`/techniques/${t.slug}/`)}>{t.title}</a>
           <p>{t.description}</p>
         </li>
       ))

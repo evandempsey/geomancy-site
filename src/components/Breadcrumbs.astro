@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/url';
+
 interface Crumb {
   name: string;
   href?: string;
@@ -16,17 +18,17 @@ const jsonLd = {
     '@type': 'ListItem',
     position: i + 1,
     name: item.name,
-    ...(item.href ? { item: new URL(item.href, Astro.site).href } : {}),
+    ...(item.href ? { item: new URL(withBase(item.href), Astro.site).href } : {}),
   })),
 };
 ---
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href={withBase('/')}>Home</a></li>
     {
       items.map((item) => (
-        <li>{item.href ? <a href={item.href}>{item.name}</a> : <span aria-current="page">{item.name}</span>}</li>
+        <li>{item.href ? <a href={withBase(item.href)}>{item.name}</a> : <span aria-current="page">{item.name}</span>}</li>
       ))
     }
   </ol>

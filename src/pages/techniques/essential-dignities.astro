@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import QuoteList from '../../components/QuoteList.astro';
 import { TECHNIQUES } from '../../lib/techniques';
@@ -24,11 +25,11 @@ const t = TECHNIQUES.find((x) => x.slug === 'essential-dignities')!;
   <QuoteList topic="dignities" noFigures />
   <p>
     Cattan's reckoning of each figure's good and ill houses is quoted on the
-    <a href="/figures/">individual figure pages</a>.
+    <a href={withBase('/figures/')}>individual figure pages</a>.
   </p>
   <p>
     The complete Golden Dawn table (every figure's house, exaltation, triplicity, fall and
     detriment) is reproduced in the library:
-    <a href="/library/crowley/dignities-and-aspects/">the Table of Essential Dignities</a>.
+    <a href={withBase('/library/crowley/dignities-and-aspects/')}>the Table of Essential Dignities</a>.
   </p>
 </Prose>

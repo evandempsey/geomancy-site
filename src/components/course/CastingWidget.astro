@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/url';
 /**
  * Casting practice widget: generates four random Mothers, derives the
  * whole shield with the shared casting math, and draws it — all at once,
@@ -95,7 +96,7 @@ const cells: Cell[] = [
   <noscript>
     <p class="noscript">
       The practice tool needs JavaScript. Without it, follow the
-      <a href="/casting/">casting walkthrough</a> with pen and paper, which is the better
+      <a href={withBase('/casting/')}>casting walkthrough</a> with pen and paper, which is the better
       exercise in any case.
     </p>
   </noscript>

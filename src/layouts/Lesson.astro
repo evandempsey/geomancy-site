@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Reading from '../components/course/Reading.astro';
 import { lessonUrl, type Lesson } from '../lib/course';
 import { toolByKey, toolUrl } from '../lib/tools';
+import { withBase } from '../lib/url';
 
 interface Props {
   lesson: Lesson;
@@ -22,7 +23,7 @@ const jsonLd = [
     name: title,
     description,
     position: order,
-    isPartOf: new URL('/course/', Astro.site).href,
+    isPartOf: new URL(withBase('/course/'), Astro.site).href,
     educationalLevel: 'beginner',
     isAccessibleForFree: true,
   },
@@ -73,7 +74,7 @@ const jsonLd = [
             ← Lesson {prev.data.order}: {prev.data.title}
           </a>
         ) : (
-          <a class="prev" href="/course/">
+          <a class="prev" href={withBase('/course/')}>
             ← The Course
           </a>
         )

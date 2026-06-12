@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/url';
 import Prose from '../layouts/Prose.astro';
 import Quote from '../components/Quote.astro';
 import ShieldChart from '../components/ShieldChart.astro';
@@ -50,8 +51,8 @@ import HouseChart from '../components/HouseChart.astro';
   <p>
     Agrippa then gives his own “astrological” arrangement, and other authors differ again:
     Crowley's Golden Dawn scheme begins with the first Mother in the tenth house. See
-    <a href="/library/agrippa/of-geomancy/">Agrippa's text</a> and
-    <a href="/library/crowley/twelve-houses/">Crowley's chapter III</a> for the variants.
+    <a href={withBase('/library/agrippa/of-geomancy/')}>Agrippa's text</a> and
+    <a href={withBase('/library/crowley/twelve-houses/')}>Crowley's chapter III</a> for the variants.
   </p>
 
   <h2>4. Judgment</h2>
@@ -61,5 +62,5 @@ import HouseChart from '../components/HouseChart.astro';
     universal in the Golden Dawn line:
   </p>
   <Quote id="crowley/techniques/destroy-rule" compact />
-  <p>Continue with <a href="/techniques/">the techniques of judgment →</a></p>
+  <p>Continue with <a href={withBase('/techniques/')}>the techniques of judgment →</a></p>
 </Prose>
