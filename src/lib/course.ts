@@ -62,6 +62,6 @@ export const PARTS = [
 /**
  * Lessons not yet written, shown unlinked on the syllabus. All thirteen
  * lessons are now published, so the list stands empty; it is kept so any
- * future additions to the course rejoin the same machinery.
+ * future additions can use the same syllabus path.
  */
 export const FORTHCOMING: { order: number; part: number; title: string; synopsis: string }[] = [];

@@ -41,7 +41,7 @@ export const TOOLS: Tool[] = [
     description:
       'Drill the sixteen figures to reflex: figure to name, name to meaning, and figure to each attribution (planet, sign, quality and element), until two clean passes in a row.',
     taughtIn: [
-      { href: '/course/the-alphabet-of-the-earth/', label: 'Lesson 2: The Alphabet of the Earth' },
+      { href: '/course/the-sixteen-figures/', label: 'Lesson 2: The Sixteen Figures' },
       { href: '/course/the-sixteen-natures/', label: 'Lesson 3: The Sixteen Natures' },
     ],
   },
