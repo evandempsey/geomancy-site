@@ -42,8 +42,28 @@ Avoid:
 
 - writerly abstractions such as `lowest visible link`, `irreducible residue`, `signal hygiene`, `the sharp edge`, `the pull`, and `the machinery`
 - dramatic phrases such as `at a stroke`, `in one breath`, and `not X, not Y, but Z`
+- metacommentary such as `what matters is`, `what matters now`, `this matters`, and `the point is`
+- skeptical distancing such as `you do not need to believe this`, `suspend disbelief`, and `your own affair`
 - personifying charts, houses, figures, sources, or lessons unless the phrase is a necessary technical shorthand
 - redundant pacing language such as `no dates and no cohort; speed is irrelevant`
+
+If something matters, state the rule directly. If it does not matter, cut the sentence.
+
+Bad:
+
+> What matters is not the medium but the conditions.
+
+Good:
+
+> Use any medium, but keep the casting conditions.
+
+Bad:
+
+> You do not need to believe this. What you make of it afterwards is your own affair.
+
+Good:
+
+> Study the course inside the worldview of the sources. Do not translate the rules into psychology or coincidence while learning them.
 
 Use technical terms when they belong to the method. `Traditional` is allowed when it is accurate. Do not replace it with a weaker term.
 
@@ -92,6 +112,7 @@ Use these replacements unless the old word is inside a direct quote, source titl
 | instrument | tool, check, technique |
 | authority | source, source weight, official |
 | authorities | sources, officials |
+| adjudicate | decide, weigh, choose |
 | canon | rule, source set, standard list |
 | canonical | standard |
 | hierarchy | reading order, ranking |
@@ -101,13 +122,21 @@ Use these replacements unless the old word is inside a direct quote, source titl
 | delineation | entry |
 | defend, defence | support, source note, explain |
 | defensible | supportable |
+| evidence | source support, support, finding |
 | lawful | valid, allowed |
 | licence | permission, source support |
+| on the record | recorded, in the journal, noted |
 | promote, promotion | finish, update |
+| testify, testifies, testified | show, indicate, support, appear |
+| testimony | source support, support |
 | term of art | technical term |
+| verdict | answer |
+| witness | source, example, support |
 | shall | will, should, must, does |
 
 Use `shall` only inside direct quotation or when naming a quoted historical question exactly.
+
+Use lower-case `witness` only for ordinary English inside a quotation. Keep the technical chart terms `Witness`, `Witnesses`, `Right Witness`, and `Left Witness`.
 
 ## Titles And Slugs
 
@@ -156,8 +185,11 @@ Avoid:
 - `canonical doctrine`
 - `licence`
 - `pedigree`
+- `testify`
+- `on the record`
+- `adjudicate`
 
-The point is not to lower the evidentiary standard. The point is to state it without legal ceremony.
+Keep the source standard. State it without legal ceremony.
 
 ## Reading Order
 
@@ -284,6 +316,12 @@ And search for literary tics:
 
 ```sh
 rg -n "engine of|irreducible|residue|lowest visible link|signal hygiene|lives in|sharp edge|the pull|at a stroke|in one breath|cited to the leaf|speed is irrelevant|no dates and no cohort|the machinery" src/content/course src/pages/course src/pages/tools src/lib
+```
+
+Also search for the latest plain-prose tics:
+
+```sh
+rg -n "what matters|matters is|matters now|matters because|matters for|matters most|only .* matters|your own affair|suspend disbelief|weighing can only weigh|chart record has gathered|\btestif(y|ies|ied|ying)\b|\btestimon(y|ies)\b|\badjudicat\w*\b|\bverdict\b|\bon the record\b|\bevidence recorded\b" src/content/course src/pages/course src/pages/tools src/lib
 ```
 
 Review every hit. It may be acceptable inside a quote, source title, or non-course corpus file. It is usually not acceptable in course-authored prose.
