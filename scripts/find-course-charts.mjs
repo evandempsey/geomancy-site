@@ -1,6 +1,6 @@
 /**
  * Search for the course's fixed example charts (A, B, C, D, and the
- * Lesson 13 practicum charts J, K, L) by testing deterministic candidate
+ * Lesson 13 final-practice charts J, K, L) by testing deterministic candidate
  * Mothers against the curriculum's criteria, using the real casting math
  * and the real figure data.
  *
@@ -15,17 +15,17 @@
  *           houses, good Judge, no conjunction, an ill figure in another
  *           angle for texture, and a way of point that completes (fresh —
  *           A has no way, B's ends ill, C's dies short).
- * Chart J — practicum, 11th-house hope question: grants by conjunction in
+ * Chart J — final practice, 11th-house hope question: grants by conjunction in
  *           the unworked direction — the QUERENT'S approach (querent's
  *           figure in house 10 or 12, quesited's NOT beside the 1st);
  *           good 11th figure, good Judge, Step 0 clear, no occupation,
  *           witness-judge corpus row on file.
- * Chart K — practicum, 12th-house prison question, the hard chart: a
+ * Chart K — final practice, 12th-house prison question, the hard chart: a
  *           grant the student will be tempted to refuse — perfection
  *           1↔12 present but of an ILL figure, under an ILL Judge, with
  *           at least one GOOD Witness (the trajectory itself divided);
  *           Step 0 clear, witness-judge row on file.
- * Chart L — practicum, 7th-house marriage question (Judgment III's
+ * Chart L — final practice, 7th-house marriage question (Judgment III's
  *           shield half): a clean grant — perfection present, neither
  *           significator ill, good Judge, Step 0 clear, Mothers distinct
  *           from Chart A's, witness-judge row on file.

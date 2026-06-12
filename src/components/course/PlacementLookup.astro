@@ -132,7 +132,7 @@ const houseData = houses.map((h) => ({
         const empty = document.createElement('p');
         empty.className = 'empty';
         empty.textContent =
-          'No delineation for this placement has been transcribed yet. Reason from the figure and the house:';
+          'No entry for this placement has been transcribed yet. Reason from the figure and the house:';
         const detail = document.createElement('p');
         detail.className = 'empty-detail';
         detail.textContent = `${figure.name} (${figure.translation}): ${figure.keywords.join(', ')}. ${house.name}: ${house.significations.join('; ')}.`;

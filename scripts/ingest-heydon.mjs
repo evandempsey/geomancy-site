@@ -222,7 +222,7 @@ for (const file of readdirSync('references/extracted/heydon')) {
       ], m.body);
       written++;
     } else if (/Chap\. XIII/i.test(heading)) {
-      // per-figure passing doctrine; split on [figure: …] markers
+      // per-figure passing rule; split on [figure: …] markers
       const parts = m.body.split(/(?=\[figure: [\d, ]+\])/).filter((p) => p.trim());
       const preamble = [];
       for (const part of parts) {

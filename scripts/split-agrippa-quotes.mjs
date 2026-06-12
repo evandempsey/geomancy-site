@@ -1,5 +1,5 @@
 /**
- * Split the per-figure, per-house delineations of Agrippa's "Of Geomancy"
+ * Split the per-figure, per-house entries of Agrippa's "Of Geomancy"
  * (converted from EEBO-TCP by tei-to-md.mjs) into individual corpus quote
  * files under corpus/agrippa/houses/.
  *
@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 const md = readFileSync('src/content/library/agrippa/of-geomancy.md', 'utf8');
 const body = md.split('---').slice(2).join('---'); // strip frontmatter
 
-// order of the delineation sections in the text
+// order of the entry sections in the text
 const FIGURES = [
   ['fortuna-major', 'Fortuna major'],
   ['fortuna-minor', 'Fortuna minor'],
@@ -35,7 +35,7 @@ const ORDINALS = [
   'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth',
 ];
 
-// find the start of each figure's delineation section
+// find the start of each figure's entry section
 const starts = FIGURES.map(([slug, name]) => {
   const re = new RegExp(
     `\\*${name.replace(' ', '[\\s\\S]{1,3}')},?\\*[,]?\\s+(?:being\\s+found\\s+in|found\\s+in|in)\\s+the\\s+(?:[Ff]irst|[Ss]econd)\\s+house`,
@@ -45,7 +45,7 @@ const starts = FIGURES.map(([slug, name]) => {
   return { slug, name, index: m.index };
 });
 
-// the delineations end where Cauda's note begins
+// the entries end where Cauda's note begins
 const caudaNote = body.indexOf('*Cauda Draconis,* in all and singular');
 if (caudaNote === -1) throw new Error('no Cauda note');
 

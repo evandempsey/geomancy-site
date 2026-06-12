@@ -1,6 +1,6 @@
 /**
  * Generate the authors' ground-truth dossier for the course charts
- * (A–D, and the Lesson 13 practicum charts J–L) and assert every
+ * (A–D, and the Lesson 13 final-practice charts J–L) and assert every
  * structural fact the course lessons state about them. Lessons 5–13
  * are written against this file; if an assertion here fails, prose
  * somewhere is wrong.
