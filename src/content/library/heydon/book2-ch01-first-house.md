@@ -26,11 +26,9 @@ generatedFrom:
   - "references/extracted/heydon/ch01-figures.md"
 ---
 
-[Book title block as printed, pdf-page 397:] THE TEMPLE OF VVISDOME. The Second Book, Being A discovery of the quality of this Art, And signification of the 16 Figures from their Idea's and Rulers in the 12 Parts or Houses of the Earth.
+<div class="source-title-block"><p class="source-title-block__title">THE TEMPLE OF VVISDOME.</p><p class="source-title-block__subtitle">The Second Book, Being A discovery of the quality of this Art, And signification of the 16 Figures from their Idea's and Rulers in the 12 Parts or Houses of the Earth.</p></div>
 
-CHAP I.
-
-*Questions concerning the first house and the signification of the Rulers Idea's and figures in the same.*
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">CHAP I.</p><p class="source-chapter-heading__title"><em>Questions concerning the first house and the signification of the Rulers Idea's and figures in the same.</em></p></div>
 
 IN the beginning of our Art we Divide the Earth into 12 parts, which parts are governed by 7 Lords or Rulers and their 12 Idea's which govern and are incorporated into the 16 figures and give such signification in the houses as followeth.
 
@@ -138,7 +136,7 @@ In finding this Figure called *Letitia*, in the first house, shews a long and pr
 
 ## Rubeus
 
-<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>the figure is not named in the text of this paragraph; it is identified only by the marginal dot-diagram (2,1,2,2 = Rubeus) and its attribution to *Bazzable* [sic, Barzabel] and *Barchiel* in the eighth house; it is named as *Rubeus* under Cauda Draconis on pdf-page 405.</aside>
+<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>Heydon does not name this figure in the paragraph. The marginal dot pattern is 2,1,2,2, and the attribution to *Bazzable* [sic, Barzabel] and *Barchiel* identifies it as Rubeus. The following Cauda Draconis paragraph also names Rubeus in this context.</aside>
 
 <span class="library-glyph" role="img" aria-label="Rubeus: two points, one point, two points, two points" data-figure="rubeus"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Rubeus</span></span>
 
@@ -162,4 +160,4 @@ When ye find this Figure called *Conjunctio*, in the first house, gives a gracef
 
 When ye find this Figure called *Cauda Draconis*, in the first house, it always produceth much mischief and trouble, perplexity both of body and mind, continual dolor, sorrow, loss and tribulations; scandals and calumnies attend the Native, it viciates his fare, many times is dangerous to the eyes, and imports but short life. Some old VVriters would not this or *Rubeus* should be judged in this house, but I am of the opinion that the Judgment herein should not be delayd: for what cause soever the demand was asked, and the figure made, it signifieth illness and damage for all things that may be demanded, so that it is good for nothing but for ruines and burning of Countries by VVars and Treasons, by reason that it is a figure of *Zazel* and *Barzabel*, and the *Idea's Barchiel* and *Hanael*, in the sixth, eighth, and twelfth houses, and of the Element of the Fire, and a very ill figure.
 
-<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>actual figure order/pages differ slightly from the brief's estimates (Amissio appears on 401–402, Caput Draconis on 402–403, Rubeus unnamed on 404). All sixteen figures are present. Distinctive printed forms retained as set: *Thoroscope*, "aud Visage" (turned n), "Fgure", *Aquesitio*/*Anquisitio*, *Havael*, *Sorah* (vs. *Sorath* elsewhere), *Pautarva* (for Pantarva), "liekwise", "deligteth", *Bazzable*, *Letitia*, "viciates his fare", and VV-for-W ("VVar", "VVriters"). The glyph after "□ or" on pdf-page 405 is read as the opposition sign ☍ (square-or-opposition aspect context).</aside>
+<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>All sixteen figures are present. Original spellings and distinctive printed forms are retained, including *Thoroscope*, "aud Visage" (turned n), "Fgure", *Aquesitio*/*Anquisitio*, *Havael*, *Sorah* (where *Sorath* appears elsewhere), *Pautarva*, "liekwise", "deligteth", *Bazzable*, *Letitia*, "viciates his fare", and VV-for-W forms such as "VVar" and "VVriters". The aspect glyph after "□ or" is read as the opposition sign ☍.</aside>

@@ -28,15 +28,11 @@ generatedFrom:
 
 <div class="source-locator source-locator--block">leaf 095 / p. 67</div>
 
-<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>opens with the book title and prologue, as printed</aside>
-
-The second Booke of Geomancie.
-
-*The Prologue.*
+<div class="source-title-block"><p class="source-title-block__title">The second Booke of Geomancie.</p><p class="source-title-block__subtitle">The Prologue.</p></div>
 
 After that it is sufficiently treated, what thing Geomancie is, and the manner how to practise the same, and what profite and commoditie commeth therof by the subtiltie of the Science, and the receation which is taken therein, together with the knowledge & experience which the Geomancian ought to have in Astrologie: now resteth it to open and discover the qualitie of this Art by the xij. houses of heaven, and their significations which be as followeth.
 
-Of all the significations being of the first house, upon the questions and demaundes which may be propounded and made in the same. Chap. I.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. I.</p><p class="source-chapter-heading__title">Of all the significations being of the first house, upon the questions and demaundes which may be propounded and made in the same.</p></div>
 
 The first house which is, Thoroscope or Ascendant and Angle of the Orient, contayneth the signification of the demaundes which may be moved upon the qualitie, complexion, and the length of the life of man, that is to say:
 

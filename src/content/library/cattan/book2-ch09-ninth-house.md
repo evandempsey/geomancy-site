@@ -26,8 +26,7 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses09-10.md"
 ---
 
-Of the ninth house, and of the demaundes contained
-therein. Chap. 9.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 9.</p><p class="source-chapter-heading__title">Of the ninth house, and of the demaundes contained therein.</p></div>
 
 1 The ninth house called the Cadant from the Angle of the Occident, otherwise called the house of God, containeth naturally the questions and demaunds which may be propounded upon the appertenances of any Temple, Church, Chappel, Monasterie or Hermitage.
 

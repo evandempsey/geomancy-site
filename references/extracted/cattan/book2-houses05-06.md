@@ -2,6 +2,8 @@
 - leaves: 117–125 (chapter heading and demaundes list, leaves 117–118; figure entries, leaves 118–125)
 - pages: 89–97 (the headline of leaf 124 misprints page 96 as "69")
 
+[source-chapter: Chap. 5. | Of the fift house, and of the demaundes therein contained.]
+
 1 The fift house called the succedant of the angle of the septentrionall, otherwise called the good fortune, doth containe properly the significations of the demaundes which may be made touching a childe, to knowe whether he shall be small or great of stature, and touching his birth, whether he be legitimate or bastarde, of good nature or ill.
 
 2 The demaundes likewise which may be moved on the maner of his living, that is to say, if it be profitable to a person to eate and drincke.
@@ -128,6 +130,8 @@ When in this fift house you finde this figure Via, it dooth signifie to have few
 # Book II, Chap. 6 — Of the sixt house, and of the questions therein contayned. Chap. 6.
 - leaves: 125–130 (heading and questions list, leaves 125–126; figure entries, leaves 126–130; ends where "Of the seuenth house... Chap. 7." begins on leaf 130)
 - pages: 97–102
+
+[source-chapter: Chap. 6. | Of the sixt house, and of the questions therein contayned.]
 
 1 The sixt house called the Cadant from the Angle septentrionall, or the ill fortune, contayneth properly all the demaundes which may be made touching servaunts and other subjects.
 

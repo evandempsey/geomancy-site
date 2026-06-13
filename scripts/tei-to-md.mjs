@@ -236,12 +236,12 @@ if (!geomancy || !gerard) throw new Error('could not locate parts in TEI');
   writeChapter(
     'src/content/library/agrippa/of-geomancy.md',
     {
-      title: '"Of Geomancy" — the full text',
+      title: 'Of Geomancy — the full text',
       source: 'agrippa',
       order: 1,
-      locator: '"pp. 1–60"',
+      locator: 'pp. 1–60',
       description:
-        '"The complete text of the treatise on geomancy attributed to Henry Cornelius Agrippa, in Robert Turner\'s English translation of 1655."',
+        "The complete text of the treatise on geomancy attributed to Henry Cornelius Agrippa, in Robert Turner's English translation of 1655.",
     },
     body,
   );

@@ -10,9 +10,7 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-Of the company of the house.
-
-Chap. 7.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 7.</p><p class="source-chapter-heading__title">Of the company of the house.</p></div>
 
 WHen you finde a good fygure in a good house, it is double good, because the house is good and the fygure also, and signifyeth that without any doubt the querant shal obtaine his demaunde. By the like reason if yee finde an ill fygure in an ill house, it is very ill for the querant, but if ye finde a good fygure in an ill house, it signifyeth good to the querant, but it will not continue, but it taketh away some part of the malice of the house : in like case if yee finde an ill fygure in a good house, it taketh away the malice of the figure, for she would doe harme, but shee can not, keeping alwaies that the good come not to the querant : and for, as much as in this Chapter I have promised to speake of the company of fygures, I will that you doe understand that this companie is of three manners, whereof the one is simple, the other demy simple, and the third compound.
 

@@ -1,9 +1,9 @@
 ---
-title: "\"Of Geomancy\" — the full text"
+title: "Of Geomancy — the full text"
 source: agrippa
 order: 1
-locator: "\"pp. 1–60\""
-description: "\"The complete text of the treatise on geomancy attributed to Henry Cornelius Agrippa, in Robert Turner's English translation of 1655.\""
+locator: "pp. 1–60"
+description: "The complete text of the treatise on geomancy attributed to Henry Cornelius Agrippa, in Robert Turner's English translation of 1655."
 ---
 
 GEOMANCY is an art of divination, whereby the judgment may be rendered by lot, or destiny to every question of every thing whatsoever: but the art hereof consisteth especially in certain points, whereof certain figures are deducted according to the reason or rule of equallity or inequallity, likeness or unlikeness; which figures are also reduced to the caelestial figures, assuming their natures and properties, according to the course and forms of the signs and planets. Notwithstanding this in the first place we are to consider, that this kind of art can declare or shew forth nothing of verity, unless it shall be radical in some divine virtue; and this the authors of this science have demonstrated to be too-fold: the one whereof consists in religion and cerimonies; and therefore they will have the projecting of the points of this art to be made with signs in the earth: wherefore the art is appropriated to this element the earth, even as pyromancy to the the fire, and hydromancy to the element of water: then whereas they judged the hand of the projector or worker to be most powerfully

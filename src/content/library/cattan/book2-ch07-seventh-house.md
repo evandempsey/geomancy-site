@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses07-08.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 7.</p><p class="source-chapter-heading__title">Of the seventh house, and of the demaunds therein contayned.</p></div>
+
 1 The seventh house, which is the Angle of the Occident, contayneth properly and naturally the significations of the questions and demaundes which may be moved on the contrary of the demaund of any person.
 
 2 Also uppon all debates, sutes in lawe, theeverie and fugitives.

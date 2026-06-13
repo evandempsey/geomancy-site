@@ -2,9 +2,10 @@
 - leaves: 192–195
 - pages: 174, 175, 176, 161 [sic — printed "161", evidently a misprint for 177]
 
+> Note: In these printed tables, the two Witnesses in each column stand side by side, with the Judge below. This transcription treats the left figure as the First Witness and the right figure as the Second Witness.
+
 ## Amissio, even witnesses (leaf 192, p. 174, block 1)
-- headline-band: w1
-> note: In these tables the two witnesses are not printed as upper and lower bands but side by side within each column: the headline figure stands at the left of each witness-pair (transcribed as w1) and its partner at the right (w2), the pair occupying four star-rows; the Judge is printed below as a normal four-row figure. Block label printed "Euen witnesses".
+> Note: Block label printed "Euen witnesses".
 
 ### Amissio + Acquisitio → Via
 - dots: w1=1,2,1,2 w2=2,1,2,1 judge=1,1,1,1
@@ -71,8 +72,7 @@
 | thing lost | not found |
 
 ## Amissio, even witnesses (leaf 192, p. 174, block 2)
-- headline-band: w1
-> note: Side-by-side witness layout as in block 1. Block label printed short, "Euen witnes".
+> Note: Block label printed short, "Euen witnes".
 
 ### Amissio + Populus → Amissio
 - dots: w1=1,2,1,2 w2=2,2,2,2 judge=1,2,1,2
@@ -139,8 +139,7 @@
 | thing lost | part found |
 
 ## Conjunctio, even witnesses (leaf 193, p. 175, block 1)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1). Margin headline printed "Coniunctio".
+> Note: Margin headline printed "Coniunctio".
 
 ### Conjunctio + Acquisitio → Fortuna Major
 - dots: w1=2,1,1,2 w2=2,1,2,1 judge=2,2,1,1
@@ -207,8 +206,7 @@
 | thing lost | found |
 
 ## Conjunctio, even witnesses (leaf 193, p. 175, block 2)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1).
+> Note: Side-by-side witness layout (headline figure left = w1).
 
 ### Conjunctio + Via → Carcer
 - dots: w1=2,1,1,2 w2=1,1,1,1 judge=1,2,2,1
@@ -275,8 +273,7 @@
 | thing lost | found |
 
 ## Carcer, even witnesses (leaf 194, p. 176, block 1)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1).
+> Note: Side-by-side witness layout (headline figure left = w1).
 
 ### Carcer + Populus → Carcer
 - dots: w1=1,2,2,1 w2=2,2,2,2 judge=1,2,2,1
@@ -343,8 +340,7 @@
 | thing lost | part found |
 
 ## Carcer, even witnesses (leaf 194, p. 176, block 2)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1).
+> Note: Side-by-side witness layout (headline figure left = w1).
 
 ### Carcer + Fortuna Major → Amissio
 - dots: w1=1,2,2,1 w2=2,2,1,1 judge=1,2,1,2
@@ -411,8 +407,7 @@
 | thing lost | be found |
 
 ## Fortuna Minor, even witnesses (leaf 195, p. 161 [sic, for 177], block 1)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1). Margin headline printed in italic "Fortuna minor". The printed page number reads "161", a misprint (the verso of leaf 194 is p. 176, so this recto should be 177).
+> Note: Side-by-side witness layout (headline figure left = w1). Margin headline printed in italic "Fortuna minor". The printed page number reads "161", a misprint (the verso of leaf 194 is p. 176, so this recto should be 177).
 
 ### Fortuna Minor + Fortuna Major → Via
 - dots: w1=1,1,2,2 w2=2,2,1,1 judge=1,1,1,1
@@ -479,8 +474,7 @@
 | thing lost | found |
 
 ## Fortuna Minor, even witnesses (leaf 195, p. 161 [sic, for 177], block 2)
-- headline-band: w1
-> note: Side-by-side witness layout (headline figure left = w1). This block's matter-labels differ from the standard list: "gouernement" stands where other blocks have "worship", "lands" where they have "possession", and "way" where they have "iourney". This is the final block of the table series; nothing follows it on the page but the gathering signature "B b" — the advertisement/epilogue prose (transcribed elsewhere) begins on the next leaf.
+> Note: Side-by-side witness layout (headline figure left = w1). This block's matter-labels differ from the standard list: "gouernement" stands where other blocks have "worship", "lands" where they have "possession", and "way" where they have "iourney". This is the final block of the table series; nothing follows it on the page but the gathering signature "B b" — the advertisement/epilogue prose (transcribed elsewhere) begins on the next leaf.
 
 ### Fortuna Minor + Amissio → Conjunctio
 - dots: w1=1,1,2,2 w2=1,2,1,2 judge=2,1,1,2

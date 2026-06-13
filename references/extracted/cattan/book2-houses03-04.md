@@ -2,6 +2,8 @@
 - leaves: 105–109
 - pages: 77–81
 
+[source-chapter: Chap. 3. | Of the third house and of the demaundes which belong thereunto.]
+
 1 The demaundes which naturally be attributed unto the third house called the Cadant from the ascendant of the Angle of the orient be of brethren, sisters, nephewes, and other kinsfolkes and alies, wyth the number of them, and the place of the nativity of the querant.
 
 2 This house containeth also the questions which may be propounded of a Scholler studying in the Universitie, or in anie other place.
@@ -117,6 +119,8 @@ When in the third house ye finde this Figure called Via, it signifyeth small goo
 # Book II, Chap. 4 — Of the fourth house, and of the demaundes thereunto belonging. Chap. 4.
 - leaves: 109–117
 - pages: 81–89
+
+[source-chapter: Chap. 4. | Of the fourth house, and of the demaundes thereunto belonging.]
 
 1 The fourth house which is the angle septentrionall or the earth, contayneth naturally the questions and demaundes which may be made upon the Father or Grandfather, and upon the great Grantfather.
 

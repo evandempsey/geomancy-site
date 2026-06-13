@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses05-06.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 5.</p><p class="source-chapter-heading__title">Of the fift house, and of the demaundes therein contained.</p></div>
+
 1 The fift house called the succedant of the angle of the septentrionall, otherwise called the good fortune, doth containe properly the significations of the demaundes which may be made touching a childe, to knowe whether he shall be small or great of stature, and touching his birth, whether he be legitimate or bastarde, of good nature or ill.
 
 2 The demaundes likewise which may be moved on the maner of his living, that is to say, if it be profitable to a person to eate and drincke.

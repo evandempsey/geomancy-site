@@ -5,7 +5,7 @@
  * the chapter-shaped extraction files as the readable text and records which
  * corpus quote IDs each generated chapter covers.
  */
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { normalizeLibraryBody } from './lib/library-markup.mjs';
 
@@ -100,7 +100,9 @@ function yamlString(value) {
 }
 
 function writeChapter(path, meta, body) {
-  mkdirSync(dirname(path), { recursive: true });
+  const wantsMdx = body.includes('<ShieldChart');
+  const targetPath = wantsMdx && path.endsWith('.md') ? path.replace(/\.md$/, '.mdx') : path;
+  mkdirSync(dirname(targetPath), { recursive: true });
   const lines = [
     '---',
     `title: ${yamlString(meta.title)}`,
@@ -117,9 +119,17 @@ function writeChapter(path, meta, body) {
     lines.push('generatedFrom:');
     for (const item of meta.generatedFrom) lines.push(`  - ${yamlString(item)}`);
   }
-  lines.push('---', '', body.trim(), '');
-  writeFileSync(path, lines.join('\n'));
-  return path;
+  lines.push('---', '');
+  if (wantsMdx) lines.push("import ShieldChart from '../../../components/ShieldChart.astro';", '');
+  lines.push(body.trim(), '');
+
+  if (targetPath !== path && existsSync(path)) unlinkSync(path);
+  if (!wantsMdx && path.endsWith('.md') && existsSync(path.replace(/\.md$/, '.mdx'))) {
+    unlinkSync(path.replace(/\.md$/, '.mdx'));
+  }
+
+  writeFileSync(targetPath, lines.join('\n'));
+  return targetPath;
 }
 
 function cattanBook2() {
@@ -243,6 +253,23 @@ function cattanBook3() {
         generatedFrom: tableFiles.map(sourcePath),
       },
       tables,
+    ),
+  );
+
+  const ch27 = join(CATTAN, 'book3-ch27.md.aside');
+  generated.push(
+    writeChapter(
+      join(OUT, 'cattan', 'book3-ch27-qualities.md'),
+      {
+        title: 'Book III, ch. 27: The qualities and properties of all the figures',
+        source: 'cattan',
+        order: 327,
+        locator: 'Book III, ch. 27 (pp. 214–224)',
+        description: "Cattan's tables of figure qualities, properties, and common question classes.",
+        covers: ['cattan/book-3/ch-27-entering-exiting', 'cattan/book-3/ch-27-time-of-life'],
+        generatedFrom: [sourcePath(ch27)],
+      },
+      normalizeBody(stripMarkdownTitle(readFileSync(ch27, 'utf8'))),
     ),
   );
 

@@ -10,9 +10,7 @@ generatedFrom:
   - "references/extracted/heydon/techniques.md"
 ---
 
-CHAP. XIV.
-
-*Of the good or ill Houses, and which they be, where the Figures be in their places.*
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">CHAP. XIV.</p><p class="source-chapter-heading__title"><em>Of the good or ill Houses, and which they be, where the Figures be in their places.</em></p></div>
 
 THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mean houses be the second, third, fourth, and ninth: the evil houses be the sixth, seventh, eighth, and twelfth houses.
 

@@ -16,15 +16,28 @@ import { glyphGeometry } from '../lib/glyph';
 interface Props {
   /** four Mothers, e.g. ['puer', 'amissio', 'albus', 'populus'] or dots arrays */
   mothers?: (string | number[])[];
+  /** fifteen figures in chart order: I-IV, V-VIII, IX-XII, XIII-XIV, XV */
+  figures?: (string | number[])[];
   caption?: string;
 }
 
-const { mothers: mothersProp, caption } = Astro.props;
+const { mothers: mothersProp, figures: figuresProp, caption } = Astro.props;
 
 const W = 640;
 
 let filled: { dots: FigureDots; name: string }[] | undefined;
-if (mothersProp) {
+let explicitChart = false;
+if (mothersProp && figuresProp) {
+  throw new Error('ShieldChart accepts either `mothers` or `figures`, not both');
+}
+if (figuresProp) {
+  if (figuresProp.length !== 15) {
+    throw new Error(`ShieldChart needs exactly fifteen figures, got ${figuresProp.length}`);
+  }
+  explicitChart = true;
+  const resolved = await Promise.all(figuresProp.map(resolveDots));
+  filled = await Promise.all(resolved.map(async (dots) => ({ dots, name: await nameOf(dots) })));
+} else if (mothersProp) {
   if (mothersProp.length !== 4) {
     throw new Error(`ShieldChart needs exactly four Mothers, got ${mothersProp.length}`);
   }
@@ -83,16 +96,20 @@ const GLYPH_SCALE = 0.72; // 72×96 glyph → ~52×69
 const filledCaption =
   caption ??
   (filled
-    ? `A shield chart cast from the Mothers ${filled
-        .slice(0, 4)
-        .map((f) => f.name)
-        .join(', ')}; the Judge is ${filled[14].name}.`
+    ? explicitChart
+      ? `A printed shield chart; the Judge is ${filled[14].name}.`
+      : `A shield chart cast from the Mothers ${filled
+          .slice(0, 4)
+          .map((f) => f.name)
+          .join(', ')}; the Judge is ${filled[14].name}.`
     : undefined);
 const filledAria = filled
-  ? `Shield chart cast from the Mothers ${filled
-      .slice(0, 4)
-      .map((f) => f.name)
-      .join(', ')}. Witnesses ${filled[12].name} and ${filled[13].name}; Judge ${filled[14].name}.`
+  ? explicitChart
+    ? `Printed shield chart. Witnesses ${filled[12].name} and ${filled[13].name}; Judge ${filled[14].name}.`
+    : `Shield chart cast from the Mothers ${filled
+        .slice(0, 4)
+        .map((f) => f.name)
+        .join(', ')}. Witnesses ${filled[12].name} and ${filled[13].name}; Judge ${filled[14].name}.`
   : undefined;
 
 // --- structural (no-prop) geometry, unchanged ---

@@ -99,7 +99,7 @@ const quotes = defineCollection({
 
 /** Full texts reproduced in the library, one file per chapter/section. */
 const library = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/content/library' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/library' }),
   schema: z.object({
     title: z.string(),
     source: reference('sources'),

@@ -26,13 +26,9 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>ornamental headpiece</aside>
+<div class="source-title-block"><p class="source-title-block__title">The third Booke.</p><p class="source-title-block__subtitle">A briefe deduction of the accord and signification which the sixteene figures have by the twelve houses.</p></div>
 
-The third Booke.
-
-A briefe deduction of the accord and signification which the sixteene figures have by the twelve houses.
-
-CHAP. 1.
+<div class="source-chapter-heading source-chapter-heading--label-only"><p class="source-chapter-heading__label">CHAP. 1.</p></div>
 
 <span class="source-margin"><span class="source-margin__label">margin</span>1. 2<span class="source-margin__sep">; </span><span class="library-glyph" role="img" aria-label="Acquisitio: two points, one point, two points, one point" data-figure="acquisitio"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Acquisitio</span></span></span> IF this figure named *Aquisitio*, do in mounting growe from the first house into the seconde, that is to say, that he be in the second or be like unto the first where *Aquisitio* is, it signifyeth to gaine gownes, and clothing apparell, to get honour, and to make gaine and profit in all acts of honour and vertue, and with the like people.
 

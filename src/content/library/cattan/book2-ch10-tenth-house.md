@@ -26,9 +26,7 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses09-10.md"
 ---
 
-Of the tenth house, and of the demaundes
-contained therein.
-Chap. 10.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 10.</p><p class="source-chapter-heading__title">Of the tenth house, and of the demaundes contained therein.</p></div>
 
 1 This tenth house which is the Angle of the South, or the house of the heart of the heaven containeth properly all the questions and demaundes which may be propounded touching the honour or praise of a person.
 

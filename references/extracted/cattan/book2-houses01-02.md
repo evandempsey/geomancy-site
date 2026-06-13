@@ -4,15 +4,11 @@
 
 [leaf 095 / p. 67]
 
-> Note: opens with the book title and prologue, as printed
-
-The second Booke of Geomancie.
-
-*The Prologue.*
+[source-title: The second Booke of Geomancie. | The Prologue.]
 
 After that it is sufficiently treated, what thing Geomancie is, and the manner how to practise the same, and what profite and commoditie commeth therof by the subtiltie of the Science, and the receation which is taken therein, together with the knowledge & experience which the Geomancian ought to have in Astrologie: now resteth it to open and discover the qualitie of this Art by the xij. houses of heaven, and their significations which be as followeth.
 
-Of all the significations being of the first house, upon the questions and demaundes which may be propounded and made in the same. Chap. I.
+[source-chapter: Chap. I. | Of all the significations being of the first house, upon the questions and demaundes which may be propounded and made in the same.]
 
 The first house which is, Thoroscope or Ascendant and Angle of the Orient, contayneth the signification of the demaundes which may be moved upon the qualitie, complexion, and the length of the life of man, that is to say:
 
@@ -131,6 +127,8 @@ This figure named Populus, found in this house is alwaies good in all things as 
 # Book II, Chap. 2 — Of the second house, and of her signification upon all the demaundes which may be put in question under her. Chap. 2.
 - leaves: 100–105
 - pages: 72–77
+
+[source-chapter: Chap. 2. | Of the second house, and of her signification upon all the demaundes which may be put in question under her.]
 
 1 The second house called the succidant of the Angle of the Orient, hath properly and naturally the signification of gaine to come, for the person which demaundeth and propoundeth the question, to knowe if it shall be with the travaile and sweate of his bodie, or by succession, or by guift.
 

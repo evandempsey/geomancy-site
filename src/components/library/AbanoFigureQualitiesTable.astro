@@ -1,0 +1,156 @@
+---
+import FigureGlyph from '../FigureGlyph.astro';
+import DotPatternGlyph from '../DotPatternGlyph.astro';
+
+const figures = {
+  acquisitio: { name: 'Acquisitio', dots: [2, 1, 2, 1] },
+  albus: { name: 'Albus', dots: [2, 2, 1, 2] },
+  amissio: { name: 'Amissio', dots: [1, 2, 1, 2] },
+  caput: { name: 'Caput Draconis', dots: [2, 1, 1, 1] },
+  carcer: { name: 'Carcer', dots: [1, 2, 2, 1] },
+  cauda: { name: 'Cauda Draconis', dots: [1, 1, 1, 2] },
+  conjunctio: { name: 'Conjunctio', dots: [2, 1, 1, 2] },
+  fortunaMajor: { name: 'Fortuna Major', dots: [2, 2, 1, 1] },
+  fortunaMinor: { name: 'Fortuna Minor', dots: [1, 1, 2, 2] },
+  laetitia: { name: 'Laetitia', dots: [1, 2, 2, 2] },
+  puer: { name: 'Puer', dots: [1, 1, 2, 1] },
+  puella: { name: 'Puella', dots: [1, 2, 1, 1] },
+  populus: { name: 'Populus', dots: [2, 2, 2, 2] },
+  rubeus: { name: 'Rubeus', dots: [2, 1, 2, 2] },
+  tristitia: { name: 'Tristitia', dots: [2, 2, 2, 1] },
+  via: { name: 'Via', dots: [1, 1, 1, 1] },
+};
+
+const qualityRows = [
+  {
+    qualities: 'Hot and wet; aerial; masculine; oriental; sanguine',
+    figures: [figures.laetitia, figures.conjunctio, figures.puer, figures.acquisitio],
+  },
+  {
+    qualities: 'Hot and dry; fiery; masculine; choleric; southern',
+    figures: [figures.cauda, figures.fortunaMinor, figures.rubeus, figures.amissio],
+  },
+  {
+    qualities: 'Cold and wet; watery; feminine; phlegmatic; northern',
+    figures: [figures.via, figures.puella, figures.albus, figures.populus],
+  },
+  {
+    qualities: 'Cold and dry; earthy; feminine; melancholic; western',
+    figures: [figures.caput, figures.carcer, figures.tristitia, figures.fortunaMajor],
+  },
+];
+
+const timeRows = [
+  {
+    span: 'Years',
+    figures: [
+      figures.acquisitio,
+      figures.fortunaMajor,
+      { name: 'five-line manuscript pattern', dots: [1, 2, 1, 2, 2], variant: true },
+      figures.tristitia,
+      figures.albus,
+      figures.caput,
+      figures.carcer,
+    ],
+  },
+  {
+    span: 'Months',
+    figures: [figures.puella, figures.puer, figures.rubeus, figures.populus, figures.via, figures.fortunaMinor],
+  },
+  {
+    span: 'Days',
+    figures: [figures.amissio, figures.cauda],
+  },
+  {
+    span: 'Hours',
+    figures: [figures.conjunctio],
+  },
+];
+---
+
+<table class="abano-table">
+  <caption>Qualities of the figures</caption>
+  <thead>
+    <tr>
+      <th scope="col">Qualities</th>
+      <th scope="col">Figures</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      qualityRows.map((row) => (
+        <tr>
+          <th scope="row">{row.qualities}</th>
+          <td>
+            <ul class="figure-list">
+              {row.figures.map((figure) => (
+                <li>
+                  <FigureGlyph dots={figure.dots} name={figure.name} size={1.6} />
+                  <span>{figure.name}</span>
+                </li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<table class="abano-table">
+  <caption>Time signified by the figures</caption>
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Figures</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      timeRows.map((row) => (
+        <tr>
+          <th scope="row">{row.span}</th>
+          <td>
+            <ul class="figure-list">
+              {row.figures.map((figure) => (
+                <li>
+                  {figure.variant ? (
+                    <DotPatternGlyph dots={figure.dots} name={figure.name} size={1.6} />
+                  ) : (
+                    <FigureGlyph dots={figure.dots} name={figure.name} size={1.6} />
+                  )}
+                  <span>{figure.name}</span>
+                </li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  .abano-table + .abano-table {
+    margin-top: var(--space-6);
+  }
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .figure-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .figure-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+  }
+</style>

@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses03-04.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 3.</p><p class="source-chapter-heading__title">Of the third house and of the demaundes which belong thereunto.</p></div>
+
 1 The demaundes which naturally be attributed unto the third house called the Cadant from the ascendant of the Angle of the orient be of brethren, sisters, nephewes, and other kinsfolkes and alies, wyth the number of them, and the place of the nativity of the querant.
 
 2 This house containeth also the questions which may be propounded of a Scholler studying in the Universitie, or in anie other place.

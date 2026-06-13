@@ -2,13 +2,9 @@
 - leaves: 168–176
 - pages: 150–158 (printed; running header "The third Booke" / "of Geomancie."; the header of p. 154 misprints "The second Booke")
 
-[ornamental headpiece]
+[source-title: The third Booke. | A briefe deduction of the accord and signification which the sixteene figures have by the twelve houses.]
 
-The third Booke.
-
-A briefe deduction of the accord and signification which the sixteene figures have by the twelve houses.
-
-CHAP. 1.
+[source-chapter: CHAP. 1.]
 
 {margin: 1. 2, dot-figure of Aquisitio} IF this figure named *Aquisitio*, do in mounting growe from the first house into the seconde, that is to say, that he be in the second or be like unto the first where *Aquisitio* is, it signifyeth to gaine gownes, and clothing apparell, to get honour, and to make gaine and profit in all acts of honour and vertue, and with the like people.
 
@@ -176,7 +172,7 @@ When so ever ye finde the first houses to passe one into an other, you shall jud
 - leaves: 176–178
 - pages: 158–160
 
-Of the good or ill house, and which they be, where the figures be in their places. Chap. 2.
+[source-chapter: Chap. 2. | Of the good or ill house, and which they be, where the figures be in their places.]
 
 THe good houses, to be briefe, are the first, fift, tenth and eleventh : the meane houses be the second, third, fourth and ninth : the evill houses be the sixt, seventh, eight and twelfth houses.
 
@@ -218,7 +214,7 @@ The houses wherein the figures be found to be good.
 - leaves: 178–179
 - pages: 160–161
 
-Of the two witnesses. Chap. 3.
+[source-chapter: Chap. 3. | Of the two witnesses.]
 
 AFter that we have sufficiently treated of the 12. houses and of the fygures and of their translation and concorde, and which be good and which be bad. Now resteth it to speake of the two witnesses and of the Judge, now must you know that the two witnesses be two figures drawen of the twelve figures of the Zodiacke, whereof the one must be placed in the Figure formed on the right side, which is the thirteenth Figure, and is called the right witnes, the other must be placed on the left side of the Figure, and is the fourteenth Figure named the left witnes : the right witnes is put for the querant, and signifyeth all that which by the first Figure, and all the others which bee on the right side (that is to say the second, third, fourth, ninth and tenth) is discerned, which is the motive of the question before propounded. The left witnes containeth all that which the figures doe signifie which be on his side, that is to say, the fift, sixt, seventh, eight, eleventh and twelfth, on such wise that the right witnes signifyeth the querant, and the left witnes the thing demaunded, propounded and enquired. Besides this, the right witnes signifyeth joy and happines of the thing lately passed to the person which propounded the question, and the left witnesse signifyeth heavinesse, unquietnesse and mishap of the thing to come, and put in question : you must further note, that these two witnesses be no houses, neither naturall Figures, but bee onely accidentalles, taken from the other to give a judgement certaine on the question propounded.
 
@@ -226,7 +222,7 @@ AFter that we have sufficiently treated of the 12. houses and of the fygures and
 - leaves: 179 (the witness-and-judge tables follow on leaves 180–195, printed pp. 162–177; not transcribed)
 - pages: 161
 
-Of the Judge. Chap. 4.
+[source-chapter: Chap. 4. | Of the Judge.]
 
 THe Judge or the fifteenth figure is procreated of the two witnesses to judge the ende of all the signification of the demaund, to know if it be good or bad. The which judge ought alwayes of necessitie to be even : for if it be not, the figure should be false : and so if the Judge be good, the signification of the demaund shall come to a good ende, and if he be ill, it shall come to an ill ende. If the Judge doe agree with the first, and with the other fygures which be on the right side, it signifyeth good to the querant and in the thing demaunded. And if he agree wyth those of the left hand which be called the daughters, it signifyeth to the querant an ill issue of the thing demaunded. And so must ye say and esteeme of the accorde which he hath with the right or left witnesse, as ye shall see by the example following, according to the doctours in this Arte, as well Hebrewes as Chaldeans, and other which have treated thereof.
 
@@ -238,13 +234,13 @@ This Table following shall serve you to knowe the Witnesses and the Judge as wel
 - leaves: 196–201
 - pages: printed pagination erroneously begins again at "162" on leaf 196 and runs 162–167 (duplicating the numbers used on the table leaves)
 
-[Prefixed on the same leaf, immediately before the chapter, stands this epilogue to the tables:]
+> Note: Cattan prints the following advertisement immediately before chapter 6, as an epilogue to the witness-and-judge tables.
 
 An advertisement of this Table here going before.
 
 ANd thus hath beene described unto you by this Table here before, by a discourse, the signification of the Judge, and of the witnesses even and uneven, to the ende you may the easelier give a certaine judgement of the Figures as they shall fall, having sometimes like signification and importance for sundry demaundes, and sometime unlike, as to knowe if that a person shall be of long life or shorte, if he shall have the goodes and succession of his father, if it be good to buy landes and lordships, if it be good to take a wife, and whether she shall be good or bad, and whether a woman with childe shall have a sonne or a daughter, or if a sicke person shall amend of that disease, or that he which is in prison shall quickely come forth, or if it be good to take a voyage in hand, whether a thing lost shall be founde againe. And so of all other questions and demaundes which may be named, according to the example here before set out, whereby you may by your owne selfe without any further declaration knowe the Figures which be good for one demaund, and those which holde no more on the one side then on the other. Moreover, I have here placed the figure *Populus* for a Judge, contrarie to the opinion of all the Doctors in this Science, the which say all with one accorde, that when she is found in this place, that then the figure formed is not to be made, or question propounded, is not to be judged by him, but that question must bee judged by the foure angles and other rules, which wee will hereafter shewe, by the which they may be as well and certainely judged, as by the Judge himselfe.
 
-How many manner of waies a figure is saide to be well made and fortunate or unfortunate. Chap. 6.
+[source-chapter: Chap. 6. | How many manner of waies a figure is saide to be well made and fortunate or unfortunate.]
 
 YOu must knowe that a figure consisting (as we have saide before) of fifteene Figures, that is to say, foure mothers, foure daughters, foure nephews, two witnesses, and one judge, is saide to be good and well made for three reasons. The first is, when the Figure doth consist uppon many good figures. The second is, when the Figure is made of figures which have more even points then odde. The third is, when it is of more then ninetie six points, or of so many at the least.
 
@@ -268,9 +264,7 @@ And thus by these two examples is manifestly shewed unto you, the translation of
 - leaves: 201–207
 - pages: 167–173 (printed, second sequence)
 
-Of the company of the house.
-
-Chap. 7.
+[source-chapter: Chap. 7. | Of the company of the house.]
 
 WHen you finde a good fygure in a good house, it is double good, because the house is good and the fygure also, and signifyeth that without any doubt the querant shal obtaine his demaunde. By the like reason if yee finde an ill fygure in an ill house, it is very ill for the querant, but if ye finde a good fygure in an ill house, it signifyeth good to the querant, but it will not continue, but it taketh away some part of the malice of the house : in like case if yee finde an ill fygure in a good house, it taketh away the malice of the figure, for she would doe harme, but shee can not, keeping alwaies that the good come not to the querant : and for, as much as in this Chapter I have promised to speake of the company of fygures, I will that you doe understand that this companie is of three manners, whereof the one is simple, the other demy simple, and the third compound.
 
@@ -300,7 +294,7 @@ BEcause that here before I have given you an example howe to judge the figure of
 - leaves: 207–208
 - pages: 173–174 (printed, second sequence)
 
-Of the company of coniunction. Chap. 8.
+[source-chapter: Chap. 8. | Of the company of coniunction.]
 
 THere is an other manner of company in this Science which is called a Conjunction, which is when the first figure passeth in the company or house of the thing demaunded, or to tell you the more truelier, when the figure of the thing demaunded is in company of the first. Which thing I will give you easly to understand by the figure that followeth, and the declaration which I will hereafter make.
 
@@ -314,7 +308,7 @@ THe Lord of Lymoges being gone to Scotland, as well to accompany the Quéene, as
 - leaves: 208–210
 - pages: 174–176 (printed, second sequence)
 
-Of the occupation. Chap. 9.
+[source-chapter: Chap. 9. | Of the occupation.]
 
 THe occupation is when the Fygure of the querant goeth straight into the house of the thing demaunded as hereafter ye shall sée by example, on such wise, that if the first Figure which is the house of the querant be good, and that it passe into the house of the thing demaunded, that is the best signe that may be. But if the figure be ill, it is an ill signe, as by example, if they be two figures of the Fire, and that the Question be made to know which of the two which have sutes or other quarels shall come to an end, it signifyeth that the accord shall bee surely, but it shall not be without fraude or deceipt. If they were both good figures of the Ayre, or of the Water, or of the Earth, they should signifie great goodnes as by the deduction of this example you may see.
 

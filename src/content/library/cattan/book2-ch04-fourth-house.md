@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses03-04.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 4.</p><p class="source-chapter-heading__title">Of the fourth house, and of the demaundes thereunto belonging.</p></div>
+
 1 The fourth house which is the angle septentrionall or the earth, contayneth naturally the questions and demaundes which may be made upon the Father or Grandfather, and upon the great Grantfather.
 
 2 Also uppon houses, landes, vines, gardens, medowes, hearbes, trees, and their appertenances.

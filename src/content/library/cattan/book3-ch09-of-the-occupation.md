@@ -10,7 +10,7 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-Of the occupation. Chap. 9.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 9.</p><p class="source-chapter-heading__title">Of the occupation.</p></div>
 
 THe occupation is when the Fygure of the querant goeth straight into the house of the thing demaunded as hereafter ye shall sée by example, on such wise, that if the first Figure which is the house of the querant be good, and that it passe into the house of the thing demaunded, that is the best signe that may be. But if the figure be ill, it is an ill signe, as by example, if they be two figures of the Fire, and that the Question be made to know which of the two which have sutes or other quarels shall come to an end, it signifyeth that the accord shall bee surely, but it shall not be without fraude or deceipt. If they were both good figures of the Ayre, or of the Water, or of the Earth, they should signifie great goodnes as by the deduction of this example you may see.
 

@@ -2,6 +2,8 @@
 - leaves: 130-137
 - pages: 102-109
 
+[source-chapter: Chap. 7. | Of the seventh house, and of the demaunds therein contayned.]
+
 1 The seventh house, which is the Angle of the Occident, contayneth properly and naturally the significations of the questions and demaundes which may be moved on the contrary of the demaund of any person.
 
 2 Also uppon all debates, sutes in lawe, theeverie and fugitives.
@@ -137,6 +139,8 @@ If this fygure Via be in this house, the enemy is feeble and of small power, the
 # Book II, Chap. 8 — Of the eight house and of his demaundes. Chap. 8.
 - leaves: 138-143
 - pages: 110-115
+
+[source-chapter: Chap. 8. | Of the eight house and of his demaundes.]
 
 1 The eight house called the succedant of the Angle of the Occident, otherwise called the house of death, containeth naturally the questions and demaundes which may be made and propounded uppon the sicknes or death of any man, if he shall live long or die quickely.
 

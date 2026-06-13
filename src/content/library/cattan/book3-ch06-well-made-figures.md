@@ -10,13 +10,13 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-[Prefixed on the same leaf, immediately before the chapter, stands this epilogue to the tables:]
+<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>Cattan prints the following advertisement immediately before chapter 6, as an epilogue to the witness-and-judge tables.</aside>
 
 An advertisement of this Table here going before.
 
 ANd thus hath beene described unto you by this Table here before, by a discourse, the signification of the Judge, and of the witnesses even and uneven, to the ende you may the easelier give a certaine judgement of the Figures as they shall fall, having sometimes like signification and importance for sundry demaundes, and sometime unlike, as to knowe if that a person shall be of long life or shorte, if he shall have the goodes and succession of his father, if it be good to buy landes and lordships, if it be good to take a wife, and whether she shall be good or bad, and whether a woman with childe shall have a sonne or a daughter, or if a sicke person shall amend of that disease, or that he which is in prison shall quickely come forth, or if it be good to take a voyage in hand, whether a thing lost shall be founde againe. And so of all other questions and demaundes which may be named, according to the example here before set out, whereby you may by your owne selfe without any further declaration knowe the Figures which be good for one demaund, and those which holde no more on the one side then on the other. Moreover, I have here placed the figure *Populus* for a Judge, contrarie to the opinion of all the Doctors in this Science, the which say all with one accorde, that when she is found in this place, that then the figure formed is not to be made, or question propounded, is not to be judged by him, but that question must bee judged by the foure angles and other rules, which wee will hereafter shewe, by the which they may be as well and certainely judged, as by the Judge himselfe.
 
-How many manner of waies a figure is saide to be well made and fortunate or unfortunate. Chap. 6.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 6.</p><p class="source-chapter-heading__title">How many manner of waies a figure is saide to be well made and fortunate or unfortunate.</p></div>
 
 YOu must knowe that a figure consisting (as we have saide before) of fifteene Figures, that is to say, foure mothers, foure daughters, foure nephews, two witnesses, and one judge, is saide to be good and well made for three reasons. The first is, when the Figure doth consist uppon many good figures. The second is, when the Figure is made of figures which have more even points then odde. The third is, when it is of more then ninetie six points, or of so many at the least.
 

@@ -2,8 +2,7 @@
 - leaves: 143–149
 - pages: 115–121
 
-Of the ninth house, and of the demaundes contained
-therein. Chap. 9.
+[source-chapter: Chap. 9. | Of the ninth house, and of the demaundes contained therein.]
 
 1 The ninth house called the Cadant from the Angle of the Occident, otherwise called the house of God, containeth naturally the questions and demaunds which may be propounded upon the appertenances of any Temple, Church, Chappel, Monasterie or Hermitage.
 
@@ -141,9 +140,7 @@ Finding this fygure Via in this house, it is ill for the church, the man shall n
 - leaves: 149–156
 - pages: 121–128
 
-Of the tenth house, and of the demaundes
-contained therein.
-Chap. 10.
+[source-chapter: Chap. 10. | Of the tenth house, and of the demaundes contained therein.]
 
 1 This tenth house which is the Angle of the South, or the house of the heart of the heaven containeth properly all the questions and demaundes which may be propounded touching the honour or praise of a person.
 

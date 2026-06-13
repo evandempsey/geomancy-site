@@ -26,7 +26,7 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-Of the good or ill house, and which they be, where the figures be in their places. Chap. 2.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 2.</p><p class="source-chapter-heading__title">Of the good or ill house, and which they be, where the figures be in their places.</p></div>
 
 THe good houses, to be briefe, are the first, fift, tenth and eleventh : the meane houses be the second, third, fourth and ninth : the evill houses be the sixt, seventh, eight and twelfth houses.
 

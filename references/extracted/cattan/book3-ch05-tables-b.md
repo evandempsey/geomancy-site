@@ -1,10 +1,9 @@
 # Book III, Chap. 5 — The tables of the Judges and their Witnesses
 - leaves: 184–187
 - pages: 166, 167, 168, 169
-- layout note: on all four leaves the two witnesses of each column are printed SIDE BY SIDE (not as upper/lower bands): the headline figure's stars stand at the left of the column and the partner witness at the right, with the Judge's stars centred beneath them. Accordingly w1 = left-hand figure, w2 = right-hand figure below. Every column of every block passed the parity-sum check (w1 + w2 = judge, line by line).
+> Note: In these printed tables, the two Witnesses in each column stand side by side, with the Judge centred below. This transcription treats the left figure as the First Witness and the right figure as the Second Witness. Every column in this file passes the line-parity check from Witnesses to Judge.
 
 ## Albus, uneven witnesses (leaf 184, p. 166, block 1)
-- headline-band: w1 (left)
 
 ### Albus + Puer → Via
 - dots: w1=2,2,1,2 w2=1,1,2,1 judge=1,1,1,1
@@ -71,7 +70,6 @@
 | thing lost | parte found |
 
 ## Albus, uneven witnesses (leaf 184, p. 166, block 2)
-- headline-band: w1 (left)
 
 ### Albus + Tristitia → Fortuna Major
 - dots: w1=2,2,1,2 w2=2,2,2,1 judge=2,2,1,1
@@ -138,7 +136,6 @@
 | thing lost | parte found |
 
 ## Rubeus, uneven witnesses (leaf 185, p. 167, block 1)
-- headline-band: w1 (left)
 
 ### Rubeus + Laetitia → Fortuna Minor
 - dots: w1=2,1,2,2 w2=1,2,2,2 judge=1,1,2,2
@@ -205,7 +202,6 @@
 | thing lost | found |
 
 ## Rubeus, uneven witnesses (leaf 185, p. 167, block 2)
-- headline-band: w1 (left)
 
 ### Rubeus + Cauda Draconis → Amissio
 - dots: w1=2,1,2,2 w2=1,1,1,2 judge=1,2,1,2
@@ -272,7 +268,6 @@
 | thing lost | not found |
 
 ## Tristitia, uneven witnesses (leaf 186, p. 168, block 1)
-- headline-band: w1 (left)
 
 ### Tristitia + Tristitia → Populus
 - dots: w1=2,2,2,1 w2=2,2,2,1 judge=2,2,2,2
@@ -339,7 +334,6 @@
 | thing lost | not found |
 
 ## Tristitia, uneven witnesses (leaf 186, p. 168, block 2)
-- headline-band: w1 (left)
 
 ### Tristitia + Puer → Fortuna Minor
 - dots: w1=2,2,2,1 w2=1,1,2,1 judge=1,1,2,2
@@ -406,7 +400,6 @@
 | thing lost | not found |
 
 ## Puella, uneven witnesses (leaf 187, p. 169, block 1)
-- headline-band: w1 (left)
 
 ### Puella + Puer → Conjunctio
 - dots: w1=1,2,1,1 w2=1,1,2,1 judge=2,1,1,2
@@ -473,8 +466,7 @@
 | thing lost | found |
 
 ## Puella, uneven witnesses (leaf 187, p. 169, block 2)
-- headline-band: w1 (left)
-> note: printer's transposition in this block — the matter labels run in the usual order (life … thing lost) but the verdict contents of the first five rows and the last five rows are swapped: rows 1–5 carry the answers that belong to woman with child/sickensse/prison/iourney/thing lost, and rows 6–10 carry the answers that belong to life/substance/worshippe/possession/a wife (e.g. "life: after the 5.", "a wife: not found", "thing lost: ill end"). Transcribed below verbatim as printed, label beside the verdict actually standing in its row.
+> Note: printer's transposition in this block — the matter labels run in the usual order (life … thing lost) but the verdict contents of the first five rows and the last five rows are swapped: rows 1–5 carry the answers that belong to woman with child/sickensse/prison/iourney/thing lost, and rows 6–10 carry the answers that belong to life/substance/worshippe/possession/a wife (e.g. "life: after the 5.", "a wife: not found", "thing lost: ill end"). Transcribed below verbatim as printed, label beside the verdict actually standing in its row.
 
 ### Puella + Rubeus → Via
 - dots: w1=1,2,1,1 w2=2,1,2,2 judge=1,1,1,1

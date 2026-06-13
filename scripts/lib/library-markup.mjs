@@ -120,12 +120,41 @@ export function sourceLocatorHtml(label, block = false) {
 
 function sourceNoteHtml(kind, body) {
   const cleaned = body
+    .replace(/^note:\s*/i, '')
+    .replace(/^layout note:\s*/i, '')
+    .replace(/^boundary note:\s*/i, '')
+    .replace(/^transcription conventions used here:\s*/i, '')
     .replace(/;\s*`headline-band:\s*w1`\s*throughout\.?/gi, '.')
     .replace(/,\s*so\s*`headline-band:\s*w1`\s*throughout\.?/gi, '.')
     .replace(/\s*The headline figure is always the left \(w1\) figure;\s*/i, ' The headline figure is always the left witness; ')
+    .replace(/\bSIDE BY SIDE\b/g, 'side by side')
+    .replace(/\bw1\b/g, 'first witness')
+    .replace(/\bw2\b/g, 'second witness')
+    .replace(/\bLEFT\b/g, 'left')
+    .replace(/\bRIGHT\b/g, 'right')
     .replace(/\s{2,}/g, ' ')
     .trim();
   return `<aside class="library-note library-note--${kind}"><span class="library-note__label">${kind === 'diagram' ? 'Source diagram' : 'Editorial note'}</span>${formatInlineMarkers(cleaned)}</aside>`;
+}
+
+function sourceTitleHtml(raw) {
+  const [title, ...subtitleParts] = String(raw).split(/\s+\|\s+/);
+  const subtitle = subtitleParts.join(' | ').trim();
+  return `<div class="source-title-block"><p class="source-title-block__title">${formatInlineMarkers(title.trim())}</p>${subtitle ? `<p class="source-title-block__subtitle">${formatInlineMarkers(subtitle)}</p>` : ''}</div>`;
+}
+
+function sourceHeadingText(raw) {
+  return formatInlineMarkers(raw.trim()).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+function sourceChapterHtml(raw) {
+  const [label, ...titleParts] = String(raw).split(/\s+\|\s+/);
+  const title = titleParts.join(' | ').trim();
+  return `<div class="source-chapter-heading${title ? '' : ' source-chapter-heading--label-only'}"><p class="source-chapter-heading__label">${escapeHtml(label.trim())}</p>${title ? `<p class="source-chapter-heading__title">${sourceHeadingText(title)}</p>` : ''}</div>`;
+}
+
+function sourceChapterLabelHtml(raw) {
+  return sourceChapterHtml(raw);
 }
 
 function sourceLocatorWithContextHtml(marker, block = false) {
@@ -211,6 +240,8 @@ function normalizeHeadingLine(line) {
 
 export function formatInlineMarkers(value) {
   let output = String(value);
+  output = output.replace(/^\[source-title:\s*([\s\S]+?)\]$/gim, (_, title) => sourceTitleHtml(title));
+  output = output.replace(/^\[source-chapter:\s*([\s\S]+?)\]$/gim, (_, chapter) => sourceChapterHtml(chapter));
   output = output.replace(/^\[(PDF\s+[^\]]+)\]$/gm, (_, marker) => sourceLocatorWithContextHtml(marker, true));
   output = output.replace(/^\[(p\.\s*\d+(?:[-–]\d+)?)\]$/gim, (_, marker) => sourceLocatorHtml(marker, true));
   output = output.replace(/^\[(leaf\s+[^\]]+)\]$/gim, (_, marker) => sourceLocatorHtml(marker, true));
@@ -256,6 +287,12 @@ function sourceRowHtml(line) {
 
 function standaloneBracketNote(line) {
   const trimmed = line.trim();
+  const sourceTitle = trimmed.match(/^\[source-title:\s*([\s\S]+?)\]$/i);
+  if (sourceTitle) return sourceTitleHtml(sourceTitle[1]);
+
+  const sourceChapter = trimmed.match(/^\[source-chapter:\s*([\s\S]+?)\]$/i);
+  if (sourceChapter) return sourceChapterHtml(sourceChapter[1]);
+
   const page = trimmed.match(/^\[(p\.\s*\d+(?:[-–]\d+)?)\]$/i);
   if (page) return sourceLocatorHtml(page[1], true);
 
@@ -274,7 +311,10 @@ function standaloneBracketNote(line) {
 export function normalizeLibraryBody(body) {
   const stripped = body
     .replace(/\r\n/g, '\n')
-    .replace(/^- (?:leaves?|pages?|dot-pattern|pdf-pages?|printed-pages?|chapter):.*$/gm, '')
+    .replace(
+      /^- (?:leaves?|pages?|pages\s*\/\s*leaves|dot-pattern|pdf-pages?|printed-pages?|chapter|headline-band|margin|label|source|uncertain):.*$/gm,
+      '',
+    )
     .replace(/^- \(printed .*$/gm, '')
     .trim();
 
@@ -282,14 +322,22 @@ export function normalizeLibraryBody(body) {
     if (/^- headline-band:/i.test(line)) return '';
     const heading = normalizeHeadingLine(line);
     if (heading) return heading;
+    if (/^(?:CHAP|Chap)\.?\s+[IVXLCDM0-9]+\.?\s*$/i.test(line.trim())) return sourceChapterLabelHtml(line);
     const dotsBand = dotsBandHtml(line);
     if (dotsBand) return dotsBand;
     const blockNote = line.match(/^>\s*note:\s*(.+)$/i);
     if (blockNote) return sourceNoteHtml('editorial', blockNote[1]);
     const listNote = line.match(/^-\s*Note:\s*(.+)$/i);
     if (listNote) return sourceNoteHtml('editorial', listNote[1]);
+    const layoutNote = line.match(/^-\s*layout note:\s*(.+)$/i);
+    if (layoutNote) return sourceNoteHtml('editorial', layoutNote[1]);
+    const boundaryNote = line.match(/^Boundary note:\s*(.+)$/i);
+    if (boundaryNote) return sourceNoteHtml('editorial', boundaryNote[1]);
+    const conventionsNote = line.match(/^Transcription conventions used here:\s*(.+)$/i);
+    if (conventionsNote) return sourceNoteHtml('editorial', conventionsNote[1]);
     const transcriptionNote = line.match(/^Transcription notes:\s*(.+)$/i);
     if (transcriptionNote) return sourceNoteHtml('editorial', transcriptionNote[1]);
+    if (/^Caption:\s*/.test(line)) return '';
     const bracketNote = standaloneBracketNote(line);
     if (bracketNote) return bracketNote;
     const braceNote = line.trim().match(/^\{([^}]+)\}$/);

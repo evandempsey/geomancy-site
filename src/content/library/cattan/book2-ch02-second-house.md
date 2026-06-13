@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses01-02.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 2.</p><p class="source-chapter-heading__title">Of the second house, and of her signification upon all the demaundes which may be put in question under her.</p></div>
+
 1 The second house called the succidant of the Angle of the Orient, hath properly and naturally the signification of gaine to come, for the person which demaundeth and propoundeth the question, to knowe if it shall be with the travaile and sweate of his bodie, or by succession, or by guift.
 
 2 This house also contayneth the resolution of demaundes which may be made for moveable goods, which be in the power of the person demaunding, or for whom the question is propounded.

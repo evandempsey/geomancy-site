@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses05-06.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 6.</p><p class="source-chapter-heading__title">Of the sixt house, and of the questions therein contayned.</p></div>
+
 1 The sixt house called the Cadant from the Angle septentrionall, or the ill fortune, contayneth properly all the demaundes which may be made touching servaunts and other subjects.
 
 2 Also the demaundes which may be made upon sicke persons and diseases, whether it shall be long or short, and of which of the foure humours it commeth, and if the patient shall be quickly hoale, or lose or destroy any of his lymmes by that diseases, and if he shall die in what estate shall he die, in good or bad, and in what day and in what houre.

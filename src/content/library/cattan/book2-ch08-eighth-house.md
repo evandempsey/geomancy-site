@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses07-08.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 8.</p><p class="source-chapter-heading__title">Of the eight house and of his demaundes.</p></div>
+
 1 The eight house called the succedant of the Angle of the Occident, otherwise called the house of death, containeth naturally the questions and demaundes which may be made and propounded uppon the sicknes or death of any man, if he shall live long or die quickely.
 
 2 Also to knowe whether he shall die within a day, month, or yeare.

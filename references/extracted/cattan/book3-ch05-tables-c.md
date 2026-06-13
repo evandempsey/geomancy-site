@@ -1,11 +1,9 @@
 # Book III, Chap. 5 — The tables of the Judges and their Witnesses
 - leaves: 188–191
 - pages: 170, 171, 172, 173
-- source: The Geomancie of Maister Christopher Cattan (London, 1591), archive.org b30337860
-> note: On all four leaves the two witnesses of each column are printed SIDE BY SIDE within a single band of four star-rows (left figure and right figure sharing each row), not as two stacked bands. The four-row Judge band is printed below them. In this file w1 = the LEFT witness of the pair and w2 = the RIGHT witness; the headline figure is the left witness in every column, so `headline-band: w1` throughout. Judge arithmetic (line-wise parity sum of the witnesses) was computed and verified for every column; the single failure is flagged below (leaf 191, block 2, column 3).
+> Note: In these printed tables, the two Witnesses in each column stand side by side, with the Judge below. This transcription treats the left figure as the First Witness and the right figure as the Second Witness. Judge arithmetic was checked line by line; the single failure is flagged below.
 
 ## Puer, uneven witnesses (leaf 188, p. 170, block 1)
-- headline-band: w1
 - margin: Puer
 - label: Vneuen witnesses
 
@@ -74,7 +72,6 @@
 | thing lost | not found |
 
 ## Puer, uneven witnesses (leaf 188, p. 170, block 2)
-- headline-band: w1
 - margin: Puer
 - label: Vneuen witnesses
 
@@ -143,7 +140,6 @@
 | thing lost | not found |
 
 ## Caput Draconis, uneven witnesses (leaf 189, p. 171, block 1)
-- headline-band: w1
 - margin: Caput drac.
 - label: Vneuen witnesses
 
@@ -212,7 +208,6 @@
 | thing lost | found |
 
 ## Caput Draconis, uneven witnesses (leaf 189, p. 171, block 2)
-- headline-band: w1
 - margin: Caput draconis
 - label: Vneuen witnesses
 
@@ -281,7 +276,6 @@
 | thing lost | found |
 
 ## Cauda Draconis, uneven witnesses (leaf 190, p. 172, block 1)
-- headline-band: w1
 - margin: Cauda drac.
 - label: Vneuen witnesses
 
@@ -350,7 +344,6 @@
 | thing lost | found |
 
 ## Cauda Draconis, uneven witnesses (leaf 190, p. 172, block 2)
-- headline-band: w1
 - margin: Cauda drac.
 - label: Vneuen witnesses
 
@@ -419,7 +412,6 @@
 | thing lost | not found |
 
 ## Acquisitio, even witnesses (leaf 191, p. 173, block 1)
-- headline-band: w1
 - margin: Aquisitio
 - label: Euen witnesses
 
@@ -488,10 +480,9 @@
 | thing lost | not found |
 
 ## Acquisitio, even witnesses (leaf 191, p. 173, block 2)
-- headline-band: w1
 - margin: Aquisitio
 - label: Euen witnesses
-> note: As printed, this block does not complete the eight even-figure partners. Columns 3 and 4 repeat Fortuna Major and Fortuna Minor as partner witnesses (already used in columns 1 and 2); Conjunctio and Carcer never appear as partners on this leaf. In column 4 the printed witnesses and judge are internally consistent but the column duplicates column 2 exactly (series expectation: witnesses Acquisitio + Carcer → judge Fortuna Minor — printed partner and judge look interchanged). In column 3 the printed judge does not even agree with the printed witnesses (see entry).
+> Note: As printed, this block does not complete the eight even-figure partners. Columns 3 and 4 repeat Fortuna Major and Fortuna Minor as partner witnesses (already used in columns 1 and 2); Conjunctio and Carcer never appear as partners on this leaf. In column 4 the printed witnesses and judge are internally consistent but the column duplicates column 2 exactly (series expectation: witnesses Acquisitio + Carcer → judge Fortuna Minor — printed partner and judge look interchanged). In column 3 the printed judge does not even agree with the printed witnesses (see entry).
 
 ### Acquisitio + Fortuna Major → Conjunctio
 - dots: w1=2,1,2,1 w2=2,2,1,1 judge=2,1,1,2
@@ -528,7 +519,7 @@
 ### Acquisitio + Fortuna Major → Carcer
 - dots: w1=2,1,2,1 w2=2,2,1,1 judge=1,2,2,1
 - uncertain: true
-> note: Printed exactly as given (star patterns re-verified at high magnification), but arithmetically inconsistent: Acquisitio + Fortuna Major computes to Conjunctio (2,1,1,2), and the printed judge Carcer is its line-wise inverse. The witness pair also duplicates column 1 of this block. By the series logic this column should be Acquisitio + Conjunctio → Fortuna Major. Apparent compositor's error in the 1591 printing.
+> Note: Printed exactly as given (star patterns re-verified at high magnification), but arithmetically inconsistent: Acquisitio + Fortuna Major computes to Conjunctio (2,1,1,2), and the printed judge Carcer is its line-wise inverse. The witness pair also duplicates column 1 of this block. By the series logic this column should be Acquisitio + Conjunctio → Fortuna Major. Apparent compositor's error in the 1591 printing.
 
 | matter | verdict |
 | --- | --- |
@@ -545,7 +536,7 @@
 
 ### Acquisitio + Fortuna Minor → Carcer
 - dots: w1=2,1,2,1 w2=1,1,2,2 judge=1,2,2,1
-> note: Witnesses and judge are arithmetically consistent as printed, but the column duplicates column 2 of this block. By the series logic it should be Acquisitio + Carcer → Fortuna Minor (the printed partner and judge appear interchanged). The verdicts differ from column 2, so both columns are transcribed.
+> Note: Witnesses and judge are arithmetically consistent as printed, but the column duplicates column 2 of this block. By the series logic it should be Acquisitio + Carcer → Fortuna Minor (the printed partner and judge appear interchanged). The verdicts differ from column 2, so both columns are transcribed.
 
 | matter | verdict |
 | --- | --- |

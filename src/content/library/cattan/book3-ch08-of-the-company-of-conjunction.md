@@ -10,7 +10,7 @@ generatedFrom:
   - "references/extracted/cattan/book3-techniques-a.md"
 ---
 
-Of the company of coniunction. Chap. 8.
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 8.</p><p class="source-chapter-heading__title">Of the company of coniunction.</p></div>
 
 THere is an other manner of company in this Science which is called a Conjunction, which is when the first figure passeth in the company or house of the thing demaunded, or to tell you the more truelier, when the figure of the thing demaunded is in company of the first. Which thing I will give you easly to understand by the figure that followeth, and the declaration which I will hereafter make.
 

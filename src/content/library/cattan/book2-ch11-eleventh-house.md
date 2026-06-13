@@ -26,6 +26,8 @@ generatedFrom:
   - "references/extracted/cattan/book2-houses11-12.md"
 ---
 
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">Chap. 11.</p><p class="source-chapter-heading__title">Of the eleventh house, and of the demaunds contained therein.</p></div>
+
 1 The eleventh house which is the succedant of the Angle of the South, otherwise called the good Angle, naturally doth containe all the demaundes which may be made upon a friend, he, or shée, that is to say upon the thing ye love, and whereof ye hope to have consolation, ayde and profite, as well of the friend hard by you, as by him which is farre away.
 
 2 Also the questions which may be made uppon a secrete companion unto whom ye give credite.

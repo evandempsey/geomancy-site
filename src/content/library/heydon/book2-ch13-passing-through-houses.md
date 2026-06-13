@@ -26,9 +26,7 @@ generatedFrom:
   - "references/extracted/heydon/techniques.md"
 ---
 
-CHAP. XIII.
-
-*A brief deduction of the accord and signification which the sixteen Figures have by the twelve Houses.*
+<div class="source-chapter-heading"><p class="source-chapter-heading__label">CHAP. XIII.</p><p class="source-chapter-heading__title"><em>A brief deduction of the accord and signification which the sixteen Figures have by the twelve Houses.</em></p></div>
 
 <span class="library-glyph" role="img" aria-label="Acquisitio: two points, one point, two points, one point" data-figure="acquisitio"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Acquisitio</span></span> IF this Figure named *Acquisitio*, do in mounting grow from the first into the second, that is to say, that he be in the second, or be like unto the first where *Aquisitio* is, it signifieth to gain Gowns, and Clothing apparel, to get honour, and to make gain and profit in all acts of honour and vertue, and with the like people.
 

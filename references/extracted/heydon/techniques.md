@@ -1,28 +1,37 @@
 # Book I, Chap. IV — *How to frame the* Witnesse *and the* Judge.
 - pdf-pages: 121–122 (printed pp. 9–10; Chap. V begins PDF 123)
 
-CHAP. IV.
-
-*How to frame the* Witnesse *and the* Judge.
+[source-chapter: CHAP. IV. | *How to frame the* Witnesse *and the* Judge.]
 
 NExt we must teach you how to make the *Witness* & the *Judge*, that out of them we may have a certain Resolution, Sentence, and stay upon the question, and of the difference thereof; the right *Witnesse* is taken from the ninth and tenth figures, and of these two *Witnesses* cometh a *Judge*, unto whom appertaineth the discussion of the whole figures: And if he be good, the Demand will be found good, and if he be ill, the question is ill: And you must note that sometimes we speak of Idea's and sometimes of Genii, you are to understand by a Genius, a certain Divine spirit that worketh secret things in Nature Miraculously, and by an Idea, the Divine and Natural Form of your Figure; so that there is no great difference betwixt a Genius and a Divine Idea, as you may read in *The Harmony of the World*: Now here followes the Figure.
 
-[PDF p. 122 / p. 10 — full-page example chart, boxes numbered right to left]
+[PDF p. 122 / p. 10 — Heydon's printed example chart, boxes numbered right to left]
 
-8 [figure: 2,2,1,2] — 7 [figure: 1,2,1,1] — 6 [figure: 2,2,2,1] — 5 [figure: 2,2,2,2] — 4 [figure: 2,1,1,2] — 3 [figure: 2,2,1,1] — 2 [figure: 2,2,2,2] — 1 [figure: 2,2,1,2]
-
-12 [figure: 1,2,2,1] — 11 [figure: 2,2,2,1] — 10 [figure: 2,1,2,1] — 9 [figure: 2,2,1,2]
-
-14 [figure: 1,2,2,2] (labelled "The left Witnesse.") — 13 [figure: 2,1,1,1] (labelled "The right Witness")
-
-15 [figure: 1,1,1,1]
+<ShieldChart
+  figures={[
+    'albus',
+    'populus',
+    'fortuna-major',
+    'conjunctio',
+    'populus',
+    'tristitia',
+    'puella',
+    'albus',
+    'albus',
+    'acquisitio',
+    'tristitia',
+    'carcer',
+    'caput-draconis',
+    'laetitia',
+    'via',
+  ]}
+  caption="Heydon's printed example shield for framing the Witnesses and the Judge."
+/>
 
 # Book II, Chap. XIII — *A brief deduction of the accord and signification which the sixteen Figures have by the twelve Houses.*
 - pdf-pages: 485–495 (printed pp. 89–99; Chap. XIV begins PDF 496)
 
-CHAP. XIII.
-
-*A brief deduction of the accord and signification which the sixteen Figures have by the twelve Houses.*
+[source-chapter: CHAP. XIII. | *A brief deduction of the accord and signification which the sixteen Figures have by the twelve Houses.*]
 
 [figure: 2,1,2,1] IF this Figure named *Acquisitio*, do in mounting grow from the first into the second, that is to say, that he be in the second, or be like unto the first where *Aquisitio* is, it signifieth to gain Gowns, and Clothing apparel, to get honour, and to make gain and profit in all acts of honour and vertue, and with the like people.
 
@@ -189,9 +198,7 @@ Whensoever ye finde the first houses to pass one into another, you shall judge a
 # Book II, Chap. XIV — *Of the good or ill Houses, and which they be, where the Figures be in their places.*
 - pdf-pages: 496–498 (printed pp. 100–102; Chap. XV begins PDF 499)
 
-CHAP. XIV.
-
-*Of the good or ill Houses, and which they be, where the Figures be in their places.*
+[source-chapter: CHAP. XIV. | *Of the good or ill Houses, and which they be, where the Figures be in their places.*]
 
 THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mean houses be the second, third, fourth, and ninth: the evil houses be the sixth, seventh, eighth, and twelfth houses.
 
@@ -234,18 +241,14 @@ In all the Telesmes it must be observed that the figures of Astromancie and Geom
 # Book II, Chap. XVI — *Of the two Witnesses.*
 - pdf-pages: 527 (printed p. 131)
 
-CHAP. XVI.
-
-*Of the two Witnesses.*
+[source-chapter: CHAP. XVI. | *Of the two Witnesses.*]
 
 AFter that we have sufficiently treated of the twelve houses, and of the Figures, and of their translation and concord, and which be good, and which be bad. Now resteth it to speak of the two Witnesses and of the Judge, now must you know that the two Witnesses be two figures drawn of the twelve figures of the Zodiack, whereof the one must be placed in the Figure formed on the right side, which is the thirteenth Figure, and is called the right Witness; the other must be placed on the left side of the Figure, and is the fourteenth Figure, named the left Witness: the right Witness is put for the *Querent*, and signifieth all that which by the first Figure, and all the others which be on the right side (that is to say, the second, third, fourth, ninth, and tenth) is discerned, which is the motive of the question before propounded. The left Witness containeth all that which the figures do signifie which be on his side, that is to say, the fifth, sixth, seventh, eighth, eleventh, and twelfth, on such wise that the right Witness signifieth the *Querent*, and the left Witness the thing demanded, propounded, and enquired. Besides this, the right Witness signifieth joy and happiness of the thing lately passed to the person which propounded the question, and the left Witness signifieth heaviness, unquietness, and mishap of the thing to come, and put in question: you must further note, that these two Witnesses be no houses, neither natural figures, but be only accidentals, taken from the other to give a judgment certain on the question propounded.
 
 # Book II, Chap. XVII — *Of the Judge.*
 - pdf-pages: 528–529 (printed pp. 132–133; the chapter's prose ends PDF 529, and the Table of Witnesses and Judge that it announces begins PDF 530)
 
-CHAP. XVII.
-
-*Of the Judge.*
+[source-chapter: CHAP. XVII. | *Of the Judge.*]
 
 THe Judge, or the fifteenth figure is procreated of the two Witnesses to judge the end of all the signification of the demand, to know if it be good or bad. The which Judge ought always of necessity to be even; for if it be not, the figure should be false: and so if the Judge be good, the signification of the demand shall come to a good end, and if he be ill, it shall come to an ill end. If the Judge do agree with the first and with the other figures which be on the right side, it signifieth good to the *Querent*, and in the thing demanded. And if he agree with those on the left hand, which be called the daughters, it signifieth to the *Querent* an ill issue of the thing demanded. And so must ye say and esteem of the accord which he hath with the right or left Witness, as ye shall see by the example following, according to the doctors in this Art, as well Hebrews as Chaldeans, and others which have treated thereof.
 
