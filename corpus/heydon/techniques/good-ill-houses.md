@@ -24,7 +24,7 @@ THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mea
 
 *Tristitia* is a very ill Figure in all the houses, but in the eighth and twelfth houses, where she is good: and mean in the first and second houses.
 
-*Albus* is good for a man which hopeth to have gain [PDF 497, p. 101] or profit in any thing, and also to have entrie into any place, and in this respect is found good in the first and fourth houses.
+*Albus* is good for a man which hopeth to have gainor <span class="source-locator">PDF p. 497 / p. 101</span> profit in any thing, and also to have entrie into any place, and in this respect is found good in the first and fourth houses.
 
 *Rubeus* is ill in all good things, and good in all ill things, and many times signifieth death, she is never found in the first house to make a judgment as is told you before, she is ill in the second, fourth, seventh and tenth houses, and almost in all the other, saving in certain demands.
 
@@ -38,7 +38,7 @@ THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mea
 
 *Caput draconis* is good with good, and ill with ill, and is good in the seventh and second houses, and sheweth to have a good issue in the things where a man hopeth to have gain.
 
-*Cauda draconis* is very good with the ill, and very ill with the good, in matter of loss she is good, and to pass out of an affair: she is found good in the fourth, sixth, ninth, and twelfth houses, and ill in the second: ye must note that in the ninth she is good to learn [PDF 498, p. 102] Science, and ill to journey, signifying spoiling and robbing, she is also ill in this place for all other things.
+*Cauda draconis* is very good with the ill, and very ill with the good, in matter of loss she is good, and to pass out of an affair: she is found good in the fourth, sixth, ninth, and twelfth houses, and ill in the second: ye must note that in the ninth she is good to learnScience <span class="source-locator">PDF p. 498 / p. 102</span>, and ill to journey, signifying spoiling and robbing, she is also ill in this place for all other things.
 
 *Populus* is sometime good and sometime bad, with good she is good, and with ill she is ill, she is good in the tenth, and ill in the eighth house.
 

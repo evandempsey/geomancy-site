@@ -21,7 +21,7 @@ If she go into the seventh, the marriage lately begun shall take effect, to the 
 
 And if it pass into the eighth, it signifieth death by a hot disease of Rhumes, and Cathers, it is also good for Magick.
 
-[PDF 491, p. 95] If she go into the ninth, it signifieth that the long journy shall be good and profitable, and that the Letters which come from afar off bring good news, it is also good for Doctors and Church-men, and to make amitie and acquaintance with them.
+<span class="source-locator">PDF p. 491 / p. 95</span> If she go into the ninth, it signifieth that the long journy shall be good and profitable, and that the Letters which come from afar off bring good news, it is also good for Doctors and Church-men, and to make amitie and acquaintance with them.
 
 If it pass into the tenth, it is good to go to Kings, Princes, and Lords, and to go to visit his mother.
 

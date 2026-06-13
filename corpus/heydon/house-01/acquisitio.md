@@ -8,7 +8,7 @@ quality: transcribed
 excerpt: "When yee find this Fgure in the first house called Aquesitio, yee shall Judge it to signify goodnesse, happiness, and quiet life with the accomplishment of the persons own hearts…"
 ---
 
-[figure: 2,1,2,1]
+<span class="library-glyph" role="img" aria-label="Acquisitio: two points, one point, two points, one point" data-figure="acquisitio"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Acquisitio</span></span>
 
 When yee find this Fgure in the first house called *Aquesitio*, yee shall Judge it to signify goodnesse, happiness, and quiet life with the accomplishment of the persons own hearts desire,
 

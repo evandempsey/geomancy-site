@@ -12,6 +12,11 @@ moved, and directed to the terrestrial spirits; and therefore they first used ce
 
 Another power there is that doth direct and rule this lot or fortune, which is in the very soul itself of the projector, when he is carried to this work with some great egress of his own desire, for this art hath a natural obedience to the soul itself, and of necessity hath efficacy and is moved to that which the soul itself desires; and this way is by far more true and pure: neither matters it where or how those points are projected: therefore this art hath the same radix with the art of Astrological questions: which also can no otherwise be verified, unless with a constant and excessive affection of the Querent himself. Now then that we may proceed to the praxis of this art; first it is to be known, that all figures upon which this whole art is founded are only sixteen, as in this following table you shall see noted, with their names.
 
+<figure class="source-diagram">
+  <img src="../../../assets/agrippa/hcafig1.gif" alt="The sixteen geomantic figures arranged with planetary attributions." loading="lazy" />
+  <figcaption>Agrippa opening table of the sixteen figures and their planetary attributions. Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>
+</figure>
+
 Now we proceed to declare with what planets these figures are distributed: for hereupon all the propriety and nature of figures, and the judgment of the whole art dependeth: therefore the *greater* and *lesser fortune* are ascribed to the Sun; but the *first* or *greater fortune* is when the sun is diurnal, and posited in his dignities; the other, or *lesser fortune,* is when the sun is nocturnal, or placed in less dignities. *Via,* and *Populus,* (that is, the way, and people) are referred to the moon;
 
 the first from her beginning and increasing, the second from her full light and quarter decreasing. *Acquisitio,* and *Laetitia,* (which is gain, profit; Joy and gladness) are of *Jupiter:* but the first hath *Jupiter* the *greater fortune,* the second the *less,* but without detriment. *Puella* and *Amissio* are of *Venus*; the first fortunate, the other (as it were) retrograde, or combust. *Conjunctio* and *Albus* are both figures of *Mercury,* and are both good: but the first the more fortunate. *Puer* and *Rubeus* are figures ascribed to *Mars*; the first whereof hath *Mars* benevolent, the second malevolent. *Carcer* and *Tristtitia* are both figures of *Saturn,* and both evil; but the first of the greater detrement. The Dargons head and Dragons tail do follow their own natures.
@@ -28,15 +33,24 @@ They do likewise distribute these figures to the twelve signs of the zodiack, af
 
 And now we come to speak of the manner of projecting or setting down these figures, which is thus; that we set down the points according to their course in four lines, from the right hand towards the left, and this in four courses: there will therefore result unto us four figures made in four several lines, according to the even or uneven marking every several line; which four figures are wont to be called *Matres:* which do bring forth the rest, filling up and compleating the whole figure of judgment, an example whereof you may see here following.
 
+<figure class="source-diagram">
+  <img src="../../../assets/agrippa/hcafig2.gif" alt="Example projection showing four Mothers made from rows of points." loading="lazy" />
+  <figcaption>Agrippa example of projecting points to make the four Mothers. Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>
+</figure>
+
 Of these four *Matres* are also produced four other secondary figures, which they call *Filiae,* or succedents, which are gathered together after this manner, that is to say, by making the four *Matres* according to their order, placing them by course one after another **; then that which shall result out of every line maketh the figure of *Fileae,* the order whereof is by descending from the superior points through both *mediums* to the lowest: as in this example.
 
-Filiae produced. Matres. ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+<figure class="source-diagram">
+  <img src="../../../assets/agrippa/hcafig3.gif" alt="Matres and Filiae diagram showing how the daughters are produced from the mothers." loading="lazy" />
+  <figcaption>Agrippa Matres and Filiae diagram. Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>
+</figure>
 
 And these figures do make 8 houses of heaven, after this manner, by placing the figures from the left hand towards the right: as the four *Matres* do make the four first houses, so the four *Filiae* do make the four following houses, which are the fifth, sixth, seventh, and eighth: and the rest of the houses are found after this manner; that is to say, out of the first and second is derived the ninth; out of the third and fourth the tenth; out of the fifth and sixth the eleventh; and out of the seventh and eighth the twelfth: by the combination of joining together of two figures according to the rule of the even or uneven number in the remaining points of each figure. After the same manner they are produced out of the last four figures, that is to say, of the ninth, tenth, eleventh, and twelfth, two figures, which they call *Coadjutrices* or *Testes*; out of which two is also one constituted, which is called the index of the whole figure, or thing quesited: as appeareth in this example following.
 
-## A Theme of Geomancy.
-
-Filiae. Matres.
+<figure class="source-diagram">
+  <img src="../../../assets/agrippa/hcafig4.gif" alt="A Theme of Geomancy, with Filiae and Matres arranged in a semicircular chart." loading="lazy" />
+  <figcaption>Agrippa common geomantic theme diagram. Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>
+</figure>
 
 And this which we have declared is the common manner observed by Geomancers, which we do not altogether reject, neither extoll; therefore this is only to be considered in our judgments: now therefore I will give you the true figure of Geomancy, according to the right constitution of Astrological reason, which is thus.
 
@@ -50,7 +64,10 @@ placed in to the several houses and according to commisture of other figures asp
 
 But here we shall give you the secret of the art of finding out the Index in the subsequent figure, which is thus: that you number all the points which are contained in the lines of the projections, and this you shall divide by twelve: and that which remaineth project from the ascendent by the several houses, and upon which house there falleth a final unity, that figure giveth you a competent judgment of the thing quesited; and this together with the significations of the judgments aforesaid. But if on either part they shall be equal, or ambiguous, then the index alone shall certifie you of the thing quesited. The example of this Figure is here placed.
 
-## There remains out of the division of the projections 6 points; wherefore Jupiter in the sixth house sheweth the index.
+<figure class="source-diagram">
+  <img src="../../../assets/agrippa/hcafig5.gif" alt="Square geomantic chart showing Jupiter in the sixth house as the index." loading="lazy" />
+  <figcaption>Agrippa true figure and index diagram. Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>
+</figure>
 
 It remaineth now, that we declare, of what thing and to what house a question doth appertain. Then, what every Figure doth shew or signify concerning all questions in every house.
 

@@ -7,7 +7,7 @@ CHAP. IV.
 
 NExt we must teach you how to make the *Witness* & the *Judge*, that out of them we may have a certain Resolution, Sentence, and stay upon the question, and of the difference thereof; the right *Witnesse* is taken from the ninth and tenth figures, and of these two *Witnesses* cometh a *Judge*, unto whom appertaineth the discussion of the whole figures: And if he be good, the Demand will be found good, and if he be ill, the question is ill: And you must note that sometimes we speak of Idea's and sometimes of Genii, you are to understand by a Genius, a certain Divine spirit that worketh secret things in Nature Miraculously, and by an Idea, the Divine and Natural Form of your Figure; so that there is no great difference betwixt a Genius and a Divine Idea, as you may read in *The Harmony of the World*: Now here followes the Figure.
 
-[PDF 122, p. 10 — full-page example chart, boxes numbered right to left:]
+[PDF p. 122 / p. 10 — full-page example chart, boxes numbered right to left]
 
 8 [figure: 2,2,1,2] — 7 [figure: 1,2,1,1] — 6 [figure: 2,2,2,1] — 5 [figure: 2,2,2,2] — 4 [figure: 2,1,1,2] — 3 [figure: 2,2,1,1] — 2 [figure: 2,2,2,2] — 1 [figure: 2,2,1,2]
 
@@ -36,7 +36,7 @@ If that she go from the first to the sixth, it signifieth profit and good luck f
 
 If she go into the seventh, it signifieth to make a contract of enemies, to make marriages, and to get honour and the love of persons, and for all demands it is good.
 
-[PDF 486, p. 90] If she go from the first into the eighth, it signifieth death for the thing demanded, or for the demander, and great profit in succession and heritages: it is also good for things of Magick.
+[PDF p. 486 / p. 90] If she go from the first into the eighth, it signifieth death for the thing demanded, or for the demander, and great profit in succession and heritages: it is also good for things of Magick.
 
 If she go from the first to the ninth, it signifieth to have profit and gain by Voyages, and in things of the Church, as in Benefices or Offices: it is also good for the profit of the children that ye would put to School, for they shall have promotions Ecclesiastical, and they shall be men of knowledge.
 
@@ -50,7 +50,7 @@ If she pass from the first to the twelfth, it signifieth imprisonment, loss of b
 
 If she pass into the third house, it signifieth anger and contentions between Kinsfolks and Allies, it is also ill for small and short journeys.
 
-If she go into the fourth house, it signifieth anger between the children and the father, and between the father and the children, and by that means loss of heritages, [PDF 487, p. 91] and the beginning and suit in law the one against the other: and this copulation and assembly of the Figure is very ill but for lechery.
+If she go into the fourth house, it signifieth anger between the children and the father, and between the father and the children, and by that means loss of heritages, [PDF p. 487 / p. 91] and the beginning and suit in law the one against the other: and this copulation and assembly of the Figure is very ill but for lechery.
 
 If she pass into the fifth house, the woman with child shall have unseasonable deliverance: it is also ill to eat and drink, and signifieth anger about victuals.
 
@@ -70,7 +70,7 @@ If she go into the twelfth, it signifieth loss of cattel, and imprisonment. And 
 
 [figure: 2,2,1,1] If this Figure *Fortuna Major* be in the first house, and thence leap into the second, it signifieth a great gain in goods, moveables, as gold, silver, and rich utensils.
 
-If she pass into the third house, it signifi[PDF 488, p. 92]eth to have much substance by the means of the kindred: it is also good for small and short Voyages.
+If she pass into the third house, it signifi[PDF p. 488 / p. 92]eth to have much substance by the means of the kindred: it is also good for small and short Voyages.
 
 If it pass into the fourth, it signifieth the father to be of good and godly disposition; it is also good to buy heritages and possessions, and a good issue in all things.
 
@@ -92,7 +92,7 @@ If it go into the twelfth, it signifieth imprisonment of the Prince, and that hi
 
 [figure: 1,1,2,2] If this Figure *Fortuna Minor*, be in the first house, and thence go into the second, which we call going from one house to another, it signifieth a mean in gain, and he which medleth with red things shall quickly lose thereby.
 
-[PDF 489, p. 93] If she pass into the third, it signifieth joy of the kinsfolks, it is also good for a short voyage, and signifieth that it shall be quickly ended, it is also good for friends.
+[PDF p. 489 / p. 93] If she pass into the third, it signifieth joy of the kinsfolks, it is also good for a short voyage, and signifieth that it shall be quickly ended, it is also good for friends.
 
 If it pass into the fourth, it signifieth that the father is angry or sick, it also signifieth the loss of the suit.
 
@@ -112,7 +112,7 @@ If it pass into the eleventh, it signifieth good and trustie friends, and a good
 
 If she go into the twelfth, it is ill in all things but to buy horses.
 
-[PDF 490, p. 94] [figure: 2,1,2,2] If you find *Rubeus* in the first house, I will say no other thing but that which before I have told you, that is to say, that following the opinion of all the Doctors in this science, be they Caldeans, Indians, Hebrews, Arabies, Egyptians, or Persians, when this Figure is found in this place, it ought not to be judged, the which thing I have always found true by long experience, wherefore at this time I will say no other thing, but that she is ill in all the houses but in the sixth.
+[PDF p. 490 / p. 94] [figure: 2,1,2,2] If you find *Rubeus* in the first house, I will say no other thing but that which before I have told you, that is to say, that following the opinion of all the Doctors in this science, be they Caldeans, Indians, Hebrews, Arabies, Egyptians, or Persians, when this Figure is found in this place, it ought not to be judged, the which thing I have always found true by long experience, wherefore at this time I will say no other thing, but that she is ill in all the houses but in the sixth.
 
 [figure: 2,2,1,2] If you find this Figure *Albus* in the first house, and be found again in the second house, it signifieth gain and profit in white things, Writings, or Letters, or Books.
 
@@ -128,7 +128,7 @@ If she go into the seventh, the marriage lately begun shall take effect, to the 
 
 And if it pass into the eighth, it signifieth death by a hot disease of Rhumes, and Cathers, it is also good for Magick.
 
-[PDF 491, p. 95] If she go into the ninth, it signifieth that the long journy shall be good and profitable, and that the Letters which come from afar off bring good news, it is also good for Doctors and Church-men, and to make amitie and acquaintance with them.
+[PDF p. 491 / p. 95] If she go into the ninth, it signifieth that the long journy shall be good and profitable, and that the Letters which come from afar off bring good news, it is also good for Doctors and Church-men, and to make amitie and acquaintance with them.
 
 If it pass into the tenth, it is good to go to Kings, Princes, and Lords, and to go to visit his mother.
 
@@ -150,7 +150,7 @@ If it pass into the seventh, it is a good time for marriage and for reconciliati
 
 If she go into the eighth, it signifieth death without remedy, and sometime in this place it signifieth to win inheritances.
 
-If it pass into the ninth, it signifieth gain and [PDF 492, p. 96] profit by a long Voyage by men of the Church.
+If it pass into the ninth, it signifieth gain and [PDF p. 492 / p. 96] profit by a long Voyage by men of the Church.
 
 If she go into the tenth, it is good to go to Kings, Princes, and to the mother.
 
@@ -168,7 +168,7 @@ If she go into the fourth, the end of all things shall be joyful, but the promis
 
 If it pass into the fifth, it is good for children, and to eat and drink, and to sing musick, and signifieth a great lights[o]m[n]ess of heart.
 
-If she go into the sixth, it is good for servants, [PDF 493, p. 97] signifying that they shall be profitable to their masters: in all the other houses this Figure is good, but in the eghth and twelfth, for in the eighth she signifieth death, and in the twelfth loss of Cattel. And for because that according to the signification of each house I have herebefore sufficiently written, you may by the same easily judge each question that is demanded, I will not hold you long in the other Figures which follow, in touching their mutations and concordances, but onely pass over them generally.
+If she go into the sixth, it is good for servants, [PDF p. 493 / p. 97] signifying that they shall be profitable to their masters: in all the other houses this Figure is good, but in the eghth and twelfth, for in the eighth she signifieth death, and in the twelfth loss of Cattel. And for because that according to the signification of each house I have herebefore sufficiently written, you may by the same easily judge each question that is demanded, I will not hold you long in the other Figures which follow, in touching their mutations and concordances, but onely pass over them generally.
 
 [figure: 2,2,2,1] This Figure *Tristitia* found in the first, and thence go into the second, it signifieth small profit but in things of the earth, as Vines, Medows, Woods, and Lands aerable, in all the other houses this Figure is ill, but in the fourth and eighth, where both in the one and the other, it is good to buy heritages, and because I have largely declared herebefore, I will say nothing more at this time.
 
@@ -176,7 +176,7 @@ If she go into the sixth, it is good for servants, [PDF 493, p. 97] signifying t
 
 [figure: 1,1,2,1] If this figure *Puer*, passeth from the first to the second, it signifieth small gain, but in things of War, in all other houses this figure is mean, but in the eighth and twelfth she is ill.
 
-[PDF 494, p. 98] [figure: 2,1,1,2] This Figure *Conjunctio* going from the first to the second, it signifieth gain by books and writings; in all other houses this Figure is indifferent, but in the seventh where it is good for marriage, and in the ninth to put Scholers to study, and in the eighth it is ill, for it always signifieth death, and in the twelfth it is neither good nor bad.
+[PDF p. 494 / p. 98] [figure: 2,1,1,2] This Figure *Conjunctio* going from the first to the second, it signifieth gain by books and writings; in all other houses this Figure is indifferent, but in the seventh where it is good for marriage, and in the ninth to put Scholers to study, and in the eighth it is ill, for it always signifieth death, and in the twelfth it is neither good nor bad.
 
 [figure: 1,2,2,1] This Figure *Carcer* passing from the first into the second, it is gainful to buy lands aerable, in all other houses where ye find her, ye shall judge her as ye do the others, that is to say, according to the signification of the house where she is, and therefore at this time I will speak no more thereof.
 
@@ -184,7 +184,7 @@ If she go into the sixth, it is good for servants, [PDF 493, p. 97] signifying t
 
 [figure: 1,1,1,1] This Figure *Via* going from the first to the second, it signifieth small gain, if it pass into the third it is good for short Voyages: in all the other houses this figure is ill, but in the ninth and tenth, where she is very good, in the eighth she signifieth death, and imprisonment in the twelfth.
 
-Whensoever ye finde the first houses to pass one into another, you shall judge according to the signification of the house where they pass, as I have in the [PDF 495, p. 99] beginning told you at large, and now in the end more briefly; the which things, to the end, you may the better understand them, I will set you an example of a Figure which my Lord of *Tays* commanded me to make, to know whether the French King *Francis* the first of that name, and the Emperour *Charles* of *Austriche*, the fifth of that name, should speak together: which Figure being made, and by fortune, *Acquisitio* being in the first house, went strait into the seventh, which is the house of Kings and Emperours, which was the cause that I straight way judged that the Emperour should speak with the King; and so likewise shall ye judge of the second if it pass into the third, to know (as by way of example) if the demand be made for substance it signifieth that the substance shall come into the hands of the kinsfolks of him which made the question according to the content of the demand, and the signification of the house where the said Figure is: if the second pass into the third, fifth, or sixth, or into any of the others following, you shall also judge according to the signification of the house where it is: the like shall ye do by the third if it pass into the fourth, or into any of the other unto the twelfth, so shall ye do by the fourth if she pass into the fifth, or into any of the other houses following: and so all the others judging as is aforesaid, according to the signification of the houses where they go, and according to the good or ill of the said Figures. And ye must note that they never pass but one time to stay the judgment, although that a Figure formed have many of one sort, and all alike, whereof I will speak more at large hereafter, in declaring the example that I will set.
+Whensoever ye finde the first houses to pass one into another, you shall judge according to the signification of the house where they pass, as I have in the [PDF p. 495 / p. 99] beginning told you at large, and now in the end more briefly; the which things, to the end, you may the better understand them, I will set you an example of a Figure which my Lord of *Tays* commanded me to make, to know whether the French King *Francis* the first of that name, and the Emperour *Charles* of *Austriche*, the fifth of that name, should speak together: which Figure being made, and by fortune, *Acquisitio* being in the first house, went strait into the seventh, which is the house of Kings and Emperours, which was the cause that I straight way judged that the Emperour should speak with the King; and so likewise shall ye judge of the second if it pass into the third, to know (as by way of example) if the demand be made for substance it signifieth that the substance shall come into the hands of the kinsfolks of him which made the question according to the content of the demand, and the signification of the house where the said Figure is: if the second pass into the third, fifth, or sixth, or into any of the others following, you shall also judge according to the signification of the house where it is: the like shall ye do by the third if it pass into the fourth, or into any of the other unto the twelfth, so shall ye do by the fourth if she pass into the fifth, or into any of the other houses following: and so all the others judging as is aforesaid, according to the signification of the houses where they go, and according to the good or ill of the said Figures. And ye must note that they never pass but one time to stay the judgment, although that a Figure formed have many of one sort, and all alike, whereof I will speak more at large hereafter, in declaring the example that I will set.
 
 # Book II, Chap. XIV — *Of the good or ill Houses, and which they be, where the Figures be in their places.*
 - pdf-pages: 496–498 (printed pp. 100–102; Chap. XV begins PDF 499)
@@ -209,7 +209,7 @@ THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mea
 
 *Tristitia* is a very ill Figure in all the houses, but in the eighth and twelfth houses, where she is good: and mean in the first and second houses.
 
-*Albus* is good for a man which hopeth to have gain [PDF 497, p. 101] or profit in any thing, and also to have entrie into any place, and in this respect is found good in the first and fourth houses.
+*Albus* is good for a man which hopeth to have gain [PDF p. 497 / p. 101] or profit in any thing, and also to have entrie into any place, and in this respect is found good in the first and fourth houses.
 
 *Rubeus* is ill in all good things, and good in all ill things, and many times signifieth death, she is never found in the first house to make a judgment as is told you before, she is ill in the second, fourth, seventh and tenth houses, and almost in all the other, saving in certain demands.
 
@@ -223,7 +223,7 @@ THe good houses, to be brief, are the first, fifth, tenth, and eleventh; the mea
 
 *Caput draconis* is good with good, and ill with ill, and is good in the seventh and second houses, and sheweth to have a good issue in the things where a man hopeth to have gain.
 
-*Cauda draconis* is very good with the ill, and very ill with the good, in matter of loss she is good, and to pass out of an affair: she is found good in the fourth, sixth, ninth, and twelfth houses, and ill in the second: ye must note that in the ninth she is good to learn [PDF 498, p. 102] Science, and ill to journey, signifying spoiling and robbing, she is also ill in this place for all other things.
+*Cauda draconis* is very good with the ill, and very ill with the good, in matter of loss she is good, and to pass out of an affair: she is found good in the fourth, sixth, ninth, and twelfth houses, and ill in the second: ye must note that in the ninth she is good to learn [PDF p. 498 / p. 102] Science, and ill to journey, signifying spoiling and robbing, she is also ill in this place for all other things.
 
 *Populus* is sometime good and sometime bad, with good she is good, and with ill she is ill, she is good in the tenth, and ill in the eighth house.
 
@@ -249,7 +249,7 @@ CHAP. XVII.
 
 THe Judge, or the fifteenth figure is procreated of the two Witnesses to judge the end of all the signification of the demand, to know if it be good or bad. The which Judge ought always of necessity to be even; for if it be not, the figure should be false: and so if the Judge be good, the signification of the demand shall come to a good end, and if he be ill, it shall come to an ill end. If the Judge do agree with the first and with the other figures which be on the right side, it signifieth good to the *Querent*, and in the thing demanded. And if he agree with those on the left hand, which be called the daughters, it signifieth to the *Querent* an ill issue of the thing demanded. And so must ye say and esteem of the accord which he hath with the right or left Witness, as ye shall see by the example following, according to the doctors in this Art, as well Hebrews as Chaldeans, and others which have treated thereof.
 
-[PDF 529, p. 133]
+[PDF p. 529 / p. 133]
 
 This Table following shall serve you to know the Witnesses and the Judge as well even as uneven, and the signification which they have, and also for the better playing: the judgment of each figure and demand propounded.
 

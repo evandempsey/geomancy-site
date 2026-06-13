@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "coverage": "node scripts/coverage.mjs",
     "audit:content": "node scripts/audit-content.mjs",
+    "references:normalize": "node scripts/normalize-extracted-references.mjs",
     "library:generate": "node scripts/generate-library-from-extracted.mjs",
     "check:library": "node scripts/check-library-coverage.mjs",
     "test:casting": "node --test scripts/test-casting.mjs",

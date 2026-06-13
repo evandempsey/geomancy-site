@@ -5,14 +5,14 @@ translator: Francis Sparry
 year: 1591
 originalYear: 1558
 archiveUrl: https://archive.org/details/b30337860
-locatorScheme: folio
+locatorScheme: page
 citationTemplate: "Cattan, *The Geomancie* (London, 1591), {locator}"
 publicDomain: true
 provenance: >-
   Transcribed from the 1591 London edition (John Wolfe), digitised by the
   Wellcome Library at archive.org item b30337860. The blackletter text was
-  transcribed directly from the page images; each quotation links to the
-  scanned leaf it was taken from.
+  transcribed directly from the page images; quotations cite printed pages,
+  with scan links pointing to the photographed leaf where available.
 description: >-
   The most influential geomancy manual of the Renaissance: Cattan's French
   treatise of 1558 in Francis Sparry's English translation of 1591.

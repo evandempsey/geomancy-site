@@ -11,7 +11,7 @@ If you find this Figure *Amissio* in the first house, and from thence be found i
 
 If she pass into the third house, it signifieth anger and contentions between Kinsfolks and Allies, it is also ill for small and short journeys.
 
-If she go into the fourth house, it signifieth anger between the children and the father, and between the father and the children, and by that means loss of heritages, [PDF 487, p. 91] and the beginning and suit in law the one against the other: and this copulation and assembly of the Figure is very ill but for lechery.
+If she go into the fourth house, it signifieth anger between the children and the father, and between the father and the children, and by that means loss of heritages, <span class="source-locator">PDF p. 487 / p. 91</span> and the beginning and suit in law the one against the other: and this copulation and assembly of the Figure is very ill but for lechery.
 
 If she pass into the fifth house, the woman with child shall have unseasonable deliverance: it is also ill to eat and drink, and signifieth anger about victuals.
 

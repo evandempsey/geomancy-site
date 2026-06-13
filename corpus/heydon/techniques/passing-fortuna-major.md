@@ -9,7 +9,7 @@ editorialNote: "Heydon here reprints Cattan's teaching (The Geomancie, 1591) nea
 
 If this Figure *Fortuna Major* be in the first house, and thence leap into the second, it signifieth a great gain in goods, moveables, as gold, silver, and rich utensils.
 
-If she pass into the third house, it signifi[PDF 488, p. 92]eth to have much substance by the means of the kindred: it is also good for small and short Voyages.
+If she pass into the third house, it signifieth <span class="source-locator">PDF p. 488 / p. 92</span> to have much substance by the means of the kindred: it is also good for small and short Voyages.
 
 If it pass into the fourth, it signifieth the father to be of good and godly disposition; it is also good to buy heritages and possessions, and a good issue in all things.
 

@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normalizeLocatorLabel, sourceLocatorHtml } from './lib/library-markup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
@@ -52,7 +53,7 @@ const tableComponents = new Map([
 const publicSourceNote =
   '> Source: Bayerische Staatsbibliothek, Clm 489, ' +
   '[MDZ/BSB digital facsimile](https://www.digitale-sammlungen.de/en/view/bsb00124288), ' +
-  'downloadable PDF pp. 460-494.\n';
+  `downloadable ${normalizeLocatorLabel('PDF pp. 460-494')}.\n`;
 
 function componentFor(src, width) {
   const standard = figures[src];
@@ -78,6 +79,11 @@ function transform(body) {
   }
 
   out = out.replace(
+    /^##\s+(PDF\s+p\.?\s*\d+\s*\/\s*ms\s+p\.?\s*\d+[rv])\s*$/gim,
+    (_, marker) => `${sourceLocatorHtml(marker, true)}\n`,
+  );
+
+  out = out.replace(
     /<img src="figures\/([^"]+\.svg)" alt="([^"]*)" title="([^"]*)" width="(\d+)">/g,
     (_, src, _alt, _title, width) => componentFor(src, width),
   );
@@ -89,7 +95,7 @@ const frontmatter = `---
 title: "The Method of Judging Questions According to Peter of Abano"
 source: abano
 order: 1
-locator: "PDF pp. 460-494"
+locator: "PDF pp. 460–494"
 description: "An automated English translation of the Latin Modus Iudicandi questiones attributed to Peter of Abano, with native site glyphs and tables."
 ---
 

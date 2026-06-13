@@ -9,7 +9,7 @@ editorialNote: "Heydon here reprints Cattan's teaching (The Geomancie, 1591) nea
 
 If this Figure *Fortuna Minor*, be in the first house, and thence go into the second, which we call going from one house to another, it signifieth a mean in gain, and he which medleth with red things shall quickly lose thereby.
 
-[PDF 489, p. 93] If she pass into the third, it signifieth joy of the kinsfolks, it is also good for a short voyage, and signifieth that it shall be quickly ended, it is also good for friends.
+<span class="source-locator">PDF p. 489 / p. 93</span> If she pass into the third, it signifieth joy of the kinsfolks, it is also good for a short voyage, and signifieth that it shall be quickly ended, it is also good for friends.
 
 If it pass into the fourth, it signifieth that the father is angry or sick, it also signifieth the loss of the suit.
 
@@ -29,4 +29,4 @@ If it pass into the eleventh, it signifieth good and trustie friends, and a good
 
 If she go into the twelfth, it is ill in all things but to buy horses.
 
-[PDF 490, p. 94]
+<div class="source-locator source-locator--block">PDF p. 490 / p. 94</div>

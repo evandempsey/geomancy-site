@@ -28,7 +28,7 @@ In the eleventh house it signifies great increase of friends, and very much proc
 
 In the twelfth house it signifies wary and quick-witted enemies, causeth such as are in prison to remain and continue so very long, and causeth a man to eschew very many dangers in his life.
 
-## Albus — through the twelve houses
+## Albus — Through the Twelve Houses
 - pdf-pages: 516–517
 - printed-pages: 120–121
 
@@ -58,7 +58,7 @@ In the eleventh house it maketh dissembling and false friends, causeth love and 
 
 In the twelfth house, denoteth vile, impotent, and rustical enemies, sheweth such as are in prison shall not escape, and signifies a great many and various troubles and discommodities of ones life.
 
-## Puer — through the twelve houses
+## Puer — Through the Twelve Houses
 - pdf-pages: 518–519
 - printed-pages: 122–123
 
@@ -88,7 +88,7 @@ In the eleventh house it sheweth noble friends, and noble men, and such as shall
 
 In the twelfth house he causeth Enemies to be cruel and pernicious, those that are in prison shall escape, and maketh them to eschew many dangers.
 
-## Rubeus — through the twelve houses
+## Rubeus — Through the Twelve Houses
 - pdf-pages: 519–521
 - printed-pages: 123–125
 
@@ -118,7 +118,7 @@ In the eleventh house, it giveth no true, nor any faithful friends; sheweth men 
 
 In the twelfth house, it maketh enemies to be cruel and traiterous, of whom we ought circumspectly to beware; signifies such as are in prison shall come to an evil end, and sheweth a great many inconveniencies and mischiefs to happen in a mans life.
 
-## Carcer — through the twelve houses
+## Carcer — Through the Twelve Houses
 - pdf-pages: 521–523
 - printed-pages: 125–127
 
@@ -148,7 +148,7 @@ In the eleventh house, it causeth no friends, nor love, nor favour amongst men.
 
 In the twelfth house it raiseth enemies, detaineth in prison, and inflicteth many evils.
 
-## Tristitia — through the twelve houses
+## Tristitia — Through the Twelve Houses
 - pdf-pages: 523–524
 - printed-pages: 127–128
 
@@ -178,7 +178,7 @@ In the eleventh house it signifies scarcity of friends, and the death of friends
 
 In the twelfth house it sheweth no enemies, wretchedly condemneth the imprisoned, and causeth many discommodities and disprofits to happen in ones life.
 
-## Caput Draconis — through the twelve houses
+## Caput Draconis — Through the Twelve Houses
 - pdf-pages: 524–525
 - printed-pages: 128–129
 
@@ -208,7 +208,7 @@ In the eleventh house he causeth many friends, and to be beloved of all men.
 
 In the twelfth house it signifieth men to have many enemies, and many women, detaineth the imprisoned, and evilly punisheth them.
 
-## Cauda Draconis — through the twelve houses
+## Cauda Draconis — Through the Twelve Houses
 - pdf-pages: 525–526
 - printed-pages: 129–130
 

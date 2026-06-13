@@ -71,6 +71,7 @@ const quotes = quoteFiles.map((path) => {
 });
 
 const libraryFiles = [...files('src/content/library', (path) => /\.mdx?$/.test(path))];
+const displayFiles = [...quoteFiles, ...libraryFiles];
 const covered = new Set();
 const libraryBodies = [];
 const librarySources = new Set();
@@ -128,6 +129,36 @@ if (missingDirect.length || missingCorpus.length) {
   process.exit(1);
 }
 
+const rawMarkerPatterns = [
+  ['raw margin marker', /\{margin:/],
+  ['raw leaf marker', /\{Leaf\b/i],
+  ['library wide frontmatter', /^wide:\s*true\s*$/m],
+  ['raw PDF marker', /\[PDF\b/],
+  ['raw PDF heading', /^##\s+PDF\s+p\./m],
+  ['raw figure marker', /\[figure:/],
+  ['unnormalized PDF locator', /class="source-locator[^"]*">PDF\s+\d/],
+  ['unnormalized manuscript page locator', /\bms p\.\s*\d+[rv]\b/i],
+  ['raw dots metadata', /^-?\s*dots:/m],
+  ['raw headline-band metadata', /headline-band:/],
+  ['long bullet-dot run', /(?:●\s*){8,}/],
+];
+
+const rawMarkerHits = [];
+for (const path of displayFiles) {
+  const text = readFileSync(path, 'utf8');
+  for (const [label, pattern] of rawMarkerPatterns) {
+    if (pattern.test(text)) rawMarkerHits.push({ path, label });
+  }
+}
+
+if (rawMarkerHits.length) {
+  console.error(`x ${rawMarkerHits.length} raw transcription marker(s) remain in generated display content:`);
+  for (const hit of rawMarkerHits.slice(0, 80)) console.error(`  ${hit.path}: ${hit.label}`);
+  if (rawMarkerHits.length > 80) console.error(`  ...and ${rawMarkerHits.length - 80} more`);
+  process.exit(1);
+}
+
 const explicit = covered.size;
 console.log(`✓ ${directQuoteIds.size} direct Quote ids and ${quotes.length} corpus quotes have Library coverage.`);
 console.log(`✓ Checked ${libraryFiles.length} library chapters (${explicit} covered quote ids).`);
+console.log(`✓ No raw transcription markers remain in corpus/library display content.`);

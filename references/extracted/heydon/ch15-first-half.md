@@ -1,7 +1,7 @@
 # Book II, Chap. XV — CHAP. XV.
 - pdf-pages: 499
 
-## Fortuna Major — through the twelve houses
+## Fortuna Major — Through the Twelve Houses
 - pdf-pages: 499-501
 - printed-pages: 103-105
 
@@ -29,7 +29,7 @@ In the eleventh house, he signifies true friends and profitable, a Prince rich a
 
 In the twelfth house, if a Question be proposed of the quality of enemies, it demonstrateth them to be potent and noble, and hardly to be resisted; but if a Question shall be concerning any other condition or respect to the enemies, he will deliver from their treacheries; it signifieth faithful servants, reduceth fugitives, hath signification of animals, as Horses, Lions, and Bulls; freeth from imprisonments, and eminent dangers he either mitigateth or taketh away.
 
-## Fortuna Minor — through the twelve houses
+## Fortuna Minor — Through the Twelve Houses
 - pdf-pages: 501-503
 - printed-pages: 105-107
 
@@ -57,7 +57,7 @@ In the eleventh house, he maketh many friends, but such as are poor and unprofit
 
 In the twelfth house, he sheweth enemies to be crafty, subtle, and fraudulent, and studying to circumvent you with many secret factions: signifies one in prison to be long detained, but at length to be delivered; animals he sheweth to be unfruitful, and servants unprofitable; and the changes of fortune to be frequent from good to evil, and from bad to good.
 
-## Via — through the twelve houses
+## Via — Through the Twelve Houses
 - pdf-pages: 503-505
 - printed-pages: 107-109
 
@@ -85,7 +85,7 @@ In the eleventh house, he raiseth many wealthy friends, and acquireth faithful f
 
 In the twelfth house, causeth many Enemies, but such as of whom little hurt or danger is to be feared; signifies servants and animals to be profitable, whosoever is in prison to be escaped, or speedily to be delivered from thence, and preserveth a man from the evil accidents of Fortune.
 
-## Populus — through the twelve houses
+## Populus — Through the Twelve Houses
 - pdf-pages: 505-507
 - printed-pages: 109-111
 
@@ -113,7 +113,7 @@ In the eleventh house, he giveth few friends, and many flatterers; and with Prin
 
 In the twelfth house, he sheweth weak and ignoble enemies, declareth one in prison not to be delivered, discovereth dangers in Waters, and waterie places.
 
-## Acquisitio — through the twelve houses
+## Acquisitio — Through the Twelve Houses
 - pdf-pages: 508-509
 - printed-pages: 112-113
 
@@ -141,7 +141,7 @@ In the eleventh house, multiplieth friends, and bringeth profit from them, and e
 
 In the twelfth house he signifieth a man shall have many powerful or potent enemies, reduceth or bringeth home servants fled away, and cattel strayed; and signifies he that is in prison shall not be delivered.
 
-## Laetitia — through the twelve houses
+## Laetitia — Through the Twelve Houses
 - pdf-pages: 509-511
 - printed-pages: 113-115
 
@@ -169,7 +169,7 @@ In the eleventh house, it increaseth favour with Princes, and multiplies friends
 
 And in the twelfth house, it giveth the victory over Enemies, causeth good servants and families, delivereth from imprisonment, and preserveth from future evils.
 
-## Puella — through the twelve houses
+## Puella — Through the Twelve Houses
 - pdf-pages: 511-513
 - printed-pages: 115-117
 
@@ -197,7 +197,7 @@ In the eleventh house he giveth many friends, and encreaseth favour with women.
 
 In the twelfth house he signifies few enemies; but contention with women, and delivereth prisoners out of prison through the intercession of friends.
 
-## Amissio — through the twelve houses
+## Amissio — Through the Twelve Houses
 - pdf-pages: 513-514
 - printed-pages: 117-118
 

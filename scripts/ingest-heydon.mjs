@@ -8,6 +8,7 @@
  *   node scripts/ingest-heydon.mjs
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
+import { formatInlineMarkers, plainSnippet } from './lib/library-markup.mjs';
 
 const SLUGS = [
   [/fortuna\s*major|fortune\s*major/i, 'fortuna-major'],
@@ -54,16 +55,11 @@ function meta(block) {
 
 function writeQuote(path, fields, body) {
   mkdirSync(path.slice(0, path.lastIndexOf('/')), { recursive: true });
-  writeFileSync(path, `---\n${fields.filter(Boolean).join('\n')}\n---\n\n${body}\n`);
+  writeFileSync(path, `---\n${fields.filter(Boolean).join('\n')}\n---\n\n${formatInlineMarkers(body).trim()}\n`);
 }
 
 function excerptOf(text) {
-  const e = text
-    .replace(/\[figure:[^\]]*\]/g, '')
-    .replace(/\{margin:[^}]*\}/g, '')
-    .replace(/[\[\]*]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+  const e = plainSnippet(text)
     .slice(0, 180);
   return e.replace(/\s\S*$/, '…');
 }

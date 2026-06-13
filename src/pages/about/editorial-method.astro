@@ -16,8 +16,13 @@ import Prose from '../../layouts/Prose.astro';
     <li>Original spelling, capitalisation and punctuation are otherwise retained.</li>
     <li>Letters illegible in the source copy are marked with • (following the Text Creation
         Partnership convention) or [?]; text supplied from another copy or edition is noted.</li>
-    <li>Marginal annotations of the original are given inline as {'{margin: …}'}; woodcut
-        figures and chart diagrams are described in [square brackets].</li>
+    <li>Marginal annotations of the original are signalled with a small labelled margin marker.</li>
+    <li>Source page and scan breaks are shown as compact locator markers only when they clarify
+        the transcription.</li>
+    <li>Printed dot-figures are rendered as labelled geomantic glyphs; written figure names in
+        the source text remain ordinary text.</li>
+    <li>Woodcut tables and chart diagrams are either reproduced as source diagrams with captions
+        or described in labelled editorial notes when the image itself is not available.</li>
     <li>Manifest misprints of the original are reproduced, with an editorial note.</li>
   </ul>
   <h2>The editions used</h2>
@@ -33,7 +38,8 @@ import Prose from '../../layouts/Prose.astro';
     <li>
       <strong>Agrippa and Gerard of Cremona</strong>: from the EEBO-TCP transcription (A26563) of
       Turner's 1655 edition, checked and lightly normalised; passages damaged in that copy are
-      supplied from the parallel issue (A26562) and so noted.
+      supplied from the parallel issue (A26562) and so noted. Agrippa diagrams missing or flattened
+      in the TCP transcription are checked against Elizabeth Bennett's Princeton reproduction.
     </li>
     <li>
       <strong>Crowley</strong>: from a re-typeset edition of The Equinox I.2 (1909), with its
@@ -53,8 +59,8 @@ import Prose from '../../layouts/Prose.astro';
   </p>
   <h2>Verifying a quotation</h2>
   <p>
-    Every quotation carries a citation with a locator (folio, signature, page or section) and,
-    for Cattan, a “view scan” link to the photographed page. Errors do occur; if you find one,
-    check the scan first, then write to us.
+    Every quotation carries a citation with a locator (page, folio, signature or section) and,
+    where available, a “view scan” link to the photographed page. Errors do occur; if you find
+    one, check the scan first, then write to us.
   </p>
 </Prose>

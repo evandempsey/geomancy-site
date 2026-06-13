@@ -7,6 +7,7 @@
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
+import { normalizeLibraryBody } from './lib/library-markup.mjs';
 
 const ROOT = process.cwd();
 const CATTAN = 'references/extracted/cattan';
@@ -81,12 +82,7 @@ function stripMarkdownTitle(section) {
 }
 
 function normalizeBody(body) {
-  return body
-    .replace(/\r\n/g, '\n')
-    .replace(/^- (?:leaves?|pages?|dot-pattern|pdf-pages?|printed-pages?|chapter):.*$/gm, '')
-    .replace(/^- \(printed .*$/gm, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim() + '\n';
+  return normalizeLibraryBody(body);
 }
 
 function cleanHeadingText(text) {

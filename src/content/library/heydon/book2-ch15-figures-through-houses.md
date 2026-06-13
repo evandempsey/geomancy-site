@@ -180,7 +180,7 @@ generatedFrom:
   - "references/extracted/heydon/ch15-second-half.md"
 ---
 
-## Fortuna Major — through the twelve houses
+## Fortuna Major — Through the Twelve Houses
 
 *Fortuna Major* being found in the first house, giveth long life, and freeth from the molestation of diseases: it demonstrateth a man to be noble, magnanimous, of good manners, mean of stature, complexion ruddy, hair curling, and his superiour members greater then his inferiour.
 
@@ -206,7 +206,7 @@ In the eleventh house, he signifies true friends and profitable, a Prince rich a
 
 In the twelfth house, if a Question be proposed of the quality of enemies, it demonstrateth them to be potent and noble, and hardly to be resisted; but if a Question shall be concerning any other condition or respect to the enemies, he will deliver from their treacheries; it signifieth faithful servants, reduceth fugitives, hath signification of animals, as Horses, Lions, and Bulls; freeth from imprisonments, and eminent dangers he either mitigateth or taketh away.
 
-## Fortuna Minor — through the twelve houses
+## Fortuna Minor — Through the Twelve Houses
 
 *Fortuna Minor* in the first house, giveth long life, but incumbred with divers molestations and sicknesses; it signifieth a person of short stature, a lean body, having a mold or mark in his forehead or right eye.
 
@@ -232,7 +232,7 @@ In the eleventh house, he maketh many friends, but such as are poor and unprofit
 
 In the twelfth house, he sheweth enemies to be crafty, subtle, and fraudulent, and studying to circumvent you with many secret factions: signifies one in prison to be long detained, but at length to be delivered; animals he sheweth to be unfruitful, and servants unprofitable; and the changes of fortune to be frequent from good to evil, and from bad to good.
 
-## Via — through the twelve houses
+## Via — Through the Twelve Houses
 
 *Via* in the first house, bestoweth a long and prosperous life; giveth signification of a stranger, lean of body, and tall of stature, fair of complexion, having a small beard, a person liberal and pleasant, but slow, and little addicted to labour.
 
@@ -258,7 +258,7 @@ In the eleventh house, he raiseth many wealthy friends, and acquireth faithful f
 
 In the twelfth house, causeth many Enemies, but such as of whom little hurt or danger is to be feared; signifies servants and animals to be profitable, whosoever is in prison to be escaped, or speedily to be delivered from thence, and preserveth a man from the evil accidents of Fortune.
 
-## Populus — through the twelve houses
+## Populus — Through the Twelve Houses
 
 *Populus* being found in the first house, if a question be propounded concerning that house, sheweth a mean life, of a middle age, but inconstant, with divers sicknesses, and various successes of fortune; signifies a man of a middle stature, a gross body, well set in his members, perhaps some mold or mark about his left eye. But if a question shall be propounded concerning the Figure of a man, and to this Figure if there be joyned any thing of the figures of *Zazel* or *Rubeus*, it sheweth the man to be monstrously deformed, and that deformity he signifies to proceed from his birth; but if in the fifth house, if he be encompassed with malevolent Aspects, then that monstrousness is, to come.
 
@@ -284,7 +284,7 @@ In the eleventh house, he giveth few friends, and many flatterers; and with Prin
 
 In the twelfth house, he sheweth weak and ignoble enemies, declareth one in prison not to be delivered, discovereth dangers in Waters, and waterie places.
 
-## Acquisitio — through the twelve houses
+## Acquisitio — Through the Twelve Houses
 
 *Acquisitio* found in the first house, giveth a long life and prosperous old age; signifies a man of a middle stature, and a great head, a countenance very well to be distinguished or known, a long nose much beard, hair curling, and fair eys, free of his meat and drink, but in all things else sparing and not liberal.
 
@@ -310,7 +310,7 @@ In the eleventh house, multiplieth friends, and bringeth profit from them, and e
 
 In the twelfth house he signifieth a man shall have many powerful or potent enemies, reduceth or bringeth home servants fled away, and cattel strayed; and signifies he that is in prison shall not be delivered.
 
-## Laetitia — through the twelve houses
+## Laetitia — Through the Twelve Houses
 
 *Letitia* in the first house, signifies long life with prosperity, and much joy and gladness, and causeth a man to out-live and be more victorious then all his brethren; signifies a man of a tall stature, fair members, a broad fore-head, having great and broad teeth, and that hath a face comely and well coloured.
 
@@ -336,7 +336,7 @@ In the eleventh house, it increaseth favour with Princes, and multiplies friends
 
 And in the twelfth house, it giveth the victory over Enemies, causeth good servants and families, delivereth from imprisonment, and preserveth from future evils.
 
-## Puella — through the twelve houses
+## Puella — Through the Twelve Houses
 
 *Puella* in the first house signifies a person of a short life, weak constitution of body, middle stature, little fat, but fair, effeminate, and luxurious; and one who will incur many troubles and dangers in his life time, for the love of women.
 
@@ -362,7 +362,7 @@ In the eleventh house he giveth many friends, and encreaseth favour with women.
 
 In the twelfth house he signifies few enemies; but contention with women, and delivereth prisoners out of prison through the intercession of friends.
 
-## Amissio — through the twelve houses
+## Amissio — Through the Twelve Houses
 
 *Amissio* in the first house signifies the sick not to live long, and sheweth a short life; signifies a man of disproportionated members of his body, and one of a wicked life and conversation, and who is marked with some notorious and remarkable defect in some part of his body, as either lame, or maimed, or the like.
 
@@ -389,9 +389,9 @@ In the eleventh house, it signifies few friends, and causeth them to be easily l
 In the twelfth house, destroyeth all enemies, detaineth long in prison, but preserveth from dangers.
 
 
-## Conjunctio — through the twelve houses
+## Conjunctio — Through the Twelve Houses
 
-[figure: 2,1,1,2]
+<span class="library-glyph" role="img" aria-label="Conjunctio: two points, one point, one point, two points" data-figure="conjunctio"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Conjunctio</span></span>
 
 *Conjunctio* in the first house maketh a prosperous life, and signifies a man of a middle stature, not lean nor fat, long face, plain hair, a little beard, long fingers and thighs, liberal, amiable, and a friend to many people
 
@@ -417,9 +417,9 @@ In the eleventh house it signifies great increase of friends, and very much proc
 
 In the twelfth house it signifies wary and quick-witted enemies, causeth such as are in prison to remain and continue so very long, and causeth a man to eschew very many dangers in his life.
 
-## Albus — through the twelve houses
+## Albus — Through the Twelve Houses
 
-[figure: 2,2,1,2]
+<span class="library-glyph" role="img" aria-label="Albus: two points, two points, one point, two points" data-figure="albus"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Albus</span></span>
 
 *Albus* in the first house signifies a life vexed with continual sickness and grievous diseases, signifies a man of a short stature, broad brest, and gross arms, having curled, or crisped hair, one of a broad full mouth, a great talker and babler, given much to use vain and unprofitable discourse, but one that is merry, joyous, and jocond, and much pleasing to men.
 
@@ -445,9 +445,9 @@ In the eleventh house it maketh dissembling and false friends, causeth love and 
 
 In the twelfth house, denoteth vile, impotent, and rustical enemies, sheweth such as are in prison shall not escape, and signifies a great many and various troubles and discommodities of ones life.
 
-## Puer — through the twelve houses
+## Puer — Through the Twelve Houses
 
-[figure: 1,1,2,1]
+<span class="library-glyph" role="img" aria-label="Puer: one point, one point, two points, one point" data-figure="puer"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Puer</span></span>
 
 *Puer* in the first house giveth an indifferent long life, but laborious; raiseth men to great fame through military dignity, signifies a person of a strong body, ruddy complection, a fair countenance and black hair.
 
@@ -473,9 +473,9 @@ In the eleventh house it sheweth noble friends, and noble men, and such as shall
 
 In the twelfth house he causeth Enemies to be cruel and pernicious, those that are in prison shall escape, and maketh them to eschew many dangers.
 
-## Rubeus — through the twelve houses
+## Rubeus — Through the Twelve Houses
 
-[figure: 2,1,2,2]
+<span class="library-glyph" role="img" aria-label="Rubeus: two points, one point, two points, two points" data-figure="rubeus"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Rubeus</span></span>
 
 *Rubeus* in the first house, signifies a short life, and an evil end, signifies a man to be filthy, unprofitable, and of an evil, cruel, and malicious countenance, having some remarkable and notable sign or scar in some part of his body.
 
@@ -501,9 +501,9 @@ In the eleventh house, it giveth no true, nor any faithful friends; sheweth men 
 
 In the twelfth house, it maketh enemies to be cruel and traiterous, of whom we ought circumspectly to beware; signifies such as are in prison shall come to an evil end, and sheweth a great many inconveniencies and mischiefs to happen in a mans life.
 
-## Carcer — through the twelve houses
+## Carcer — Through the Twelve Houses
 
-[figure: 1,2,2,1]
+<span class="library-glyph" role="img" aria-label="Carcer: one point, two points, two points, one point" data-figure="carcer"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Carcer</span></span>
 
 *Carcer* in the first house being posited, giveth a short life, signifies men to be most wicked, of a filthy, cruel unclean figure and shape, and such as are hated and despised of all men.
 
@@ -529,9 +529,9 @@ In the eleventh house, it causeth no friends, nor love, nor favour amongst men.
 
 In the twelfth house it raiseth enemies, detaineth in prison, and inflicteth many evils.
 
-## Tristitia — through the twelve houses
+## Tristitia — Through the Twelve Houses
 
-[figure: 1,2,2,2]
+<span class="library-glyph" role="img" aria-label="Laetitia: one point, two points, two points, two points" data-figure="laetitia"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Laetitia</span></span>
 
 *Tristitia* in the first house doth not abbreviate life, but afflicteth it with many molestations, signifieth a person of good manners and carriage, but one that is solitary, and slow in all his business and occasions, one that is solitary, melancholy, seldome laughing, but most covetous after all things.
 
@@ -557,9 +557,9 @@ In the eleventh house it signifies scarcity of friends, and the death of friends
 
 In the twelfth house it sheweth no enemies, wretchedly condemneth the imprisoned, and causeth many discommodities and disprofits to happen in ones life.
 
-## Caput Draconis — through the twelve houses
+## Caput Draconis — Through the Twelve Houses
 
-[figure: 2,1,1,1]
+<span class="library-glyph" role="img" aria-label="Caput Draconis: two points, one point, one point, one point" data-figure="caput-draconis"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="2"><i></i><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span></span><span class="library-glyph__name">Caput Draconis</span></span>
 
 *Caput Draconis* in the first house augmenteth life and fortune.
 
@@ -585,9 +585,9 @@ In the eleventh house he causeth many friends, and to be beloved of all men.
 
 In the twelfth house it signifieth men to have many enemies, and many women, detaineth the imprisoned, and evilly punisheth them.
 
-## Cauda Draconis — through the twelve houses
+## Cauda Draconis — Through the Twelve Houses
 
-[figure: 1,1,1,2]
+<span class="library-glyph" role="img" aria-label="Cauda Draconis: one point, one point, one point, two points" data-figure="cauda-draconis"><span class="library-glyph__dots" aria-hidden="true"><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="1"><i></i></span><span class="library-glyph__line" data-points="2"><i></i><i></i></span></span><span class="library-glyph__name">Cauda Draconis</span></span>
 
 *Cauda Draconis* in all and singular the respective houses aforesaid, giveth the contrary judgment to *Caput*. And these are the natures of the figures of Geomancie, and their judgments, in all and singular their houses, upon all manner of questions to be propounded, of or concerning any matter or thing whatsoever.
 

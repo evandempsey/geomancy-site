@@ -19,6 +19,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { addFigures } from '../src/lib/casting.ts';
+import { formatInlineMarkers, plainSnippet } from './lib/library-markup.mjs';
 
 // figure dots from the YAML source of truth (for ch. 5 verification)
 const FIGURE_DOTS = {};
@@ -111,7 +112,7 @@ function meta(block) {
 
 function writeQuote(path, fields, body) {
   mkdirSync(path.slice(0, path.lastIndexOf('/')), { recursive: true });
-  writeFileSync(path, `---\n${fields.filter(Boolean).join('\n')}\n---\n\n${body}\n`);
+  writeFileSync(path, `---\n${fields.filter(Boolean).join('\n')}\n---\n\n${formatInlineMarkers(body).trim()}\n`);
 }
 
 let written = 0;
@@ -165,10 +166,7 @@ for (const file of readdirSync('references/extracted/cattan')) {
           warnings.push(`${file}: short body for ${slug} house ${houseNum}`);
           continue;
         }
-        const excerpt = fm.body
-          .replace(/\{margin:[^}]*\}/g, '')
-          .replace(/[\[\]*]/g, '')
-          .replace(/\s+/g, ' ')
+        const excerpt = plainSnippet(fm.body)
           .slice(0, 180)
           .replace(/\s\S*$/, '…');
         writeQuote(

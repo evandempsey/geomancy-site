@@ -19,7 +19,7 @@ If that she go from the first to the sixth, it signifieth profit and good luck f
 
 If she go into the seventh, it signifieth to make a contract of enemies, to make marriages, and to get honour and the love of persons, and for all demands it is good.
 
-[PDF 486, p. 90] If she go from the first into the eighth, it signifieth death for the thing demanded, or for the demander, and great profit in succession and heritages: it is also good for things of Magick.
+<span class="source-locator">PDF p. 486 / p. 90</span> If she go from the first into the eighth, it signifieth death for the thing demanded, or for the demander, and great profit in succession and heritages: it is also good for things of Magick.
 
 If she go from the first to the ninth, it signifieth to have profit and gain by Voyages, and in things of the Church, as in Benefices or Offices: it is also good for the profit of the children that ye would put to School, for they shall have promotions Ecclesiastical, and they shall be men of knowledge.
 

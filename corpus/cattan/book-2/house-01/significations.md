@@ -7,7 +7,9 @@ topics: [houses]
 quality: transcribed
 ---
 
-{Leaf 095 (page 67) opens with the book title and prologue, as printed:}
+<div class="source-locator source-locator--block">leaf 095 / p. 67</div>
+
+<aside class="library-note library-note--editorial"><span class="library-note__label">Editorial note</span>opens with the book title and prologue, as printed</aside>
 
 The second Booke of Geomancie.
 

@@ -21,7 +21,7 @@ If it pass into the seventh, it is a good time for marriage and for reconciliati
 
 If she go into the eighth, it signifieth death without remedy, and sometime in this place it signifieth to win inheritances.
 
-If it pass into the ninth, it signifieth gain and [PDF 492, p. 96] profit by a long Voyage by men of the Church.
+If it pass into the ninth, it signifieth gain andprofit <span class="source-locator">PDF p. 492 / p. 96</span> by a long Voyage by men of the Church.
 
 If she go into the tenth, it is good to go to Kings, Princes, and to the mother.
 

@@ -143,6 +143,68 @@ function teiToMd(chunk, { headLevel = 2 } = {}) {
     .replace(/<\/table>/g, '\n</table>');
 }
 
+function agrippaDiagram(src, alt, caption) {
+  return [
+    '<figure class="source-diagram">',
+    `  <img src="../../../assets/agrippa/${src}" alt="${alt}" loading="lazy" />`,
+    `  <figcaption>${caption} Source diagram from Elizabeth Bennett's Princeton reproduction of Turner's 1655 Agrippa text.</figcaption>`,
+    '</figure>',
+  ].join('\n');
+}
+
+function applyAgrippaDiagrams(body) {
+  const diagrams = {
+    table: agrippaDiagram(
+      'hcafig1.gif',
+      'The sixteen geomantic figures arranged with planetary attributions.',
+      'Agrippa opening table of the sixteen figures and their planetary attributions.',
+    ),
+    projection: agrippaDiagram(
+      'hcafig2.gif',
+      'Example projection showing four Mothers made from rows of points.',
+      'Agrippa example of projecting points to make the four Mothers.',
+    ),
+    filiae: agrippaDiagram(
+      'hcafig3.gif',
+      'Matres and Filiae diagram showing how the daughters are produced from the mothers.',
+      'Agrippa Matres and Filiae diagram.',
+    ),
+    theme: agrippaDiagram(
+      'hcafig4.gif',
+      'A Theme of Geomancy, with Filiae and Matres arranged in a semicircular chart.',
+      'Agrippa common geomantic theme diagram.',
+    ),
+    index: agrippaDiagram(
+      'hcafig5.gif',
+      'Square geomantic chart showing Jupiter in the sixth house as the index.',
+      'Agrippa true figure and index diagram.',
+    ),
+  };
+
+  let output = body;
+  output = output.replace(
+    /(all figures upon which this whole art is founded are only sixteen, as in this following table you shall see noted, with their names\.)\n\nNow we proceed/,
+    `$1\n\n${diagrams.table}\n\nNow we proceed`,
+  );
+  output = output.replace(
+    /(an example whereof you may see here following\.)\n\nOf these four/,
+    `$1\n\n${diagrams.projection}\n\nOf these four`,
+  );
+  output = output.replace(
+    /(as in this example\.)\n\nFiliae produced\. Matres\.[\s\S]*?\n\nAnd these figures/,
+    `$1\n\n${diagrams.filiae}\n\nAnd these figures`,
+  );
+  output = output.replace(
+    /(as appeareth in this example following\.)\n\n## A Theme of Geomancy\.\n\nFiliae\. Matres\.\n\nAnd this/,
+    `$1\n\n${diagrams.theme}\n\nAnd this`,
+  );
+  output = output.replace(
+    /(The example of this Figure is here placed\.)\n\n## There remains out of the division of the projections 6 points; wherefore Jupiter in the sixth house sheweth the index\.\n\nIt remaineth/,
+    `$1\n\n${diagrams.index}\n\nIt remaineth`,
+  );
+  return output;
+}
+
 function writeChapter(path, frontmatter, body) {
   const fm = Object.entries(frontmatter)
     .map(([k, v]) => (typeof v === 'string' && /[:#'"]/.test(v) ? `${k}: ${JSON.stringify(v)}` : `${k}: ${v}`))
@@ -170,7 +232,7 @@ if (!geomancy || !gerard) throw new Error('could not locate parts in TEI');
 
 /* --- Agrippa, Of Geomancy: one chapter --- */
 {
-  let body = teiToMd(geomancy.chunk.replace(/<head>[\s\S]*?<\/head>/, ''), { headLevel: 2 });
+  let body = applyAgrippaDiagrams(teiToMd(geomancy.chunk.replace(/<head>[\s\S]*?<\/head>/, ''), { headLevel: 2 }));
   writeChapter(
     'src/content/library/agrippa/of-geomancy.md',
     {

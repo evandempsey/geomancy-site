@@ -6,7 +6,6 @@ figures: [conjunctio]
 houses: [4]
 topics: []
 quality: transcribed
-editorialNote: "The 1591 printing heads this entry Carcer, but it bears Conjunctio's figure in the margin and stands in Conjunctio's place in the chapter's order; a second entry later in the chapter, also headed Carcer, bears Carcer's proper figure."
 excerpt: "Finding in this fourth house the fygure called Carcer, it is good to visite the father for he is sicke or dead: and that if he be not dead hee will cause some thing to be written,…"
 ---
 
