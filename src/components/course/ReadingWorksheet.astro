@@ -1,9 +1,9 @@
 ---
 /**
- * Guided reading worksheet: walks the standard reading order one
+ * Optional reading worksheet: walks the standard reading order one
  * step at a time and assembles the student's notes into a draft
  * reading paragraph. Without JavaScript all steps render at once — a
- * printable worksheet, which is how it should be used on paper anyway.
+ * printable worksheet for students who prefer paper notes.
  */
 import { getCollection } from 'astro:content';
 
@@ -11,7 +11,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
 ---
 
 <form class="worksheet" data-worksheet>
-  <p class="worksheet-title">The order of reading</p>
+  <p class="worksheet-title">Reading worksheet</p>
 
   <fieldset data-step="1">
     <legend>1 · The question</legend>
@@ -98,7 +98,7 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
   <fieldset data-step="6">
     <legend>6 · The answer</legend>
     <label>
-      Weigh the findings and pronounce, with the limits the chart itself demands
+      Write the answer, reasons, and limits the chart supports
       <textarea name="answer" rows="4"></textarea>
     </label>
   </fieldset>
@@ -113,8 +113,8 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
     <p class="summary-title">Draft reading</p>
     <p data-summary-text></p>
     <p class="hint">
-      Copy this into your casting journal and rewrite it in your own words. The worksheet drafts;
-      the geomancer reads.
+      Use this as notes, or rewrite it as prose. The worksheet helps organize; it is not a
+      required form.
     </p>
   </div>
 </form>

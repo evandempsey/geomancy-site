@@ -188,7 +188,7 @@ const cells = [
       `All nine are placed. The lord of the Ascendant, ${c.lord}, stands in the ` +
       `${c.projections.find((p) => p.planet === c.lord)?.house ?? '?'}th house ` +
       `(${houseKind(c.projections.find((p) => p.planet === c.lord)!.house)}), ` +
-      `the first thing Gerard weighs.`;
+      `the first thing Gerard checks.`;
 
     let current: Cast | null = null;
     let stepIndex = -1; // 0 = ascendant, 1–9 = planets, 10 = the lord
