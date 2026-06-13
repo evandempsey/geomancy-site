@@ -1,0 +1,41 @@
+---
+const rows = [
+  ['Cardinal houses', '1, 4, 7, 10'],
+  ['Succedent houses', '2, 5, 8, 11'],
+  ['Cadent houses', '3, 6, 8, 12'],
+  ['Good houses', '5, 9, 11'],
+  ['Evil houses', '6, 8, 12'],
+  ['Temperate houses', '1, 2, 3, 4, 7, 10'],
+  ['Witnesses', '13 and 14'],
+  ['Judge', '15'],
+];
+---
+
+<table class="abano-table">
+  <caption>House classes in the Abano table</caption>
+  <tbody>
+    {
+      rows.map(([label, value]) => (
+        <tr>
+          <th scope="row">{label}</th>
+          <td>{value}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+<p class="table-note">The cadent row reproduces the manuscript's repeated 8 and omitted 9.</p>
+
+<style>
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .table-note {
+    color: var(--color-ink-muted);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    margin-top: calc(-1 * var(--space-3));
+  }
+</style>

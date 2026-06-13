@@ -1,0 +1,61 @@
+---
+import FigureGlyph from '../FigureGlyph.astro';
+
+const rows = [
+  ['Acquisitio', [2, 1, 2, 1], 31],
+  ['Rubeus', [2, 1, 2, 2], 14],
+  ['Amissio', [1, 2, 1, 2], 15],
+  ['Albus', [2, 2, 1, 2], 9],
+  ['Fortuna Major', [2, 2, 1, 1], 12],
+  ['Conjunctio', [2, 1, 1, 2], 2],
+  ['Fortuna Minor', [1, 1, 2, 2], 1],
+  ['Carcer', [1, 2, 2, 1], 10],
+  ['Laetitia', [1, 2, 2, 2], 5],
+  ['Populus', [2, 2, 2, 2], 2],
+  ['Tristitia', [2, 2, 2, 1], 12],
+  ['Via', [1, 1, 1, 1], 9],
+  ['Puella', [1, 2, 1, 1], 1],
+  ['Caput Draconis', [2, 1, 1, 1], 14],
+  ['Puer', [1, 1, 2, 1], 9],
+  ['Cauda Draconis', [1, 1, 1, 2], 9],
+] as const;
+---
+
+<table class="abano-table">
+  <caption>Computus of the figures</caption>
+  <thead>
+    <tr>
+      <th scope="col">Figure</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map(([name, dots, value]) => (
+        <tr>
+          <th scope="row">
+            <span class="figure-cell">
+              <FigureGlyph dots={dots} name={name} size={1.4} />
+              <span>{name}</span>
+            </span>
+          </th>
+          <td>{value}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .figure-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+  }
+</style>

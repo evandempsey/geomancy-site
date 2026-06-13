@@ -1,0 +1,59 @@
+---
+const rows = [
+  ['Saturn', 'Capricorn, Aquarius', 'Libra', 'Aries'],
+  ['Jupiter', 'Sagittarius, Pisces', 'Cancer', 'Capricorn'],
+  ['Mars', 'Aries, Scorpio', 'Capricorn', 'Cancer'],
+  ['Sun', 'Leo', 'Aries', 'Libra'],
+  ['Venus', 'Taurus, Libra', 'Pisces', 'Virgo'],
+  ['Mercury', 'Gemini, Virgo', 'Virgo', 'Pisces'],
+  ['Moon', 'Cancer', 'Taurus', 'Scorpio'],
+];
+---
+
+<table class="abano-table">
+  <caption>Planetary houses, exaltations, and depressions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Planet</th>
+      <th scope="col">Houses</th>
+      <th scope="col">Exaltation</th>
+      <th scope="col">Depression</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map(([planet, houses, exaltation, depression]) => (
+        <tr>
+          <th scope="row">{planet}</th>
+          <td>{houses}</td>
+          <td>{exaltation}</td>
+          <td>{depression}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+<table class="abano-table node-table">
+  <caption>Dragon's Head and Tail</caption>
+  <tbody>
+    <tr>
+      <th scope="row">Caput Draconis</th>
+      <td>Of the nature of Jupiter and Venus</td>
+    </tr>
+    <tr>
+      <th scope="row">Cauda Draconis</th>
+      <td>Of the nature of Saturn and Mars</td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .node-table {
+    margin-top: var(--space-4);
+  }
+</style>

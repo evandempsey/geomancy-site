@@ -1,0 +1,99 @@
+---
+import FigureGlyph from '../FigureGlyph.astro';
+
+const figures = {
+  acquisitio: { name: 'Acquisitio', dots: [2, 1, 2, 1] },
+  albus: { name: 'Albus', dots: [2, 2, 1, 2] },
+  amissio: { name: 'Amissio', dots: [1, 2, 1, 2] },
+  caput: { name: 'Caput Draconis', dots: [2, 1, 1, 1] },
+  carcer: { name: 'Carcer', dots: [1, 2, 2, 1] },
+  cauda: { name: 'Cauda Draconis', dots: [1, 1, 1, 2] },
+  fortunaMajor: { name: 'Fortuna Major', dots: [2, 2, 1, 1] },
+  fortunaMinor: { name: 'Fortuna Minor', dots: [1, 1, 2, 2] },
+  laetitia: { name: 'Laetitia', dots: [1, 2, 2, 2] },
+  puer: { name: 'Puer', dots: [1, 1, 2, 1] },
+  puella: { name: 'Puella', dots: [1, 2, 1, 1] },
+  rubeus: { name: 'Rubeus', dots: [2, 1, 2, 2] },
+  tristitia: { name: 'Tristitia', dots: [2, 2, 2, 1] },
+};
+
+const rows = [
+  {
+    category: 'Entirely good',
+    items: [figures.fortunaMajor, figures.fortunaMinor, figures.laetitia, figures.caput],
+  },
+  {
+    category: 'Entirely evil',
+    items: [figures.tristitia, figures.carcer, figures.cauda, figures.rubeus],
+  },
+  {
+    category: 'Mediocre tending to good',
+    items: [figures.acquisitio, figures.albus, figures.puella],
+  },
+  {
+    category: 'Mediocre tending to evil',
+    items: [figures.amissio, figures.puer],
+  },
+];
+---
+
+<table class="abano-table">
+  <caption>Which figures are good, evil, or mediocre</caption>
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Figures</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((row) => (
+        <tr>
+          <th scope="row">{row.category}</th>
+          <td>
+            <ul class="figure-list">
+              {row.items.map((figure) => (
+                <li>
+                  <FigureGlyph dots={figure.dots} name={figure.name} size={1.6} />
+                  <span>{figure.name}</span>
+                </li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+<p class="table-note">
+  The source table has shifted labels in the manuscript layout; the rows above preserve the four
+  figure groups as rendered from that table.
+</p>
+
+<style>
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .figure-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .figure-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+  }
+  .table-note {
+    color: var(--color-ink-muted);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    margin-top: calc(-1 * var(--space-3));
+  }
+</style>

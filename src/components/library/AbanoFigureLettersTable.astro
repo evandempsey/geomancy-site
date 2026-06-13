@@ -1,0 +1,61 @@
+---
+import FigureGlyph from '../FigureGlyph.astro';
+
+const rows = [
+  ['Acquisitio', [2, 1, 2, 1], 'L'],
+  ['Puella', [1, 2, 1, 1], 'I'],
+  ['Populus', [2, 2, 2, 2], 'T. V.'],
+  ['Amissio', [1, 2, 1, 2], 'M'],
+  ['Puer', [1, 1, 2, 1], 'R'],
+  ['Via', [1, 1, 1, 1], 'N. O.'],
+  ['Fortuna Major', [2, 2, 1, 1], 'E'],
+  ['Rubeus', [2, 1, 2, 2], 'C'],
+  ['Caput Draconis', [2, 1, 1, 1], 'G'],
+  ['Fortuna Minor', [1, 1, 2, 2], 'F'],
+  ['Albus', [2, 2, 1, 2], 'D'],
+  ['Cauda Draconis', [1, 1, 1, 2], 'H'],
+  ['Laetitia', [1, 2, 2, 2], 'A'],
+  ['Conjunctio', [2, 1, 1, 2], 'S. R.'],
+  ['Tristitia', [2, 2, 2, 1], 'B'],
+  ['Carcer', [1, 2, 2, 1], 'P. Q.'],
+] as const;
+---
+
+<table class="abano-table">
+  <caption>Letters of the figures</caption>
+  <thead>
+    <tr>
+      <th scope="col">Figure</th>
+      <th scope="col">Letters</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map(([name, dots, letters]) => (
+        <tr>
+          <th scope="row">
+            <span class="figure-cell">
+              <FigureGlyph dots={dots} name={name} size={1.4} />
+              <span>{name}</span>
+            </span>
+          </th>
+          <td>{letters}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  .abano-table caption {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: var(--space-2);
+  }
+  .figure-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+  }
+</style>

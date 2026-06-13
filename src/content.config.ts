@@ -3,7 +3,7 @@ import { glob, file } from 'astro/loaders';
 import { TOOL_KEYS } from './lib/tools';
 
 /**
- * The five historical sources. Every quote in the corpus references one of
+ * The historical sources. Every quote in the corpus references one of
  * these; `publicDomain: z.literal(true)` is a hard gate — a source that is
  * not public domain cannot be added without failing the build.
  */
@@ -99,13 +99,17 @@ const quotes = defineCollection({
 
 /** Full texts reproduced in the library, one file per chapter/section. */
 const library = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/library' }),
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/content/library' }),
   schema: z.object({
     title: z.string(),
     source: reference('sources'),
     order: z.number(),
     locator: z.string().optional(),
     description: z.string().max(170),
+    /** Quote-corpus entries whose text is represented in this library chapter. */
+    covers: z.array(reference('quotes')).default([]),
+    /** Extraction files or scripts used to assemble generated library chapters. */
+    generatedFrom: z.array(z.string()).default([]),
   }),
 });
 

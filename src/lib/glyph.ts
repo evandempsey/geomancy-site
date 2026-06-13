@@ -1,5 +1,5 @@
 /**
- * Geometry for rendering a geomantic figure (four lines of one or two
+ * Geometry for rendering a dot figure (one or more lines of one or two
  * points) as SVG. Shared by FigureGlyph.astro and the OG-image generator.
  */
 export type Dots = readonly number[];
@@ -14,7 +14,7 @@ const R = 5; // dot radius
 
 export function glyphGeometry(dots: Dots): GlyphGeometry {
   const width = UNIT * 3;
-  const height = UNIT * 4;
+  const height = UNIT * dots.length;
   const circles = dots.flatMap((n, row) => {
     const cy = UNIT * (row + 0.5);
     if (n === 1) return [{ cx: width / 2, cy, r: R }];

@@ -13,14 +13,14 @@ const jsonLd = [
     name: 'The Art of Geomancy',
     url: new URL(withBase('/'), Astro.site).href,
     description:
-      'The figures, houses and readings of traditional geomancy, quoted from the historical sources: Cattan, Heydon, Agrippa, Gerard of Cremona and Crowley.',
+      'The figures, houses and readings of traditional geomancy, quoted from the historical sources: pseudo-Abano, Cattan, Heydon, Agrippa, Gerard of Cremona and Crowley.',
   },
 ];
 ---
 
 <Base
   title="The Art of Geomancy: the historical sources of geomantic divination"
-  description="A reference library of medieval and Renaissance geomancy: the sixteen figures, the twelve houses and the reading techniques, quoted directly from Cattan, Heydon, Agrippa and the other historical sources."
+  description="A reference library of medieval and Renaissance geomancy: the sixteen figures, the twelve houses and the reading techniques, quoted directly from pseudo-Abano, Cattan, Heydon, Agrippa and the other historical sources."
   type="website"
   jsonLd={jsonLd}
   wide
@@ -31,10 +31,11 @@ const jsonLd = [
       Geomancy was the great divinatory art of medieval and Renaissance Europe, “the daughter of
       Astrologie”, read through sixteen figures of points cast into the twelve houses of heaven. This
       site presents the art as its historical authors taught it: every interpretation on these pages is
-      quoted directly, with citation, from the public-domain sources: Christopher Cattan’s
-      <em>Geomancie</em> (1591), John Heydon’s <em>Theomagia</em> (1663), the <em>Of Geomancy</em>
-      attributed to Cornelius Agrippa and the <em>Astronomical Geomancy</em> of Gerard of Cremona
-      (1655), and Aleister Crowley’s Equinox handbook (1909).
+      quoted directly, with citation, from the public-domain sources: the pseudo-Abano
+      <em>Method of Judging Questions</em>, Christopher Cattan’s <em>Geomancie</em> (1591), John
+      Heydon’s <em>Theomagia</em> (1663), the <em>Of Geomancy</em> attributed to Cornelius Agrippa
+      and the <em>Astronomical Geomancy</em> of Gerard of Cremona (1655), and Aleister Crowley’s
+      Equinox handbook (1909).
     </p>
     <nav class="start" aria-label="Start here">
       <a href={withBase('/what-is-geomancy/')}>What is geomancy?</a>

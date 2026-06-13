@@ -1,9 +1,14 @@
 ---
 title: "The qualities and properties of all the figures — Cattan, Book III, ch. 27"
 source: cattan
-order: 1
+order: 327
 locator: "Book III, ch. 27 (pp. 214–224)"
 description: "Cattan's thematic tables of the sixteen figures: which are good or ill for the year, for love, theft, war, marriage, voyages, sickness and more (1591)."
+covers:
+  - cattan/book-3/ch-27-entering-exiting
+  - cattan/book-3/ch-27-time-of-life
+generatedFrom:
+  - "references/extracted/cattan/book3-ch27.md.aside"
 ---
 
 *In the 1591 printing these tables contain only the dot-figures; the figure names here are supplied editorially from the woodcuts, each verified against the page images. View the scans from leaf 248 of the [digitised copy](https://archive.org/details/b30337860/page/n248).*

@@ -4,6 +4,17 @@ The site quotes its sources from page scans and public-domain transcriptions kep
 
 You rarely need any of this to read or build the site. Every quote in `corpus/` carries a `scanRef` link to the exact page it was transcribed from, so quotes can be verified in the browser. These materials matter only if you want to extend the corpus or re-run the ingest scripts.
 
+## Pseudo-Abano, *Modus Iudicandi Questiones Secundum Petrum de Abano Patauinum*
+
+A medieval Latin geomantic method of judging questions, attributed in the manuscript heading to Peter of Abano.
+
+- Public source: Bayerische Staatsbibliothek Clm 489, [MDZ/BSB digital facsimile bsb00124288](https://www.digitale-sammlungen.de/en/view/bsb00124288).
+- IIIF manifest: `https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00124288/manifest`.
+- Locator: downloadable PDF pp. 460-494, ms pp. 222r-239r.
+- Working project: `../abano-judging-questions`.
+- Site text: `src/content/library/abano/method-of-judging-questions.mdx`, generated from `../abano-judging-questions/petrus_de_abano_modus_iudicandi_english.md` by `node scripts/ingest-abano-library.mjs`.
+- The generated MDX uses native site glyph and table components rather than copied SVG assets from the source project.
+
 ## Christopher Cattan, *The Geomancie of Maister Christopher Cattan* (London, 1591)
 
 The primary English source for the figure-in-house delineations and the technique chapters.

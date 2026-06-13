@@ -13,6 +13,7 @@ static host.
 
 | Source | Edition | Acquisition |
 |---|---|---|
+| Pseudo-Abano, *The Method of Judging Questions* | medieval Latin manuscript tradition; site English translation | BSB Clm 489, MDZ/BSB digital facsimile `bsb00124288`; generated from the working translation project |
 | Cattan, *The Geomancie* | London 1591 (Sparry trans.) | archive.org `b30337860`; transcribed by vision from leaf scans |
 | Heydon, *Theomagia* | London 1663–4 | local PDF in `references/`; OCR index + page-image transcription |
 | Agrippa (attrib.), *Of Geomancy* | Turner trans., 1655 | EEBO-TCP A26563 (A26562 for damaged passages) |
@@ -24,8 +25,11 @@ static host.
 - `corpus/` — ★ the canonical quote store. One Markdown file per quotation,
   with frontmatter (`source`, `locator`, `scanRef`, `figures`, `houses`,
   `topics`, `quality`). Site pages are *views* over this collection.
-- `src/data/` — figures (16), houses (12), sources (5) as YAML.
-- `src/content/library/` — full texts as Markdown chapters.
+- `src/data/` — figures (16), houses (12), sources as YAML.
+- `src/content/library/` — Library reader chapters. Full-text sources live
+  here directly; longer extracted sources are generated here from
+  `references/extracted/` with `covers` metadata tying chapters back to corpus
+  quote IDs.
 - `references/` — source PDFs and the committed EEBO TEI. `references/scans/`
   and `references/ocr/` are gitignored caches; re-create them with the
   scripts below.
@@ -38,6 +42,8 @@ static host.
 npm run dev          # local preview
 npm run build        # static build to dist/ (zod-validates the whole corpus)
 npm run coverage     # print the 16×12 extraction matrix per source
+npm run library:generate # extracted Cattan/Heydon chapters → Library pages
+npm run check:library    # every corpus/course quote has Library coverage
 npm run fetch:eebo   # re-download the EEBO-TCP TEI
 npm run fetch:cattan # re-download the 288 Cattan leaf scans (IIIF)
 npm run heydon index   # rebuild the Heydon per-page OCR index
