@@ -15,42 +15,58 @@ const t = TECHNIQUES.find((x) => x.slug === 'essential-dignities')!;
   jsonLd={[{ '@type': 'Article', headline: t.title }]}
 >
   <p>
-    A figure is not equally strong everywhere. The houses themselves differ in strength (angles are
-    strong, succedents middling, cadents weak), and each figure has houses where it stands well and
-    houses where it stands ill. Essential dignity measures this strength of place, which shows how
-    firmly a figure can act, apart from whether the figure itself is good or ill.
+    A figure is not equally strong everywhere. Each figure is strong in some houses and weak in
+    others, following the dignities of its ruling planet. This strength of place is its essential
+    dignity. It is separate from whether the figure itself is good or ill, and it shows how much
+    force a finding carries.
   </p>
 
-  <h2>Weigh a figure's dignity</h2>
+  <h2>Read a figure's dignity</h2>
   <ol>
-    <li>Look the figure up in Cattan's reckoning of its good and ill houses. This is the course's main dignity tool, and it does not depend on any disputed attribution.</li>
-    <li>Note the strength of its place: a figure in an angle is strong, in a succedent middling, in a cadent weak.</li>
-    <li>Refine by triplicity when one element rules the chart: a figure stands stronger in a house of its own element. Use the course's default element grouping below.</li>
-    <li>For exaltation or fall, name the system you are using, since Cattan's planetary table and the modern houses-as-signs table do not always agree.</li>
-    <li>Read strength together with goodness, never as the same thing. An ill figure strongly placed acts with more force, not less.</li>
+    <li>Find the figure's ruling planet and element in the table below.</li>
+    <li>Read each house of the chart as a sign: the first house as Aries through the twelfth as Pisces.</li>
+    <li>The figure is dignified when it falls in a house answering to its planet's domicile or exaltation, and debilitated in its detriment or fall.</li>
+    <li>It is also stronger where the chart around it shares its element, its triplicity.</li>
+    <li>Read dignity apart from goodness: a strong place makes a figure more able to act, for good or ill.</li>
   </ol>
-  <p>The course's default triplicities, taken from the figures' elements, are:</p>
   <table>
     <thead>
-      <tr><th>Element</th><th>Figures</th></tr>
+      <tr><th>Figure</th><th>Planet</th><th>Triplicity</th><th>Domicile</th><th>Exaltation</th><th>Detriment</th><th>Fall</th></tr>
     </thead>
     <tbody>
-      <tr><td>Fire</td><td>Fortuna Major, Rubeus, Puer, Amissio</td></tr>
-      <tr><td>Air</td><td>Fortuna Minor, Puella, Laetitia, Conjunctio</td></tr>
-      <tr><td>Water</td><td>Acquisitio, Cauda Draconis, Via, Populus</td></tr>
-      <tr><td>Earth</td><td>Carcer, Tristitia, Albus, Caput Draconis</td></tr>
+      <tr><td>Fortuna Major</td><td>Sun</td><td>Fire</td><td>Leo</td><td>Aries</td><td>Aquarius</td><td>Libra</td></tr>
+      <tr><td>Fortuna Minor</td><td>Sun</td><td>Air</td><td>Leo</td><td>Aries</td><td>Aquarius</td><td>Libra</td></tr>
+      <tr><td>Via</td><td>Moon</td><td>Water</td><td>Cancer</td><td>Taurus</td><td>Capricorn</td><td>Scorpio</td></tr>
+      <tr><td>Populus</td><td>Moon</td><td>Water</td><td>Cancer</td><td>Taurus</td><td>Capricorn</td><td>Scorpio</td></tr>
+      <tr><td>Acquisitio</td><td>Jupiter</td><td>Water</td><td>Sagittarius, Pisces</td><td>Cancer</td><td>Gemini, Virgo</td><td>Capricorn</td></tr>
+      <tr><td>Laetitia</td><td>Jupiter</td><td>Air</td><td>Sagittarius, Pisces</td><td>Cancer</td><td>Gemini, Virgo</td><td>Capricorn</td></tr>
+      <tr><td>Puella</td><td>Venus</td><td>Air</td><td>Taurus, Libra</td><td>Pisces</td><td>Aries, Scorpio</td><td>Virgo</td></tr>
+      <tr><td>Amissio</td><td>Venus</td><td>Fire</td><td>Taurus, Libra</td><td>Pisces</td><td>Aries, Scorpio</td><td>Virgo</td></tr>
+      <tr><td>Conjunctio</td><td>Mercury</td><td>Air</td><td>Gemini, Virgo</td><td>Virgo</td><td>Sagittarius, Pisces</td><td>Pisces</td></tr>
+      <tr><td>Albus</td><td>Mercury</td><td>Earth</td><td>Gemini, Virgo</td><td>Virgo</td><td>Sagittarius, Pisces</td><td>Pisces</td></tr>
+      <tr><td>Puer</td><td>Mars</td><td>Fire</td><td>Aries, Scorpio</td><td>Capricorn</td><td>Taurus, Libra</td><td>Cancer</td></tr>
+      <tr><td>Rubeus</td><td>Mars</td><td>Fire</td><td>Aries, Scorpio</td><td>Capricorn</td><td>Taurus, Libra</td><td>Cancer</td></tr>
+      <tr><td>Carcer</td><td>Saturn</td><td>Earth</td><td>Capricorn, Aquarius</td><td>Libra</td><td>Cancer, Leo</td><td>Aries</td></tr>
+      <tr><td>Tristitia</td><td>Saturn</td><td>Earth</td><td>Capricorn, Aquarius</td><td>Libra</td><td>Cancer, Leo</td><td>Aries</td></tr>
+      <tr><td>Caput Draconis</td><td>North Node</td><td>Earth</td><td>none</td><td>Gemini</td><td>none</td><td>none</td></tr>
+      <tr><td>Cauda Draconis</td><td>South Node</td><td>Water</td><td>none</td><td>Sagittarius</td><td>none</td><td>none</td></tr>
     </tbody>
   </table>
+  <p>
+    Read each house as a sign for this table: the first house answers to Aries and the twelfth to
+    Pisces. The Dragon's Head and Tail keep only their exaltations.
+  </p>
 
   <h2>In the sources</h2>
   <QuoteList topic="dignities" noFigures />
   <p>
-    Cattan's reckoning of each figure's good and ill houses is quoted on the
-    <a href={withBase('/figures/')}>individual figure pages</a>.
+    Cattan's reckoning of each figure's good and ill houses, the everyday dignity tool, is quoted on
+    the <a href={withBase('/figures/')}>individual figure pages</a>.
   </p>
   <p>
-    The complete Golden Dawn table (every figure's house, exaltation, triplicity, fall and
-    detriment) is reproduced in the library:
+    The Golden Dawn sets the same scheme out house by house in the library:
     <a href={withBase('/library/crowley/dignities-and-aspects/')}>the Table of Essential Dignities</a>.
+    It is fuller on the nodes, giving Caput Draconis the dignities of Jupiter and Venus and Cauda
+    Draconis those of Saturn and Mars; the table above keeps the nodes to their exaltations.
   </p>
 </Prose>
