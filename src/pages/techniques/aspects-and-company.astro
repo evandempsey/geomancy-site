@@ -15,23 +15,51 @@ const t = TECHNIQUES.find((x) => x.slug === 'aspects-and-company')!;
   jsonLd={[{ '@type': 'Article', headline: t.title }]}
 >
   <p>
-    The houses of the chart behold one another as the signs do: each house has its sextiles,
-    squares and trines on either side, and its opposition across the chart. Aspects falling
-    <em>against</em> the natural order of the houses are called <em>dexter</em> and are the
-    stronger; those following the order are <em>sinister</em>. Figures, like planets, also keep
-    friendships and enmities with one another, by their rulers and by their elements:
+    The houses of a chart behold one another as the signs do, by aspect: each house has its
+    sextiles, squares, and trines on either side, and its opposition across the chart. Beside the
+    aspects, neighbouring houses keep company in fixed pairs. Both relations show how the figures in
+    other houses help or hinder the matter in question.
+  </p>
+
+  <h2>Count the aspects</h2>
+  <ol>
+    <li>Fix the house you are reading, usually the first or the seventh.</li>
+    <li>Count to the houses that aspect it, on either side, by inclusive counting, where the house itself is the first counted.</li>
+    <li>Note the aspect and its direction. An aspect against the order of the houses is <em>dexter</em> and the stronger; one following the order is <em>sinister</em>. The dexter-stronger rule is a modern refinement.</li>
+    <li>Judge by the figure standing in the beholding house, not by the aspect alone. A trine with an ill figure is still ill; a square with a strong, agreeing figure can help.</li>
+  </ol>
+  <table>
+    <thead>
+      <tr><th>Aspect</th><th>Houses apart</th><th>Nature</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sextile</td><td>2</td><td>Mild friendship, the weakest of the four</td></tr>
+      <tr><td>Square</td><td>3</td><td>Hard, but judged by the figure</td></tr>
+      <tr><td>Trine</td><td>4</td><td>Strong friendship</td></tr>
+      <tr><td>Opposition</td><td>opposite (6)</td><td>Hard, though it can agree if the figures agree</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Read the company</h2>
+  <ol>
+    <li>Take a significator and look at its companion house, in the fixed pairs: the first with the second, the third with the fourth, and so through the chart.</li>
+    <li>Name the kind of company: simple (the same figure), demi-simple (figures sharing a planet), compound (contrary figures), or by the points on high (their top lines agree).</li>
+    <li>Read it as support, not perfection. Good company strengthens a significator; ill company undermines it.</li>
+  </ol>
+
+  <h2>In the sources</h2>
+  <p>
+    Cattan sets out the aspects and the friendships and enmities of the figures. Friendly figures
+    aspecting the house of the question aid it, and hostile figures hinder it:
   </p>
   <QuoteList topic="aspects" />
   <p>
-    Friendly figures aspecting the house of the question aid it; hostile figures hinder it.
+    On the company of houses, Cattan distinguishes simple, half-simple, and compound company, with
+    worked examples from his own practice:
+  </p>
+  <QuoteList topic="company" />
+  <p>
     Crowley's worked example shows the weighing of these findings in practice:
     <a href={withBase('/library/crowley/method-of-judging/')}>the General Method of Judging a Figure</a>.
   </p>
-  <h2>The company of figures</h2>
-  <p>
-    Beside the aspects, neighbouring houses keep <em>company</em>: the second with the first, the
-    fourth with the third, and so through the chart. Cattan distinguishes simple, half-simple and
-    compound company, and judges by them with worked examples from his own practice:
-  </p>
-  <QuoteList topic="company" />
 </Prose>

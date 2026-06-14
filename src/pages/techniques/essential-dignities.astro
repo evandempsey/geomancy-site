@@ -15,13 +15,34 @@ const t = TECHNIQUES.find((x) => x.slug === 'essential-dignities')!;
   jsonLd={[{ '@type': 'Article', headline: t.title }]}
 >
   <p>
-    As in astrology, a figure is not equally strong everywhere. The houses themselves differ in
-    strength (angles, succedents and cadents) and each figure has houses where it stands in
-    dignity and houses where it is debilitated. Cattan reckons the good and ill houses of every
-    figure, its triplicity with its day and night rulers, and its exaltation, joy and fall; the
-    Golden Dawn line systematised the same doctrine into a table of house, exaltation, triplicity,
-    fall and detriment, counting the twelve houses as answering to the twelve signs:
+    A figure is not equally strong everywhere. The houses themselves differ in strength (angles are
+    strong, succedents middling, cadents weak), and each figure has houses where it stands well and
+    houses where it stands ill. Essential dignity measures this strength of place, which shows how
+    firmly a figure can act, apart from whether the figure itself is good or ill.
   </p>
+
+  <h2>Weigh a figure's dignity</h2>
+  <ol>
+    <li>Look the figure up in Cattan's reckoning of its good and ill houses. This is the course's main dignity tool, and it does not depend on any disputed attribution.</li>
+    <li>Note the strength of its place: a figure in an angle is strong, in a succedent middling, in a cadent weak.</li>
+    <li>Refine by triplicity when one element rules the chart: a figure stands stronger in a house of its own element. Use the course's default element grouping below.</li>
+    <li>For exaltation or fall, name the system you are using, since Cattan's planetary table and the modern houses-as-signs table do not always agree.</li>
+    <li>Read strength together with goodness, never as the same thing. An ill figure strongly placed acts with more force, not less.</li>
+  </ol>
+  <p>The course's default triplicities, taken from the figures' elements, are:</p>
+  <table>
+    <thead>
+      <tr><th>Element</th><th>Figures</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fire</td><td>Fortuna Major, Rubeus, Puer, Amissio</td></tr>
+      <tr><td>Air</td><td>Fortuna Minor, Puella, Laetitia, Conjunctio</td></tr>
+      <tr><td>Water</td><td>Acquisitio, Cauda Draconis, Via, Populus</td></tr>
+      <tr><td>Earth</td><td>Carcer, Tristitia, Albus, Caput Draconis</td></tr>
+    </tbody>
+  </table>
+
+  <h2>In the sources</h2>
   <QuoteList topic="dignities" noFigures />
   <p>
     Cattan's reckoning of each figure's good and ill houses is quoted on the

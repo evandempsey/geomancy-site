@@ -15,51 +15,47 @@ const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
   jsonLd={[{ '@type': 'Article', headline: t.title }]}
 >
   <p>
-    In the house chart, a question is answered by the relation between the figure of the querent
-    (normally the first house) and the figure of the thing asked about (the house of the
-    quesited). The medieval geomancers (the doctrine is set out most systematically in the
-    <em>Method of Judging Questions</em> that circulated under the name of Pietro d'Abano)
-    recognised four principal ways the chart <em>perfects</em>, that is, joins querent to
-    quesited and promises the matter accomplished:
+    A house chart answers a question through the relation between the figure of the querent (usually
+    the first house) and the figure of the quesited (the house of the thing asked about). Perfection
+    is the joining of those two significators: when the chart perfects, the matter comes about; when
+    it does not, the matter is denied. The medieval sources name four modes of perfection. This
+    course tests them by Cattan's method, where occupation and conjunction perfect the matter, and
+    the company and springing of figures are read alongside as circumstances.
   </p>
-  <ul>
-    <li>
-      <strong>Occupation</strong>: the same figure stands in the house of the querent and the
-      house of the quesited: the matter is achieved without impediment.
-    </li>
-    <li>
-      <strong>Conjunction</strong>: the figure of the querent or of the quesited passes to a
-      house immediately beside the other: the matter is achieved by effort; whose figure moves
-      shows who must do the seeking.
-    </li>
-    <li>
-      <strong>Mutation</strong>: the figures of querent and quesited appear together, side by
-      side, elsewhere in the chart: the matter is accomplished, but in an unexpected way or place.
-    </li>
-    <li>
-      <strong>Translation</strong>: a third figure appears next to both significators: the matter
-      is accomplished through a go-between, another person or thing answering to that figure.
-    </li>
-  </ul>
+
+  <h2>Test for perfection</h2>
+  <ol>
+    <li>Name the two significators: the querent's figure and house, and the quesited's figure and house.</li>
+    <li>Find every house where each significator's figure is repeated across the chart.</li>
+    <li><strong>Test occupation.</strong> The querent's figure also stands in the quesited's house. This is the strongest perfection; the matter comes about of itself.</li>
+    <li><strong>Test conjunction.</strong> One significator's figure stands in a house beside the other significator's house. This perfects the matter by effort, and the figure that moves shows who must seek it.</li>
+    <li><strong>Test company.</strong> A significator's figure stands in its companion house (the fixed pairs 1·2, 3·4, and so on). Company strengthens or weakens a significator but does not by itself join the parties.</li>
+    <li>Conclude: perfected by occupation or conjunction, or denied. Read any further springings as circumstances of the matter, not as the answer.</li>
+  </ol>
+  <p>The older sources name four modes. This course reads them as follows:</p>
+  <table>
+    <thead>
+      <tr><th>Mode</th><th>In the chart</th><th>In this course</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Occupation</td><td>The querent's figure also holds the quesited's house</td><td>Perfects the matter</td></tr>
+      <tr><td>Conjunction</td><td>A significator stands in a house beside the other</td><td>Perfects the matter, by effort</td></tr>
+      <tr><td>Mutation</td><td>The two significators stand side by side elsewhere</td><td>Not a perfection here; read as a springing</td></tr>
+      <tr><td>Translation</td><td>A third figure stands beside both significators</td><td>Not a perfection here; read by the third figure's aspect or company</td></tr>
+    </tbody>
+  </table>
   <p>
-    If the chart shows none of these (and no aspect joins the significators) the matter is
-    denied. The favourableness of the figures themselves then colours <em>how</em> the thing comes
-    about, for which see <a href={withBase('/figures/')}>the natures of the figures</a> and
-    <a href={withBase('/techniques/aspects-and-company/')}>their aspects and friendships</a>.
+    When a chart perfects, the <a href={withBase('/figures/')}>natures of the figures</a> and their
+    <a href={withBase('/techniques/aspects-and-company/')}>aspects and friendships</a> show how the
+    matter comes about.
   </p>
-  <p class="sourcing">
-    The summary above follows the pseudo-Abano
+
+  <h2>In the sources</h2>
+  <p>
+    The four modes are set out most fully in the pseudo-Abano
     <a href={withBase('/library/abano/method-of-judging-questions/')}>Method of Judging Questions</a>.
-    Cattan teaches the same doctrine under his own names (<em>occupation</em> and the
-    <em>company of conjunction</em>) with worked examples from his own practice:
+    Cattan teaches the same modes under his own names, occupation and the company of conjunction,
+    with worked examples from his own practice:
   </p>
   <QuoteList topic="perfection" />
 </Prose>
-
-<style>
-  .sourcing {
-    font-family: var(--font-ui);
-    font-size: var(--text-sm);
-    color: var(--color-ink-muted);
-  }
-</style>
