@@ -14,6 +14,13 @@ for (const f of figures) {
   names[f.data.dots.join('')] = { name: f.data.name, id: f.id };
 }
 
+// The sixteen figures in canonical order, for the "enter your own Mothers"
+// menus. Every four-line pattern is one of these, so no blank option is needed.
+const orderedFigures = [...figures]
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((f) => ({ id: f.id, name: f.data.name }));
+const motherLabels = ['1st Mother', '2nd Mother', '3rd Mother', '4th Mother'];
+
 const W = 640;
 const ROW = 150;
 const H = ROW * 4;
@@ -65,13 +72,34 @@ const cells: Cell[] = [
   <div class="controls" hidden>
     <button data-action="cast">Cast a chart</button>
     <button data-action="step">Cast step by step</button>
+    <button data-action="own">Enter your own Mothers</button>
     <button data-action="next" hidden>Next step →</button>
   </div>
   <p class="explain" data-explain aria-live="polite"></p>
+  <div class="mother-inputs" hidden>
+    <p class="mother-inputs-hint">
+      Set the four Mothers, by name here or by clicking the lines in cells I–IV (which the diagram
+      places on the right). The rest of the shield follows.
+    </p>
+    <div class="mother-fields">
+      {
+        motherLabels.map((label, i) => (
+          <label>
+            <span>{label}</span>
+            <select data-mother={i}>
+              {orderedFigures.map((f) => (
+                <option value={f.id}>{f.name}</option>
+              ))}
+            </select>
+          </label>
+        ))
+      }
+    </div>
+  </div>
   <svg
     viewBox={`0 0 ${W} ${H}`}
     role="img"
-    aria-label="Practice shield chart. Use the buttons above to cast a chart; the cells fill with the derived figures."
+    aria-label="Practice shield chart. Use the buttons above to cast a chart, or enter your own four Mothers; the cells fill with the derived figures."
   >
     {
       cells.map((c) => (
@@ -89,6 +117,18 @@ const cells: Cell[] = [
           <text class="label" x={c.x + c.w / 2} y={c.y + 136}>
             {c.role}
           </text>
+          {c.idx <= 3 &&
+            [0, 1, 2, 3].map((line) => (
+              <rect
+                class="hit"
+                data-idx={c.idx}
+                data-line={line}
+                x={c.x}
+                y={c.y + 30 + line * 24 * GLYPH_SCALE}
+                width={c.w}
+                height={24 * GLYPH_SCALE}
+              />
+            ))}
         </>
       ))
     }
@@ -103,7 +143,13 @@ const cells: Cell[] = [
 </div>
 
 <script>
-  import { deriveChart, chartFigures, randomMother, type FigureDots } from '../../lib/casting';
+  import {
+    deriveChart,
+    chartFigures,
+    randomMother,
+    parseDotsKey,
+    type FigureDots,
+  } from '../../lib/casting';
   import { glyphGeometry } from '../../lib/glyph';
 
   const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -143,11 +189,22 @@ const cells: Cell[] = [
     const explain = root.querySelector<HTMLElement>('[data-explain]');
     const castBtn = root.querySelector<HTMLButtonElement>('[data-action="cast"]');
     const stepBtn = root.querySelector<HTMLButtonElement>('[data-action="step"]');
+    const ownBtn = root.querySelector<HTMLButtonElement>('[data-action="own"]');
     const nextBtn = root.querySelector<HTMLButtonElement>('[data-action="next"]');
-    if (!controls || !explain || !castBtn || !stepBtn || !nextBtn) continue;
+    const motherInputs = root.querySelector<HTMLElement>('.mother-inputs');
+    const selects = root.querySelectorAll<HTMLSelectElement>('select[data-mother]');
+    const hitRects = root.querySelectorAll<SVGRectElement>('rect.hit');
+    if (!controls || !explain || !castBtn || !stepBtn || !ownBtn || !nextBtn || !motherInputs)
+      continue;
+
+    // id → dots, inverted from the embedded names island, for the menus.
+    const idToDots: Record<string, FigureDots> = {};
+    for (const [key, v] of Object.entries(names)) idToDots[v.id] = parseDotsKey(key);
 
     let figures: FigureDots[] = [];
     let stepIndex = -1;
+    let mothers: FigureDots[] = [];
+    let ownMode = false;
 
     const clear = () => {
       for (const slot of root.querySelectorAll('.glyph-slot')) slot.replaceChildren();
@@ -171,11 +228,48 @@ const cells: Cell[] = [
     };
 
     const cast = () => {
-      const mothers = [0, 0, 0, 0].map(() => randomMother());
+      const seed = [0, 0, 0, 0].map(() => randomMother());
+      figures = chartFigures(deriveChart(seed));
+    };
+
+    const leaveOwn = () => {
+      ownMode = false;
+      root.classList.remove('mode-own');
+      motherInputs.hidden = true;
+    };
+
+    // Derive and draw the whole shield from the current four editable Mothers,
+    // keeping the name menus in step. Every line pattern is a valid figure, so
+    // there is no invalid state to guard against.
+    const renderOwn = () => {
       figures = chartFigures(deriveChart(mothers));
+      clear();
+      for (let i = 0; i < 15; i++) fill(i);
+      for (const sel of selects) {
+        const idx = Number(sel.dataset.mother);
+        sel.value = names[mothers[idx].join('')]?.id ?? '';
+      }
+      const judge = names[figures[14].join('')]?.name ?? 'unknown';
+      explain.textContent = `Your shield, derived from the four Mothers. The Judge is ${judge}. Click a line in cells I–IV to toggle its points, or pick a Mother by name.`;
+    };
+
+    const enterOwn = () => {
+      // Seed from the chart already on screen if there is one, else a fresh
+      // cast, so a complete, editable shield is always shown.
+      mothers =
+        figures.length === 15
+          ? figures.slice(0, 4).map((d) => d.slice() as FigureDots)
+          : [0, 0, 0, 0].map(() => randomMother());
+      ownMode = true;
+      root.classList.add('mode-own');
+      motherInputs.hidden = false;
+      nextBtn.hidden = true;
+      stepIndex = -1;
+      renderOwn();
     };
 
     castBtn.addEventListener('click', () => {
+      leaveOwn();
       cast();
       clear();
       for (let i = 0; i < 15; i++) fill(i);
@@ -183,6 +277,30 @@ const cells: Cell[] = [
       nextBtn.hidden = true;
       explain.textContent = `A fresh chart. The Judge is ${names[figures[14].join('')]?.name ?? 'unknown'}.`;
     });
+
+    ownBtn.addEventListener('click', enterOwn);
+
+    for (const rect of hitRects) {
+      rect.addEventListener('click', () => {
+        if (!ownMode) return;
+        const idx = Number(rect.dataset.idx);
+        const line = Number(rect.dataset.line);
+        const m = mothers[idx].slice() as FigureDots;
+        m[line] = m[line] === 1 ? 2 : 1;
+        mothers[idx] = m;
+        renderOwn();
+      });
+    }
+
+    for (const sel of selects) {
+      sel.addEventListener('change', () => {
+        const idx = Number(sel.dataset.mother);
+        const dots = idToDots[sel.value];
+        if (!dots) return;
+        mothers[idx] = dots.slice() as FigureDots;
+        renderOwn();
+      });
+    }
 
     const advance = () => {
       stepIndex += 1;
@@ -196,6 +314,7 @@ const cells: Cell[] = [
     };
 
     stepBtn.addEventListener('click', () => {
+      leaveOwn();
       cast();
       clear();
       stepIndex = -1;
@@ -276,6 +395,50 @@ const cells: Cell[] = [
     font-family: var(--font-ui);
     font-size: 12px;
     fill: var(--color-ink-muted);
+  }
+  .mother-inputs {
+    margin: 0 0 var(--space-2);
+  }
+  .mother-inputs-hint {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-2);
+  }
+  .mother-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .mother-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+  .mother-fields select {
+    font-family: var(--font-serif);
+    font-size: var(--text-sm);
+    color: var(--color-ink);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-1) var(--space-2);
+  }
+  rect.hit {
+    fill: transparent;
+    stroke: none;
+    pointer-events: none;
+  }
+  .mode-own rect.hit {
+    pointer-events: all;
+    cursor: pointer;
+  }
+  .mode-own rect.hit:hover {
+    fill: var(--color-rubric);
+    fill-opacity: 0.08;
   }
   .noscript {
     font-family: var(--font-ui);
