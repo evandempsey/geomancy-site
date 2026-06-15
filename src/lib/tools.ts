@@ -31,7 +31,7 @@ export const TOOLS: Tool[] = [
     slug: 'casting-practice',
     title: 'The Casting Practice',
     description:
-      'Cast four random Mothers and derive the whole shield: at once, or step by step with every addition explained. Made for checking shields you have first worked by hand.',
+      'Cast four random Mothers and derive the whole shield, at once or step by step with every addition explained, or enter your own four Mothers to derive and check a shield you have worked by hand.',
     taughtIn: [{ href: '/course/casting-the-chart/', label: 'Lesson 4: Casting the Chart' }],
   },
   {
