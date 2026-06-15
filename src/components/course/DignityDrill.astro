@@ -1,0 +1,248 @@
+---
+import { withBase } from '../../lib/url';
+/**
+ * Sign-dignity flashcard drill, a sibling of FlashcardDrill for the essential
+ * dignities. The card shows a zodiac sign; the mode sets what you recall and
+ * what Reveal shows: its ruling planet ('sign-ruler') or the planet exalted in
+ * it ('sign-exaltation', "None" for Leo, Scorpio and Aquarius). Data comes from
+ * SIGN_DIGNITIES, the same source as the table on the essential dignities page.
+ * Score is kept in memory for the round only; mastery is the student's business,
+ * not localStorage's.
+ */
+import { SIGNS } from '../../lib/gerard';
+import { SIGN_DIGNITIES, SIGN_SYMBOL, PLANET_SYMBOL } from '../../lib/dignities';
+import { astroSymbolsText } from '../../lib/rehype-astro-symbols.mjs';
+
+interface Props {
+  mode?: 'sign-ruler' | 'sign-exaltation';
+}
+const { mode = 'sign-ruler' } = Astro.props;
+
+// astroSymbolsText appends the U+FE0E text-presentation selector so the glyphs
+// render as monochrome line glyphs, not colour emoji (matching .astro-symbol).
+const deck = SIGNS.map((sign) => {
+  const d = SIGN_DIGNITIES[sign];
+  return {
+    sign,
+    signSymbol: astroSymbolsText(SIGN_SYMBOL[sign]),
+    ruler: d.ruler,
+    rulerSymbol: astroSymbolsText(PLANET_SYMBOL[d.ruler]),
+    exaltation: d.exaltation ?? 'None',
+    exaltationSymbol: d.exaltation ? astroSymbolsText(PLANET_SYMBOL[d.exaltation]) : '',
+  };
+});
+---
+
+<div class="flashcards" data-flashcards data-mode={mode}>
+  <script type="application/json" data-deck is:inline set:html={JSON.stringify(deck)} />
+  <div class="card" hidden>
+    <p class="progress" data-progress></p>
+    <p class="card-prompt">
+      <span class="card-symbol astro-symbol" data-prompt-symbol aria-hidden="true"></span>
+      <span class="card-label" data-prompt-name></span>
+    </p>
+    <div class="answer" data-answer hidden>
+      <p class="answer-name">
+        <span class="answer-symbol astro-symbol" data-answer-symbol aria-hidden="true"></span><span data-answer-name></span>
+      </p>
+    </div>
+    <div class="card-controls">
+      <button data-action="reveal">Reveal</button>
+      <button data-action="right" hidden>I had it right</button>
+      <button data-action="wrong" hidden>I missed it</button>
+      <button data-action="again" hidden>Run the deck again</button>
+    </div>
+  </div>
+  <noscript>
+    <p class="noscript">
+      The flashcard drill needs JavaScript. Without it, drill from
+      <a href={withBase('/techniques/essential-dignities/')}>the table of essential dignities</a>
+      with a sheet of paper over one column.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  interface Card {
+    sign: string;
+    signSymbol: string;
+    ruler: string;
+    rulerSymbol: string;
+    exaltation: string;
+    exaltationSymbol: string;
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-flashcards]')) {
+    const deck: Card[] = JSON.parse(root.querySelector('[data-deck]')?.textContent ?? '[]');
+    const mode = root.dataset.mode ?? 'sign-ruler';
+    const card = root.querySelector<HTMLElement>('.card');
+    const progress = root.querySelector<HTMLElement>('[data-progress]');
+    const promptSymbol = root.querySelector<HTMLElement>('[data-prompt-symbol]');
+    const promptName = root.querySelector<HTMLElement>('[data-prompt-name]');
+    const answer = root.querySelector<HTMLElement>('[data-answer]');
+    const answerSymbol = root.querySelector<HTMLElement>('[data-answer-symbol]');
+    const answerName = root.querySelector<HTMLElement>('[data-answer-name]');
+    const revealBtn = root.querySelector<HTMLButtonElement>('[data-action="reveal"]');
+    const rightBtn = root.querySelector<HTMLButtonElement>('[data-action="right"]');
+    const wrongBtn = root.querySelector<HTMLButtonElement>('[data-action="wrong"]');
+    const againBtn = root.querySelector<HTMLButtonElement>('[data-action="again"]');
+    if (
+      !card || !progress || !promptSymbol || !promptName || !answer || !answerSymbol ||
+      !answerName || !revealBtn || !rightBtn || !wrongBtn || !againBtn
+    )
+      continue;
+
+    let order: number[] = [];
+    let pos = 0;
+    let right = 0;
+
+    const shuffle = () => {
+      order = deck.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+    };
+
+    const answerFor = (c: Card) =>
+      mode === 'sign-exaltation'
+        ? { name: c.exaltation, symbol: c.exaltationSymbol }
+        : { name: c.ruler, symbol: c.rulerSymbol };
+
+    const show = () => {
+      const c = deck[order[pos]];
+      progress.textContent = `Card ${pos + 1} of ${deck.length} · ${right} right so far`;
+      promptSymbol.textContent = c.signSymbol;
+      promptName.textContent = c.sign;
+      answer.hidden = true;
+      revealBtn.hidden = false;
+      rightBtn.hidden = true;
+      wrongBtn.hidden = true;
+      againBtn.hidden = true;
+    };
+
+    const finish = () => {
+      progress.textContent = `Done: ${right} of ${deck.length} right. ${
+        right === deck.length
+          ? 'A clean run. Do it once more to be sure.'
+          : 'Run it again until two clean passes in a row.'
+      }`;
+      promptSymbol.textContent = '';
+      promptName.textContent = '';
+      answer.hidden = true;
+      revealBtn.hidden = true;
+      rightBtn.hidden = true;
+      wrongBtn.hidden = true;
+      againBtn.hidden = false;
+    };
+
+    revealBtn.addEventListener('click', () => {
+      const a = answerFor(deck[order[pos]]);
+      answerSymbol.textContent = a.symbol;
+      answerName.textContent = a.name;
+      answer.hidden = false;
+      revealBtn.hidden = true;
+      rightBtn.hidden = false;
+      wrongBtn.hidden = false;
+    });
+
+    const advance = (gotIt: boolean) => {
+      if (gotIt) right += 1;
+      pos += 1;
+      if (pos >= order.length) finish();
+      else show();
+    };
+    rightBtn.addEventListener('click', () => advance(true));
+    wrongBtn.addEventListener('click', () => advance(false));
+    againBtn.addEventListener('click', () => {
+      shuffle();
+      pos = 0;
+      right = 0;
+      show();
+    });
+
+    shuffle();
+    show();
+    card.hidden = false;
+  }
+</script>
+
+<style>
+  .flashcards {
+    margin: var(--space-8) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-6);
+    background: var(--color-bg-raised);
+    text-align: center;
+  }
+  .progress {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-4);
+  }
+  .card-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 7rem;
+    margin: 0;
+  }
+  .card-symbol {
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-ink);
+  }
+  .card-label {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+    color: var(--color-ink);
+  }
+  .answer-name {
+    font-size: var(--text-md);
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+    margin: var(--space-3) 0 0;
+  }
+  .answer-symbol {
+    font-variant: normal;
+    font-size: var(--text-lg);
+    margin-right: 0.3em;
+  }
+  .answer-symbol:empty {
+    margin-right: 0;
+  }
+  .card-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  button {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--color-rubric);
+    border-color: var(--color-rubric);
+  }
+  .noscript {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+  }
+</style>

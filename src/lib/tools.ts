@@ -37,9 +37,9 @@ export const TOOLS: Tool[] = [
   {
     key: 'flashcards',
     slug: 'flashcards',
-    title: 'The Figure Flashcards',
+    title: 'The Flashcards',
     description:
-      'Drill the sixteen figures to reflex: figure to name, name to meaning, and figure to each attribution (planet, sign, quality and element), until two clean passes in a row.',
+      'Drill the sixteen figures to reflex (figure to name, name to meaning, and each attribution), and the signs to their rulers and exaltations, until two clean passes in a row.',
     taughtIn: [
       { href: '/course/the-sixteen-figures/', label: 'Lesson 2: The Sixteen Figures' },
       { href: '/course/the-sixteen-natures/', label: 'Lesson 3: The Sixteen Natures' },
