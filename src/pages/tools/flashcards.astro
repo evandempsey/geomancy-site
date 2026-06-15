@@ -2,6 +2,7 @@
 import { withBase } from '../../lib/url';
 import Prose from '../../layouts/Prose.astro';
 import FlashcardDrill from '../../components/course/FlashcardDrill.astro';
+import DignityDrill from '../../components/course/DignityDrill.astro';
 import { TOOLS } from '../../lib/tools';
 
 const tool = TOOLS.find((t) => t.slug === 'flashcards')!;
@@ -45,4 +46,10 @@ const tool = TOOLS.find((t) => t.slug === 'flashcards')!;
 
   <h2>Figure to element</h2>
   <FlashcardDrill mode="figure-element" />
+
+  <h2>Sign to ruler</h2>
+  <DignityDrill mode="sign-ruler" />
+
+  <h2>Sign to exaltation</h2>
+  <DignityDrill mode="sign-exaltation" />
 </Prose>

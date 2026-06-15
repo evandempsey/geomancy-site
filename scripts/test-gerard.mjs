@@ -25,6 +25,7 @@ import {
   randomProjection,
   projectionTotal,
 } from '../src/lib/gerard.ts';
+import { SIGN_DIGNITIES } from '../src/lib/dignities.ts';
 
 test('the ascendant table covers all sixteen figures', () => {
   assert.equal(Object.keys(GERARD_ASCENDANT_SIGN).length, 16);
@@ -56,6 +57,18 @@ test('spot checks against the printed table', () => {
   assert.equal(GERARD_ASCENDANT_SIGN['via'], 'Leo');
   assert.equal(GERARD_ASCENDANT_SIGN['populus'], 'Capricorn');
   assert.equal(GERARD_ASCENDANT_SIGN['cauda-draconis'], 'Sagittarius');
+});
+
+test('SIGN_DIGNITIES rulers agree with RULERS, for all twelve signs', () => {
+  assert.equal(Object.keys(SIGN_DIGNITIES).length, 12);
+  for (const sign of SIGNS) {
+    assert.equal(SIGN_DIGNITIES[sign].ruler, RULERS[sign], `${sign} ruler`);
+  }
+});
+
+test('SIGN_DIGNITIES: only Leo, Scorpio and Aquarius have no exaltation', () => {
+  const noExaltation = SIGNS.filter((sign) => SIGN_DIGNITIES[sign].exaltation === null);
+  assert.deepEqual(noExaltation, ['Leo', 'Scorpio', 'Aquarius']);
 });
 
 test('signsForHouses runs the zodiac in order from the ascendant', () => {
