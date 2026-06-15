@@ -2,25 +2,32 @@
 import { withBase } from '../../lib/url';
 /**
  * Sign-dignity flashcard drill, a sibling of FlashcardDrill for the essential
- * dignities. The card shows a zodiac sign; the mode sets what you recall and
- * what Reveal shows: its ruling planet ('sign-ruler') or the planet exalted in
- * it ('sign-exaltation', "None" for Leo, Scorpio and Aquarius). Data comes from
- * SIGN_DIGNITIES, the same source as the table on the essential dignities page.
- * Score is kept in memory for the round only; mastery is the student's business,
- * not localStorage's.
+ * dignities. The mode sets the prompt and what Reveal shows. With 'sign-ruler'
+ * and 'sign-exaltation' the card shows a zodiac sign and you recall its ruling
+ * planet, or the planet exalted in it ("None" for Leo, Scorpio and Aquarius).
+ * With 'planet-exaltation' it runs the exaltation the other way: the card shows
+ * a planet (or node) and you recall the sign it is exalted in, over the nine
+ * bodies that have an exaltation. Data comes from SIGN_DIGNITIES, the same
+ * source as the table on the essential dignities page. Score is kept in memory
+ * for the round only; mastery is the student's business, not localStorage's.
  */
 import { SIGNS } from '../../lib/gerard';
 import { SIGN_DIGNITIES, SIGN_SYMBOL, PLANET_SYMBOL } from '../../lib/dignities';
 import { astroSymbolsText } from '../../lib/rehype-astro-symbols.mjs';
 
 interface Props {
-  mode?: 'sign-ruler' | 'sign-exaltation';
+  mode?: 'sign-ruler' | 'sign-exaltation' | 'planet-exaltation';
 }
 const { mode = 'sign-ruler' } = Astro.props;
 
+// Going planet-to-sign, drill only the signs that exalt a body, so the prompt is
+// always a real planet or node and never "None".
+const signsForDeck =
+  mode === 'planet-exaltation' ? SIGNS.filter((s) => SIGN_DIGNITIES[s].exaltation) : SIGNS;
+
 // astroSymbolsText appends the U+FE0E text-presentation selector so the glyphs
 // render as monochrome line glyphs, not colour emoji (matching .astro-symbol).
-const deck = SIGNS.map((sign) => {
+const deck = signsForDeck.map((sign) => {
   const d = SIGN_DIGNITIES[sign];
   return {
     sign,
@@ -104,16 +111,25 @@ const deck = SIGNS.map((sign) => {
       }
     };
 
-    const answerFor = (c: Card) =>
-      mode === 'sign-exaltation'
+    // Going planet-to-sign the prompt and answer swap sides; the sign modes
+    // both prompt with the sign and differ only in what Reveal shows.
+    const promptFor = (c: Card) =>
+      mode === 'planet-exaltation'
         ? { name: c.exaltation, symbol: c.exaltationSymbol }
-        : { name: c.ruler, symbol: c.rulerSymbol };
+        : { name: c.sign, symbol: c.signSymbol };
+
+    const answerFor = (c: Card) => {
+      if (mode === 'planet-exaltation') return { name: c.sign, symbol: c.signSymbol };
+      if (mode === 'sign-exaltation') return { name: c.exaltation, symbol: c.exaltationSymbol };
+      return { name: c.ruler, symbol: c.rulerSymbol };
+    };
 
     const show = () => {
       const c = deck[order[pos]];
+      const p = promptFor(c);
       progress.textContent = `Card ${pos + 1} of ${deck.length} · ${right} right so far`;
-      promptSymbol.textContent = c.signSymbol;
-      promptName.textContent = c.sign;
+      promptSymbol.textContent = p.symbol;
+      promptName.textContent = p.name;
       answer.hidden = true;
       revealBtn.hidden = false;
       rightBtn.hidden = true;
