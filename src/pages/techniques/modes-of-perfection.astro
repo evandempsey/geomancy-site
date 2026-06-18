@@ -18,9 +18,10 @@ const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
     A house chart answers a question through the relation between the figure of the querent (usually
     the first house) and the figure of the quesited (the house of the thing asked about). Perfection
     is the joining of those two significators: when the chart perfects, the matter comes about; when
-    it does not, the matter is denied. The medieval sources name four modes of perfection. This
-    course tests them by Cattan's method, where occupation and conjunction perfect the matter, and
-    the company and springing of figures are read alongside as circumstances.
+    it does not, the matter is denied. The medieval sources name four modes of perfection —
+    occupation, conjunction, mutation, and translation — each a different way the two significators
+    meet. Company, the rule of the fixed house-pairs, is read alongside as a strengthening or
+    weakening circumstance, but it does not by itself join the parties.
   </p>
 
   <h2>Test for perfection</h2>
@@ -29,19 +30,22 @@ const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
     <li>Find every house where each significator's figure is repeated across the chart.</li>
     <li><strong>Test occupation.</strong> The querent's figure also stands in the quesited's house. This is the strongest perfection; the matter comes about of itself.</li>
     <li><strong>Test conjunction.</strong> One significator's figure stands in a house beside the other significator's house. This perfects the matter by effort, and the figure that moves shows who must seek it.</li>
+    <li><strong>Test mutation.</strong> Both significators' figures are found side by side in a pair of adjacent houses elsewhere in the chart, away from their own houses. This perfects the matter, but the parties meet away from home; the houses where they are found together describe the circumstances of the meeting.</li>
+    <li><strong>Test translation.</strong> A third figure — not either significator's own figure — appears in a house beside the querent's house and also in a house beside the quesited's house. This perfects the matter through a go-between who carries it from one party to the other.</li>
     <li><strong>Test company.</strong> A significator's figure stands in its companion house (the fixed pairs 1·2, 3·4, and so on). Company strengthens or weakens a significator but does not by itself join the parties.</li>
-    <li>Conclude: perfected by occupation or conjunction, or denied. Read any further springings as circumstances of the matter, not as the answer.</li>
+    <li>Conclude: perfected by one of the four modes, or denied. Read any further springings as circumstances of the matter, not as the answer.</li>
   </ol>
-  <p>The older sources name four modes. This course reads them as follows:</p>
+  <p>The four modes, in order from strongest to weakest, with company read alongside:</p>
   <table>
     <thead>
-      <tr><th>Mode</th><th>In the chart</th><th>In this course</th></tr>
+      <tr><th>Mode</th><th>In the chart</th><th>How it perfects</th></tr>
     </thead>
     <tbody>
-      <tr><td>Occupation</td><td>The querent's figure also holds the quesited's house</td><td>Perfects the matter</td></tr>
-      <tr><td>Conjunction</td><td>A significator stands in a house beside the other</td><td>Perfects the matter, by effort</td></tr>
-      <tr><td>Mutation</td><td>The two significators stand side by side elsewhere</td><td>Not a perfection here; read as a springing</td></tr>
-      <tr><td>Translation</td><td>A third figure stands beside both significators</td><td>Not a perfection here; read by the third figure's aspect or company</td></tr>
+      <tr><td>Occupation</td><td>The querent's figure also holds the quesited's house</td><td>Perfects the matter; the parties are already joined</td></tr>
+      <tr><td>Conjunction</td><td>A significator stands in a house beside the other</td><td>Perfects the matter, by effort; the moving figure shows who seeks</td></tr>
+      <tr><td>Mutation</td><td>The two significators stand side by side elsewhere</td><td>Perfects the matter; the parties meet away from home</td></tr>
+      <tr><td>Translation</td><td>A third figure stands beside both significators</td><td>Perfects the matter; a third party brings it about</td></tr>
+      <tr><td>Company</td><td>A significator's figure stands in its companion house</td><td>Strengthens or weakens a significator; does not join the parties</td></tr>
     </tbody>
   </table>
   <p>
@@ -53,9 +57,12 @@ const t = TECHNIQUES.find((x) => x.slug === 'modes-of-perfection')!;
   <h2>In the sources</h2>
   <p>
     The four modes are set out most fully in the pseudo-Abano
-    <a href={withBase('/library/abano/method-of-judging-questions/')}>Method of Judging Questions</a>.
-    Cattan teaches the same modes under his own names, occupation and the company of conjunction,
-    with worked examples from his own practice:
+    <a href={withBase('/library/abano/method-of-judging-questions/')}>Method of Judging Questions</a>,
+    which gives a formal definition and a worked example for each. Cattan teaches occupation and
+    conjunction under his own names with worked examples from his own practice, and his Lord of
+    Ferte figure expressly cites "mutation and translation of good fygures in good houses." The
+    springing of figures — the repetition rule that every mode above relies on — is taught by the
+    pseudo-Agrippa and by Cattan's house-by-house passing series:
   </p>
   <QuoteList topic="perfection" />
 </Prose>
