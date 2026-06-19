@@ -78,6 +78,8 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
     <p class="hint">Test in order of strength; record everything found, not just the first.</p>
     <label class="check"><input type="checkbox" name="occupation" /> Occupation: the same figure in both houses</label>
     <label class="check"><input type="checkbox" name="conjunction" /> Conjunction: a significator passes to a house beside the other</label>
+    <label class="check"><input type="checkbox" name="mutation" /> Mutation: both significators found side by side elsewhere</label>
+    <label class="check"><input type="checkbox" name="translation" /> Translation: a third figure beside both significators</label>
     <label class="check"><input type="checkbox" name="company" /> Company: a significator strengthened by its companion house</label>
     <label class="check"><input type="checkbox" name="aspect" /> Favorable aspect between the significators</label>
     <label class="check"><input type="checkbox" name="denied" /> Perfection denied</label>
@@ -164,6 +166,8 @@ const houses = (await getCollection('houses')).sort((a, b) => a.data.number - b.
       const perfections = [
         checked('occupation') && 'occupation',
         checked('conjunction') && 'conjunction',
+        checked('mutation') && 'mutation',
+        checked('translation') && 'translation',
         checked('company') && 'company',
         checked('aspect') && 'favorable aspect',
       ].filter(Boolean);

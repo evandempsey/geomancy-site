@@ -58,7 +58,7 @@ export const TOOLS: Tool[] = [
     slug: 'reading-worksheet',
     title: 'The Reading Worksheet',
     description:
-      'A six-step guided worksheet that walks a chart from significators through perfection, aspects and company to a finished reading, printable for work on paper.',
+      'An eight-step guided worksheet that walks a chart from significators through perfection, aspects and company to a finished reading, printable for work on paper.',
     taughtIn: [
       { href: '/course/perfection-of-the-figure/', label: 'Lesson 7: Perfection of the Figure' },
       { href: '/course/the-finished-reading/', label: 'Lesson 10: The Finished Reading' },
